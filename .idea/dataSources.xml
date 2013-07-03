@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="963978342">
+    <data-source source="LOCAL" name="Data Source" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="9b8147b8-78d5-40a2-95dc-ccc5d2ad87b4">
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc://</jdbc-url>
+      <libraries>
+        <library>
+          <url>jar:///Applications/play/play-2.1.1/repository/local/com.h2database/h2/1.3.168/jars/h2.jar!/</url>
+        </library>
+      </libraries>
+    </data-source>
+  </component>
+</project>
+
