@@ -2,36 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71f484c1-7011-43f2-87dc-059d1ffb1f16" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/conf/evolutions/default/1.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/Api.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/dao/StoriesDao.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/dao/StoriesDaoSpec.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/model/Story.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/Www.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/Application.scala" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/stylesheets/main.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/main.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ApplicationSpec.scala" afterPath="$PROJECT_DIR$/test/ApplicationSpec.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/IntegrationSpec.scala" afterPath="$PROJECT_DIR$/test/IntegrationSpec.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/application.conf" afterPath="$PROJECT_DIR$/conf/application.conf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/index.scala.html" afterPath="$PROJECT_DIR$/app/views/index.scala.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/controllers/Api.scala" afterPath="$PROJECT_DIR$/app/controllers/api/Stories.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/model/Story.scala" afterPath="$PROJECT_DIR$/app/model/Story.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/routes" afterPath="$PROJECT_DIR$/conf/routes" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="anechoic.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1372880651802" ignored="false" />
+    <file path="/Dummy.txt" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373296937758" ignored="false" />
     <file path="/application.log" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371147391406" ignored="false" />
     <file path="/application.conf" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1372878310606" ignored="false" />
     <file path="/100000.sql" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371147914543" ignored="false" />
     <file path="/Application.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371148916583" ignored="false" />
-    <file path="/routes" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371148854895" ignored="false" />
+    <file path="/routes" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373306030495" ignored="false" />
     <file path="/fragment.java" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1372876523685" ignored="false" />
     <file path="/a.dummy" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371148817188" ignored="false" />
     <file path="/Api.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371148979989" ignored="false" />
     <file path="$PROJECT_DIR$/target/scala-2.10/src_managed/main/controllers/routes.java" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371149071569" ignored="false" />
-    <file path="/Story.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371150956764" ignored="false" />
+    <file path="/Story.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373305961525" ignored="false" />
     <file path="/StoriesDao.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1372876329523" ignored="false" />
     <file path="/StoriesDaoSpec.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1372878330957" ignored="false" />
     <file path="/Fixture.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371155702142" ignored="false" />
@@ -41,6 +29,8 @@
     <file path="/index.scala.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1372880703469" ignored="false" />
     <file path="/Www.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1372879366187" ignored="false" />
     <file path="/main.less" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1372880277545" ignored="false" />
+    <file path="/Stories.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373299373755" ignored="false" />
+    <file path="/Formats.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373299260416" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +50,7 @@
     <sortChildren value="false" />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -96,7 +87,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -106,15 +96,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Www.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/Www.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="49" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="StoriesDao.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/dao/StoriesDao.scala">
           <provider selected="true" editor-type-id="text-editor">
@@ -124,13 +105,40 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StoriesDaoSpec.scala" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="StoriesDaoSpec.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/dao/StoriesDaoSpec.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="91" selection-start="883" selection-end="883" vertical-scroll-proportion="0.6353791">
+            <state line="23" column="9" selection-start="551" selection-end="551" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Stories.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/api/Stories.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="81" selection-start="99" selection-end="99" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#13#52#0" expanded="true" />
+                <element signature="e#25#46#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.conf" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conf/application.conf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="57" selection-start="976" selection-end="976" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/conf/routes">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="43" selection-start="392" selection-end="392" vertical-scroll-proportion="0.15311004">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -139,9 +147,27 @@
         <entry file="file://$PROJECT_DIR$/test/ApplicationSpec.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Story.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/model/Story.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="0" selection-start="740" selection-end="740" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#14#41#0" expanded="true" />
+                <element signature="e#15#42#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Reads.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar:///Applications/play/play-2.1.1/repository/local/play/play_2.10/2.1.1/jars/play_2.10.jar!/play/api/libs/json/Reads.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="6" selection-start="269" selection-end="269" vertical-scroll-proportion="-2.56">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -149,7 +175,7 @@
       <file leaf-file-name="index.scala.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/index.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="243" selection-end="243" vertical-scroll-proportion="-6.4">
+            <state line="10" column="0" selection-start="243" selection-end="243" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -159,36 +185,6 @@
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/main.less">
           <provider selected="true" editor-type-id="text-editor">
             <state line="7" column="22" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.scala.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/main.scala.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Story.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/model/Story.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="21" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="1.sql" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/evolutions/default/1.sql">
-          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="248" selection-end="248" vertical-scroll-proportion="-8.888889">
               <folding />
             </state>
           </provider>
@@ -212,10 +208,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/conf/routes" />
-        <option value="$PROJECT_DIR$/app/controllers/Api.scala" />
-        <option value="$PROJECT_DIR$/app/model/Story.scala" />
-        <option value="$PROJECT_DIR$/conf/application.conf" />
         <option value="$PROJECT_DIR$/test/Fixture.scala" />
         <option value="$PROJECT_DIR$/app/color.html" />
         <option value="$PROJECT_DIR$/test/HelloWorldSpec.scala" />
@@ -228,6 +220,10 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/main.less" />
         <option value="$PROJECT_DIR$/app/views/index.scala.html" />
         <option value="$PROJECT_DIR$/test/dao/StoriesDaoSpec.scala" />
+        <option value="$PROJECT_DIR$/conf/routes" />
+        <option value="$PROJECT_DIR$/app/controllers/api/Stories.scala" />
+        <option value="$PROJECT_DIR$/app/model/Formats.scala" />
+        <option value="$PROJECT_DIR$/app/model/Story.scala" />
       </list>
     </option>
   </component>
@@ -286,7 +282,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -446,6 +441,10 @@
               <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Story.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -497,12 +496,35 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="anechoic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="anechoic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="stylesheets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -518,9 +540,9 @@
     <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -563,14 +585,6 @@
       <option name="PROGRAM_PARAMETERS" />
       <method />
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-      <method />
-    </configuration>
     <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <extension name="scalaCoverage" />
@@ -584,6 +598,27 @@
       <setting name="testName" value="" />
       <setting name="testKind" value="Class" />
       <setting name="showProgressMessages" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -614,19 +649,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -640,13 +662,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -668,6 +683,13 @@
       </option>
       <envs />
       <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
@@ -696,6 +718,11 @@
       <created>1371136457817</created>
       <updated>1371136457817</updated>
     </task>
+    <task id="LOCAL-00001" summary="basic working test&#10;basic colors (eigengrau!)&#10;convert from css to less">
+      <created>1372880788456</created>
+      <updated>1372880788456</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -715,7 +742,6 @@
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299532" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3299532" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Analysis" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -728,6 +754,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3299532" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -799,21 +826,12 @@
   <component name="editorHistoryManager">
     <entry file="jar:///Applications/play/play-2.1.1/repository/local/org.specs2/specs2_2.10/1.13/jars/specs2_2.10.jar!/org/specs2/specification/FormattingFragments.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="6" selection-start="757" selection-end="757" vertical-scroll-proportion="0.13018714">
-          <folding />
-        </state>
+        <state line="10" column="6" selection-start="757" selection-end="757" vertical-scroll-proportion="0.13018714" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/IntegrationSpec.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="43" selection-start="256" selection-end="277" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Api.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="7" selection-start="78" selection-end="78" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -825,28 +843,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/application.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="57" selection-start="976" selection-end="976" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/dao/StoriesDao.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="6" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/conf/evolutions/default/1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="248" selection-end="248" vertical-scroll-proportion="-8.888889">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/main.scala.html">
@@ -858,14 +862,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/Www.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="49" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/Story.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="21" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0">
+        <state line="3" column="21" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -880,25 +877,67 @@
     <entry file="file://$PROJECT_DIR$/test/ApplicationSpec.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#14#41#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/index.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="243" selection-end="243" vertical-scroll-proportion="-6.4">
+        <state line="10" column="0" selection-start="243" selection-end="243" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/application.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="57" selection-start="976" selection-end="976" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/dao/StoriesDaoSpec.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="91" selection-start="883" selection-end="883" vertical-scroll-proportion="0.6353791">
+        <state line="23" column="9" selection-start="551" selection-end="551" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/dao/StoriesDao.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="6" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/Stories.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="81" selection-start="99" selection-end="99" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#13#52#0" expanded="true" />
+            <element signature="e#25#46#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Applications/play/play-2.1.1/repository/local/play/play_2.10/2.1.1/jars/play_2.10.jar!/play/api/libs/json/Reads.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="6" selection-start="269" selection-end="269" vertical-scroll-proportion="-2.56">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Story.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="0" selection-start="740" selection-end="740" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#15#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/routes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="43" selection-start="392" selection-end="392" vertical-scroll-proportion="0.15311004">
+          <folding />
         </state>
       </provider>
     </entry>
