@@ -4,13 +4,14 @@ import play.api.mvc._
 import play.api.libs.json.Json
 import dao.StoriesDao
 
-/**
- * api controllers
- */
 object Stories extends Controller {
   
-  def getStories = Action {
+  def list = Action {
     Ok(Json.toJson(StoriesDao.get(1, 1)))
   }
-  
+
+  def post(title: String, url: String) = Action {
+    Ok("hello")
+   // Ok(Json.toJson(StoriesDao.add(title, url)))
+  }
 }

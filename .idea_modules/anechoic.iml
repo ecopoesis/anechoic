@@ -4,7 +4,7 @@
     <facet type="scala" name="Scala">
       <configuration>
         <option name="compilerLibraryLevel" value="Project" />
-        <option name="compilerLibraryName" value="scala-2.10.0" />
+        <option name="compilerLibraryName" value="Scala 2.10.0" />
         <option name="compilerOptions" value="-deprecation -unchecked -encoding utf8" />
         <option name="deprecationWarnings" value="true" />
         <option name="fsc" value="true" />
