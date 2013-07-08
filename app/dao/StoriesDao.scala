@@ -4,7 +4,6 @@ import model.Story
 import play.api.Play.current
 import play.api.db.DB
 import anorm._
-import scala.Unit
 
 object StoriesDao {
 
@@ -28,9 +27,9 @@ object StoriesDao {
     DB.withConnection { implicit c =>
       SQL(
         """
-          |insert into stories (title, url) values ({title}, {url})
+          |insert into stories (title, url, score) values ({title}, {url}, {score})
         """.stripMargin)
-      .on("title" -> title, "url" -> url)
+      .on("title" -> title, "url" -> url, "score" -> DEFAULT_SCORE)
       .executeInsert() match {
         case Some(a) => a
         case None => None
