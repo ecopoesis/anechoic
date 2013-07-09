@@ -17,6 +17,9 @@
     <option name="snCheckCPP" value="true" />
     <option name="snCheckC" value="true" />
   </component>
+  <component name="DeleteUselessSourceAdvisor">
+    <option name="SHOULD_OFFER_DELETE_SOURCES" value="false" />
+  </component>
   <component name="FindBugsConfigurable">
     <option name="make" value="true" />
     <option name="effort" value="default" />

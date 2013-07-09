@@ -6,10 +6,14 @@ import play.api.mvc._
 /**
  * web page routes
  */
-object Www extends Controller {
+object Www extends Controller with securesocial.core.SecureSocial {
   
-  def index = Action {
+  def index = UserAwareAction { implicit request =>
     Ok(views.html.index())
+  }
+
+  def submit = SecuredAction { implicit request =>
+    Ok("new story page")
   }
   
 }

@@ -5,17 +5,17 @@ import play.Project._
 object ApplicationBuild extends Build {
 
   val appName         = "anechoic"
-  val appVersion      = "1.0-SNAPSHOT"
+  val appVersion      = "1-SNAPSHOT"
 
   val appDependencies = Seq(
-    // Add your project dependencies here,
     jdbc,
-    anorm
+    anorm,
+    "securesocial" %% "securesocial" % "master-SNAPSHOT"
   )
 
 
   val main = play.Project(appName, appVersion, appDependencies).settings(
-    // Add your own project settings here      
+    resolvers += Resolver.url("sbt-plugin-snapshots", new URL("http://repo.scala-sbt.org/scalasbt/sbt-plugin-snapshots/"))(Resolver.ivyStylePatterns)
   )
 
 }
