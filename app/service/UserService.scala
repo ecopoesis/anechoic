@@ -6,10 +6,14 @@ import securesocial.core.providers.Token
 import securesocial.core.UserId
 import scala.Some
 import org.mindrot.jbcrypt.BCrypt
+import dao.UserDao
+import securesocial.core.Identity
 
 
 /**
  * maps SecureSocial's users to our user objects
+ * we currently only support userpass users, so everything gets hardcoded to that
+ * this would be easy to change in the future if we need to
  */
 class UserService(application: Application) extends UserServicePlugin(application) {
   private var users = Map[String, Identity]()
@@ -21,10 +25,7 @@ class UserService(application: Application) extends UserServicePlugin(applicatio
    * @return an optional user
    */
   def find(id: UserId): Option[Identity] = {
-    if ( Logger.isDebugEnabled ) {
-      Logger.debug("users = %s".format(users))
-    }
-    users.get(id.id + id.providerId)
+    UserDao.getByUsername(id.id)
   }
 
   /**
@@ -34,23 +35,19 @@ class UserService(application: Application) extends UserServicePlugin(applicatio
    * @return
    */
   def findByEmailAndProvider(email: String, providerId: String): Option[Identity] = {
-    if ( Logger.isDebugEnabled ) {
-      Logger.debug("users = %s".format(users))
-    }
-    users.values.find( u => u.email.map( e => e == email && u.id.providerId == providerId).getOrElse(false))
+    UserDao.getByEmail(email)
   }
 
   /**
-   * Saves the user.  This method gets called when a user logs in.
+   * Saves the user. This method gets called when a user logs in.
    * This is your chance to save the user information in your backing store.
    * @param user the user to save
    */
   def save(user: Identity): Identity = {
-    users = users + (user.id.id + user.id.providerId -> user)
-    // this sample returns the same user object, but you could return an instance of your own class
-    // here as long as it implements the Identity trait. This will allow you to use your own class in the protected
-    // actions and event callbacks. The same goes for the find(id: UserId) method.
-    user
+    UserDao.upsert(user) match {
+      case Some(a) => a
+      case None => throw new Exception("error saving user")
+    }
   }
 
   /**

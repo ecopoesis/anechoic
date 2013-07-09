@@ -6,7 +6,7 @@ import anorm._
 import anorm.SqlParser._
 import play.api.Play.current
 
-import securesocial.core.{PasswordInfo, AuthenticationMethod, UserId}
+import securesocial.core.{Identity, PasswordInfo, AuthenticationMethod, UserId}
 import securesocial.core.providers.UsernamePasswordProvider
 
 object UserDao {
@@ -45,9 +45,78 @@ object UserDao {
           |from users
           |where username = {username}
         """.stripMargin)
-        .on("username" -> username)
+        .on('username -> username)
         .singleOpt(user)
     }
   }
 
+  def getByEmail(email: String): Option[User] = {
+    DB.withConnection { implicit c =>
+      SQL(
+        """
+          |select
+          | id, username, password, pw_hash, pw_salt, firstname, lastname, email
+          |from users
+          |where email = {email}
+        """.stripMargin)
+        .on('email -> email)
+        .singleOpt(user)
+    }
+  }
+
+  /**
+   * create a user if they don't exist, otherwise update
+   * @param identity
+   * @return
+   */
+  def upsert(identity: Identity): Option[Identity] = {
+    getByUsername(identity.id.id) match {
+      case Some(_) => update(identity)
+      case None => insert(identity)
+    }
+
+    getByUsername(identity.id.id)
+  }
+
+  def insert(identity: Identity): Any = {
+    DB.withConnection { implicit c =>
+      SQL(
+        """
+          |insert into users (username, password, pw_hash, pw_salt, firstname, lastname, email) values ({username}, {password}, {pw_hash}, {pw_salt}, {firstname}, {lastname}, {email})
+        """.stripMargin)
+        .on(
+          'username -> identity.id.id,
+          'password -> identity.passwordInfo.get.password,
+          'pw_hash -> identity.passwordInfo.get.hasher,
+          'pw_salt -> identity.passwordInfo.get.salt.get,
+          'firstname -> identity.firstName,
+          'lastname -> identity.lastName,
+          'email -> identity.email
+      )
+      .executeInsert() match {
+        case Some(a) => a
+        case None => None
+      }
+    }
+  }
+
+  def update(identity: Identity) {
+    DB.withConnection { implicit c =>
+      SQL(
+        """
+          |update users set password={password}, pw_hash={pw_hash}, pw_salt={pw_salt}, firstname={firstname}, lastname={lastname}, email={email}) where username = {username}
+        """.stripMargin)
+        .on(
+          'username -> identity.id.id,
+          'password -> identity.passwordInfo.get.password,
+          'pw_hash -> identity.passwordInfo.get.hasher,
+          'pw_salt -> identity.passwordInfo.get.salt.get,
+          'firstname -> identity.firstName,
+          'lastname -> identity.lastName,
+          'email -> identity.email
+      )
+      .executeUpdate()
+    }
+  }
 }
+

@@ -2,24 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71f484c1-7011-43f2-87dc-059d1ffb1f16" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/conf/evolutions/default/2.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/dao/StoryDaoSpec.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/model/User.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/dao/UserDao.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/dao/UserDaoSpec.scala" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/dao/StoriesDaoSpec.scala" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/dao/StoriesDao.scala" afterPath="$PROJECT_DIR$/app/dao/StoryDao.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/evolutions/default/1.sql" afterPath="$PROJECT_DIR$/conf/evolutions/default/1.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/api/Stories.scala" afterPath="$PROJECT_DIR$/app/controllers/api/Stories.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/evolutions/default/2.sql" afterPath="$PROJECT_DIR$/conf/evolutions/default/2.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/dao/UserDao.scala" afterPath="$PROJECT_DIR$/app/dao/UserDao.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/dao/UserDaoSpec.scala" afterPath="$PROJECT_DIR$/test/dao/UserDaoSpec.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/service/UserService.scala" afterPath="$PROJECT_DIR$/app/service/UserService.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/application.conf" afterPath="$PROJECT_DIR$/conf/application.conf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/securesocial.conf" afterPath="$PROJECT_DIR$/conf/securesocial.conf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="anechoic.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373399507865" ignored="false" />
+    <file path="/Dummy.txt" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373400800088" ignored="false" />
     <file path="/application.log" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371147391406" ignored="false" />
     <file path="/application.conf" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373382602350" ignored="false" />
     <file path="/100000.sql" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371147914543" ignored="false" />
@@ -35,7 +27,7 @@
     <file path="/Fixture.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371155702142" ignored="false" />
     <file path="/color.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1372086308345" ignored="false" />
     <file path="/TestSpec.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1372877737074" ignored="false" />
-    <file path="/1.sql" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373399446185" ignored="false" />
+    <file path="/1.sql" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373401910976" ignored="false" />
     <file path="/index.scala.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1372880703469" ignored="false" />
     <file path="/Www.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373389317696" ignored="false" />
     <file path="/main.less" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1372880277545" ignored="false" />
@@ -44,13 +36,13 @@
     <file path="/Build.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373382140838" ignored="false" />
     <file path="/play.plugins" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373382550761" ignored="false" />
     <file path="/securesocial.conf" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373390972709" ignored="false" />
-    <file path="/UserService.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373394090905" ignored="false" />
-    <file path="/2.sql" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373399440277" ignored="false" />
+    <file path="/UserService.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373402203992" ignored="false" />
+    <file path="/2.sql" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373401897109" ignored="false" />
     <file path="/User.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373393711659" ignored="false" />
-    <file path="/UserDao.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373397787483" ignored="false" />
+    <file path="/UserDao.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373406364407" ignored="false" />
     <file path="/StoryDaoSpec.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373394327534" ignored="false" />
     <file path="/StoryDao.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373397580345" ignored="false" />
-    <file path="/UserDaoSpec.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373398057055" ignored="false" />
+    <file path="/UserDaoSpec.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373405794091" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,16 +103,53 @@
     <breakpoint_rules />
     <ui_properties />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="User.scala" pinned="false" current="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/app/model/User.scala">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state line="19" column="190" selection-start="492" selection-end="492" vertical-scroll-proportion="0.30806258">
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="PasswordInfo.class" pinned="false" current="false" current-in-tab="false">
+              <entry file="jar:///Applications/play/play-2.1.1/repository/cache/securesocial/securesocial_2.10/jars/securesocial_2.10-master-SNAPSHOT.jar!/securesocial/core/PasswordInfo.class">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state line="1" column="23" selection-start="49" selection-end="49" vertical-scroll-proportion="-0.64">
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="anechoic" />
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="StoryDaoSpec.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/dao/StoryDaoSpec.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="78" selection-start="516" selection-end="534" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="2.sql" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conf/evolutions/default/2.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="2" selection-start="345" selection-end="345" vertical-scroll-proportion="-9.481482">
+            <state line="11" column="31" selection-start="298" selection-end="298" vertical-scroll-proportion="-6.5185184">
               <folding />
             </state>
           </provider>
@@ -129,20 +158,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StoryDaoSpec.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/dao/StoryDaoSpec.scala">
+      <file leaf-file-name="UserService.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/service/UserService.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="62" selection-start="360" selection-end="360" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SocialUser.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar:///Applications/play/play-2.1.1/repository/cache/securesocial/securesocial_2.10/jars/securesocial_2.10-master-SNAPSHOT.jar!/securesocial/core/SocialUser.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="26" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="73" column="42" selection-start="2001" selection-end="2001" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#17#54#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -150,16 +172,7 @@
       <file leaf-file-name="UserId.class" pinned="false" current="false" current-in-tab="false">
         <entry file="jar:///Applications/play/play-2.1.1/repository/cache/securesocial/securesocial_2.10/jars/securesocial_2.10-master-SNAPSHOT.jar!/securesocial/core/UserId.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="1" selection-start="179" selection-end="179" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UsernamePasswordProvider.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar:///Applications/play/play-2.1.1/repository/cache/securesocial/securesocial_2.10/jars/securesocial_2.10-master-SNAPSHOT.jar!/securesocial/core/providers/UsernamePasswordProvider.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="7" selection-start="640" selection-end="640" vertical-scroll-proportion="0.0">
+            <state line="1" column="17" selection-start="43" selection-end="43" vertical-scroll-proportion="-0.64">
               <folding />
             </state>
           </provider>
@@ -168,16 +181,36 @@
       <file leaf-file-name="UserDao.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/dao/UserDao.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
+            <state line="79" column="36" selection-start="2064" selection-end="2064" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#13#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Sql.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar:///Applications/play/play-2.1.1/repository/local/play/anorm_2.10/2.1.1/jars/anorm_2.10.jar!/anorm/Sql.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="216" selection-start="2315" selection-end="2315" vertical-scroll-proportion="-15.36">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="1.sql" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Identity.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar:///Applications/play/play-2.1.1/repository/cache/securesocial/securesocial_2.10/jars/securesocial_2.10-master-SNAPSHOT.jar!/securesocial/core/Identity.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="177" selection-start="566" selection-end="566" vertical-scroll-proportion="-8.32">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="1.sql" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conf/evolutions/default/1.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="107" selection-start="227" selection-end="227" vertical-scroll-proportion="0.29776675">
+            <state line="9" column="0" selection-start="177" selection-end="177" vertical-scroll-proportion="-5.3333335">
               <folding />
             </state>
           </provider>
@@ -186,21 +219,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserDaoSpec.scala" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="UserDaoSpec.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/dao/UserDaoSpec.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="1" selection-start="527" selection-end="527" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1373398063000" expanded="true" signature="198:308" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PasswordInfo.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar:///Applications/play/play-2.1.1/repository/cache/securesocial/securesocial_2.10/jars/securesocial_2.10-master-SNAPSHOT.jar!/securesocial/core/PasswordInfo.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="104" selection-start="124" selection-end="130" vertical-scroll-proportion="0.0">
+            <state line="36" column="30" selection-start="982" selection-end="982" vertical-scroll-proportion="0.57761735">
               <folding />
             </state>
           </provider>
@@ -209,7 +231,7 @@
       <file leaf-file-name="StoryDao.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/dao/StoryDao.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="32" selection-end="61" vertical-scroll-proportion="0.0">
+            <state line="38" column="0" selection-start="902" selection-end="970" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -242,13 +264,13 @@
         <option value="$PROJECT_DIR$/conf/application.conf" />
         <option value="$PROJECT_DIR$/test/dao/StoriesDaoSpec.scala" />
         <option value="$PROJECT_DIR$/app/model/User.scala" />
-        <option value="$PROJECT_DIR$/app/service/UserService.scala" />
         <option value="$PROJECT_DIR$/test/dao/StoryDaoSpec.scala" />
         <option value="$PROJECT_DIR$/app/dao/StoryDao.scala" />
-        <option value="$PROJECT_DIR$/test/dao/UserDaoSpec.scala" />
-        <option value="$PROJECT_DIR$/app/dao/UserDao.scala" />
         <option value="$PROJECT_DIR$/conf/evolutions/default/2.sql" />
         <option value="$PROJECT_DIR$/conf/evolutions/default/1.sql" />
+        <option value="$PROJECT_DIR$/app/service/UserService.scala" />
+        <option value="$PROJECT_DIR$/app/dao/UserDao.scala" />
+        <option value="$PROJECT_DIR$/test/dao/UserDaoSpec.scala" />
       </list>
     </option>
   </component>
@@ -271,10 +293,13 @@
           <State>
             <id>Error handling</id>
           </State>
+          <State>
+            <id>SQL</id>
+          </State>
         </expanded-state>
         <selected-state>
           <State>
-            <id>Abstraction issues</id>
+            <id>SqlPostgresqlSelectFromProcedureInspection</id>
           </State>
         </selected-state>
       </profile-state>
@@ -704,7 +729,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="preferences.pluginManager" />
+    <property name="options.lastSelected" value="Errors" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="MemberChooser.copyJavadoc" value="false" />
@@ -733,7 +758,7 @@
       <recent name="controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="Specs2.StoriesDaoSpec">
+  <component name="RunManager" selected="Specs2.StoryDaoSpec">
     <configuration default="false" name="StoriesDaoSpec" type="Specs2RunConfiguration" factoryName="Specs2" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -744,6 +769,50 @@
       <extension name="scalaCoverage" />
       <module name="anechoic" />
       <setting name="path" value="dao.StoriesDaoSpec" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="UserDaoSpec" type="Specs2RunConfiguration" factoryName="Specs2" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <extension name="scalaCoverage" />
+      <module name="anechoic" />
+      <setting name="path" value="dao.UserDaoSpec" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="StoryDaoSpec" type="Specs2RunConfiguration" factoryName="Specs2" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <extension name="scalaCoverage" />
+      <module name="anechoic" />
+      <setting name="path" value="dao.StoryDaoSpec" />
       <setting name="package" value="" />
       <setting name="vmparams" value="" />
       <setting name="params" value="" />
@@ -875,13 +944,17 @@
       <option name="CONTEXT_PROVIDER" />
       <method />
     </configuration>
-    <list size="1">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Specs2.StoriesDaoSpec" />
+      <item index="1" class="java.lang.String" itemvalue="Specs2.UserDaoSpec" />
+      <item index="2" class="java.lang.String" itemvalue="Specs2.StoryDaoSpec" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Specs2.StoriesDaoSpec" />
-        <item index="1" class="java.lang.String" itemvalue="Specs2.StoriesDaoSpec" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Specs2.StoryDaoSpec" />
+        <item index="1" class="java.lang.String" itemvalue="Specs2.UserDaoSpec" />
+        <item index="2" class="java.lang.String" itemvalue="Specs2.StoriesDaoSpec" />
+        <item index="3" class="java.lang.String" itemvalue="Specs2.StoriesDaoSpec" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -916,7 +989,15 @@
       <created>1373390245594</created>
       <updated>1373390245594</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="basic user dao&#10;switch to postgres">
+      <created>1373399692162</created>
+      <updated>1373399692162</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fix sql format">
+      <created>1373400806229</created>
+      <updated>1373400806229</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -941,9 +1022,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="2465" height="1402" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299532" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16866474" sideWeight="0.6700468" order="3" side_tool="false" content_ui="tabs" />
@@ -955,7 +1036,7 @@
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299532" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943925" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32943925" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299532" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299532" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Analysis" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -963,8 +1044,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18147995" sideWeight="0.6705608" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299532" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18147995" sideWeight="0.6700468" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3299532" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24968995" sideWeight="0.6700468" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1014,7 +1095,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic user dao&#10;switch to postgres" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix sql format" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1034,6 +1115,7 @@
     <MESSAGE value="default score" />
     <MESSAGE value="basic user auth using SecureSocial" />
     <MESSAGE value="basic user dao&#10;switch to postgres" />
+    <MESSAGE value="fix sql format" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1043,49 +1125,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Applications/play/play-2.1.1/repository/cache/securesocial/securesocial_2.10/jars/securesocial_2.10-master-SNAPSHOT.jar!/securesocial/core/Identity.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="68" selection-end="564" vertical-scroll-proportion="-7.68" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/Stories.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="7" selection-start="106" selection-end="106" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/dao/StoryDaoSpec.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="62" selection-start="360" selection-end="360" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Applications/play/play-2.1.1/repository/cache/securesocial/securesocial_2.10/jars/securesocial_2.10-master-SNAPSHOT.jar!/securesocial/core/SocialUser.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="26" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Applications/play/play-2.1.1/repository/cache/securesocial/securesocial_2.10/jars/securesocial_2.10-master-SNAPSHOT.jar!/securesocial/core/UserId.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="1" selection-start="179" selection-end="179" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Applications/play/play-2.1.1/repository/cache/securesocial/securesocial_2.10/jars/securesocial_2.10-master-SNAPSHOT.jar!/securesocial/core/providers/UsernamePasswordProvider.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="7" selection-start="640" selection-end="640" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Applications/play/play-2.1.1/repository/cache/securesocial/securesocial_2.10/jars/securesocial_2.10-master-SNAPSHOT.jar!/securesocial/core/PasswordInfo.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="104" selection-start="124" selection-end="130" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1095,43 +1137,6 @@
         <state line="1" column="6" selection-start="33" selection-end="33" vertical-scroll-proportion="0.019851116" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/dao/StoryDao.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="32" selection-end="61" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/dao/UserDaoSpec.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="1" selection-start="527" selection-end="527" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1373398063000" expanded="true" signature="198:308" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/dao/UserDao.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/service/UserService.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="6" selection-start="454" selection-end="454" vertical-scroll-proportion="0.014440433">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/User.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="14" selection-start="185" selection-end="185" vertical-scroll-proportion="0.115523465">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Applications/play/play-2.1.1/repository/cache/securesocial/securesocial_2.10/jars/securesocial_2.10-master-SNAPSHOT.jar!/securesocial/core/AuthenticationMethod.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="0" selection-start="662" selection-end="662" vertical-scroll-proportion="0.14773777">
@@ -1139,9 +1144,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Applications/play/play-2.1.1/framework/sbt/boot/scala-2.10.0/lib/scala-library.jar!/scala/Option.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="6" selection-start="209" selection-end="209" vertical-scroll-proportion="0.079404466">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Applications/play/play-2.1.1/repository/cache/securesocial/securesocial_2.10/jars/securesocial_2.10-master-SNAPSHOT.jar!/securesocial/core/UserId.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="17" selection-start="43" selection-end="43" vertical-scroll-proportion="-0.64">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/conf/evolutions/default/2.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="2" selection-start="345" selection-end="345" vertical-scroll-proportion="-9.481482">
+        <state line="11" column="31" selection-start="298" selection-end="298" vertical-scroll-proportion="-6.5185184">
           <folding />
         </state>
       </provider>
@@ -1151,12 +1170,79 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/conf/evolutions/default/1.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="107" selection-start="227" selection-end="227" vertical-scroll-proportion="0.29776675">
+        <state line="9" column="0" selection-start="177" selection-end="177" vertical-scroll-proportion="-5.3333335">
           <folding />
         </state>
       </provider>
       <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
+      </provider>
+    </entry>
+    <entry file="jar:///Applications/play/play-2.1.1/repository/cache/securesocial/securesocial_2.10/jars/securesocial_2.10-master-SNAPSHOT.jar!/securesocial/core/Identity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="177" selection-start="566" selection-end="566" vertical-scroll-proportion="-8.32">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/dao/StoryDao.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="0" selection-start="902" selection-end="970" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/dao/StoryDaoSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="78" selection-start="516" selection-end="534" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Applications/play/play-2.1.1/repository/cache/securesocial/securesocial_2.10/jars/securesocial_2.10-master-SNAPSHOT.jar!/securesocial/core/PasswordInfo.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="23" selection-start="49" selection-end="49" vertical-scroll-proportion="-0.64">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/User.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="190" selection-start="492" selection-end="492" vertical-scroll-proportion="0.30806258">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Applications/play/play-2.1.1/repository/local/play/anorm_2.10/2.1.1/jars/anorm_2.10.jar!/anorm/Sql.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="216" selection-start="2315" selection-end="2315" vertical-scroll-proportion="-15.36">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/service/UserService.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="42" selection-start="2001" selection-end="2001" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#17#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/dao/UserDao.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="36" selection-start="2064" selection-end="2064" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#13#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/dao/UserDaoSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="30" selection-start="982" selection-end="982" vertical-scroll-proportion="0.57761735">
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
