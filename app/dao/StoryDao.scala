@@ -5,10 +5,11 @@ import play.api.Play.current
 import play.api.db.DB
 import anorm._
 
-object StoriesDao {
+object StoryDao {
 
   def DEFAULT_SCORE = 0
 
+  // @todo convert to row parser
   def get(page: Int, size: Int): List[Story] = {
     DB.withConnection { implicit c =>
       val rs = SQL(
@@ -23,6 +24,7 @@ object StoriesDao {
     }
   }
 
+  // @todo should return Option[Int]
   def add(title: String, url: String): Any = {
     DB.withConnection { implicit c =>
       SQL(

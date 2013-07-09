@@ -2,12 +2,12 @@ package controllers.api
 
 import play.api.mvc._
 import play.api.libs.json.Json
-import dao.StoriesDao
+import dao.StoryDao
 
 object Stories extends Controller with securesocial.core.SecureSocial {
   
   def list = Action {
-    Ok(Json.toJson(StoriesDao.get(1, 1)))
+    Ok(Json.toJson(StoryDao.get(1, 1)))
   }
 
   def post(title: String, url: String) = SecuredAction(ajaxCall = true) { implicit request =>

@@ -9,18 +9,14 @@ import org.mindrot.jbcrypt.BCrypt
 
 
 /**
- * A Sample In Memory user service in Scala
- *
- * IMPORTANT: This is just a sample and not suitable for a production environment since
- * it stores everything in memory.
+ * maps SecureSocial's users to our user objects
  */
 class UserService(application: Application) extends UserServicePlugin(application) {
   private var users = Map[String, Identity]()
   private var tokens = Map[String, Token]()
 
   /**
-   * Finds a user that maches the specified id
-   *
+   * finds a user that matches the specified id
    * @param id the user id
    * @return an optional user
    */
@@ -33,10 +29,6 @@ class UserService(application: Application) extends UserServicePlugin(applicatio
 
   /**
    * Finds a user by email and provider id.
-   *
-   * Note: If you do not plan to use the UsernamePassword provider just provide en empty
-   * implementation.
-   *
    * @param email - the user email
    * @param providerId - the provider id
    * @return

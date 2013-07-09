@@ -1,15 +1,15 @@
-# stories schema
+-- stories table
 
-# --- !Ups
+-- --- !Ups
 
 CREATE TABLE stories (
-    id bigint(20) NOT NULL AUTO_INCREMENT,
+    id serial NOT NULL,
     title varchar(100) NOT NULL,
     url varchar(2000) NOT NULL,
-    score int(10) NOT NULL,
+    score int NOT NULL,
     PRIMARY KEY (id)
 );
 
-# --- !Downs
+-- --- !Downs
 
 DROP TABLE stories;
