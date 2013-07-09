@@ -1,6 +1,6 @@
 -- users table
 
--- --- !Ups
+# --- !Ups
 
 CREATE TABLE users (
     id serial NOT NULL,
@@ -14,6 +14,6 @@ CREATE TABLE users (
     PRIMARY KEY (id)
 );
 
--- --- !Downs
+# --- !Downs
 
 DROP TABLE users;

@@ -1,6 +1,6 @@
 -- stories table
 
--- --- !Ups
+# --- !Ups
 
 CREATE TABLE stories (
     id serial NOT NULL,
@@ -10,6 +10,6 @@ CREATE TABLE stories (
     PRIMARY KEY (id)
 );
 
--- --- !Downs
+# --- !Downs
 
 DROP TABLE stories;
