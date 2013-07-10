@@ -6,7 +6,7 @@ import securesocial.core.providers.Token
 import securesocial.core.UserId
 import scala.Some
 import org.mindrot.jbcrypt.BCrypt
-import dao.UserDao
+import dao.{TokenDao, UserDao}
 import securesocial.core.Identity
 
 
@@ -16,9 +16,6 @@ import securesocial.core.Identity
  * this would be easy to change in the future if we need to
  */
 class UserService(application: Application) extends UserServicePlugin(application) {
-  private var users = Map[String, Identity]()
-  private var tokens = Map[String, Token]()
-
   /**
    * finds a user that matches the specified id
    * @param id the user id
@@ -54,10 +51,9 @@ class UserService(application: Application) extends UserServicePlugin(applicatio
    * Saves a token.  This is needed for users that
    * are creating an account in the system instead of using one in a 3rd party system.
    * @param token The token to save
-   * @return A string with a uuid that will be embedded in the welcome email.
    */
   def save(token: Token) {
-    tokens += (token.uuid -> token)
+    TokenDao.insert(token)
   }
 
   /**
@@ -66,25 +62,20 @@ class UserService(application: Application) extends UserServicePlugin(applicatio
    * @return
    */
   def findToken(token: String): Option[Token] = {
-    tokens.get(token)
+    TokenDao.select(token)
   }
 
   /**
    * Deletes a token
-   * @param uuid the token id
    */
   def deleteToken(uuid: String) {
-    tokens -= uuid
-  }
-
-  def deleteTokens() {
-    tokens = Map()
+    TokenDao.delete(uuid)
   }
 
   /**
    * Deletes all expired tokens
    */
   def deleteExpiredTokens() {
-    tokens = tokens.filter(!_._2.isExpired)
+    TokenDao.deleteExpired()
   }
 }
