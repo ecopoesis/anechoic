@@ -1,7 +1,11 @@
-@()
+@(user: Option[securesocial.core.Identity])(implicit request: play.api.mvc.RequestHeader)
 
 @import tags._
 
-@frame() {
-    this is the index, via a tag
+@frame(Option("Submit"), user) {
+    <form action="@routes.Forms.story()" method="POST">
+        title: <input name="title"> <br />
+        url: <input name="url"> <br />
+        <input type="submit" value="submit">
+    </form>
 }

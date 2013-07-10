@@ -4,6 +4,7 @@ import model.Story
 import play.api.Play.current
 import play.api.db.DB
 import anorm._
+import play.api.Logger
 
 object StoryDao {
 
@@ -24,8 +25,8 @@ object StoryDao {
     }
   }
 
-  // @todo should return Option[Int]
   def add(title: String, url: String): Any = {
+    Logger.debug("title = %s, url = %s".format(title, url))
     DB.withConnection { implicit c =>
       SQL(
         """

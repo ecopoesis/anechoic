@@ -1,13 +1,23 @@
-@()(body: Html)
+@(title: Option[String], user: Option[securesocial.core.Identity])(body: Html)(implicit request: play.api.mvc.RequestHeader)
 
 <html>
     <head>
-        <title>Anechoic News</title>
+        <title>
+            @title match {
+                case Some(title) => { @title - Anechoic News }
+                case None => { Anechoic News }
+            }
+        </title>
         <link rel="stylesheet" href="@routes.Assets.at("stylesheets/main.css")">
     </head>
     <body>
         <h1>Anechoic News</h1>
         <p>all the news-- none of the noise</p>
+        @user match {
+            case Some(user) => { Welcome, @user.id.id }
+            case None => { <a href="//@request.host/login">Login</a> }
+        }
+        <hr>
         @body
     </body>
 </html>

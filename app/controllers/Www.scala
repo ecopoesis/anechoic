@@ -13,7 +13,6 @@ object Www extends Controller with securesocial.core.SecureSocial {
   }
 
   def submit = SecuredAction { implicit request =>
-    Ok(views.html.submit())
+    Ok(views.html.submit(Option(request.user)))
   }
-  
 }
