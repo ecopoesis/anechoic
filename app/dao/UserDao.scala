@@ -88,7 +88,7 @@ object UserDao {
           'username -> identity.id.id,
           'password -> identity.passwordInfo.get.password,
           'pw_hash -> identity.passwordInfo.get.hasher,
-          'pw_salt -> identity.passwordInfo.get.salt.get,
+          'pw_salt -> identity.passwordInfo.get.salt,
           'firstname -> identity.firstName,
           'lastname -> identity.lastName,
           'email -> identity.email
@@ -104,13 +104,13 @@ object UserDao {
     DB.withConnection { implicit c =>
       SQL(
         """
-          |update users set password={password}, pw_hash={pw_hash}, pw_salt={pw_salt}, firstname={firstname}, lastname={lastname}, email={email}) where username = {username}
+          |update users set password={password}, pw_hash={pw_hash}, pw_salt={pw_salt}, firstname={firstname}, lastname={lastname}, email={email} where username = {username}
         """.stripMargin)
         .on(
           'username -> identity.id.id,
           'password -> identity.passwordInfo.get.password,
           'pw_hash -> identity.passwordInfo.get.hasher,
-          'pw_salt -> identity.passwordInfo.get.salt.get,
+          'pw_salt -> identity.passwordInfo.get.salt,
           'firstname -> identity.firstName,
           'lastname -> identity.lastName,
           'email -> identity.email
