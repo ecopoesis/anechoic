@@ -9,11 +9,11 @@ import play.api.mvc._
 object Www extends Controller with securesocial.core.SecureSocial {
   
   def index = UserAwareAction { implicit request =>
-    Ok(views.html.index())
+    Ok(views.html.index(request.user))
   }
 
   def submit = SecuredAction { implicit request =>
-    Ok("new story page")
+    Ok(views.html.submit())
   }
   
 }

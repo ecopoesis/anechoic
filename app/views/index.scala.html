@@ -1,7 +1,13 @@
-@()
+@(user: Option[securesocial.core.Identity])(implicit request: play.api.mvc.RequestHeader)
 
 @import tags._
 
 @frame() {
+    @user match {
+        case Some(user) => { Welcome, @user.id.id }
+        case None => { <a href="//@request.host/login">Login</a> }
+    }
+    <br>
+
     this is the index, via a tag
 }
