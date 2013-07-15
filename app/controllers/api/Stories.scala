@@ -7,7 +7,8 @@ import dao.StoryDao
 object Stories extends Controller with securesocial.core.SecureSocial {
   
   def list = Action {
-    Ok(Json.toJson(StoryDao.get(1, 1)))
+    Ok("foo")
+    //Ok(Json.toJson(StoryDao.getList(1, 1)))
   }
 
   def post(title: String, url: String) = SecuredAction(ajaxCall = true) { implicit request =>

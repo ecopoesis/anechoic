@@ -1,6 +1,6 @@
 package dao
 
-import model.{User}
+import model.User
 import play.api.db.DB
 import anorm._
 import anorm.SqlParser._
@@ -34,7 +34,21 @@ object UserDao {
         Some[PasswordInfo](new PasswordInfo(pw_hash, password, pw_salt))
         )
     }
-   }
+  }
+
+  def getById(id: Long): Option[User] = {
+    DB.withConnection { implicit c =>
+      SQL(
+        """
+          |select
+          | id, username, password, pw_hash, pw_salt, firstname, lastname, email
+          |from users
+          |where id = {id}
+        """.stripMargin)
+        .on('id -> id)
+        .singleOpt(user)
+    }
+  }
 
   def getByUsername(username: String): Option[User] = {
     DB.withConnection { implicit c =>
@@ -66,8 +80,6 @@ object UserDao {
 
   /**
    * create a user if they don't exist, otherwise update
-   * @param identity
-   * @return
    */
   def upsert(identity: Identity): Option[Identity] = {
     getByUsername(identity.id.id) match {

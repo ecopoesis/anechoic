@@ -1,35 +1,35 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CheckstyleConfigurable">
-    <option name="suppFilterFilename" value="" />
-    <option name="suppCommentFilter" value="false" />
-    <option name="offComment" value="CHECKSTYLE\:OFF" />
-    <option name="onComment" value="CHECKSTYLE\:ON" />
-    <option name="checkFormat" value=".*" />
-    <option name="messageFormat" value="" />
-    <option name="checkCPP" value="true" />
-    <option name="checkC" value="true" />
-    <option name="suppNearbyCommentFilter" value="false" />
-    <option name="snCommentFormat" value="SUPPRESS CHECKSTYLE (\w+)" />
-    <option name="snCheckFormat" value="$1" />
-    <option name="snMessageFormat" value="" />
-    <option name="snInfluenceFormat" value="0" />
-    <option name="snCheckCPP" value="true" />
-    <option name="snCheckC" value="true" />
+    <option value="" name="suppFilterFilename"></option>
+    <option value="false" name="suppCommentFilter"></option>
+    <option value="CHECKSTYLE\:OFF" name="offComment"></option>
+    <option value="CHECKSTYLE\:ON" name="onComment"></option>
+    <option value=".*" name="checkFormat"></option>
+    <option value="" name="messageFormat"></option>
+    <option value="true" name="checkCPP"></option>
+    <option value="true" name="checkC"></option>
+    <option value="false" name="suppNearbyCommentFilter"></option>
+    <option value="SUPPRESS CHECKSTYLE (\w+)" name="snCommentFormat"></option>
+    <option value="$1" name="snCheckFormat"></option>
+    <option value="" name="snMessageFormat"></option>
+    <option value="0" name="snInfluenceFormat"></option>
+    <option value="true" name="snCheckCPP"></option>
+    <option value="true" name="snCheckC"></option>
   </component>
   <component name="DeleteUselessSourceAdvisor">
-    <option name="SHOULD_OFFER_DELETE_SOURCES" value="false" />
+    <option value="false" name="SHOULD_OFFER_DELETE_SOURCES"></option>
   </component>
   <component name="FindBugsConfigurable">
-    <option name="make" value="true" />
-    <option name="effort" value="default" />
-    <option name="priority" value="Medium" />
+    <option value="true" name="make"></option>
+    <option value="default" name="effort"></option>
+    <option value="Medium" name="priority"></option>
   </component>
-  <component name="IdProvider" IDEtalkID="EE4AA9E5F422FD1E5EE97C65DB19F2AD" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK" />
+  <component IDEtalkID="EE4AA9E5F422FD1E5EE97C65DB19F2AD" name="IdProvider"></component>
+  <component 
+  project-jdk-type="JavaSDK" project-jdk-name="1.7" jdk-15="true" assert-keyword="true" languageLevel="JDK_1_7" version="2" name="ProjectRootManager">
+</component>
   <component name="SuppressionsComponent">
-    <option name="suppCommentEnabled" value="false" />
-    <option name="suppComment" value="SUPPRESS CODING RULES" />
+    <option value="false" name="suppCommentEnabled"></option>
+    <option value="SUPPRESS CODING RULES" name="suppComment"></option>
   </component>
 </project>
-

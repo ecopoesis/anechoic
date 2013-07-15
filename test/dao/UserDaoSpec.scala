@@ -84,6 +84,7 @@ class UserDaoSpec extends Specification {
     "create a user with no salt" in testDb {
       UserDao.getByUsername("rbalboa") must_== None
       UserDao.insert(testUserNoSalt) must beEqualTo(1L)
+
       val user = UserDao.getByUsername(testUserNoSalt.id.id)
       user must_!= None
       user.get.numId must_== 1
@@ -100,6 +101,23 @@ class UserDaoSpec extends Specification {
       user.get.passwordInfo.get.hasher must_== testUserNoSalt.passwordInfo.get.hasher
       user.get.passwordInfo.get.password must_== testUserNoSalt.passwordInfo.get.password
       user.get.passwordInfo.get.salt must_== None
+
+      val user2 = UserDao.getById(1L)
+      user2 must_!= None
+      user2.get.numId must_== 1
+      user2.get.id.id must_== "rbalboa"
+      user2.get.id.providerId must_== UsernamePasswordProvider.UsernamePassword
+      user2.get.firstName must_== testUserNoSalt.firstName
+      user2.get.lastName must_== testUserNoSalt.lastName
+      user2.get.fullName must_== "Rocky Balboa"
+      user2.get.email.get must_== testUserNoSalt.email.get
+      user2.get.avatarUrl must_== None
+      user2.get.authMethod must_== AuthenticationMethod.UserPassword
+      user2.get.oAuth1Info must_== None
+      user2.get.oAuth2Info must_== None
+      user2.get.passwordInfo.get.hasher must_== testUserNoSalt.passwordInfo.get.hasher
+      user2.get.passwordInfo.get.password must_== testUserNoSalt.passwordInfo.get.password
+      user2.get.passwordInfo.get.salt must_== None
     }
 
     "update a user" in testDb {

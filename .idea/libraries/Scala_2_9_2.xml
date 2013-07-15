@@ -1,10 +1,10 @@
 <component name="libraryTable">
   <library name="Scala 2.9.2">
     <CLASSES>
-      <root url="jar:///Applications/play/play-2.1.1/framework/sbt/boot/scala-2.9.2/lib/scala-library.jar!/" />
-      <root url="jar:///Applications/play/play-2.1.1/framework/sbt/boot/scala-2.9.2/lib/scala-compiler.jar!/" />
+      <root url="jar:///Applications/play/play-2.1.1/framework/sbt/boot/scala-2.9.2/lib/scala-library.jar!/"></root>
+      <root url="jar:///Applications/play/play-2.1.1/framework/sbt/boot/scala-2.9.2/lib/scala-compiler.jar!/"></root>
     </CLASSES>
-    <JAVADOC />
-    <SOURCES />
+    <JAVADOC> </JAVADOC>
+    <SOURCES> </SOURCES>
   </library>
 </component>

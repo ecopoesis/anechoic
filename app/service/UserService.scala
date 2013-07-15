@@ -8,6 +8,7 @@ import scala.Some
 import org.mindrot.jbcrypt.BCrypt
 import dao.{TokenDao, UserDao}
 import securesocial.core.Identity
+import model.User
 
 
 /**
@@ -21,7 +22,7 @@ class UserService(application: Application) extends UserServicePlugin(applicatio
    * @param id the user id
    * @return an optional user
    */
-  def find(id: UserId): Option[Identity] = {
+  def find(id: UserId): Option[User] = {
     UserDao.getByUsername(id.id)
   }
 
@@ -31,7 +32,7 @@ class UserService(application: Application) extends UserServicePlugin(applicatio
    * @param providerId - the provider id
    * @return
    */
-  def findByEmailAndProvider(email: String, providerId: String): Option[Identity] = {
+  def findByEmailAndProvider(email: String, providerId: String): Option[User] = {
     UserDao.getByEmail(email)
   }
 
