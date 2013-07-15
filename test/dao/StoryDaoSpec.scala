@@ -8,7 +8,7 @@ class StoryDaoSpec extends Specification {
 
   "StoryDao" should {
       "have no stories" in testDb {
-        StoryDao.getList(0, 0) must have size 0
+        StoryDao.getList(1, 10) must have size 0
       }
 
       "create a story" in testDb {
@@ -16,11 +16,11 @@ class StoryDaoSpec extends Specification {
       }
 
       "create stories in order" in testDb {
-        StoryDao.getList(0, 0) must have size 0
+        StoryDao.getList(1, 10) must have size 0
         StoryDao.add("Fake Story", "www.fake.com", 1) must beEqualTo(1L)
-        StoryDao.getList(0, 0) must have size 1
+        StoryDao.getList(1, 10) must have size 1
         StoryDao.add("Example", "www.example.com", 1) must_== 2L
-        StoryDao.getList(0, 0) must have size 2
+        StoryDao.getList(1, 10) must have size 2
       }
     }
 

@@ -10,6 +10,9 @@ import AnormExtension._
 import org.joda.time.DateTime
 
 object StoryDao {
+  val Gravity = 1.8
+  val DefaultScore = 0
+
   val story: RowParser[Story] = {
     get[Long]("id") ~
     get[String]("title") ~
@@ -29,8 +32,6 @@ object StoryDao {
     }
   }
 
-  def DEFAULT_SCORE = 0
-
   def getList(page: Int, size: Int): List[Story] = {
     DB.withConnection { implicit c =>
       SQL(
@@ -38,7 +39,15 @@ object StoryDao {
           |select
           | id, title, url, score, user_id, created_at
           |from stories
+          |order by
+          | case when score = 0 then 1 else score end / power((EXTRACT(EPOCH FROM current_timestamp - created_at) / 3600) + 2, {gravity}) desc
+          |limit {size} offset ({page} - 1) * {size}
         """.stripMargin)
+        .on(
+          'gravity -> Gravity,
+          'page -> page,
+          'size -> size
+        )
         .as(story *)
     }
   }
@@ -53,7 +62,7 @@ object StoryDao {
       .on(
         'title -> title,
         'url -> url,
-        'score -> DEFAULT_SCORE,
+        'score -> DefaultScore,
         'user_id -> userId
       )
       .executeInsert() match {

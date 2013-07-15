@@ -1,8 +1,16 @@
-@(user: Option[securesocial.core.Identity])(implicit request: play.api.mvc.RequestHeader)
+@(user: Option[securesocial.core.Identity], stories: List[model.Story])(implicit request: play.api.mvc.RequestHeader)
 
 @import tags._
 
 @frame(None, user) {
 
-    this is the index, via a tag
+    @for(story <- stories) {
+        <div class="story_list">
+            <div><a href="@story.url">@story.title</a></div>
+            <div>@story.user.get.id.id</div>
+            <div>@story.createdAt</div>
+            <div>@story.score</div>
+        </div>
+        <hr>
+    }
 }
