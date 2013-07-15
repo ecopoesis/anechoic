@@ -1,0 +1,9 @@
+@(user: Option[securesocial.core.Identity], story: model.Story)(implicit request: play.api.mvc.RequestHeader)
+
+@import tags._
+
+@frame(Option(story.title), user) {
+    <h1>@story.title</h1>
+    <p>@story.url</p>
+    <div>@story.createdAt</div>
+}

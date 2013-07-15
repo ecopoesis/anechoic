@@ -12,14 +12,19 @@ class StoryDaoSpec extends Specification {
       }
 
       "create a story" in testDb {
-        StoryDao.add("Fake Story", "www.fake.com", 1) must beEqualTo(1L)
+        StoryDao.add("Fake Story", "http://www.fake.com", 1) must beEqualTo(1L)
+        val story = StoryDao.getId(1)
+        story must_!= None
+        story.get.id must_== 1L
+        story.get.title must_== "Fake Story"
+        story.get.url must_== "http://www.fake.com"
       }
 
       "create stories in order" in testDb {
         StoryDao.getList(1, 10) must have size 0
-        StoryDao.add("Fake Story", "www.fake.com", 1) must beEqualTo(1L)
+        StoryDao.add("Fake Story", "http://www.fake.com", 1) must beEqualTo(1L)
         StoryDao.getList(1, 10) must have size 1
-        StoryDao.add("Example", "www.example.com", 1) must_== 2L
+        StoryDao.add("Example", "http://www.example.com", 1) must_== 2L
         StoryDao.getList(1, 10) must have size 2
       }
     }

@@ -8,6 +8,7 @@ import play.api.Logger
 import anorm.SqlParser._
 import AnormExtension._
 import org.joda.time.DateTime
+import scala.language.postfixOps
 
 object StoryDao {
   val Gravity = 1.8
@@ -29,6 +30,20 @@ object StoryDao {
           UserDao.getById(user_id),
           created_at
         )
+    }
+  }
+
+  def getId(id: Long): Option[Story] = {
+    DB.withConnection { implicit c =>
+      SQL(
+        """
+          |select
+          | id, title, url, score, user_id, created_at
+          |from stories
+          |where id = {id}
+        """.stripMargin)
+        .on('id -> id)
+        .singleOpt(story)
     }
   }
 

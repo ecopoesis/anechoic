@@ -5,6 +5,7 @@
 # Web
 GET         /                              controllers.Www.index
 GET         /submit                        controllers.Www.submit
+GET         /story/:id                     controllers.Www.story(id: Long)
 
 # Forms
 POST        /form/story                    controllers.Forms.story
