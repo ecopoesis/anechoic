@@ -8,8 +8,12 @@ import play.api.Play.current
 
 import securesocial.core.{Identity, PasswordInfo, AuthenticationMethod, UserId}
 import securesocial.core.providers.UsernamePasswordProvider
+import play.api.cache.Cache
 
 object UserDao {
+  val CacheKey = "user_"
+  val CacheTimeout = 60 * 60 * 6
+
   val user: RowParser[User] = {
     get[Long]("id") ~
     get[String]("username") ~
@@ -36,7 +40,7 @@ object UserDao {
     }
   }
 
-  def getById(id: Long): Option[User] = {
+  def getById(id: Long): Option[User] = Cache.getOrElse(CacheKey + id, CacheTimeout) {
     DB.withConnection { implicit c =>
       SQL(
         """
@@ -87,7 +91,13 @@ object UserDao {
       case None => insert(identity)
     }
 
-    getByUsername(identity.id.id)
+    getByUsername(identity.id.id) match {
+      case Some(u: User) => {
+        Cache.set(CacheKey + u, u, CacheTimeout)
+        return Option(u)
+      }
+      case _ => return None
+    }
   }
 
   def insert(identity: Identity): Any = {
