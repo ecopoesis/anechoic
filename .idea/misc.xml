@@ -24,6 +24,7 @@
     <option name="make" value="true" />
     <option name="effort" value="default" />
     <option name="priority" value="Medium" />
+    <option name="excludeFilter" value="" />
   </component>
   <component name="IdProvider" IDEtalkID="EE4AA9E5F422FD1E5EE97C65DB19F2AD" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK" />
