@@ -1,0 +1,14 @@
+@(comment: model.Comment, level: Int, storyId: Long)(implicit request: play.api.mvc.RequestHeader)
+
+<div>
+    <div>Level: @level</div>
+    <div>@comment.text</div>
+    <div>@comment.user.id.id</div>
+    <div>@comment.score</div>
+    <div>@comment.createdAt</div>
+    <a href="//@request.host/comment/@storyId/@comment.id">Reply</a>
+</div>
+<hr>
+@for(child <- comment.children) {
+    @nest(child, level + 1, storyId)
+}

@@ -7,12 +7,12 @@ import org.joda.time.DateTime
 import play.api.Play.current
 import AnormExtension._
 import scala.language.postfixOps
-import model.{CommentOrdering, Comment, CommentHierarchy}
+import model.{User, CommentOrdering, Comment, CommentHierarchy}
 import scala.collection.mutable
 
 case class RawComment(
   id: Long,
-  userId: Long,
+  user: User,
   storyId: Long,
   parentId: Option[Long],
   text: String,
@@ -21,6 +21,8 @@ case class RawComment(
 )
 
 object CommentDao {
+  val DefaultScore = 0
+
   val rawComment: RowParser[RawComment] = {
     get[Long]("id") ~
     get[Long]("user_id") ~
@@ -32,7 +34,7 @@ object CommentDao {
     case id ~ user_id ~ story_id ~ parent_id ~ comment ~ score ~ created_at =>
       RawComment(
         id,
-        user_id,
+        UserDao.getById(user_id).get,
         story_id,
         parent_id,
         comment,
@@ -66,7 +68,7 @@ object CommentDao {
 
     for(c <- raw) {
       // create the comment
-      val comment = new Comment(c.id, UserDao.getById(c.userId).get, c.text, c.score, c.createdAt, new mutable.TreeSet[Comment]()(CommentOrdering))
+      val comment = new Comment(c.id, c.user, c.text, c.score, c.createdAt, new mutable.TreeSet[Comment]()(CommentOrdering))
 
       // add to master comments map
       all.put(c.id, comment)
@@ -81,5 +83,38 @@ object CommentDao {
     }
 
     comments
+  }
+
+  def getComment(commentId: Long): Option[RawComment] = {
+    DB.withConnection { implicit c =>
+      SQL(
+        """
+          |select id, user_id, story_id, parent_id, comment, score, created_at
+          |from comments
+          |where id = {id}
+        """.stripMargin)
+        .on('id -> commentId)
+        .singleOpt(rawComment)
+    }
+  }
+
+  def add(storyId: Long, parentId: Option[Long], text: String, userId: Long): Any = {
+    DB.withConnection { implicit c =>
+      SQL(
+        """
+          |insert into comments (user_id, story_id, parent_id, comment, score) values ({user_id}, {story_id}, {parent_id}, {comment}, {score})
+        """.stripMargin)
+        .on(
+          'user_id -> userId,
+          'story_id -> storyId,
+          'parent_id -> parentId,
+          'comment -> text,
+          'score -> DefaultScore
+      )
+        .executeInsert() match {
+          case Some(a) => a
+          case None => None
+      }
+    }
   }
 }

@@ -2,23 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71f484c1-7011-43f2-87dc-059d1ffb1f16" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/conf/evolutions/default/2.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/dao/CommentDao.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/dao/CommentDaoSpec.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/model/CommentHierarchy.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comment.scala.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/tags/nest.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/dao/CommentDao.scala" afterPath="$PROJECT_DIR$/app/dao/CommentDao.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/dao/CommentDaoSpec.scala" afterPath="$PROJECT_DIR$/test/dao/CommentDaoSpec.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/model/CommentHierarchy.scala" afterPath="$PROJECT_DIR$/app/model/CommentHierarchy.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Forms.scala" afterPath="$PROJECT_DIR$/app/controllers/Forms.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/dao/StoryDaoSpec.scala" afterPath="$PROJECT_DIR$/test/dao/StoryDaoSpec.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Www.scala" afterPath="$PROJECT_DIR$/app/controllers/Www.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/routes" afterPath="$PROJECT_DIR$/conf/routes" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/story.scala.html" afterPath="$PROJECT_DIR$/app/views/story.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="anechoic.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373998370904" ignored="false" />
+    <file path="/Dummy.txt" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374008930640" ignored="false" />
     <file path="/application.log" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371147391406" ignored="false" />
     <file path="/application.conf" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373482626991" ignored="false" />
     <file path="/100000.sql" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371147914543" ignored="false" />
     <file path="/Application.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371148916583" ignored="false" />
-    <file path="/routes" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373922702137" ignored="false" />
+    <file path="/routes" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374007669137" ignored="false" />
     <file path="/fragment.java" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373998188833" ignored="false" />
-    <file path="/a.dummy" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371148817188" ignored="false" />
+    <file path="/a.dummy" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374007952766" ignored="false" />
     <file path="/Api.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371148979989" ignored="false" />
     <file path="$PROJECT_DIR$/target/scala-2.10/src_managed/main/controllers/routes.java" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371149071569" ignored="false" />
     <file path="/Story.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373901948668" ignored="false" />
@@ -29,18 +34,18 @@
     <file path="/TestSpec.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1372877737074" ignored="false" />
     <file path="/1.sql" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373900730943" ignored="false" />
     <file path="/index.scala.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373923172668" ignored="false" />
-    <file path="/Www.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373923062373" ignored="false" />
+    <file path="/Www.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374008319247" ignored="false" />
     <file path="/main.less" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1372880277545" ignored="false" />
     <file path="/Stories.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373902173172" ignored="false" />
     <file path="/Formats.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373299260416" ignored="false" />
     <file path="/Build.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373382140838" ignored="false" />
     <file path="/play.plugins" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373382550761" ignored="false" />
-    <file path="/securesocial.conf" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373390972709" ignored="false" />
+    <file path="/securesocial.conf" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374004561696" ignored="false" />
     <file path="/UserService.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373899487507" ignored="false" />
     <file path="/2.sql" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373987000196" ignored="false" />
     <file path="/User.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373902064824" ignored="false" />
     <file path="/UserDao.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373989059547" ignored="false" />
-    <file path="/StoryDaoSpec.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373922427677" ignored="false" />
+    <file path="/StoryDaoSpec.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374008908278" ignored="false" />
     <file path="/StoryDao.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373922250372" ignored="false" />
     <file path="/UserDaoSpec.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373901466530" ignored="false" />
     <file path="/TokenDao.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373479811673" ignored="false" />
@@ -49,13 +54,18 @@
     <file path="/frame.scala.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373489640097" ignored="false" />
     <file path="/README" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373485471083" ignored="false" />
     <file path="/submit.scala.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373491228197" ignored="false" />
-    <file path="/Forms.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373917157085" ignored="false" />
+    <file path="/Forms.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374007374332" ignored="false" />
     <file path="/FormsSpec.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373916373277" ignored="false" />
-    <file path="/story.scala.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373923341307" ignored="false" />
-    <file path="/CommentDao.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373998403136" ignored="false" />
+    <file path="/story.scala.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374008194184" ignored="false" />
+    <file path="/CommentDao.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374008430491" ignored="false" />
     <file path="/CommentHeirarchy.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373994404336" ignored="false" />
     <file path="/CommentHierarchy.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373997194240" ignored="false" />
-    <file path="/CommentDaoSpec.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1373998255665" ignored="false" />
+    <file path="/CommentDaoSpec.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374008816522" ignored="false" />
+    <file path="/comment.scala.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374008345628" ignored="false" />
+    <file path="$PROJECT_DIR$/target/scala-2.10/src_managed/main/views/html/story.template.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374007319825" ignored="false" />
+    <file path="/nest.scala.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374008547260" ignored="false" />
+    <file path="$PROJECT_DIR$/target/scala-2.10/src_managed/main/routes_routing.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374008271265" ignored="false" />
+    <file path="$PROJECT_DIR$/target/scala-2.10/src_managed/main/routes_reverseRouting.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374008271265" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,11 +134,23 @@
             <file leaf-file-name="CommentHierarchy.scala" pinned="false" current="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/app/model/CommentHierarchy.scala">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state line="19" column="0" selection-start="297" selection-end="297" vertical-scroll-proportion="0.32583067">
+                  <state line="5" column="11" selection-start="89" selection-end="89" vertical-scroll-proportion="0.08574491">
                     <folding>
                       <element signature="e#15#44#0" expanded="true" />
                     </folding>
                   </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="2.sql" pinned="false" current="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/conf/evolutions/default/2.sql">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state line="4" column="29" selection-start="58" selection-end="58" vertical-scroll-proportion="-2.3703704">
+                    <folding />
+                  </state>
+                </provider>
+                <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+                  <state />
                 </provider>
               </entry>
             </file>
@@ -143,82 +165,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="StoryDao.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/dao/StoryDao.scala">
+      <file leaf-file-name="Www.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/Www.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="71" selection-start="800" selection-end="800" vertical-scroll-proportion="0.0">
+            <state line="30" column="91" selection-start="866" selection-end="866" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#13#31#0" expanded="true" />
+                <element signature="e#21#38#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.scala.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/index.scala.html">
+      <file leaf-file-name="comment.scala.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/comment.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="1" selection-start="502" selection-end="502" vertical-scroll-proportion="-10.24">
+            <state line="11" column="86" selection-start="359" selection-end="359" vertical-scroll-proportion="-7.04">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserDao.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/dao/UserDao.scala">
+      <file leaf-file-name="nest.scala.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/tags/nest.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="5" selection-start="1474" selection-end="1474" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#13#30#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Forms.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/Forms.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="11" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0">
+            <state line="0" column="148" selection-start="98" selection-end="98" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommentDao.scala" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/dao/CommentDao.scala">
+      <file leaf-file-name="story.scala.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/story.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="38" selection-start="1221" selection-end="1221" vertical-scroll-proportion="0.3719626">
-              <folding>
-                <element signature="e#13#34#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2.sql" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/evolutions/default/2.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="29" selection-start="58" selection-end="58" vertical-scroll-proportion="-2.3703704">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserDaoSpec.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/dao/UserDaoSpec.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="6" selection-start="290" selection-end="290" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StoryDaoSpec.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/dao/StoryDaoSpec.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="6" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0">
+            <state line="16" column="9" selection-start="573" selection-end="573" vertical-scroll-proportion="-10.24">
               <folding />
             </state>
           </provider>
@@ -227,17 +206,55 @@
       <file leaf-file-name="CommentDaoSpec.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/dao/CommentDaoSpec.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="51" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0">
+            <state line="41" column="49" selection-start="1213" selection-end="1213" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TreeSet.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar:///Applications/play/play-2.1.1/framework/sbt/boot/scala-2.10.0/lib/scala-library.jar!/scala/collection/mutable/TreeSet.class">
+      <file leaf-file-name="StoryDaoSpec.scala" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/dao/StoryDaoSpec.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="16" selection-start="49" selection-end="49" vertical-scroll-proportion="-0.64">
+            <state line="23" column="75" selection-start="678" selection-end="678" vertical-scroll-proportion="0.39904988">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserDaoSpec.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/dao/UserDaoSpec.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="64" column="52" selection-start="1557" selection-end="1600" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="frame.scala.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/tags/frame.scala.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="193" selection-start="78" selection-end="124" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.scala.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/index.scala.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="72" selection-start="413" selection-end="466" vertical-scroll-proportion="-7.68">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommentDao.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/dao/CommentDao.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="70" column="44" selection-start="1880" selection-end="1880" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#13#34#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -260,22 +277,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/test/dao/UserDaoSpec.scala" />
-        <option value="$PROJECT_DIR$/test/controllers/FormsSpec.scala" />
-        <option value="$PROJECT_DIR$/app/controllers/Forms.scala" />
-        <option value="$PROJECT_DIR$/test/dao/StoryDaoSpec.scala" />
-        <option value="$PROJECT_DIR$/conf/routes" />
-        <option value="$PROJECT_DIR$/project/Build.scala" />
         <option value="$PROJECT_DIR$/app/dao/StoryDao.scala" />
-        <option value="$PROJECT_DIR$/app/controllers/Www.scala" />
-        <option value="$PROJECT_DIR$/app/views/story.scala.html" />
         <option value="$PROJECT_DIR$/app/views/index.scala.html" />
         <option value="$PROJECT_DIR$/conf/evolutions/default/2.sql" />
         <option value="$PROJECT_DIR$/app/dao/UserDao.scala" />
         <option value="$PROJECT_DIR$/app/model/CommentHeirarchy.scala" />
         <option value="$PROJECT_DIR$/app/model/CommentHierarchy.scala" />
-        <option value="$PROJECT_DIR$/test/dao/CommentDaoSpec.scala" />
+        <option value="$PROJECT_DIR$/app/views/tags/comment.scala.html" />
+        <option value="$PROJECT_DIR$/app/controllers/Forms.scala" />
+        <option value="$PROJECT_DIR$/conf/routes" />
+        <option value="$PROJECT_DIR$/app/views/story.scala.html" />
+        <option value="$PROJECT_DIR$/app/controllers/Www.scala" />
+        <option value="$PROJECT_DIR$/app/views/comment.scala.html" />
         <option value="$PROJECT_DIR$/app/dao/CommentDao.scala" />
+        <option value="$PROJECT_DIR$/app/views/tags/nest.scala.html" />
+        <option value="$PROJECT_DIR$/test/dao/CommentDaoSpec.scala" />
+        <option value="$PROJECT_DIR$/test/dao/StoryDaoSpec.scala" />
       </list>
     </option>
   </component>
@@ -293,20 +310,9 @@
             <id />
           </State>
           <State>
-            <id>Android Lint</id>
-          </State>
-          <State>
-            <id>Error handling</id>
-          </State>
-          <State>
-            <id>SQL</id>
+            <id>Code maturity issues</id>
           </State>
         </expanded-state>
-        <selected-state>
-          <State>
-            <id>SqlPostgresqlSelectFromProcedureInspection</id>
-          </State>
-        </selected-state>
       </profile-state>
     </entry>
   </component>
@@ -704,7 +710,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="Errors" />
+    <property name="options.lastSelected" value="preferences.toDoOptions" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="MemberChooser.copyJavadoc" value="false" />
@@ -723,8 +729,8 @@
       <recent name="controllers" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/conf/evolutions/default" />
       <recent name="$PROJECT_DIR$/app/views" />
+      <recent name="$PROJECT_DIR$/conf/evolutions/default" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="dao" />
@@ -1049,7 +1055,11 @@
       <created>1373998351432</created>
       <updated>1373998351432</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="comments lookup">
+      <created>1373998414977</created>
+      <updated>1373998414977</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1074,11 +1084,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="2225" height="1400" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299532" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16805112" sideWeight="0.7995595" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1088,20 +1099,19 @@
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299532" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943925" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1421875" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3203125" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299532" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Analysis" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24968995" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13033502" sideWeight="0.8578125" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13033502" sideWeight="0.6796875" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299532" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24968995" sideWeight="0.6700468" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299532" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1147,7 +1157,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="comments lookup" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding and viewing comments" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1183,6 +1193,7 @@
     <MESSAGE value="basic story page" />
     <MESSAGE value="user caching" />
     <MESSAGE value="comments lookup" />
+    <MESSAGE value="adding and viewing comments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1192,129 +1203,123 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/conf/evolutions/default/1.sql">
+    <entry file="jar:///Applications/play/play-2.1.1/repository/local/play/play_2.10/2.1.1/jars/play_2.10.jar!/play/api/data/Form.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="20" selection-start="275" selection-end="275" vertical-scroll-proportion="-7.703704">
+        <state line="16" column="6" selection-start="1807" selection-end="1807" vertical-scroll-proportion="-10.24">
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/routes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="87" selection-start="1441" selection-end="1441" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/dao/TokenDao.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="0" selection-start="650" selection-end="926" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Applications/play/play-2.1.1/repository/local/play/play-java_2.10/2.1.1/jars/play-java_2.10.jar!/play/cache/Cache.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="4" selection-start="713" selection-end="713" vertical-scroll-proportion="0.2216789">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/User.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="11" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0">
+        <state line="29" column="67" selection-start="649" selection-end="649" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/Forms.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="11" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Applications/play/play-2.1.1/framework/sbt/boot/scala-2.10.0/lib/scala-library.jar!/scala/Predef.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="7" selection-start="364" selection-end="364" vertical-scroll-proportion="0.104319476">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Applications/play/play-2.1.1/framework/sbt/boot/scala-2.10.0/lib/scala-library.jar!/scala/collection/mutable/TreeSet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="16" selection-start="49" selection-end="49" vertical-scroll-proportion="-0.64">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/index.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="1" selection-start="502" selection-end="502" vertical-scroll-proportion="-10.24">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/dao/StoryDao.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="71" selection-start="800" selection-end="800" vertical-scroll-proportion="0.0">
+        <state line="42" column="121" selection-start="1116" selection-end="1116" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#13#31#0" expanded="true" />
+            <element signature="e#21#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/dao/UserDao.scala">
+    <entry file="file://$PROJECT_DIR$/app/views/submit.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="5" selection-start="1474" selection-end="1474" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#13#30#0" expanded="true" />
-          </folding>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/model/CommentHierarchy.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="297" selection-end="297" vertical-scroll-proportion="0.32583067">
+        <state line="5" column="11" selection-start="89" selection-end="89" vertical-scroll-proportion="0.08574491">
           <folding>
             <element signature="e#15#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/dao/UserDaoSpec.scala">
+    <entry file="file://$PROJECT_DIR$/app/views/index.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="6" selection-start="290" selection-end="290" vertical-scroll-proportion="0.0">
+        <state line="12" column="72" selection-start="413" selection-end="466" vertical-scroll-proportion="-7.68">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/dao/StoryDaoSpec.scala">
+    <entry file="file://$PROJECT_DIR$/app/controllers/Www.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="6" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0">
+        <state line="30" column="91" selection-start="866" selection-end="866" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#21#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/comment.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="86" selection-start="359" selection-end="359" vertical-scroll-proportion="-7.04">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/dao/CommentDao.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="44" selection-start="1880" selection-end="1880" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#13#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tags/frame.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="193" selection-start="78" selection-end="124" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tags/nest.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="148" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/story.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="9" selection-start="573" selection-end="573" vertical-scroll-proportion="-10.24">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/dao/UserDaoSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="52" selection-start="1557" selection-end="1600" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/dao/CommentDaoSpec.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="51" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0">
+        <state line="41" column="49" selection-start="1213" selection-end="1213" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/evolutions/default/2.sql">
+    <entry file="file://$PROJECT_DIR$/test/dao/StoryDaoSpec.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="29" selection-start="58" selection-end="58" vertical-scroll-proportion="-2.3703704">
+        <state line="23" column="75" selection-start="678" selection-end="678" vertical-scroll-proportion="0.39904988">
           <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/dao/CommentDao.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="38" selection-start="1221" selection-end="1221" vertical-scroll-proportion="0.3719626">
-          <folding>
-            <element signature="e#13#34#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

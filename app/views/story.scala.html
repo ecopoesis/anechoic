@@ -1,4 +1,4 @@
-@(user: Option[securesocial.core.Identity], story: model.Story)(implicit request: play.api.mvc.RequestHeader)
+@(user: Option[securesocial.core.Identity], story: model.Story, comments: model.CommentHierarchy)(implicit request: play.api.mvc.RequestHeader)
 
 @import tags._
 
@@ -6,4 +6,14 @@
     <h1>@story.title</h1>
     <p>@story.url</p>
     <div>@story.createdAt</div>
+    <hr>
+    <form action="@routes.Forms.comment()" method="POST">
+        comment: <textarea name="comment"></textarea>
+        <input type="hidden" name="storyId" value="@story.id">
+        <input type="submit" value="submit">
+    </form>
+    <hr>
+    @for(comment <- comments.root) {
+        @nest(comment, 0, story.id)
+    }
 }

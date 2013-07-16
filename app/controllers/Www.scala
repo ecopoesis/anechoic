@@ -3,6 +3,7 @@ package controllers
 import play.api._
 import play.api.mvc._
 import dao.StoryDao
+import dao.CommentDao
 
 /**
  * web page routes
@@ -16,7 +17,12 @@ object Www extends Controller with securesocial.core.SecureSocial {
 
   // @todo handle 404
   def story(id: Long) = UserAwareAction { implicit request =>
-    Ok(views.html.story(request.user, StoryDao.getId(id).get))
+    Ok(views.html.story(request.user, StoryDao.getId(id).get, CommentDao.getComments(id)))
+  }
+
+  // @todo handle 404
+  def comment(storyId: Long, parentId: Long) = UserAwareAction { implicit request =>
+    Ok(views.html.comment(request.user, StoryDao.getId(storyId).get, CommentDao.getComment(parentId).get))
   }
 
   def submit = SecuredAction { implicit request =>

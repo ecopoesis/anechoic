@@ -6,9 +6,11 @@
 GET         /                              controllers.Www.index
 GET         /submit                        controllers.Www.submit
 GET         /story/:id                     controllers.Www.story(id: Long)
+GET         /comment/:storyId/:parentId    controllers.Www.comment(storyId: Long, parentId: Long)
 
 # Forms
 POST        /form/story                    controllers.Forms.story
+POST        /form/comment                  controllers.Forms.comment
 
 # APIs
 GET         /stories                       controllers.api.Stories.list

@@ -1,0 +1,19 @@
+@(user: Option[securesocial.core.Identity], story: model.Story, comment: dao.RawComment)(implicit request: play.api.mvc.RequestHeader)
+
+@import tags._
+
+@frame(Option("Comment"), user) {
+    <div>
+        <div>@comment.text</div>
+        <div>@comment.user.id.id</div>
+        <div>@comment.score</div>
+        <div>@comment.createdAt</div>
+    </div>
+    <hr>
+    <form action="@routes.Forms.comment()" method="POST">
+        comment: <textarea name="comment"></textarea>
+        <input type="hidden" name="storyId" value="@story.id">
+        <input type="hidden" name="parentId" value="@comment.id">
+        <input type="submit" value="submit">
+    </form>
+}

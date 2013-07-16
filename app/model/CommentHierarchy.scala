@@ -10,7 +10,7 @@ case class Comment(
   score: Int,
   createdAt: DateTime,
 
-  // children of this comment
+  // children of this nest
   children: mutable.SortedSet[Comment]
 )
 
