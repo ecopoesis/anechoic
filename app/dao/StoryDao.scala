@@ -1,6 +1,6 @@
 package dao
 
-import model.Story
+import model.{Lookup, Story}
 import play.api.Play.current
 import play.api.db.DB
 import anorm._
@@ -68,7 +68,6 @@ object StoryDao {
   }
 
   def add(title: String, url: String, userId: Long): Any = {
-    Logger.debug("title = %s, url = %s".format(title, url))
     DB.withConnection { implicit c =>
       SQL(
         """
@@ -83,6 +82,46 @@ object StoryDao {
       .executeInsert() match {
         case Some(a) => a
         case None => None
+      }
+    }
+  }
+
+  def vote(storyId: Long, userId: Long, delta: Int): Boolean = {
+    DB.withTransaction { implicit c =>
+      SQL(
+        """
+          |update stories set score = score + {delta} where id = {storyId}
+        """.stripMargin)
+      .on(
+        'storyId -> storyId,
+        'delta -> delta
+      ).executeUpdate() match {
+        case 1 => {
+          SQL(
+            """
+              |insert into audit (type_id, action_id, value, user_id) values ({type_id}, {action_id}, {value}, {user_id})
+            """.stripMargin)
+          .on(
+            'type_id -> Lookup.AuditType.get('story),
+            'action_id -> Lookup.AuditAction.get('vote),
+            'value -> delta,
+            'user_id -> userId
+          )
+          .executeInsert() match {
+            case Some(a) => {
+              c.commit()
+              return true
+            }
+            case None => {
+              c.rollback()
+              return false
+            }
+          }
+        }
+        case _ => {
+          c.rollback()
+          return false
+        }
       }
     }
   }
