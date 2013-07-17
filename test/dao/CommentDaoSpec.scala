@@ -22,31 +22,45 @@ class CommentDaoSpec extends Specification {
   )
 
   "CommentDao" should {
-      "have no comments" in testDb {
-        UserDao.insert(testUser) must beEqualTo(1L)
-        CommentDao.getComments(1).storyId must_== 1
-        CommentDao.getComments(1).root must have size 0
-      }
-
-      "add a toplevel nest" in testDb {
-        UserDao.insert(testUser) must beEqualTo(1L)
-        CommentDao.add(1, None, "this is a nest", 1)
-        val comment = CommentDao.getComment(1)
-        comment must_!= None
-        comment.get.parentId must_== None
-        comment.get.storyId must_== 1
-        comment.get.text must_== "this is a nest"
-      }
-
-    "add a child nest" in testDb {
+    "have no comments" in testDb {
       UserDao.insert(testUser) must beEqualTo(1L)
-      CommentDao.add(4, Option(42), "this is another nest", 1)
+      CommentDao.getComments(1).storyId must_== 1
+      CommentDao.getComments(1).root must have size 0
+    }
+
+    "add a toplevel comment" in testDb {
+      UserDao.insert(testUser) must beEqualTo(1L)
+      CommentDao.add(1, None, "this is a comment", 1)
+      val comment = CommentDao.getComment(1)
+      comment must_!= None
+      comment.get.parentId must_== None
+      comment.get.storyId must_== 1
+      comment.get.text must_== "this is a comment"
+      comment.get.score must_== CommentDao.DefaultScore
+    }
+
+    "add a child comment" in testDb {
+      UserDao.insert(testUser) must beEqualTo(1L)
+      CommentDao.add(4, Option(42), "this is another comment", 1)
       val comment = CommentDao.getComment(1)
       comment must_!= None
       comment.get.parentId must_!= None
       comment.get.parentId.get must_== 42
       comment.get.storyId must_== 4
-      comment.get.text must_== "this is another nest"
+      comment.get.text must_== "this is another comment"
+    }
+
+    "vote for a comment" in testDb {
+      UserDao.insert(testUser) must beEqualTo(1L)
+      CommentDao.add(1, None, "this is a comment", 1)
+      CommentDao.vote(1, 1, 3) must_== true
+      val comment = CommentDao.getComment(1)
+      comment.get.score must_== CommentDao.DefaultScore + 3
+    }
+
+    "vote for a comment that doesn't exist" in testDb {
+      CommentDao.getComment(1) must_== None
+      CommentDao.vote(1, 1, 3) must_== false
     }
   }
 

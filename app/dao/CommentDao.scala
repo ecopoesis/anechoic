@@ -7,8 +7,13 @@ import org.joda.time.DateTime
 import play.api.Play.current
 import AnormExtension._
 import scala.language.postfixOps
-import model.{User, CommentOrdering, Comment, CommentHierarchy}
+import model._
 import scala.collection.mutable
+import anorm.~
+import model.User
+import model.Comment
+import model.CommentHierarchy
+import scala.Some
 
 case class RawComment(
   id: Long,
@@ -114,6 +119,46 @@ object CommentDao {
         .executeInsert() match {
           case Some(a) => a
           case None => None
+      }
+    }
+  }
+
+  def vote(commentId: Long, userId: Long, delta: Int): Boolean = {
+    DB.withTransaction { implicit c =>
+      SQL(
+        """
+          |update comments set score = score + {delta} where id = {commentId}
+        """.stripMargin)
+        .on(
+        'commentId -> commentId,
+        'delta -> delta
+      ).executeUpdate() match {
+        case 1 => {
+          SQL(
+            """
+              |insert into audit (type_id, action_id, value, user_id) values ({type_id}, {action_id}, {value}, {user_id})
+            """.stripMargin)
+            .on(
+            'type_id -> Lookup.AuditType.get('comment),
+            'action_id -> Lookup.AuditAction.get('vote),
+            'value -> delta,
+            'user_id -> userId
+          )
+            .executeInsert() match {
+            case Some(a) => {
+              c.commit()
+              return true
+            }
+            case None => {
+              c.rollback()
+              return false
+            }
+          }
+        }
+        case _ => {
+          c.rollback()
+          return false
+        }
       }
     }
   }
