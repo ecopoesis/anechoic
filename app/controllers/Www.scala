@@ -4,6 +4,7 @@ import play.api._
 import play.api.mvc._
 import dao.StoryDao
 import dao.CommentDao
+import model.User
 
 /**
  * web page routes
@@ -27,5 +28,20 @@ object Www extends Controller with securesocial.core.SecureSocial {
 
   def submit = SecuredAction { implicit request =>
     Ok(views.html.submit(Option(request.user)))
+  }
+
+  // @todo check if vote already exists
+  // @todo protect with hash
+  def voteStoryUp(storyId: Long) = SecuredAction { implicit request =>
+    request.user match {
+      case user: User => {
+        if (StoryDao.vote(storyId, user.numId, 1)) {
+          Ok("success")
+        } else {
+          BadRequest("failure")
+        }
+      }
+      case _ => BadRequest
+    }
   }
 }
