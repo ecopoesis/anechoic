@@ -13,13 +13,21 @@
         <script src="@routes.Assets.at("javascripts/main.js")"></script>
     </head>
     <body>
-        <h1>Anechoic News</h1>
-        <p>all the news-- none of the noise</p>
-        @user match {
-            case Some(user) => { Welcome, @user.id.id }
-            case None => { <a href="//@request.host/login">Login</a> }
-        }
-        <hr>
-        @body
+        <div class="header">
+            <div class="logo"></div>
+            <div class="mast">
+                <h1>Anechoic News</h1>
+                <div class="tag">All the news&mdash; None of the noise</div>
+            </div>
+        </div>
+        <div class="frame">
+            @user match {
+                case Some(user) => { Welcome, @user.id.id }
+                case None => { <a href="//@request.host/login">Login</a> }
+            }
+            <hr>
+            @body
+
+        </div>
     </body>
 </html>
