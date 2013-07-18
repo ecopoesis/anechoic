@@ -8,23 +8,32 @@
                 case None => { Anechoic News }
             }
         </title>
-        <link rel="stylesheet" href="@routes.Assets.at("stylesheets/main.css")"/>
+        <link rel="stylesheet" href="@routes.Assets.at("stylesheets/global.css")"/>
         <script src="@routes.Assets.at("javascripts/jquery-1.9.1.min.js")"></script>
         <script src="@routes.Assets.at("javascripts/main.js")"></script>
     </head>
-    <body>
+    <body class="dark">
         <div class="header">
             <div class="logo"></div>
             <div class="mast">
                 <h1>Anechoic News</h1>
                 <div class="tag">All the news&mdash; None of the noise</div>
             </div>
+            <ul>
+                <li><a href="//@request.host/newest">newest</a></li>
+                <li><a href="//@request.host/submit">submit</a></li>
+                @user match {
+                    case Some(user: model.User) => {
+                        <li><a href="//@request.host/user/@user.numId">@user.id.id</a></li>
+                        <li><a href="//@request.host/logout">logout</a></li>
+                    }
+                    case None => {
+                        <li><a href="//@request.host/login">login</a></li>
+                    }
+                }
+            </ul>
         </div>
         <div class="frame">
-            @user match {
-                case Some(user) => { Welcome, @user.id.id }
-                case None => { <a href="//@request.host/login">Login</a> }
-            }
             <hr>
             @body
 

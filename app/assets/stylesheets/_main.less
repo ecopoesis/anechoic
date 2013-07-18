@@ -1,12 +1,6 @@
-@eigengrau: #16161D;
-@cosmic_beige: #FFF8E7;
-@fonts: Consolas, Monaco, Courier New;
-
-body {
-  background-color: @eigengrau;
-  color: @cosmic_beige;
-  font-family: @fonts;
-}
+background-color: @background;
+color: @foreground;
+font-family: @fonts;
 
 .ninja {
   visibility: hidden;
@@ -15,15 +9,13 @@ body {
 .header {
   margin: auto auto 15px auto;
   width: 1400px;
-  max-width: 95%;
-  background-color: green;
+  max-width: 85%;
   height: 50px;
   position: relative;
 
   .logo {
     height: 50px;
     width: 50px;
-    background-color: blue;
     float: left;
   }
 
@@ -44,12 +36,30 @@ body {
     text-transform: lowercase;
     font-size: 10px;
   }
+
+  ul {
+    float: right;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  li {
+    padding: 0px 5px 0px 5px;
+    float: left;
+
+    a {
+      font-size: 12px;
+      text-decoration: none;
+
+    }
+  }
 }
 
 .frame {
   margin: auto;
   width: 1400px;
-  max-width: 95%;
+  max-width: 85%;
 }
 
 
