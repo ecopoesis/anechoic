@@ -1,6 +1,7 @@
 @(user: Option[securesocial.core.Identity], stories: List[model.Story])(implicit request: play.api.mvc.RequestHeader)
 
 @import tags._
+@import service.Signature
 
 @frame(None, user) {
 
@@ -10,7 +11,7 @@
             <div>@story.user.get.id.id</div>
             <div>@story.createdAt</div>
             <div>@story.score</div>
-            <div><a id="story_@(story.id)_up" onclick="return Vote.vote('story', @story.id, 'up')" href="#">Vote Up</a></div>
+            <div><a id="story_@(story.id)_up" onclick="return Vote.vote('story', @story.id, 'up', '@Signature.sign("story", story.id.toString, "up")')" href="#">Vote Up</a></div>
             <a href="//@request.host/story/@story.id">Discuss</a>
         </div>
         <hr>

@@ -5,6 +5,8 @@ import play.api.mvc._
 import dao.StoryDao
 import dao.CommentDao
 import model.User
+import securesocial.core.SignUpEvent
+import service.Signature
 
 /**
  * web page routes
@@ -31,14 +33,23 @@ object Www extends Controller with securesocial.core.SecureSocial {
   }
 
   // @todo check if vote already exists
-  // @todo protect with hash
   def voteStoryUp(storyId: Long) = SecuredAction { implicit request =>
+    Logger.debug("sig: " + request.getQueryString("sig"))
     request.user match {
       case user: User => {
-        if (StoryDao.vote(storyId, user.numId, 1)) {
-          Ok("success")
-        } else {
-          BadRequest("failure")
+        request.getQueryString("sig") match {
+          case sig: Some[String] => {
+            if (sig.get == Signature.sign("story", storyId.toString, "up")) {
+              if (StoryDao.vote(storyId, user.numId, 1)) {
+                Ok("success")
+              } else {
+                BadRequest("error inserting into DB")
+              }
+            } else {
+              BadRequest("invalid signature")
+            }
+          }
+          case _ => BadRequest("missing request")
         }
       }
       case _ => BadRequest
