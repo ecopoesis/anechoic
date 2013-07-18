@@ -62,6 +62,17 @@ class CommentDaoSpec extends Specification {
       CommentDao.getComment(1) must_== None
       CommentDao.vote(1, 1, 3) must_== false
     }
+
+    "have not voted" in testDb {
+      CommentDao.voted(1, 1) must_== false
+    }
+
+    "have voted" in testDb {
+      UserDao.insert(testUser) must beEqualTo(1L)
+      CommentDao.add(1, None, "this is a comment", 1)
+      CommentDao.vote(1, 1, 3) must_== true
+      CommentDao.voted(1, 1) must_== true
+    }
   }
 
   def testDb[T](code: =>T) =

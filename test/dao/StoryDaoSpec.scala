@@ -57,6 +57,17 @@ class StoryDaoSpec extends Specification {
         StoryDao.getId(1) must_== None
         StoryDao.vote(1, 1, 42) must_== false
       }
+
+      "have not voted" in testDb {
+        StoryDao.voted(1, 1) must_== false
+      }
+
+      "have voted" in testDb {
+        UserDao.insert(testUser)
+        StoryDao.add("Fake Story", "http://www.fake.com", 1) must beEqualTo(1L)
+        StoryDao.vote(1, 1, 42) must_== true
+        StoryDao.voted(1, 1) must_== true
+      }
     }
 
   def testDb[T](code: =>T) =

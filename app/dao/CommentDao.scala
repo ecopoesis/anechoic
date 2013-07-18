@@ -123,6 +123,23 @@ object CommentDao {
     }
   }
 
+  def voted(commentId: Long, userId: Long): Boolean = {
+    DB.withConnection { implicit c =>
+      val row = SQL(
+        """
+          |select case when count(*) > 0 then true else false end as voted from audit where type_id={type_id} and action_id={action_id} and object_id={comment_id} and user_id={user_id}
+        """.stripMargin)
+        .on(
+          'type_id -> Lookup.AuditType.get('comment),
+          'action_id -> Lookup.AuditAction.get('vote),
+          'comment_id -> commentId,
+          'user_id -> userId
+      ).single
+
+      row[Boolean]("voted")
+    }
+  }
+
   def vote(commentId: Long, userId: Long, delta: Int): Boolean = {
     DB.withTransaction { implicit c =>
       SQL(
@@ -136,11 +153,12 @@ object CommentDao {
         case 1 => {
           SQL(
             """
-              |insert into audit (type_id, action_id, value, user_id) values ({type_id}, {action_id}, {value}, {user_id})
+              |insert into audit (type_id, action_id, object_id, value, user_id) values ({type_id}, {action_id}, {comment_id}, {value}, {user_id})
             """.stripMargin)
             .on(
             'type_id -> Lookup.AuditType.get('comment),
             'action_id -> Lookup.AuditAction.get('vote),
+            'comment_id -> commentId,
             'value -> delta,
             'user_id -> userId
           )

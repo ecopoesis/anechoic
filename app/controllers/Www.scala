@@ -32,18 +32,20 @@ object Www extends Controller with securesocial.core.SecureSocial {
     Ok(views.html.submit(Option(request.user)))
   }
 
-  // @todo check if vote already exists
   def voteStoryUp(storyId: Long) = SecuredAction { implicit request =>
-    Logger.debug("sig: " + request.getQueryString("sig"))
     request.user match {
       case user: User => {
         request.getQueryString("sig") match {
           case sig: Some[String] => {
             if (sig.get == Signature.sign("story", storyId.toString, "up")) {
-              if (StoryDao.vote(storyId, user.numId, 1)) {
-                Ok("success")
+              if (!StoryDao.voted(storyId, user.numId)) {
+                if (StoryDao.vote(storyId, user.numId, 1)) {
+                  Ok("success")
+                } else {
+                  BadRequest("error inserting into DB")
+                }
               } else {
-                BadRequest("error inserting into DB")
+                BadRequest("already voted")
               }
             } else {
               BadRequest("invalid signature")
