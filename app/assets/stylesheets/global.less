@@ -1,3 +1,5 @@
+@import "font-awesome/font-awesome";
+
 @eigengrau: #16161D;
 @cosmic_beige: #FFF8E7;
 @fonts: Consolas, Monaco, Courier New;
@@ -5,11 +7,17 @@
 .dark {
   @background: @eigengrau;
   @foreground: @cosmic_beige;
+  @content: lighten(@eigengrau, 10%);
+  @detail: lighten(@eigengrau, 30%);
+  @link: #6897BB;
   @import "_main";
 }
 
 .light {
   @background: @cosmic_beige;
   @foreground: @eigengrau;
+  @content: darken(@cosmic_beige, 5%);
+  @detail: darken(@cosmic_beige, 20%);
+  @link: #0000FF;
   @import "_main";
 }

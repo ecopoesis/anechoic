@@ -1,6 +1,7 @@
 background-color: @background;
 color: @foreground;
 font-family: @fonts;
+margin-top: 0px;
 
 .ninja {
   visibility: hidden;
@@ -14,21 +15,36 @@ font-family: @fonts;
   position: relative;
 
   .logo {
+    margin-top: 9px;
     height: 50px;
     width: 50px;
     float: left;
   }
 
+  svg {
+    width: 50px;
+    height: 50px;
+
+    rect {
+      fill: @foreground;
+    }
+  }
+
   .mast {
     float: left;
     display: inline-block;
-    margin: auto 0px auto 5px;
+    margin: 8px 0px auto 5px;
   }
 
   h1 {
     margin: 3px;
     font-size: 25px;
     text-transform: uppercase;
+
+    a {
+      text-decoration: none;
+      color: @foreground;
+    }
   }
 
   .tag {
@@ -42,24 +58,101 @@ font-family: @fonts;
     list-style-type: none;
     margin: 0;
     overflow: hidden;
+
+    :first-child {
+      border: none;
+    }
   }
 
   li {
     padding: 0px 5px 0px 5px;
     float: left;
+    background: @content;
+    border-left: 1px;
+    border-left-style: solid;
+    border-color: @detail;
 
     a {
       font-size: 12px;
       text-decoration: none;
+      color: @foreground;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
 
+    a:hover {
+      color: @link;
     }
   }
 }
 
 .frame {
   margin: auto;
+  padding: 0px;
   width: 1400px;
   max-width: 85%;
+
+  ul.stories {
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0px;
+
+    li {
+      height: 50px;
+      padding: 10px;
+      margin: 10px 0px 10px 0px;
+      background-color: @content;
+
+      h2 {
+        font-size: 18px;
+        margin: 0px;
+
+        a {
+          text-decoration: none;
+          color: @foreground;
+        }
+
+        a:hover {
+          color: @link;
+        }
+      }
+
+      .details {
+        font-size: 12px;
+      }
+
+      .vote {
+        height: 50px;
+        padding: 0px 5px 0px 0px;
+        float: left;
+        font-size: 22px;
+
+        a {
+          text-decoration: none;
+          color: @foreground;
+        }
+
+        a:hover {
+          color: @link;
+        }
+      }
+
+      .discuss {
+        font-size: 12px;
+
+        a {
+          position: absolute;
+          text-decoration: none;
+          color: @foreground;
+        }
+
+        a:hover {
+          color: @link;
+        }
+      }
+    }
+  }
 }
 
 
