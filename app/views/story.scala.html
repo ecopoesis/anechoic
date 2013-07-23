@@ -3,16 +3,18 @@
 @import tags._
 
 @frame(Option(story.title), user) {
-    <h1>@story.title</h1>
-    <p>@story.url</p>
-    <div>@story.createdAt</div>
-    <hr>
-    <form action="@routes.Forms.comment()" method="POST">
-        comment: <textarea name="comment"></textarea>
-        <input type="hidden" name="storyId" value="@story.id">
-        <input type="submit" value="submit">
+
+    <div class="story cf">
+        @story_summary(story)
+    </div>
+
+    <form action="@routes.Forms.comment()" id="newcomment" method="POST">
+        <div class="newcomment cf">
+            <textarea name="comment"></textarea>
+            <input type="hidden" name="storyId" value="@story.id">
+            <a href="#" class="button" onclick="$('#newcomment').submit(); return false;">add comment</a>
+        </div>
     </form>
-    <hr>
     @for(comment <- comments.root) {
         @nest(comment, 0, story.id)
     }

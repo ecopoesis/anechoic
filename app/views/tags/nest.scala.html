@@ -1,14 +1,20 @@
 @(comment: model.Comment, level: Int, storyId: Long)(implicit request: play.api.mvc.RequestHeader)
 
-<div>
-    <div>Level: @level</div>
+@import service.Signature
+
+<div class="comment cf" style="width: @(50+(50*Math.exp(-0.1*level)))%">
+    <div class="action">
+        <a id="comment_@(comment.id)_up" onclick="return Vote.vote('comment', @comment.id, 'up', '@Signature.sign("comment", comment.id.toString, "up")')" href="#"><i class="icon-chevron-sign-up"></i></a>
+        <br>
+        <a id="comment_@(comment.id)_down" onclick="return Vote.vote('comment', @comment.id, 'down', '@Signature.sign("comment", comment.id.toString, "down")')" href="#"><i class="icon-chevron-sign-down"></i></a>
+        <br>
+        <a href="//@request.host/comment/@storyId/@comment.id"><i class="icon-reply"></i></a>
+    </div>
+    <div class="details">@comment.user.id.id @comment.createdAt (@comment.score)</div>
     <div>@comment.text</div>
-    <div>@comment.user.id.id</div>
-    <div>@comment.score</div>
-    <div>@comment.createdAt</div>
-    <a href="//@request.host/comment/@storyId/@comment.id">Reply</a>
+    <div class="reply"></div>
 </div>
-<hr>
+
 @for(child <- comment.children) {
     @nest(child, level + 1, storyId)
 }

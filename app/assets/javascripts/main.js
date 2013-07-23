@@ -7,3 +7,23 @@ var Vote = {
         return false;
     }
 };
+
+var Scheme = {
+    change: function() {
+        $('body').toggleClass('dark light');
+
+        Cookie.create('scheme', $('body').attr('class'));
+        return false;
+    }
+}
+
+var Cookie = {
+    create: function(name, value, days) {
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            var expires = "; expires=" + date.toGMTString();
+        } else var expires = "";
+        document.cookie = escape(name) + "=" + escape(value) + expires + "; path=/";
+    }
+}

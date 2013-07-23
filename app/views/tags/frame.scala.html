@@ -13,8 +13,8 @@
         <script src="@routes.Assets.at("javascripts/jquery-1.9.1.min.js")"></script>
         <script src="@routes.Assets.at("javascripts/main.js")"></script>
     </head>
-    <body class="dark">
-        <div class="header">
+    <body class="@request.cookies.get("scheme").fold("dark")(cookie => cookie.value)">
+        <div class="header cf">
             <div class="logo">
                 <a href="//@request.host/">
                     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewbox="0 0 21 21">
@@ -38,6 +38,7 @@
                 <div class="tag">All the news&mdash; None of the noise</div>
             </div>
             <ul class="menu">
+                <li class="menu-item"><a href="#" onclick="return Scheme.change()"><i class="icon-adjust"></i></a></li>
                 <li class="menu-item"><a href="//@request.host/newest">newest</a></li>
                 <li class="menu-item"><a href="//@request.host/submit">submit</a></li>
                 @user match {
@@ -51,7 +52,7 @@
                 }
             </ul>
         </div>
-        <div class="frame">
+        <div class="frame cf">
             @body
         </div>
     </body>

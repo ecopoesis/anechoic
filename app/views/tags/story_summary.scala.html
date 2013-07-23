@@ -1,0 +1,12 @@
+@(story: model.Story)(implicit request: play.api.mvc.RequestHeader)
+
+@import service.Signature
+
+<div class="action">
+    <a id="story_@(story.id)_up" onclick="return Vote.vote('story', @story.id, 'up', '@Signature.sign("story", story.id.toString, "up")')" href="#"><i class="icon-chevron-sign-up"></i></a>
+    <br>
+    <a id="story_@(story.id)_down" onclick="return Vote.vote('story', @story.id, 'down', '@Signature.sign("story", story.id.toString, "down")')" href="#"><i class="icon-chevron-sign-down"></i></a>
+</div>
+<h2><a href="@story.url">@story.title</a></h2>
+<div class="details">@story.score points by @story.user.get.id.id @story.createdAt</div>
+<div class="discuss"><a href="//@request.host/story/@story.id"><i class="icon-comment"></i>&nbsp;999 Comments</a></div>

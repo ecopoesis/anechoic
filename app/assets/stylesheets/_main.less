@@ -97,62 +97,113 @@ margin-top: 0px;
     margin: 0;
     overflow: hidden;
     padding: 0px;
+  }
 
-    li {
-      height: 50px;
-      padding: 10px;
-      margin: 10px 0px 10px 0px;
-      background-color: @content;
+  .story {
+    height: 50px;
+    padding: 10px;
+    margin: 10px 0px 10px 0px;
+    background-color: @content;
 
-      h2 {
-        font-size: 18px;
-        margin: 0px;
+    h2 {
+      font-size: 18px;
+      margin: 0px;
 
-        a {
-          text-decoration: none;
-          color: @foreground;
-        }
-
-        a:hover {
-          color: @link;
-        }
+      a {
+        text-decoration: none;
+        color: @foreground;
       }
 
-      .details {
-        font-size: 12px;
+      a:hover {
+        color: @link;
+      }
+    }
+
+    .details {
+      font-size: 12px;
+    }
+
+    .discuss {
+      font-size: 12px;
+
+      a {
+        position: absolute;
+        text-decoration: none;
+        color: @foreground;
       }
 
-      .vote {
-        height: 50px;
-        padding: 0px 5px 0px 0px;
-        float: left;
-        font-size: 22px;
-
-        a {
-          text-decoration: none;
-          color: @foreground;
-        }
-
-        a:hover {
-          color: @link;
-        }
-      }
-
-      .discuss {
-        font-size: 12px;
-
-        a {
-          position: absolute;
-          text-decoration: none;
-          color: @foreground;
-        }
-
-        a:hover {
-          color: @link;
-        }
+      a:hover {
+        color: @link;
       }
     }
   }
+
+  .comment {
+    min-height: 50px;
+    padding: 10px;
+    margin: 10px 0px 10px 0px;
+    background-color: @content;
+    float: right;
+
+    .details {
+      font-size: 12px;
+      color: @detail-text;
+    }
+  }
+
+  .action {
+    min-height: 50px;
+    padding: 0px 5px 0px 0px;
+    float: left;
+    font-size: 22px;
+
+    a {
+      text-decoration: none;
+      color: @foreground;
+    }
+
+    a:hover {
+      color: @link;
+    }
+  }
+
+  .newcomment {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+    textarea {
+      width: 100%;
+      height: 60px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    a.button {
+      float: right;
+    }
+  }
+
+  a.button {
+    text-decoration: none;
+    padding: 5px 15px 5px 15px;
+    background-color: @button;
+    color: @foreground;
+    font-size: 14px;
+  }
+
+  a.button:hover {
+    color: @link;
+  }
+
 }
 
+.cf:before,
+.cf:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
 
+.cf:after {
+  clear: both;
+}
