@@ -1,4 +1,4 @@
-@(user: Option[securesocial.core.Identity], story: model.Story, comment: dao.RawComment)(implicit request: play.api.mvc.RequestHeader)
+@(user: Option[securesocial.core.Identity], comment: model.Comment)(implicit request: play.api.mvc.RequestHeader)
 
 @import tags._
 
@@ -12,7 +12,7 @@
     <hr>
     <form action="@routes.Forms.comment()" method="POST">
         comment: <textarea name="comment"></textarea>
-        <input type="hidden" name="storyId" value="@story.id">
+        <input type="hidden" name="storyId" value="@comment.story.id">
         <input type="hidden" name="parentId" value="@comment.id">
         <input type="submit" value="submit">
     </form>

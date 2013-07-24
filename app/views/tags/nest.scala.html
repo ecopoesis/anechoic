@@ -9,11 +9,10 @@
         <br>
         <a id="comment_@(comment.id)_down" onclick="return Vote.vote('comment', @comment.id, 'down', '@Signature.sign("comment", comment.id.toString, "down")')" href="#"><i class="icon-chevron-sign-down"></i></a>
         <br>
-        <a href="//@request.host/comment/@storyId/@comment.id"><i class="icon-reply"></i></a>
+        <a href="//@request.host/comment/@comment.id"><i class="icon-reply"></i></a>
     </div>
     <div class="details">@comment.user.id.id @Formatting.print(comment.createdAt) (@comment.score)</div>
     <div>@comment.text</div>
-    <div class="reply"></div>
 </div>
 
 @for(child <- comment.children) {

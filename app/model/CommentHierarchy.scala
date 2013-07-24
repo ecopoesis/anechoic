@@ -6,6 +6,8 @@ import scala.collection.mutable
 case class Comment(
   id: Long,
   user: User,
+  story: Story,
+  parentId: Option[Long],
   text: String,
   score: Int,
   createdAt: DateTime,

@@ -46,7 +46,7 @@
                         <li class="menu-item"><a href="//@request.host/user/@user.numId">@user.id.id</a></li>
                         <li class="menu-item"><a href="//@request.host/logout">logout</a></li>
                     }
-                    case None => {
+                    case _ => {
                         <li class="menu-item"><a href="//@request.host/login">login</a></li>
                     }
                 }

@@ -40,9 +40,12 @@ object Www extends Controller with securesocial.core.SecureSocial {
     }
   }
 
-  // @todo handle 404
-  def comment(storyId: Long, parentId: Long) = UserAwareAction { implicit request =>
-    Ok(views.html.comment(request.user, StoryDao.getId(storyId).get, CommentDao.getComment(parentId).get))
+  def comment(id: Long) = UserAwareAction { implicit request =>
+    // does this comment exist?
+    CommentDao.getComment(id) match {
+      case Some(comment) => Ok(views.html.comment(request.user, comment))
+      case _ => NotFound(views.html.not_found(request.user))
+    }
   }
 
   def submit = SecuredAction { implicit request =>

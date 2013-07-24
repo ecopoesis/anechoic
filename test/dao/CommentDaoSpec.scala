@@ -23,6 +23,7 @@ class CommentDaoSpec extends Specification {
 
   "CommentDao" should {
     "have no comments" in testDb {
+      StoryDao.add("Fake Story", "http://www.fake.com", 1) must beEqualTo(1L)
       UserDao.insert(testUser) must beEqualTo(1L)
       CommentDao.getComments(1).storyId must_== 1
       CommentDao.getComments(1).root must have size 0
@@ -30,28 +31,31 @@ class CommentDaoSpec extends Specification {
 
     "add a toplevel comment" in testDb {
       UserDao.insert(testUser) must beEqualTo(1L)
+      StoryDao.add("Fake Story", "http://www.fake.com", 1) must beEqualTo(1L)
       CommentDao.add(1, None, "this is a comment", 1)
       val comment = CommentDao.getComment(1)
       comment must_!= None
       comment.get.parentId must_== None
-      comment.get.storyId must_== 1
+      comment.get.story.id must_== 1
       comment.get.text must_== "this is a comment"
       comment.get.score must_== CommentDao.DefaultScore
     }
 
     "add a child comment" in testDb {
       UserDao.insert(testUser) must beEqualTo(1L)
-      CommentDao.add(4, Option(42), "this is another comment", 1)
+      StoryDao.add("Fake Story", "http://www.fake.com", 1) must beEqualTo(1L)
+      CommentDao.add(1, Option(42), "this is another comment", 1)
       val comment = CommentDao.getComment(1)
       comment must_!= None
       comment.get.parentId must_!= None
       comment.get.parentId.get must_== 42
-      comment.get.storyId must_== 4
+      comment.get.story.id must_== 1
       comment.get.text must_== "this is another comment"
     }
 
     "vote for a comment" in testDb {
       UserDao.insert(testUser) must beEqualTo(1L)
+      StoryDao.add("Fake Story", "http://www.fake.com", 1) must beEqualTo(1L)
       CommentDao.add(1, None, "this is a comment", 1)
       CommentDao.vote(1, 1, 3) must_== true
       val comment = CommentDao.getComment(1)
@@ -69,6 +73,7 @@ class CommentDaoSpec extends Specification {
 
     "have voted" in testDb {
       UserDao.insert(testUser) must beEqualTo(1L)
+      StoryDao.add("Fake Story", "http://www.fake.com", 1) must beEqualTo(1L)
       CommentDao.add(1, None, "this is a comment", 1)
       CommentDao.vote(1, 1, 3) must_== true
       CommentDao.voted(1, 1) must_== true
