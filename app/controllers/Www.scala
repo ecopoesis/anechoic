@@ -1,12 +1,12 @@
 package controllers
 
-import play.api._
 import play.api.mvc._
 import dao.StoryDao
 import dao.CommentDao
-import model.User
-import securesocial.core.SignUpEvent
+import model.{Story, User}
 import helpers.Signature
+import helpers.Formatting
+import play.api.Logger
 
 /**
  * web page routes
@@ -18,9 +18,26 @@ object Www extends Controller with securesocial.core.SecureSocial {
     Ok(views.html.index(request.user, StoryDao.getList(1, DefaultPageSize)))
   }
 
-  // @todo handle 404
-  def story(id: Long) = UserAwareAction { implicit request =>
-    Ok(views.html.story(request.user, StoryDao.getId(id).get, CommentDao.getComments(id)))
+  def story(id: Long, seoParam: Option[String]) = UserAwareAction { implicit request =>
+    // does this story exist?
+    StoryDao.getId(id).get match {
+      case story: Story => {
+        // do we have the correct SEO URL?
+        seoParam match {
+          case Some(seo) => {
+            if (seo == Formatting.urlify(story.title)) {
+              Ok(views.html.story(request.user, story, CommentDao.getComments(id)))
+            } else {
+              MovedPermanently(Formatting.canonicalUrl(request.host, story))
+            }
+          }
+          case None => {
+            MovedPermanently(Formatting.canonicalUrl(request.host, story))
+          }
+        }
+      }
+      case _ => NotFound(views.html.not_found(request.user))
+    }
   }
 
   // @todo handle 404

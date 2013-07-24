@@ -64,7 +64,7 @@ object Forms extends Controller with securesocial.core.SecureSocial {
       errors => Ok(errors.toString),
       post => {
         val foo = request.user match {
-          case user : User => CommentDao.add(post.storyId, post.parentId, post.text, user.numId)
+          case user: User => CommentDao.add(post.storyId, post.parentId, post.text, user.numId)
           case _ => None
         }
 

@@ -5,7 +5,8 @@
 # Web
 GET         /                                  controllers.Www.index
 GET         /submit                            controllers.Www.submit
-GET         /story/:id                         controllers.Www.story(id: Long)
+GET         /story/:seo/:id                    controllers.Www.story(id: Long, seo: Option[String])
+GET         /story/:id                         controllers.Www.story(id: Long, seo: Option[String] = None)
 GET         /comment/:storyId/:parentId        controllers.Www.comment(storyId: Long, parentId: Long)
 GET         /story/vote/up/:storyId            controllers.Www.voteStoryUp(storyId: Long)
 
