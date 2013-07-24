@@ -35,6 +35,7 @@ class StoryDaoSpec extends Specification {
         story.get.title must_== "Fake Story"
         story.get.url must_== "http://www.fake.com"
         story.get.score must_== StoryDao.DefaultScore
+        story.get.comments must_== 0
       }
 
       "create stories in order" in testDb {

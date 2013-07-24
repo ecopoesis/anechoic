@@ -20,15 +20,17 @@ object StoryDao {
     get[String]("url") ~
     get[Int]("score") ~
     get[Long]("user_id") ~
-    get[DateTime]("created_at") map {
-      case id ~ title ~ url ~ score ~ user_id ~ created_at =>
+    get[DateTime]("created_at") ~
+    get[Long]("comments") map {
+      case id ~ title ~ url ~ score ~ user_id ~ created_at ~ comments =>
         Story(
           id,
           title,
           url,
           score,
           UserDao.getById(user_id),
-          created_at
+          created_at,
+          comments
         )
     }
   }
@@ -38,7 +40,7 @@ object StoryDao {
       SQL(
         """
           |select
-          | id, title, url, score, user_id, created_at
+          | id, title, url, score, user_id, created_at, (select count(*) from comments where story_id = stories.id) as comments
           |from stories
           |where id = {id}
         """.stripMargin)
@@ -52,7 +54,7 @@ object StoryDao {
       SQL(
         """
           |select
-          | id, title, url, score, user_id, created_at
+          | id, title, url, score, user_id, created_at, (select count(*) from comments where story_id = stories.id) as comments
           |from stories
           |order by
           | case when score = 0 then 1 else score end / power((EXTRACT(EPOCH FROM current_timestamp - created_at) / 3600) + 2, {gravity}) desc

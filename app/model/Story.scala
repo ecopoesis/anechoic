@@ -15,5 +15,6 @@ case class Story (
   url: String,
   score: Int,
   user: Option[User],
-  createdAt: DateTime
+  createdAt: DateTime,
+  comments: Long
 )
