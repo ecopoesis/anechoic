@@ -20,8 +20,8 @@ object Www extends Controller with securesocial.core.SecureSocial {
 
   def story(id: Long, seoParam: Option[String]) = UserAwareAction { implicit request =>
     // does this story exist?
-    StoryDao.getId(id).get match {
-      case story: Story => {
+    StoryDao.getId(id) match {
+      case Some(story) => {
         // do we have the correct SEO URL?
         seoParam match {
           case Some(seo) => {
@@ -31,7 +31,7 @@ object Www extends Controller with securesocial.core.SecureSocial {
               MovedPermanently(Formatting.canonicalUrl(request.host, story))
             }
           }
-          case None => {
+          case _ => {
             MovedPermanently(Formatting.canonicalUrl(request.host, story))
           }
         }
