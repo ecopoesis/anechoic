@@ -5,7 +5,7 @@
       <configuration>
         <option name="compilerLibraryLevel" value="Project" />
         <option name="compilerLibraryName" value="scala-2.10.0" />
-        <option name="compilerOptions" value="-deprecation -unchecked -encoding utf8" />
+        <option name="compilerOptions" value="-deprecation -unchecked -encoding utf8 -feature" />
         <option name="deprecationWarnings" value="true" />
         <option name="fsc" value="true" />
         <option name="uncheckedWarnings" value="true" />
@@ -22,10 +22,16 @@
       <sourceFolder url="file://$MODULE_DIR$/../conf" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/../test/resources" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/../target/native_libraries" />
       <excludeFolder url="file://$MODULE_DIR$/../target/resolution-cache" />
       <excludeFolder url="file://$MODULE_DIR$/../target/scala-2.10/cache" />
       <excludeFolder url="file://$MODULE_DIR$/../target/scala-2.10/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../target/scala-2.10/classes_managed" />
+      <excludeFolder url="file://$MODULE_DIR$/../target/scala-2.10/resource_managed" />
+      <excludeFolder url="file://$MODULE_DIR$/../target/scala-2.10/test-classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../target/specs2-reports" />
       <excludeFolder url="file://$MODULE_DIR$/../target/streams" />
+      <excludeFolder url="file://$MODULE_DIR$/../target/test-reports" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -98,6 +104,7 @@
     <orderEntry type="library" name="SBT: commons-validator:commons-validator:1.4.0" level="project" />
     <orderEntry type="library" name="SBT: commons-beanutils:commons-beanutils:1.8.3" level="project" />
     <orderEntry type="library" name="SBT: commons-digester:commons-digester:1.8" level="project" />
+    <orderEntry type="library" name="SBT: org.ocpsoft.prettytime:prettytime:3.0.2.Final" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: play:play-test_2.10:2.1.1" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: junit:junit-dep:4.10" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: org.hamcrest:hamcrest-core:1.1" level="project" />

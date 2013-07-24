@@ -12,7 +12,8 @@ object ApplicationBuild extends Build {
     anorm,
     "securesocial" %% "securesocial" % "master-SNAPSHOT",
     "org.postgresql" % "postgresql" % "9.2-1002-jdbc4",
-    "commons-validator" % "commons-validator" % "1.4.0"
+    "commons-validator" % "commons-validator" % "1.4.0" ,
+    "org.ocpsoft.prettytime" % "prettytime" % "3.0.2.Final"
   )
 
   val main = play.Project(appName, appVersion, appDependencies).settings(

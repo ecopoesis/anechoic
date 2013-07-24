@@ -1,6 +1,7 @@
 @(comment: model.Comment, level: Int, storyId: Long)(implicit request: play.api.mvc.RequestHeader)
 
-@import service.Signature
+@import helpers.Signature
+@import helpers.Formatting
 
 <div class="comment cf" style="width: @(50+(50*Math.exp(-0.1*level)))%">
     <div class="action">
@@ -10,7 +11,7 @@
         <br>
         <a href="//@request.host/comment/@storyId/@comment.id"><i class="icon-reply"></i></a>
     </div>
-    <div class="details">@comment.user.id.id @comment.createdAt (@comment.score)</div>
+    <div class="details">@comment.user.id.id @Formatting.print(comment.createdAt) (@comment.score)</div>
     <div>@comment.text</div>
     <div class="reply"></div>
 </div>

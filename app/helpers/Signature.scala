@@ -1,4 +1,4 @@
-package service
+package helpers
 
 import play.api.Play
 import play.api.Play.current

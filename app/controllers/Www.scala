@@ -6,7 +6,7 @@ import dao.StoryDao
 import dao.CommentDao
 import model.User
 import securesocial.core.SignUpEvent
-import service.Signature
+import helpers.Signature
 
 /**
  * web page routes
