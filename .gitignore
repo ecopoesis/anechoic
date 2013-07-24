@@ -1,4 +1,7 @@
 target
 logs
 .fseventsd
-
+.DS_Store
+.Trashes
+.swp
+.lock
