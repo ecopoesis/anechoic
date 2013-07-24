@@ -57,4 +57,8 @@ object Www extends Controller with securesocial.core.SecureSocial {
       case _ => BadRequest
     }
   }
+
+  def notFound(url: String) = UserAwareAction { implicit request =>
+    NotFound(views.html.not_found(request.user))
+  }
 }

@@ -1,0 +1,9 @@
+@(user: Option[securesocial.core.Identity])(implicit request: play.api.mvc.RequestHeader)
+
+@import tags._
+
+@frame(Option("404"), user) {
+    <div class="content cf">
+        The page you requested could not be found.
+    </div>
+}
