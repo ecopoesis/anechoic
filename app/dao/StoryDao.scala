@@ -57,7 +57,7 @@ object StoryDao {
           | id, title, url, score, user_id, created_at, (select count(*) from comments where story_id = stories.id) as comments
           |from stories
           |order by
-          | case when score = 0 then 1 else score end / power((EXTRACT(EPOCH FROM current_timestamp - created_at) / 3600) + 2, {gravity}) desc
+          | (case when score = 0 then 1 else score end) / power((EXTRACT(EPOCH FROM current_timestamp - created_at) / 3600) + 2, {gravity}) desc
           |limit {size} offset ({page} - 1) * {size}
         """.stripMargin)
         .on(

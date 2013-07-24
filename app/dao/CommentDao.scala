@@ -10,7 +10,6 @@ import scala.language.postfixOps
 import model._
 import scala.collection.mutable
 import anorm.~
-import model.User
 import model.Comment
 import model.CommentHierarchy
 import scala.Some
