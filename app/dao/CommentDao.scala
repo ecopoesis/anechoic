@@ -34,7 +34,7 @@ object CommentDao {
         comment,
         score,
         created_at,
-        new mutable.TreeSet[Comment]()(CommentOrdering)
+        new mutable.TreeSet[Comment]()
       )
     }
   }
@@ -56,7 +56,7 @@ object CommentDao {
         .as(commentParser *)
     }
 
-    val hierarchy = new CommentHierarchy(storyId, new mutable.TreeSet[Comment]()(CommentOrdering))
+    val hierarchy = new CommentHierarchy(storyId, new mutable.TreeSet[Comment]())
 
     // map of all comments so we can easily find where to put them in the hierarchy
     val all = new mutable.HashMap[Long, Comment]()

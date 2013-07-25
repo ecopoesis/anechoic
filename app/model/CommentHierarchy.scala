@@ -12,9 +12,20 @@ case class Comment(
   score: Int,
   createdAt: DateTime,
 
-  // children of this nest
+  // children of this comment
   children: mutable.SortedSet[Comment]
-)
+) extends Ordered[Comment] {
+  /**
+   * higher scores first, if tied, older first
+   */
+  def compare(that: Comment) = {
+    if (this.score == that.score) {
+      this.createdAt compareTo that.createdAt
+    } else {
+      this.score compareTo that.score
+    }
+  }
+}
 
 case class CommentHierarchy(
   storyId: Long,
@@ -22,16 +33,3 @@ case class CommentHierarchy(
   // the root level comments
   root: mutable.SortedSet[Comment]
 )
-
-/**
- * higher scores first, if tied, older first
- */
-object CommentOrdering extends Ordering[Comment] {
-  def compare(a:Comment, b:Comment) = {
-    if (a.score == b.score) {
-      a.createdAt compareTo b.createdAt
-    } else {
-      b.score compareTo a.score
-    }
-  }
-}
