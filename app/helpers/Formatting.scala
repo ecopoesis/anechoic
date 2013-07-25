@@ -4,6 +4,8 @@ import org.joda.time.DateTime
 import org.ocpsoft.prettytime.PrettyTime
 import model.Story
 import scala.util.matching.Regex
+import controllers.routes
+import play.api.Play
 
 object Formatting {
 
@@ -24,5 +26,9 @@ object Formatting {
     val replace = new Regex("\\s+")
 
     replace replaceAllIn(remove replaceAllIn(s, ""), "_")
+  }
+
+  def asset(f: String) = {
+    routes.Www.asset(f, Play.current.configuration.getString("application.version").get)
   }
 }

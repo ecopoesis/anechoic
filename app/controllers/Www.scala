@@ -85,4 +85,8 @@ object Www extends Controller with securesocial.core.SecureSocial {
   def notFound(url: String) = UserAwareAction { implicit request =>
     NotFound(views.html.not_found(request.user))
   }
+
+  def asset(path: String, file: String, version: String): play.api.mvc.Action[play.api.mvc.AnyContent] = {
+    controllers.Assets.at(path, file)
+  }
 }

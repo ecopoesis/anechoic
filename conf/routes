@@ -6,7 +6,7 @@
 GET         /                              controllers.Www.index
 GET         /submit                        controllers.Www.submit
 GET         /newest                        controllers.Www.newest
-GET         /story/:id                     controllers.Www.story(id: Long, seo: Option[String] =        None)
+GET         /story/:id                     controllers.Www.story(id: Long, seo: Option[String] = None)
 GET         /story/:seo/:id                controllers.Www.story(id: Long, seo: Option[String])
 GET         /comment/:id                   controllers.Www.comment(id: Long)
 GET         /story/vote/up/:storyId        controllers.Www.voteStoryUp(storyId: Long)
@@ -41,6 +41,7 @@ POST        /authenticate/:provider        securesocial.controllers.ProviderCont
 GET         /not-authorized                securesocial.controllers.ProviderController.notAuthorized
 
 # Map static resources from the /public folder to the /assets URL path
+GET         /assets/:version/*file         controllers.Www.asset(path="/public", file, version)
 GET         /assets/*file                  controllers.Assets.at(path="/public", file)
 
 # 404

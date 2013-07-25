@@ -1,11 +1,13 @@
 import sbt._
 import Keys._
 import play.Project._
+import com.typesafe.config._
 
 object ApplicationBuild extends Build {
+  val version = ConfigFactory.parseFile(new File("conf/version.conf")).resolve()
 
   val appName         = "anechoic"
-  val appVersion      = "1-SNAPSHOT"
+  val appVersion      = version.getString("application.version")
 
   val appDependencies = Seq(
     jdbc,
