@@ -15,7 +15,11 @@ object Www extends Controller with securesocial.core.SecureSocial {
   val DefaultPageSize = 25
   
   def index = UserAwareAction { implicit request =>
-    Ok(views.html.index(request.user, StoryDao.getList(1, DefaultPageSize)))
+    Ok(views.html.index(request.user, StoryDao.getScoredList(1, DefaultPageSize)))
+  }
+
+  def newest = UserAwareAction { implicit request =>
+    Ok(views.html.index(request.user, StoryDao.getNewestList(1, DefaultPageSize)))
   }
 
   def story(id: Long, seoParam: Option[String]) = UserAwareAction { implicit request =>

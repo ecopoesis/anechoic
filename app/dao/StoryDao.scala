@@ -49,7 +49,7 @@ object StoryDao {
     }
   }
 
-  def getList(page: Int, size: Int): List[Story] = {
+  def getScoredList(page: Int, size: Int): List[Story] = {
     DB.withConnection { implicit c =>
       SQL(
         """
@@ -65,6 +65,25 @@ object StoryDao {
           'page -> page,
           'size -> size
         )
+        .as(story *)
+    }
+  }
+
+  def getNewestList(page: Int, size: Int): List[Story] = {
+    DB.withConnection { implicit c =>
+      SQL(
+        """
+          |select
+          | id, title, url, score, user_id, created_at, (select count(*) from comments where story_id = stories.id) as comments
+          |from stories
+          |order by
+          | created_at desc
+          |limit {size} offset ({page} - 1) * {size}
+        """.stripMargin)
+        .on(
+        'page -> page,
+        'size -> size
+      )
         .as(story *)
     }
   }
