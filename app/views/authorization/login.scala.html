@@ -4,56 +4,53 @@
 @import securesocial.core.Registry
 @import securesocial.core.AuthenticationMethod._
 @import securesocial.core.providers.UsernamePasswordProvider.UsernamePassword
+@import tags._
+@implicitFieldConstructor = @{ FieldConstructor(securesocial.views.html.inputFieldConstructor.f) }
 
+@basic(Some("Login")) {
+    <div class="content">
+        @errorMsg.map { msg =>
+            <div class="alert alert-error">
+                @Messages(msg)
+            </div>
+        }
 
+        @request.flash.get("success").map { msg =>
+            <div class="alert alert-info">
+                @msg
+            </div>
+        }
 
-@main(Messages("securesocial.login.title")) {
-    <div class="page-header">
-        <h1>@Messages("securesocial.login.title")</h1>
+        @request.flash.get("error").map { msg =>
+            <div class="alert alert-error">
+                @msg
+            </div>
+        }
+
+        <div class="dialog">
+            <form action="//@request.host/authenticate/userpass" class="form-horizontal" autocomplete="off" method="POST" id="login">
+                @helper.inputText(
+                    loginForm("username"),
+                    '_label -> "username",
+                    '_showConstraints -> false
+                )
+
+                @helper.inputPassword(
+                    loginForm("password"),
+                    '_label -> "password",
+                    '_showConstraints -> false
+                )
+
+                <div class="form-action cf">
+                    <a href="#" class="button" onclick="$('#login').submit(); return false;">login</a>
+                </div>
+
+                <div class="secondary">
+                    <a href="@securesocial.core.providers.utils.RoutesHelper.startResetPassword()">reset password</a> | <a href="@securesocial.core.providers.utils.RoutesHelper.startSignUp()">join</a>
+                </div>
+            </form>
+        </div>
     </div>
+} {
 
-    @errorMsg.map { msg =>
-        <div class="alert alert-error">
-            @Messages(msg)
-        </div>
-    }
-
-    @request.flash.get("success").map { msg =>
-        <div class="alert alert-info">
-            @msg
-        </div>
-    }
-
-    @request.flash.get("error").map { msg =>
-        <div class="alert alert-error">
-            @msg
-        </div>
-    }
-
-
-    @defining( Registry.providers.all.values.filter( _.id != UsernamePassword) ) { externalProviders =>
-
-        @if( externalProviders.size > 0 ) {
-            <div class="clearfix">
-                <p>@Messages("securesocial.login.instructions")</p>
-                <p>
-                @for(p <- externalProviders) {
-                    @provider(p.id)
-                }
-                </p>
-            </div>
-        }
-
-        @Registry.providers.get(UsernamePassword).map { up =>
-            <div class="clearfix">
-                @if( externalProviders.size > 0 ) {
-                    <p>@Messages("securesocial.login.useEmailAndPassword")</p>
-                } else {
-                    <p>@Messages("securesocial.login.useEmailAndPasswordOnly")</p>
-                }
-
-                @provider("userpass", Some(loginForm))
-            </div>
-        }
-    }
 }

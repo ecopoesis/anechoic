@@ -1,0 +1,48 @@
+@(title: Option[String])(body: Html)(menu: Html)(implicit request: play.api.mvc.RequestHeader)
+
+@import helpers.Formatting
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+        @title match {
+            case Some(title) => { @title - Anechoic News }
+            case None => { Anechoic News }
+        }
+        </title>
+        <link rel="stylesheet" href="@Formatting.asset("stylesheets/global.css")"/>
+        <script src="@routes.Assets.at("javascripts/jquery-1.9.1.min.js")"></script>
+        <script src="@Formatting.asset("javascripts/main.js")"></script>
+    </head>
+    <body class="@request.cookies.get("scheme").fold("dark")(cookie => cookie.value)">
+        <div class="header cf">
+            <div class="logo">
+                <a href="//@request.host/">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewbox="0 0 21 21">
+                        <rect x="1" y="0" width="2" height="10"/>
+                        <rect x="4" y="0" width="2" height="10"/>
+                        <rect x="7" y="0" width="2" height="10"/>
+                        <rect x="11" y="1" width="10" height="2"/>
+                        <rect x="11" y="4" width="10" height="2"/>
+                        <rect x="11" y="7" width="10" height="2"/>
+                        <rect x="0" y="12" width="10" height="2"/>
+                        <rect x="0" y="15" width="10" height="2"/>
+                        <rect x="0" y="18" width="10" height="2"/>
+                        <rect x="12" y="11" width="2" height="10"/>
+                        <rect x="15" y="11" width="2" height="10"/>
+                        <rect x="18" y="11" width="2" height="10"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="mast">
+                <h1><a href="//@request.host/">Anechoic News</a></h1>
+                <div class="tag">All the news&mdash; None of the noise</div>
+            </div>
+            @menu
+        </div>
+        <div class="frame cf">
+        @body
+        </div>
+    </body>
+</html>
