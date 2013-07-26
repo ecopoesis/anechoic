@@ -20,7 +20,7 @@ object ApplicationBuild extends Build {
 
   val main = play.Project(appName, appVersion, appDependencies).settings(
     resolvers += Resolver.url("sbt-plugin-snapshots", new URL("http://repo.scala-sbt.org/scalasbt/sbt-plugin-snapshots/"))(Resolver.ivyStylePatterns),
-    lessEntryPoints <<= baseDirectory(_ / "app" / "assets" / "stylesheets" ** "global.less"),
+    lessEntryPoints <<= baseDirectory(_ / "app" / "assets" / "css" ** "global.less"),
     scalacOptions += "-feature",
     routesImport += "extensions.Binders._"
   )

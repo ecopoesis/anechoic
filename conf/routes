@@ -41,7 +41,7 @@ POST        /authenticate/:provider        securesocial.controllers.ProviderCont
 GET         /not-authorized                securesocial.controllers.ProviderController.notAuthorized
 
 # Map static resources from the /public folder to the /assets URL path
-GET         /assets/:version/*file         controllers.Www.asset(path="/public", file, version)
+GET         /assets_:version/*file         controllers.Www.asset(path="/public", file, version)
 GET         /assets/*file                  controllers.Assets.at(path="/public", file)
 
 # 404

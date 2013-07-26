@@ -27,3 +27,15 @@ var Cookie = {
         document.cookie = escape(name) + "=" + escape(value) + expires + "; path=/";
     }
 }
+
+var Form = {
+    submitOnEnter: function() {
+        $('input').keydown(function(e) {
+            if (e.keyCode == 13) {
+                $(this).closest('form').submit();
+            }
+        });
+    }
+}
+
+$(document).ready(Form.submitOnEnter);
