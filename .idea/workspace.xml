@@ -2,74 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71f484c1-7011-43f2-87dc-059d1ffb1f16" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/authorization/provider.scala.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/javascripts/main.js" afterPath="$PROJECT_DIR$/app/assets/js/main.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/_main.less" afterPath="$PROJECT_DIR$/app/assets/css/_main.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/font-awesome/bootstrap.less" afterPath="$PROJECT_DIR$/app/assets/css/font-awesome/bootstrap.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/font-awesome/core.less" afterPath="$PROJECT_DIR$/app/assets/css/font-awesome/core.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/font-awesome/extras.less" afterPath="$PROJECT_DIR$/app/assets/css/font-awesome/extras.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/font-awesome/font-awesome.less" afterPath="$PROJECT_DIR$/app/assets/css/font-awesome/font-awesome.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/font-awesome/icons.less" afterPath="$PROJECT_DIR$/app/assets/css/font-awesome/icons.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/font-awesome/mixins.less" afterPath="$PROJECT_DIR$/app/assets/css/font-awesome/mixins.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/font-awesome/path.less" afterPath="$PROJECT_DIR$/app/assets/css/font-awesome/path.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/font-awesome/variables.less" afterPath="$PROJECT_DIR$/app/assets/css/font-awesome/variables.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/global.less" afterPath="$PROJECT_DIR$/app/assets/css/global.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/favicon.png" afterPath="$PROJECT_DIR$/public/img/favicon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/javascripts/jquery-1.9.1.min.js" afterPath="$PROJECT_DIR$/public/js/jquery-1.9.1.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/Build.scala" afterPath="$PROJECT_DIR$/project/Build.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__com_cedarsoft_guice_annotations_2_0_14.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__com_cedarsoft_guice_annotations_2_0_14.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__com_cedarsoft_guice_annotations_2_0_17.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__com_cedarsoft_guice_annotations_2_0_17.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__com_typesafe_play_plugins_util_2_10_2_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__com_typesafe_play_plugins_util_2_10_2_1_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__com_typesafe_play_plugins_util_2_10_2_1_08.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__com_typesafe_play_plugins_util_2_10_2_1_08.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__commons_beanutils_commons_beanutils_1_8_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__commons_beanutils_commons_beanutils_1_8_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__commons_beanutils_commons_beanutils_1_8_34.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__commons_beanutils_commons_beanutils_1_8_34.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__commons_digester_commons_digester_1_8.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__commons_digester_commons_digester_1_8.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__commons_digester_commons_digester_1_82.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__commons_digester_commons_digester_1_82.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__javax_mail_mail_1_4_13.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__javax_mail_mail_1_4_13.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__javax_mail_mail_1_4_15.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__javax_mail_mail_1_4_15.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_apache_commons_commons_email_1_22.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_apache_commons_commons_email_1_22.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_apache_commons_commons_email_1_24.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_apache_commons_commons_email_1_24.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_mindrot_jbcrypt_0_3m.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_mindrot_jbcrypt_0_3m.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_mindrot_jbcrypt_0_3m7.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_mindrot_jbcrypt_0_3m7.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_ow2_spec_ee_ow2_atinject_1_0_spec_1_0_106.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_ow2_spec_ee_ow2_atinject_1_0_spec_1_0_106.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_ow2_spec_ee_ow2_atinject_1_0_spec_1_0_108.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_ow2_spec_ee_ow2_atinject_1_0_spec_1_0_108.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_postgresql_postgresql_9_2_1002_jdbc4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_postgresql_postgresql_9_2_1002_jdbc4.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_postgresql_postgresql_9_2_1002_jdbc45.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_postgresql_postgresql_9_2_1002_jdbc45.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_anorm_2_10_2_1_13.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_anorm_2_10_2_1_13.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_anorm_2_10_2_1_16.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_anorm_2_10_2_1_16.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_2_10_2_1_14.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_2_10_2_1_14.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_2_10_2_1_17.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_2_10_2_1_17.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_exceptions_2_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_exceptions_2_1_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_exceptions_2_1_15.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_exceptions_2_1_15.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_iteratees_2_10_2_1_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_iteratees_2_10_2_1_12.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_iteratees_2_10_2_1_19.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_iteratees_2_10_2_1_19.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_java_2_10_2_1_13.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_java_2_10_2_1_13.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_java_2_10_2_1_19.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_java_2_10_2_1_19.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_jdbc_2_10_2_1_13.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_jdbc_2_10_2_1_13.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_jdbc_2_10_2_1_16.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_jdbc_2_10_2_1_16.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_test_2_10_2_1_13.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_test_2_10_2_1_13.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_test_2_10_2_1_16.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_test_2_10_2_1_16.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_sbt_link_2_1_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_sbt_link_2_1_12.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_sbt_link_2_1_17.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_sbt_link_2_1_17.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_templates_2_10_2_1_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_templates_2_10_2_1_12.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_templates_2_10_2_1_16.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_templates_2_10_2_1_16.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__securesocial_securesocial_2_10_master_SNAPSHOT3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__securesocial_securesocial_2_10_master_SNAPSHOT3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__securesocial_securesocial_2_10_master_SNAPSHOT7.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__securesocial_securesocial_2_10_master_SNAPSHOT7.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tags/basic.scala.html" afterPath="$PROJECT_DIR$/app/views/tags/basic.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/authorization/login.scala.html" afterPath="$PROJECT_DIR$/app/views/authorization/login.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/routes" afterPath="$PROJECT_DIR$/conf/routes" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/authorization/registration/signUp.scala.html" afterPath="$PROJECT_DIR$/app/views/authorization/registration/signUp.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/authorization/registration/startSignUp.scala.html" afterPath="$PROJECT_DIR$/app/views/authorization/registration/startSignUp.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="anechoic.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374849052677" ignored="false" />
+    <file path="/Dummy.txt" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374854951030" ignored="false" />
     <file path="/application.log" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371147391406" ignored="false" />
     <file path="/application.conf" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374775994625" ignored="false" />
     <file path="/100000.sql" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371147914543" ignored="false" />
     <file path="/Application.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371148916583" ignored="false" />
-    <file path="/routes" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374851750857" ignored="false" />
+    <file path="/routes" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374854228505" ignored="false" />
     <file path="/fragment.java" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374694063560" ignored="false" />
     <file path="/a.dummy" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374772562651" ignored="false" />
     <file path="/Api.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371148979989" ignored="false" />
@@ -158,11 +101,13 @@
     <file path="/Authorization.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374780756785" ignored="false" />
     <file path="/Applications/play/play-2.1.1/repository/cache/securesocial/securesocial_2.10/ivydata-master-SNAPSHOT.properties" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374780037327" ignored="false" />
     <file path="/login.scala.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374787613769" ignored="false" />
-    <file path="/basic.scala.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374851776936" ignored="false" />
+    <file path="/basic.scala.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374865655786" ignored="false" />
     <file path="/*.regexp" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374849205593" ignored="false" />
-    <file path="/signUp.scala.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374849506203" ignored="false" />
-    <file path="/startSignUp.scala.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374850005336" ignored="false" />
-    <file path="$PROJECT_DIR$/target/scala-2.10/src_managed/main/views/html/tags/basic.template.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374851831761" ignored="false" />
+    <file path="/signUp.scala.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374853165986" ignored="false" />
+    <file path="/startSignUp.scala.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374853081552" ignored="false" />
+    <file path="/startResetPassword.scala.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374854069485" ignored="false" />
+    <file path="/resetPasswordPage.scala.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374854030862" ignored="false" />
+    <file path="/passwordChange.scala.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374854734275" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,7 +237,7 @@
             <file leaf-file-name="login.scala.html" pinned="false" current="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/app/views/authorization/login.scala.html">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state line="44" column="77" selection-start="1535" selection-end="1535" vertical-scroll-proportion="0.698044">
+                  <state line="46" column="1" selection-start="1413" selection-end="1570" vertical-scroll-proportion="0.70660144">
                     <folding />
                   </state>
                 </provider>
@@ -312,9 +257,60 @@
       <file leaf-file-name="signUp.scala.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/authorization/registration/signUp.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="10" selection-start="2303" selection-end="2303" vertical-scroll-proportion="-35.28">
+            <state line="49" column="66" selection-start="1863" selection-end="1863" vertical-scroll-proportion="-24.4">
               <folding>
                 <element signature="e#124#183#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="startResetPassword.scala.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/authorization/registration/startResetPassword.scala.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="47" selection-start="523" selection-end="523" vertical-scroll-proportion="-9.6">
+              <folding>
+                <element signature="e#60#75#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inputFieldConstructor.scala.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/authorization/inputFieldConstructor.scala.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="resetPasswordPage.scala.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/authorization/registration/resetPasswordPage.scala.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="49" selection-start="551" selection-end="551" vertical-scroll-proportion="-10.24">
+              <folding>
+                <element signature="e#85#100#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="notAuthorized.scala.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/authorization/notAuthorized.scala.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="passwordChange.scala.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/authorization/passwordChange.scala.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="31" selection-start="1574" selection-end="1574" vertical-scroll-proportion="-23.84">
+              <folding>
+                <element signature="e#113#172#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -323,7 +319,7 @@
       <file leaf-file-name="startSignUp.scala.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/authorization/registration/startSignUp.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="34" selection-start="623" selection-end="623" vertical-scroll-proportion="-10.24">
+            <state line="18" column="37" selection-start="701" selection-end="701" vertical-scroll-proportion="-11.52">
               <folding>
                 <element signature="e#60#75#0" expanded="true" />
               </folding>
@@ -331,48 +327,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="100" selection-start="1130" selection-end="1130" vertical-scroll-proportion="0.75919336">
+            <state line="40" column="100" selection-start="1130" selection-end="1130" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery-1.9.1.min.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/jquery-1.9.1.min.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_main.less" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/css/_main.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="231" column="34" selection-start="3340" selection-end="3340" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Www.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/Www.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="0" selection-start="2762" selection-end="2762" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="basic.scala.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="basic.scala.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/tags/basic.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="22" selection-start="196" selection-end="196" vertical-scroll-proportion="-3.28">
+            <state line="14" column="0" selection-start="402" selection-end="402" vertical-scroll-proportion="0.23716381">
               <folding />
             </state>
           </provider>
@@ -382,24 +349,6 @@
         <entry file="file://$PROJECT_DIR$/conf/routes">
           <provider selected="true" editor-type-id="text-editor">
             <state line="39" column="45" selection-start="2413" selection-end="2413" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Build.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project/Build.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="7" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Formatting.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/helpers/Formatting.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="4" selection-start="733" selection-end="733" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -423,22 +372,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/auth/mails/welcomeEmail.scala.html" />
-        <option value="$PROJECT_DIR$/app/controllers/Auth.scala" />
-        <option value="$PROJECT_DIR$/app/views/securesocial/registration/signUp.scala.html" />
         <option value="$PROJECT_DIR$/app/controllers/SecureSocial.scala" />
         <option value="$PROJECT_DIR$/conf/play.plugins" />
         <option value="$PROJECT_DIR$/app/controllers/Authorization.scala" />
         <option value="$PROJECT_DIR$/app/views/tags/frame.scala.html" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/_main.less" />
-        <option value="$PROJECT_DIR$/app/views/authorization/registration/signUp.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/authorization/registration/startSignUp.scala.html" />
         <option value="$PROJECT_DIR$/app/helpers/Formatting.scala" />
         <option value="$PROJECT_DIR$/project/Build.scala" />
         <option value="$PROJECT_DIR$/conf/routes" />
-        <option value="$PROJECT_DIR$/app/views/tags/basic.scala.html" />
         <option value="$PROJECT_DIR$/app/views/authorization/login.scala.html" />
         <option value="$PROJECT_DIR$/app/assets/js/main.js" />
+        <option value="$PROJECT_DIR$/app/views/authorization/registration/startSignUp.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/authorization/registration/signUp.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/authorization/registration/startResetPassword.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/authorization/registration/resetPasswordPage.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/authorization/passwordChange.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/tags/basic.scala.html" />
       </list>
     </option>
   </component>
@@ -1545,7 +1494,15 @@
       <created>1374788045599</created>
       <updated>1374788045599</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="#8 - join page styling&#10;&#10;also, fix static assets paths">
+      <created>1374852735628</created>
+      <updated>1374852735628</updated>
+    </task>
+    <task id="LOCAL-00048" summary="fix #8 - securesocial templates updated">
+      <created>1374854956944</created>
+      <updated>1374854956944</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1570,7 +1527,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="2491" height="1418" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299532" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1593,7 +1550,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16646217" sideWeight="0.67103237" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16646217" sideWeight="0.67103237" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973805" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24968995" sideWeight="0.6700468" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1643,7 +1600,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="#8 - login page styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix #8 - securesocial templates updated" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1657,8 +1614,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="adding and viewing comments" />
-    <MESSAGE value="story dao voting" />
     <MESSAGE value="comment dao voting" />
     <MESSAGE value="basic web story up voting" />
     <MESSAGE value="signatures for voting" />
@@ -1682,6 +1637,8 @@
     <MESSAGE value="fix #7 - version static resources" />
     <MESSAGE value="#8 - switch to our own copies of the securesocial templates" />
     <MESSAGE value="#8 - login page styling" />
+    <MESSAGE value="#8 - join page styling&#10;&#10;also, fix static assets paths" />
+    <MESSAGE value="fix #8 - securesocial templates updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1695,41 +1652,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Applications/play/play-2.1.1/repository/local/play/play_2.10/2.1.1/jars/play_2.10.jar!/views/html/helper/inputText.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="7" selection-start="33" selection-end="33" vertical-scroll-proportion="-0.64">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/comment.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="115" selection-end="130" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/story.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="117" selection-start="505" selection-end="598" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/service/UserService.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="6" selection-start="497" selection-end="497" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Applications/play/play-2.1.1/repository/cache/securesocial/securesocial_2.10/jars/securesocial_2.10-master-SNAPSHOT.jar!/securesocial/core/providers/utils/RoutesHelper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="61" selection-start="1462" selection-end="1462" vertical-scroll-proportion="-7.76">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/jquery-1.9.1.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -1767,6 +1689,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="100" selection-start="1130" selection-end="1130" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/authorization/inputFieldConstructor.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/authorization/notAuthorized.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/conf/routes">
       <provider selected="true" editor-type-id="text-editor">
         <state line="39" column="45" selection-start="2413" selection-end="2413" vertical-scroll-proportion="0.0">
@@ -1774,41 +1717,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tags/basic.scala.html">
+    <entry file="file://$PROJECT_DIR$/app/views/authorization/login.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="22" selection-start="196" selection-end="196" vertical-scroll-proportion="-3.28">
+        <state line="46" column="1" selection-start="1413" selection-end="1570" vertical-scroll-proportion="0.70660144">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/authorization/registration/resetPasswordPage.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="49" selection-start="551" selection-end="551" vertical-scroll-proportion="-10.24">
+          <folding>
+            <element signature="e#85#100#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/authorization/registration/signUp.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="10" selection-start="2303" selection-end="2303" vertical-scroll-proportion="-35.28">
+        <state line="49" column="66" selection-start="1863" selection-end="1863" vertical-scroll-proportion="-24.4">
           <folding>
             <element signature="e#124#183#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/authorization/login.scala.html">
+    <entry file="file://$PROJECT_DIR$/app/views/authorization/registration/startResetPassword.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="77" selection-start="1535" selection-end="1535" vertical-scroll-proportion="0.698044">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/authorization/registration/startSignUp.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="34" selection-start="623" selection-end="623" vertical-scroll-proportion="-10.24">
+        <state line="15" column="47" selection-start="523" selection-end="523" vertical-scroll-proportion="-9.6">
           <folding>
             <element signature="e#60#75#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/js/main.js">
+    <entry file="file://$PROJECT_DIR$/app/views/authorization/registration/startSignUp.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="100" selection-start="1130" selection-end="1130" vertical-scroll-proportion="0.75919336">
+        <state line="18" column="37" selection-start="701" selection-end="701" vertical-scroll-proportion="-11.52">
+          <folding>
+            <element signature="e#60#75#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/authorization/passwordChange.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="31" selection-start="1574" selection-end="1574" vertical-scroll-proportion="-23.84">
+          <folding>
+            <element signature="e#113#172#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tags/basic.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="402" selection-end="402" vertical-scroll-proportion="0.23716381">
           <folding />
         </state>
       </provider>
