@@ -13,51 +13,44 @@
             </div>
         }
 
-    <form action="@securesocial.core.providers.utils.RoutesHelper.handleSignUp(token).absoluteURL(IdentityProvider.sslEnabled)"
-    class="form-horizontal"
-    autocomplete= "off"
-    method="POST"
-    >
-        <fieldset>
-            @if( UsernamePasswordProvider.withUserNameSupport ) {
+        <div class="dialog">
+            <form action="//@request.host/signup/@token" class="form-horizontal" autocomplete="off" method="POST" id="signup">
                 @helper.inputText(
                     signUpForm("userName"),
-                    '_label -> Messages("securesocial.signup.username"),
-                    'class -> "input-xlarge"
+                    '_label -> "username",
+                    '_showConstraints -> false
                 )
-            }
 
-            @helper.inputText(
-                signUpForm("firstName"),
-                '_label -> Messages("securesocial.signup.firstName"),
-                'class -> "input-xlarge"
-            )
+                @helper.inputText(
+                    signUpForm("firstName"),
+                    '_label -> "first name",
+                    '_showConstraints -> false
+                )
 
-            @helper.inputText(
-                signUpForm("lastName"),
-                '_label -> Messages("securesocial.signup.lastName"),
-                'class -> "input-xlarge"
-            )
+                @helper.inputText(
+                    signUpForm("lastName"),
+                    '_label -> "last name",
+                    '_showConstraints -> false
+                )
 
-            @helper.inputPassword(
-                signUpForm("password.password1"),
-                '_label -> Messages("securesocial.signup.password1"),
-                'class -> "input-xlarge"
-            )
+                @helper.inputPassword(
+                    signUpForm("password.password1"),
+                    '_label -> "password",
+                    '_showConstraints -> false
+                )
 
-            @helper.inputPassword(
-                signUpForm("password.password2"),
-                '_label -> Messages("securesocial.signup.password2"),
-                '_error -> signUpForm.error("password"),
-                'class -> "input-xlarge"
-            )
+                @helper.inputPassword(
+                    signUpForm("password.password2"),
+                    '_label -> "confirm password",
+                    '_error -> signUpForm.error("password"),
+                    '_showConstraints -> false
+                )
 
-            <div class="form-actions">
-                <button type="submit" class="btn btn-primary">@Messages("securesocial.signup.createAccount")</button>
-                <a class="btn" href="@securesocial.core.providers.utils.RoutesHelper.login()">@Messages("securesocial.signup.cancel")</a>
-            </div>
-        </fieldset>
-    </form>
+                <div class="form-action cf">
+                    <a href="#" class="button" onclick="$('#signup').submit();">join</a>
+                </div>
+            </form>
+        </div>
     </div>
 } {
 
