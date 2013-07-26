@@ -2,12 +2,12 @@
 
 @import tags._
 
-@frame(None, user) {
+@frame(user) {
 
     <ul class="stories">
     @for(story <- stories) {
         <li class="story cf">
-            @story_summary(story)
+            @story_summary(story, user)
         </li>
     }
     </ul>

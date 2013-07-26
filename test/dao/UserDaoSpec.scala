@@ -79,6 +79,7 @@ class UserDaoSpec extends Specification {
       user.get.passwordInfo.get.hasher must_== testUser.passwordInfo.get.hasher
       user.get.passwordInfo.get.password must_== testUser.passwordInfo.get.password
       user.get.passwordInfo.get.salt.get must_== testUser.passwordInfo.get.salt.get
+      user.get.scheme must_== "dark"
     }
 
     "create a user with no salt" in testDb {
@@ -192,6 +193,24 @@ class UserDaoSpec extends Specification {
       u2.get.passwordInfo.get.hasher must_== testUser.passwordInfo.get.hasher
       u2.get.passwordInfo.get.password must_== testUser.passwordInfo.get.password
       u2.get.passwordInfo.get.salt.get must_== testUser.passwordInfo.get.salt.get
+    }
+
+    "update color scheme" in testDb {
+      UserDao.getByUsername("jrambo") must_== None
+      val u1 = UserDao.upsert(testUser)
+      u1 must_!= None
+      UserDao.setScheme(1, "light") must_== true
+      val u2 = UserDao.getById(1)
+      u2.get.scheme must_== "light"
+    }
+
+    "update unknown color scheme" in testDb {
+      UserDao.getByUsername("jrambo") must_== None
+      val u1 = UserDao.upsert(testUser)
+      u1 must_!= None
+      UserDao.setScheme(1, "fred") must_== false
+      val u2 = UserDao.getById(1)
+      u2.get.scheme must_== "dark"
     }
   }
 

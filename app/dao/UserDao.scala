@@ -22,8 +22,9 @@ object UserDao {
     get[Option[String]]("pw_salt") ~
     get[String]("firstname") ~
     get[String]("lastname") ~
-    get[Option[String]]("email") map {
-    case id ~ username ~ password ~ pw_hash ~ pw_salt ~ firstname ~ lastname ~ email =>
+    get[Option[String]]("email") ~
+    get[String]("scheme") map {
+    case id ~ username ~ password ~ pw_hash ~ pw_salt ~ firstname ~ lastname ~ email ~ scheme =>
       User(
         id,
         new UserId(username, UsernamePasswordProvider.UsernamePassword),
@@ -35,17 +36,20 @@ object UserDao {
         AuthenticationMethod.UserPassword,
         None,
         None,
-        Some[PasswordInfo](new PasswordInfo(pw_hash, password, pw_salt))
+        Some[PasswordInfo](new PasswordInfo(pw_hash, password, pw_salt)),
+        scheme
         )
     }
   }
+
+  val ValidSchemes = Set("dark", "light")
 
   def getById(id: Long): Option[User] = Cache.getOrElse(CacheKey + id, CacheTimeout) {
     DB.withConnection { implicit c =>
       SQL(
         """
           |select
-          | id, username, password, pw_hash, pw_salt, firstname, lastname, email
+          | id, username, password, pw_hash, pw_salt, firstname, lastname, email, scheme
           |from users
           |where id = {id}
         """.stripMargin)
@@ -59,7 +63,7 @@ object UserDao {
       SQL(
         """
           |select
-          | id, username, password, pw_hash, pw_salt, firstname, lastname, email
+          | id, username, password, pw_hash, pw_salt, firstname, lastname, email, scheme
           |from users
           |where username = {username}
         """.stripMargin)
@@ -73,7 +77,7 @@ object UserDao {
       SQL(
         """
           |select
-          | id, username, password, pw_hash, pw_salt, firstname, lastname, email
+          | id, username, password, pw_hash, pw_salt, firstname, lastname, email, scheme
           |from users
           |where email = {email}
         """.stripMargin)
@@ -138,6 +142,24 @@ object UserDao {
           'email -> identity.email
       )
       .executeUpdate()
+    }
+  }
+
+  def setScheme(userId: Long, scheme: String): Boolean = {
+    if (ValidSchemes.contains(scheme)) {
+      DB.withConnection { implicit c =>
+        SQL(
+          """
+            |update users set scheme={scheme} where id={id}
+          """.stripMargin
+        ).on(
+          'scheme -> scheme,
+          'id -> userId
+        )
+        .executeUpdate() == 1
+      }
+    } else {
+      false
     }
   }
 }

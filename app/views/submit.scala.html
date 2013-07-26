@@ -2,7 +2,7 @@
 
 @import tags._
 
-@frame(Option("Submit"), user) {
+@frame(user, Option("Submit")) {
     <form action="@routes.Forms.story()" method="POST">
         title: <input name="title"> <br />
         url: <input name="url"> <br />

@@ -1,8 +1,7 @@
 package controllers
 
 import play.api.mvc._
-import dao.StoryDao
-import dao.CommentDao
+import dao.{CommentDao, StoryDao, UserDao}
 import model.{Story, User}
 import helpers.Signature
 import helpers.Formatting
@@ -60,8 +59,8 @@ object Www extends Controller with securesocial.core.SecureSocial {
     request.user match {
       case user: User => {
         request.getQueryString("sig") match {
-          case sig: Some[String] => {
-            if (sig.get == Signature.sign("story", storyId.toString, "up")) {
+          case Some(sig) => {
+            if (Signature.check(sig, user.id.id, "story", storyId.toString, "up")) {
               if (!StoryDao.voted(storyId, user.numId)) {
                 if (StoryDao.vote(storyId, user.numId, 1)) {
                   Ok("success")
@@ -75,7 +74,34 @@ object Www extends Controller with securesocial.core.SecureSocial {
               BadRequest("invalid signature")
             }
           }
-          case _ => BadRequest("missing request")
+          case _ => BadRequest("missing signature")
+        }
+      }
+      case _ => BadRequest
+    }
+  }
+
+  def setScheme() = SecuredAction { implicit request =>
+    request.user match  {
+      case user: User => {
+        request.getQueryString("scheme") match {
+          case Some(scheme) => {
+            request.getQueryString("sig") match {
+              case Some(sig) => {
+                if (Signature.check(sig, user.id.id, "scheme")) {
+                  if (UserDao.setScheme(user.numId, scheme)) {
+                    Ok("success")
+                  } else {
+                    BadRequest("invalid scheme or error inserting into DB")
+                  }
+                } else {
+                  BadRequest("invalid signature")
+                }
+              }
+              case _ => BadRequest("missing signature")
+            }
+          }
+          case _ => BadRequest("missing scheme")
         }
       }
       case _ => BadRequest

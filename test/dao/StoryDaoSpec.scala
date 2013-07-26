@@ -24,7 +24,8 @@ class StoryDaoSpec extends Specification {
 
   "StoryDao" should {
       "have no stories" in testDb {
-        StoryDao.getList(1, 10) must have size 0
+        StoryDao.getScoredList(1, 10) must have size 0
+        StoryDao.getNewestList(1, 10) must have size 0
       }
 
       "create a story" in testDb {
@@ -37,14 +38,6 @@ class StoryDaoSpec extends Specification {
         story.get.score must_== StoryDao.DefaultScore
         story.get.comments must_== 0
       }
-
-      "create stories in order" in testDb {
-        StoryDao.getList(1, 10) must have size 0
-        StoryDao.add("Fake Story", "http://www.fake.com", 1) must beEqualTo(1L)
-        StoryDao.getList(1, 10) must have size 1
-        StoryDao.add("Example", "http://www.example.com", 1) must_== 2L
-        StoryDao.getList(1, 10) must have size 2
-      }.pendingUntilFixed("broken until we use postgres for unit tests")
 
       "vote for a story" in testDb {
         UserDao.insert(testUser)

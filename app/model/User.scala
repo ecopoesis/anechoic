@@ -16,5 +16,6 @@ case class User (
   authMethod: AuthenticationMethod,
   oAuth1Info: Option[OAuth1Info],
   oAuth2Info: Option[OAuth2Info],
-  passwordInfo: Option[PasswordInfo]
+  passwordInfo: Option[PasswordInfo],
+  scheme: String = "dark"
 ) extends Identity

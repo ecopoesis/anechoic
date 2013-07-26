@@ -2,10 +2,10 @@
 
 @import tags._
 
-@frame(Option(story.title), user) {
+@frame(user, Option(story.title)) {
 
     <div class="story cf">
-        @story_summary(story)
+        @story_summary(story, user)
     </div>
 
     <form action="@routes.Forms.comment()" id="newcomment" method="POST">

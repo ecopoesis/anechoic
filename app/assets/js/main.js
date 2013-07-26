@@ -1,24 +1,31 @@
-var Vote = {
+var Anechoic =  Anechoic || {};
+
+Anechoic.Vote = {
     vote: function(type, id, direction, signature) {
         var item = type + '_' + id;
         $('#' + item + '_up').addClass('ninja');
         $('#' + item + '_down').addClass('ninja');
-        $.get('http://localhost:9000/' + type + '/vote/' + direction + '/' + id + '?sig=' + signature);
+        $.get(Anechoic.baseUrl + type + '/vote/' + direction + '/' + id + '?sig=' + signature);
         return false;
     }
 };
 
-var Scheme = {
-    change: function() {
+Anechoic.Scheme = {
+    change: function(signature) {
         $('body').toggleClass('dark light');
 
-        Cookie.create('scheme', $('body').attr('class'));
+        Anechoic.Cookie.bake('scheme', $('body').attr('class'));
+
+        if (signature !== null) {
+            $.get(Anechoic.baseUrl + 'user/scheme' + '?sig=' + signature + "&scheme=" + $('body').attr('class'));
+        }
+
         return false;
     }
 }
 
-var Cookie = {
-    create: function(name, value, days) {
+Anechoic.Cookie = {
+    bake: function(name, value, days) {
         if (days) {
             var date = new Date();
             date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
@@ -28,7 +35,7 @@ var Cookie = {
     }
 }
 
-var Form = {
+Anechoic.Form = {
     submitOnEnter: function() {
         $('input').keydown(function(e) {
             if (e.keyCode == 13) {
@@ -38,4 +45,4 @@ var Form = {
     }
 }
 
-$(document).ready(Form.submitOnEnter);
+$(document).ready(Anechoic.Form.submitOnEnter);
