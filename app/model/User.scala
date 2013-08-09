@@ -7,7 +7,7 @@ import securesocial.core.OAuth1Info
 
 case class User (
   numId: Long,
-  id: securesocial.core.UserId,
+  identityId: securesocial.core.IdentityId,
   firstName: String,
   lastName: String,
   fullName: String,

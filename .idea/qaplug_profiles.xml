@@ -115,6 +115,9 @@
         <coding_rule class="CloneImplementationCloneThrowsCloneNotSupportedException" level="WARNING" enabled="true" />
         <coding_rule class="CloneImplementationProperCloneImplementation" level="ERROR" enabled="false" />
         <coding_rule class="CodeSizeCyclomaticComplexity" level="WARNING" enabled="false" />
+        <coding_rule class="CodeSizeExcessiveClassLength" level="WARNING" enabled="false" />
+        <coding_rule class="CodeSizeExcessiveMethodLength" level="WARNING" enabled="false" />
+        <coding_rule class="CodeSizeExcessiveParameterList" level="WARNING" enabled="false" />
         <coding_rule class="CodeSizeExcessivePublicCount" level="WARNING" enabled="false" />
         <coding_rule class="CodeSizeNPathComplexity" level="WARNING" enabled="false" />
         <coding_rule class="CodeSizeNcssConstructorCount" level="WARNING" enabled="false" />
@@ -328,6 +331,17 @@
         <coding_rule class="EmptyCatchBlockInspector" level="WARNING" enabled="false">
           <param name="exempts" value="java.lang.NumberFormatException" />
         </coding_rule>
+        <coding_rule class="EmptyCodeEmptyCatchBlock" level="ERROR" enabled="false" />
+        <coding_rule class="EmptyCodeEmptyFinallyBlock" level="ERROR" enabled="true" />
+        <coding_rule class="EmptyCodeEmptyIfStmt" level="ERROR" enabled="true" />
+        <coding_rule class="EmptyCodeEmptyInitializer" level="WARNING" enabled="false" />
+        <coding_rule class="EmptyCodeEmptyStatementBlock" level="WARNING" enabled="false" />
+        <coding_rule class="EmptyCodeEmptyStatementNotInLoop" level="WARNING" enabled="false" />
+        <coding_rule class="EmptyCodeEmptyStaticInitializer" level="WARNING" enabled="true" />
+        <coding_rule class="EmptyCodeEmptySwitchStatements" level="WARNING" enabled="true" />
+        <coding_rule class="EmptyCodeEmptySynchronizedBlock" level="ERROR" enabled="true" />
+        <coding_rule class="EmptyCodeEmptyTryBlock" level="WARNING" enabled="true" />
+        <coding_rule class="EmptyCodeEmptyWhileStmt" level="ERROR" enabled="true" />
         <coding_rule class="EmptyForInitializerPadCheck" level="INFO" enabled="false" />
         <coding_rule class="EmptyForIteratorPadCheck" level="INFO" enabled="false" />
         <coding_rule class="EmptySourceUnitInspector" level="WARNING" enabled="false" />
@@ -844,6 +858,7 @@
         <coding_rule class="StrictExceptionsAvoidCatchingThrowable" level="ERROR" enabled="true" />
         <coding_rule class="StrictExceptionsAvoidLosingExceptionInformation" level="WARNING" enabled="false" />
         <coding_rule class="StrictExceptionsAvoidRethrowingException" level="WARNING" enabled="true" />
+        <coding_rule class="StrictExceptionsAvoidThrowingNewInstanceOfSameException" level="WARNING" enabled="false" />
         <coding_rule class="StrictExceptionsAvoidThrowingNullPointerException" level="WARNING" enabled="true" />
         <coding_rule class="StrictExceptionsAvoidThrowingRawExceptionTypes" level="WARNING" enabled="true" />
         <coding_rule class="StrictExceptionsDoNotExtendJavaLangError" level="WARNING" enabled="false" />

@@ -45,4 +45,42 @@ Anechoic.Form = {
     }
 }
 
+Anechoic.Dashboard = {
+    build: function(config) {
+        for (var i = 0; i < config.columns.length; i++) {
+            Anechoic.Dashboard.buildColumn(config.columns[i]);
+        }
+    },
+
+    buildColumn: function(column) {
+        var c = $('<div class="column"></div>').appendTo('#dashboard');
+        for (var i = 0; i < column.widgets.length; i++) {
+            var widget = column.widgets[i];
+            if (widget.type === "rss") {
+                Anechoic.Dashboard.buildRss(c, widget);
+            }
+        }
+    },
+
+    buildRss: function(c, widget) {
+        var w = $('<div class="widget rss"></div>').appendTo(c);
+        var l = $('<ul></ul>').appendTo(w);
+
+        $.get(widget.url, function(data) {
+            var $xml = $(data);
+            $xml.find("item").each(function() {
+                var $this = $(this),
+                    item = {
+                        title: $this.find("title").text(),
+                        link: $this.find("link").text(),
+                        description: $this.find("description").text(),
+                        pubDate: $this.find("pubDate").text(),
+                        author: $this.find("author").text()
+                    }
+                $('<li><a href="' + item.link + '">' + item.title + '</a></li>').appendTo(l);
+            });
+        });
+    }
+}
+
 $(document).ready(Anechoic.Form.submitOnEnter);

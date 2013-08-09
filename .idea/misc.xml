@@ -29,8 +29,7 @@
   <component name="IdProvider" IDEtalkID="EE4AA9E5F422FD1E5EE97C65DB19F2AD" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK" />
   <component name="SuppressionsComponent">
-    <option name="suppCommentEnabled" value="false" />
-    <option name="suppComment" value="SUPPRESS CODING RULES" />
+    <option name="suppComments" value="[]" />
   </component>
 </project>
 

@@ -3,7 +3,7 @@ package service
 import play.api.{Logger, Application}
 import securesocial.core._
 import securesocial.core.providers.Token
-import securesocial.core.UserId
+import securesocial.core.IdentityId
 import scala.Some
 import org.mindrot.jbcrypt.BCrypt
 import dao.{TokenDao, UserDao}
@@ -22,8 +22,8 @@ class UserService(application: Application) extends UserServicePlugin(applicatio
    * @param id the user id
    * @return an optional user
    */
-  def find(id: UserId): Option[User] = {
-    UserDao.getByUsername(id.id)
+  def find(id: IdentityId): Option[User] = {
+    UserDao.getByUsername(id.userId)
   }
 
   /**

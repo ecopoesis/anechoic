@@ -6,7 +6,7 @@ import anorm._
 import anorm.SqlParser._
 import play.api.Play.current
 
-import securesocial.core.{Identity, PasswordInfo, AuthenticationMethod, UserId}
+import securesocial.core.{Identity, PasswordInfo, AuthenticationMethod, IdentityId}
 import securesocial.core.providers.UsernamePasswordProvider
 import play.api.cache.Cache
 
@@ -27,7 +27,7 @@ object UserDao {
     case id ~ username ~ password ~ pw_hash ~ pw_salt ~ firstname ~ lastname ~ email ~ scheme =>
       User(
         id,
-        new UserId(username, UsernamePasswordProvider.UsernamePassword),
+        new IdentityId(username, UsernamePasswordProvider.UsernamePassword),
         firstname,
         lastname,
         firstname + " " + lastname,
@@ -90,12 +90,12 @@ object UserDao {
    * create a user if they don't exist, otherwise update
    */
   def upsert(identity: Identity): Option[Identity] = {
-    getByUsername(identity.id.id) match {
+    getByUsername(identity.identityId.userId) match {
       case Some(_) => update(identity)
       case None => insert(identity)
     }
 
-    getByUsername(identity.id.id) match {
+    getByUsername(identity.identityId.userId) match {
       case Some(u: User) => {
         Cache.set(CacheKey + u, u, CacheTimeout)
         return Option(u)
@@ -111,7 +111,7 @@ object UserDao {
           |insert into users (username, password, pw_hash, pw_salt, firstname, lastname, email) values ({username}, {password}, {pw_hash}, {pw_salt}, {firstname}, {lastname}, {email})
         """.stripMargin)
         .on(
-          'username -> identity.id.id,
+          'username -> identity.identityId.userId,
           'password -> identity.passwordInfo.get.password,
           'pw_hash -> identity.passwordInfo.get.hasher,
           'pw_salt -> identity.passwordInfo.get.salt,
@@ -133,7 +133,7 @@ object UserDao {
           |update users set password={password}, pw_hash={pw_hash}, pw_salt={pw_salt}, firstname={firstname}, lastname={lastname}, email={email} where username = {username}
         """.stripMargin)
         .on(
-          'username -> identity.id.id,
+          'username -> identity.identityId.userId,
           'password -> identity.passwordInfo.get.password,
           'pw_hash -> identity.passwordInfo.get.hasher,
           'pw_salt -> identity.passwordInfo.get.salt,

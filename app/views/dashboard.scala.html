@@ -1,0 +1,32 @@
+@(user: Option[securesocial.core.Identity])(implicit request: play.api.mvc.RequestHeader)
+
+@import tags._
+
+@frame(user, Option("Dashboard")) {
+    <div id="dashboard">
+
+    </div>
+}
+
+<script>
+    var dashboard_config = {
+        "columns": [
+            {
+                widgets: [
+                    {
+                        "id": "1",
+                        "type": "rss",
+                        "url": "//@request.host/f/2"
+                    },
+                    {
+                        "id": "2",
+                        "type": "rss",
+                        "url": "//@request.host/f/1"
+                    }
+                ]
+            }
+        ]
+    };
+
+    $(document).ready(function() { Anechoic.Dashboard.build(dashboard_config); });
+</script>

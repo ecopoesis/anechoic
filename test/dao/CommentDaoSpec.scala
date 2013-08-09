@@ -4,12 +4,12 @@ import org.specs2.mutable.Specification
 import play.api.test._
 import play.api.test.Helpers._
 import model.User
-import securesocial.core.{PasswordInfo, AuthenticationMethod, UserId}
+import securesocial.core.{PasswordInfo, AuthenticationMethod, IdentityId}
 
 class CommentDaoSpec extends Specification {
   val testUser = new User(
     -1,
-    new UserId("jrambo", "junk"),
+    new IdentityId("jrambo", "junk"),
     "John",
     "Rambo",
     "ignored",

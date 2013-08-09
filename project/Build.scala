@@ -15,7 +15,8 @@ object ApplicationBuild extends Build {
     "securesocial" %% "securesocial" % "master-SNAPSHOT",
     "org.postgresql" % "postgresql" % "9.2-1002-jdbc4",
     "commons-validator" % "commons-validator" % "1.4.0" ,
-    "org.ocpsoft.prettytime" % "prettytime" % "3.0.2.Final"
+    "org.ocpsoft.prettytime" % "prettytime" % "3.0.2.Final",
+    "net.databinder.dispatch" %% "dispatch-core" % "0.11.0"
   )
 
   val main = play.Project(appName, appVersion, appDependencies).settings(

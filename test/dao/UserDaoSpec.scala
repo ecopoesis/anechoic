@@ -5,13 +5,13 @@ import org.specs2.matcher._
 import play.api.test._
 import play.api.test.Helpers._
 import model.User
-import securesocial.core.{AuthenticationMethod, PasswordInfo, UserId}
+import securesocial.core.{AuthenticationMethod, PasswordInfo, IdentityId}
 import securesocial.core.providers.UsernamePasswordProvider
 
 class UserDaoSpec extends Specification {
   val testUser = new User(
     -1,
-    new UserId("jrambo", "junk"),
+    new IdentityId("jrambo", "junk"),
     "John",
     "Rambo",
     "ignored",
@@ -25,7 +25,7 @@ class UserDaoSpec extends Specification {
 
   val testUserUpdate = new User(
     -1,
-    new UserId("jrambo", "junk"),
+    new IdentityId("jrambo", "junk"),
     "john",
     "rambo",
     "ignored",
@@ -39,7 +39,7 @@ class UserDaoSpec extends Specification {
 
   val testUserNoSalt = new User(
     -1,
-    new UserId("rbalboa", "junk"),
+    new IdentityId("rbalboa", "junk"),
     "Rocky",
     "Balboa",
     "ignored",
@@ -63,11 +63,11 @@ class UserDaoSpec extends Specification {
     "create a user" in testDb {
       UserDao.getByUsername("jrambo") must_== None
       UserDao.insert(testUser) must beEqualTo(1L)
-      val user = UserDao.getByUsername(testUser.id.id)
+      val user = UserDao.getByUsername(testUser.identityId.userId)
       user must_!= None
       user.get.numId must_== 1
-      user.get.id.id must_== "jrambo"
-      user.get.id.providerId must_== UsernamePasswordProvider.UsernamePassword
+      user.get.identityId.userId must_== "jrambo"
+      user.get.identityId.providerId must_== UsernamePasswordProvider.UsernamePassword
       user.get.firstName must_== testUser.firstName
       user.get.lastName must_== testUser.lastName
       user.get.fullName must_== "John Rambo"
@@ -86,11 +86,11 @@ class UserDaoSpec extends Specification {
       UserDao.getByUsername("rbalboa") must_== None
       UserDao.insert(testUserNoSalt) must beEqualTo(1L)
 
-      val user = UserDao.getByUsername(testUserNoSalt.id.id)
+      val user = UserDao.getByUsername(testUserNoSalt.identityId.userId)
       user must_!= None
       user.get.numId must_== 1
-      user.get.id.id must_== "rbalboa"
-      user.get.id.providerId must_== UsernamePasswordProvider.UsernamePassword
+      user.get.identityId.userId must_== "rbalboa"
+      user.get.identityId.providerId must_== UsernamePasswordProvider.UsernamePassword
       user.get.firstName must_== testUserNoSalt.firstName
       user.get.lastName must_== testUserNoSalt.lastName
       user.get.fullName must_== "Rocky Balboa"
@@ -106,8 +106,8 @@ class UserDaoSpec extends Specification {
       val user2 = UserDao.getById(1L)
       user2 must_!= None
       user2.get.numId must_== 1
-      user2.get.id.id must_== "rbalboa"
-      user2.get.id.providerId must_== UsernamePasswordProvider.UsernamePassword
+      user2.get.identityId.userId must_== "rbalboa"
+      user2.get.identityId.providerId must_== UsernamePasswordProvider.UsernamePassword
       user2.get.firstName must_== testUserNoSalt.firstName
       user2.get.lastName must_== testUserNoSalt.lastName
       user2.get.fullName must_== "Rocky Balboa"
@@ -124,11 +124,11 @@ class UserDaoSpec extends Specification {
     "update a user" in testDb {
       UserDao.getByUsername("jrambo") must_== None
       UserDao.insert(testUser) must beEqualTo(1L)
-      val user = UserDao.getByUsername(testUser.id.id)
+      val user = UserDao.getByUsername(testUser.identityId.userId)
       user must_!= None
       user.get.numId must_== 1
-      user.get.id.id must_== "jrambo"
-      user.get.id.providerId must_== UsernamePasswordProvider.UsernamePassword
+      user.get.identityId.userId must_== "jrambo"
+      user.get.identityId.providerId must_== UsernamePasswordProvider.UsernamePassword
       user.get.firstName must_== testUser.firstName
       user.get.lastName must_== testUser.lastName
       user.get.fullName must_== "John Rambo"
@@ -142,11 +142,11 @@ class UserDaoSpec extends Specification {
       user.get.passwordInfo.get.salt.get must_== testUser.passwordInfo.get.salt.get
 
       UserDao.update(testUserUpdate)
-      val user2 = UserDao.getByUsername(testUserUpdate.id.id)
+      val user2 = UserDao.getByUsername(testUserUpdate.identityId.userId)
       user2 must_!= None
       user2.get.numId must_== 1
-      user2.get.id.id must_== "jrambo"
-      user2.get.id.providerId must_== UsernamePasswordProvider.UsernamePassword
+      user2.get.identityId.userId must_== "jrambo"
+      user2.get.identityId.providerId must_== UsernamePasswordProvider.UsernamePassword
       user2.get.firstName must_== testUserUpdate.firstName
       user2.get.lastName must_== testUserUpdate.lastName
       user2.get.fullName must_== "john rambo"
@@ -164,8 +164,8 @@ class UserDaoSpec extends Specification {
       UserDao.getByUsername("jrambo") must_== None
       val u1 = UserDao.upsert(testUser)
       u1 must_!= None
-      u1.get.id.id must_== "jrambo"
-      u1.get.id.providerId must_== UsernamePasswordProvider.UsernamePassword
+      u1.get.identityId.userId must_== "jrambo"
+      u1.get.identityId.providerId must_== UsernamePasswordProvider.UsernamePassword
       u1.get.firstName must_== testUser.firstName
       u1.get.lastName must_== testUser.lastName
       u1.get.fullName must_== "John Rambo"
@@ -180,8 +180,8 @@ class UserDaoSpec extends Specification {
 
       val u2 = UserDao.upsert(testUser)
       u2 must_!= None
-      u2.get.id.id must_== "jrambo"
-      u2.get.id.providerId must_== UsernamePasswordProvider.UsernamePassword
+      u2.get.identityId.userId must_== "jrambo"
+      u2.get.identityId.providerId must_== UsernamePasswordProvider.UsernamePassword
       u2.get.firstName must_== testUser.firstName
       u2.get.lastName must_== testUser.lastName
       u2.get.fullName must_== "John Rambo"

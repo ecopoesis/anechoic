@@ -5,7 +5,10 @@ import dao.{CommentDao, StoryDao, UserDao}
 import model.{Story, User}
 import helpers.Signature
 import helpers.Formatting
-import play.api.Logger
+import dispatch._
+import Defaults._
+import Http._
+import play.api.{Play, Logger}
 
 /**
  * web page routes
@@ -15,6 +18,23 @@ object Www extends Controller with securesocial.core.SecureSocial {
   
   def index = UserAwareAction { implicit request =>
     Ok(views.html.index(request.user, StoryDao.getScoredList(1, DefaultPageSize)))
+  }
+
+  def dashboard = UserAwareAction { implicit request =>
+    Ok(views.html.dashboard(request.user))
+  }
+
+  def proxyFeed(id: Long) = UserAwareAction { implicit request =>
+    val userAgent = "Anechoic News RSS v" + Play.current.configuration.getString("application.version") + " - www.anechoicnews.com"
+    if (id == 1) {
+      val svc = url("http://feeds.arstechnica.com/arstechnica/index") <:< Map("User-Agent" -> userAgent)
+      val country = Http(svc OK as.String)
+      Ok(country())
+    } else {
+      val svc = url("https://news.ycombinator.com/rss")
+      val country = Http(svc OK as.String)
+      Ok(country())
+    }
   }
 
   def newest = UserAwareAction { implicit request =>
@@ -60,7 +80,7 @@ object Www extends Controller with securesocial.core.SecureSocial {
       case user: User => {
         request.getQueryString("sig") match {
           case Some(sig) => {
-            if (Signature.check(sig, user.id.id, "story", storyId.toString, "up")) {
+            if (Signature.check(sig, user.identityId.userId, "story", storyId.toString, "up")) {
               if (!StoryDao.voted(storyId, user.numId)) {
                 if (StoryDao.vote(storyId, user.numId, 1)) {
                   Ok("success")
@@ -88,7 +108,7 @@ object Www extends Controller with securesocial.core.SecureSocial {
           case Some(scheme) => {
             request.getQueryString("sig") match {
               case Some(sig) => {
-                if (Signature.check(sig, user.id.id, "scheme")) {
+                if (Signature.check(sig, user.identityId.userId, "scheme")) {
                   if (UserDao.setScheme(user.numId, scheme)) {
                     Ok("success")
                   } else {

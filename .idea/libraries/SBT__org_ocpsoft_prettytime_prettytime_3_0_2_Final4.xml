@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SBT: org.ocpsoft.prettytime:prettytime:3.0.2.Final">
+    <CLASSES>
+      <root url="jar:///Applications/play/play-2.1.1/repository/cache/org.ocpsoft.prettytime/prettytime/jars/prettytime-3.0.2.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
