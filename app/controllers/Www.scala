@@ -1,7 +1,7 @@
 package controllers
 
 import play.api.mvc._
-import dao.{CommentDao, StoryDao, UserDao}
+import dao.{CommentDao, FeedDao, StoryDao, UserDao}
 import model.{Story, User}
 import helpers.Signature
 import helpers.Formatting
@@ -22,19 +22,6 @@ object Www extends Controller with securesocial.core.SecureSocial {
 
   def dashboard = UserAwareAction { implicit request =>
     Ok(views.html.dashboard(request.user))
-  }
-
-  def proxyFeed(id: Long) = UserAwareAction { implicit request =>
-    val userAgent = "Anechoic News RSS v" + Play.current.configuration.getString("application.version") + " - www.anechoicnews.com"
-    if (id == 1) {
-      val svc = url("http://feeds.arstechnica.com/arstechnica/index") <:< Map("User-Agent" -> userAgent)
-      val country = Http(svc OK as.String)
-      Ok(country())
-    } else {
-      val svc = url("https://news.ycombinator.com/rss")
-      val country = Http(svc OK as.String)
-      Ok(country())
-    }
   }
 
   def newest = UserAwareAction { implicit request =>
