@@ -9,7 +9,7 @@ import scala.xml.XML
 import org.joda.time.format.ISODateTimeFormat
 import org.joda.time.DateTimeZone
 
-class FeedDaoSpec extends Specification {
+class FeedDaoAtomSpec extends Specification {
   val atom =
     XML.loadString("""
       |<feed xmlns="http://www.w3.org/2005/Atom">

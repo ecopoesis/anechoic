@@ -36,7 +36,7 @@ object FeedDao {
           (entry \\ "title").text,
           (entry \\ "summary").text,
           getLink(entry \\ "link"),
-          iso8601DateFormat.parseDateTime((entry \\ "updated").text),
+          iso8601DateFormat.parseDateTime((entry \\ "updated").text.trim),
           (entry \\ "author" \\ "name").text
         )
       }
@@ -44,7 +44,7 @@ object FeedDao {
         (feed \ "title").text,
         (feed \ "subtitle").text,
         getLink(feed \ "link"),
-        iso8601DateFormat.parseDateTime((feed \ "updated").text),
+        iso8601DateFormat.parseDateTime((feed \ "updated").text.trim),
         items
       ))
     } else {
@@ -60,7 +60,7 @@ object FeedDao {
           (item \\ "title").text,
           (item \\ "description").text,
           new URL((item \\ "link").text),
-          rssDateFormat.parseDateTime((item \\ "pubDate").text),
+          rssDateFormat.parseDateTime((item \\ "pubDate").text.trim),
           (item \\ "author").text
         )
       }
@@ -68,7 +68,7 @@ object FeedDao {
         (channel \ "title").text,
         (channel \ "description").text,
         new URL((channel \ "link").text),
-        rssDateFormat.parseDateTime((channel \ "pubDate").text),
+        rssDateFormat.parseDateTime((channel \ "pubDate").text.trim),
         items
       ))
     } else {
