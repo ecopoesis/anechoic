@@ -37,7 +37,7 @@ object FeedDao {
           (entry \\ "summary").text,
           getLink(entry \\ "link"),
           iso8601DateFormat.parseDateTime((entry \\ "updated").text),
-          (entry \\ "author").text
+          (entry \\ "author" \\ "name").text
         )
       }
       Option(Feed(
@@ -81,7 +81,10 @@ object FeedDao {
     if (url.length == 0) {
       url = node.filter(n => (n \ "@type").text == "text/html").map(n => (n \ "@href").text)
       if (url.length == 0) {
-        url = node.map(n => (n \ "@href").text)
+        url = node.filter(n => (n \ "@rel").text != "self").map(n => (n \ "@href").text)
+        if (url.length == 0) {
+          url = node.map(n => (n \ "@href").text)
+        }
       }
     }
     new URL(url.head)

@@ -6,6 +6,8 @@ import play.api.test.Helpers._
 import model.User
 import securesocial.core.{PasswordInfo, AuthenticationMethod, IdentityId}
 import scala.xml.XML
+import org.joda.time.format.ISODateTimeFormat
+import org.joda.time.DateTimeZone
 
 class FeedDaoSpec extends Specification {
   val atom =
@@ -47,6 +49,34 @@ class FeedDaoSpec extends Specification {
     "process atom" in test {
       val feed = FeedDao.processAtom(atom)
       feed must_!= None
+    }
+
+    "process atom feed with two items" in test {
+      val feed = FeedDao.processAtom(atom)
+      feed.get.items.length must_== 2
+    }
+
+    "process atom feed globals correctly" in test {
+      val feed = FeedDao.processAtom(atom)
+      feed.get.title must_== "Example Feed"
+      feed.get.description must_== "A subtitle."
+      feed.get.link.toString must_== "http://example.org/"
+    }
+
+    "process the first entry in the atom feed correctly" in test {
+      val feed = FeedDao.processAtom(atom)
+      feed.get.items(0).title must_== "Atom-Powered Robots Run Amok"
+      feed.get.items(0).description must_== "Some text."
+      feed.get.items(0).link.toString must_== "http://example.org/2003/12/13/atom03.html"
+      feed.get.items(0).author must_== "John Doe"
+    }
+
+    "process the second entry in the atom feed correctly" in test {
+      val feed = FeedDao.processAtom(atom)
+      feed.get.items(1).title must_== "I Become Death"
+      feed.get.items(1).description must_== "Summary!"
+      feed.get.items(1).link.toString must_== "http://example.org/boom"
+      feed.get.items(1).author must_== "Robert Oppenheimer"
     }
   }
 
