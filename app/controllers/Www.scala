@@ -2,13 +2,14 @@ package controllers
 
 import play.api.mvc._
 import dao.{CommentDao, FeedDao, StoryDao, UserDao}
-import model.{Story, User}
+import model.{Feed, User}
 import helpers.Signature
 import helpers.Formatting
 import dispatch._
 import Defaults._
 import Http._
 import play.api.{Play, Logger}
+import play.api.libs.json.Json
 
 /**
  * web page routes
@@ -22,6 +23,13 @@ object Www extends Controller with securesocial.core.SecureSocial {
 
   def dashboard = UserAwareAction { implicit request =>
     Ok(views.html.dashboard(request.user))
+  }
+
+  def feed(url: String, sig: String) = UserAwareAction { implicit request =>
+    FeedDao.get(url) match {
+      case Some(feed) => Ok(Json.toJson(feed))
+      case _ => InternalServerError
+    }
   }
 
   def newest = UserAwareAction { implicit request =>

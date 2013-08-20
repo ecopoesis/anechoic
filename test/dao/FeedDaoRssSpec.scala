@@ -4,6 +4,7 @@ import org.specs2.mutable.Specification
 import play.api.test._
 import play.api.test.Helpers._
 import scala.xml.XML
+import play.api.Play
 
 class FeedDaoRssSpec extends Specification {
   val rss =
@@ -14,7 +15,7 @@ class FeedDaoRssSpec extends Specification {
       | <description>This is an example of an RSS feed</description>
       | <link>http://www.someexamplerssdomain.com/main.html</link>
       | <lastBuildDate>Mon, 06 Sep 2010 00:01:00 +0000 </lastBuildDate>
-      | <pubDate>Mon, 06 Sep 2009 16:20:00 +0000 </pubDate>
+      | <pubDate>Sun, 06 Sep 2009 16:20:00 +0000 </pubDate>
       | <ttl>1800</ttl>
       |
       | <item>
@@ -22,7 +23,7 @@ class FeedDaoRssSpec extends Specification {
       |  <description>Here is some text containing an interesting description.</description>
       |  <link>http://www.wikipedia.org/</link>
       |  <guid>unique string per item</guid>
-      |  <pubDate>Mon, 06 Sep 2009 16:20:00 +0000 </pubDate>
+      |  <pubDate>Sun, 06 Sep 2009 16:20:00 +0000 </pubDate>
       | </item>
       |
       | <item>
@@ -30,7 +31,7 @@ class FeedDaoRssSpec extends Specification {
       |  <description>more description</description>
       |  <link>http://www.example.com/</link>
       |  <guid>unique string per item 2</guid>
-      |  <pubDate>Mon, 07 Sep 2010 18:34:00 +0000</pubDate>
+      |  <pubDate>Tue, 07 Sep 2010 18:34:00 +0000</pubDate>
       |  <author>John Rambo</author>
       | </item>
       |</channel>
@@ -53,6 +54,7 @@ class FeedDaoRssSpec extends Specification {
       feed.get.title must_== "RSS Title"
       feed.get.description must_== "This is an example of an RSS feed"
       feed.get.link.toString must_== "http://www.someexamplerssdomain.com/main.html"
+      feed.get.date.toString() must_== "2009-09-06T16:20:00.000Z"
     }
 
     "process the first entry in the rss feed correctly" in test {
@@ -61,6 +63,7 @@ class FeedDaoRssSpec extends Specification {
       feed.get.items(0).description must_== "Here is some text containing an interesting description."
       feed.get.items(0).link.toString must_== "http://www.wikipedia.org/"
       feed.get.items(0).author must_== ""
+      feed.get.items(0).date.toString() must_== "2009-09-06T16:20:00.000Z"
     }
 
     "process the second entry in the rss feed correctly" in test {
@@ -69,6 +72,15 @@ class FeedDaoRssSpec extends Specification {
       feed.get.items(1).description must_== "more description"
       feed.get.items(1).link.toString must_== "http://www.example.com/"
       feed.get.items(1).author must_== "John Rambo"
+      feed.get.items(1).date.toString() must_== "2010-09-07T18:34:00.000Z"
+    }
+
+    "process arstechnica.com from 2013-08-22" in test {
+      import play.api.Play.current
+      val feed = FeedDao.processRss(XML.load(Play.classloader.getResource("arstechnica-2013-08-20.rss")))
+      feed.get.title must_== "Ars Technica"
+      feed.get.date.toString() must_== "2013-08-20T18:35:32.000Z"
+      feed.get.items.length must_== 25
     }
   }
 

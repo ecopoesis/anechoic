@@ -10,12 +10,14 @@ import scala.xml.{NodeSeq, Elem, XML}
 import java.net.URL
 import java.util.Locale
 import org.joda.time.format.{DateTimeFormat, ISODateTimeFormat}
+import org.joda.time.{DateTime, DateTimeZone}
 
 object FeedDao {
 
   val userAgent = "Anechoic News v" + Play.current.configuration.getString("application.version") + " - www.anechoicnews.com"
-  val iso8601DateFormat = ISODateTimeFormat.dateTimeNoMillis();
-  val rssDateFormat = DateTimeFormat.forPattern("EEE, dd MMM yyyy HH:mm:ss Z").withLocale(Locale.ENGLISH);
+  val iso8601DateFormat = ISODateTimeFormat.dateTimeNoMillis().withLocale(Locale.ENGLISH).withZone(DateTimeZone.UTC);
+  val rssDateFormatOffsetTimezone = DateTimeFormat.forPattern("EEE, dd MMM yyyy HH:mm:ss Z").withLocale(Locale.ENGLISH).withZone(DateTimeZone.UTC);
+  val rssDateFormatNoTimezone = DateTimeFormat.forPattern("EEE, dd MMM yyyy HH:mm:ss").withLocale(Locale.ENGLISH).withZone(DateTimeZone.UTC);
 
   def get(uri: String): Option[Feed] = {
     val svc = url(uri) <:< Map("User-Agent" -> userAgent)
@@ -60,7 +62,7 @@ object FeedDao {
           (item \\ "title").text,
           (item \\ "description").text,
           new URL((item \\ "link").text),
-          rssDateFormat.parseDateTime((item \\ "pubDate").text.trim),
+          parseRssDate((item \\ "pubDate").text),
           (item \\ "author").text
         )
       }
@@ -68,7 +70,7 @@ object FeedDao {
         (channel \ "title").text,
         (channel \ "description").text,
         new URL((channel \ "link").text),
-        rssDateFormat.parseDateTime((channel \ "pubDate").text.trim),
+        parseRssDate((channel \ "pubDate").text),
         items
       ))
     } else {
@@ -88,5 +90,18 @@ object FeedDao {
       }
     }
     new URL(url.head)
+  }
+
+  def parseRssDate(date: String): DateTime = {
+    var d = date.trim
+    try {
+      rssDateFormatOffsetTimezone.parseDateTime(d)
+    } catch {
+      case e: IllegalArgumentException => {
+        // since timezone names are unparsable, assume this is a UTC time, remove the timezone on the end
+        d = d.substring(0, d.lastIndexOf(" "))
+        rssDateFormatNoTimezone.parseDateTime(d)
+      }
+    }
   }
 }

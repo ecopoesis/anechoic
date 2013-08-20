@@ -14,6 +14,7 @@ GET         /comment/:id                   controllers.Www.comment(id: Long)
 # Ajax Calls
 GET         /story/vote/up/:storyId        controllers.Www.voteStoryUp(storyId: Long)
 GET         /user/scheme                   controllers.Www.setScheme()
+GET         /feed                          controllers.Www.feed(url: String, sig: String)
 
 # Forms
 POST        /form/story                    controllers.Forms.story
@@ -21,7 +22,7 @@ POST        /form/comment                  controllers.Forms.comment
 
 # APIs
 GET         /stories                       controllers.api.Stories.list
-POST        /stories                       controllers.api.Stories.post(title, url)
+POST        /stories                       controllers.api.Stories.post(title: String, url: String)
 
 # SecureSocial - Login page
 GET         /login                         securesocial.controllers.LoginPage.login
