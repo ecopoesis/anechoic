@@ -38,7 +38,7 @@ object FeedDao {
           (entry \\ "title").text,
           (entry \\ "summary").text,
           getLink(entry \\ "link"),
-          iso8601DateFormat.parseDateTime((entry \\ "updated").text.trim),
+          Option(iso8601DateFormat.parseDateTime((entry \\ "updated").text.trim)),
           (entry \\ "author" \\ "name").text
         )
       }
@@ -46,7 +46,7 @@ object FeedDao {
         (feed \ "title").text,
         (feed \ "subtitle").text,
         getLink(feed \ "link"),
-        iso8601DateFormat.parseDateTime((feed \ "updated").text.trim),
+        Option(iso8601DateFormat.parseDateTime((feed \ "updated").text.trim)),
         items
       ))
     } else {
@@ -92,15 +92,23 @@ object FeedDao {
     new URL(url.head)
   }
 
-  def parseRssDate(date: String): DateTime = {
+  def parseRssDate(date: String): Option[DateTime] = {
+    // grantland has null in some of their pubdates
+    if (date.length == 0 || date == "null") {
+      return None
+    }
+
     var d = date.trim
     try {
-      rssDateFormatOffsetTimezone.parseDateTime(d)
+      Option(rssDateFormatOffsetTimezone.parseDateTime(d))
     } catch {
       case e: IllegalArgumentException => {
-        // since timezone names are unparsable, assume this is a UTC time, remove the timezone on the end
-        d = d.substring(0, d.lastIndexOf(" "))
-        rssDateFormatNoTimezone.parseDateTime(d)
+        // if the date is longer then 25, assume is has a timezone
+        if (d.length > 25) {
+          // since timezone names are unparsable, assume this is a UTC time, remove the timezone on the end
+          d = d.substring(0, d.lastIndexOf(" "))
+        }
+        Option(rssDateFormatNoTimezone.parseDateTime(d))
       }
     }
   }

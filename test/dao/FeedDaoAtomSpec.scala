@@ -61,7 +61,7 @@ class FeedDaoAtomSpec extends Specification {
       feed.get.title must_== "Example Feed"
       feed.get.description must_== "A subtitle."
       feed.get.link.toString must_== "http://example.org/"
-      feed.get.date.toString() must_== "2003-12-13T18:30:02.000Z"
+      feed.get.date.get.toString() must_== "2003-12-13T18:30:02.000Z"
     }
 
     "process the first entry in the atom feed correctly" in test {
@@ -70,7 +70,7 @@ class FeedDaoAtomSpec extends Specification {
       feed.get.items(0).description must_== "Some text."
       feed.get.items(0).link.toString must_== "http://example.org/2003/12/13/atom03.html"
       feed.get.items(0).author must_== "John Doe"
-      feed.get.items(0).date.toString() must_== "2003-12-13T18:30:02.000Z"
+      feed.get.items(0).date.get.toString() must_== "2003-12-13T18:30:02.000Z"
     }
 
     "process the second entry in the atom feed correctly" in test {
@@ -79,7 +79,7 @@ class FeedDaoAtomSpec extends Specification {
       feed.get.items(1).description must_== "Summary!"
       feed.get.items(1).link.toString must_== "http://example.org/boom"
       feed.get.items(1).author must_== "Robert Oppenheimer"
-      feed.get.items(1).date.toString() must_== "2006-11-12T18:30:02.000Z"
+      feed.get.items(1).date.get.toString() must_== "2006-11-12T18:30:02.000Z"
     }
   }
 

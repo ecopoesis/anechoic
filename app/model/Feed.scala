@@ -9,7 +9,7 @@ case class Item (
   title: String,
   description: String,
   link: URL,
-  date: DateTime,
+  date: Option[DateTime],
   author: String
 )
 
@@ -17,7 +17,7 @@ case class Feed (
   title: String,
   description: String,
   link: URL,
-  date: DateTime,
+  date: Option[DateTime],
   items: Seq[Item]
 )
 

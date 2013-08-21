@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>Grantland: Home Page</title>
+		<description>The sports and culture website created by Bill Simmons</description>
+		<link>http://www.grantland.com</link>
+		<ttl>60</ttl>
+		<language>en-us</language>
+		<lastBuildDate>Wed, 21 Aug 2013 10:50:04</lastBuildDate>
+		<image>
+			<url>http://a.espncdn.com/photo/2011/0608/grantland_wordmark_134.jpg</url>
+			<title>Grantland</title>
+			<link>http://www.grantland.com</link>
+			<width>134</width>
+			<height>75</height>
+		</image>
+		<item>
+			<title><![CDATA[All It's Quacked Up to Be]]></title>
+			<link><![CDATA[http://www.grantland.com/story/_/id/9586999/the-unexpected-triumph-duck-dynasty]]></link>
+			<guid isPermalink="true"><![CDATA[http://www.grantland.com/story/_/id/9586999/the-unexpected-triumph-duck-dynasty]]></guid>
+			<dc:creator><![CDATA[Andy Greenwald]]></dc:creator>
+			<description><![CDATA[How did <i>Duck Dynasty</i> become one of the biggest shows in America?]]></description>
+			<pubDate>Tue, 20 Aug 2013 20:04:25</pubDate>
+		</item>
+		<item>
+			<title><![CDATA[First & Goal]]></title>
+			<link><![CDATA[http://www.grantland.com/story/_/id/9587579/bill-barnwell-which-backs-succeed-fail-trenches]]></link>
+			<guid isPermalink="true"><![CDATA[http://www.grantland.com/story/_/id/9587579/bill-barnwell-which-backs-succeed-fail-trenches]]></guid>
+			<dc:creator><![CDATA[Bill Barnwell]]></dc:creator>
+			<description><![CDATA[When your offense needs to punch in the ball at the goal line, which kind of back do you want taking the ball?]]></description>
+			<pubDate>Wed, 21 Aug 2013 04:29:11</pubDate>
+		</item>
+		<item>
+			<title><![CDATA[Inside Joke: Hannibal Buress]]></title>
+			<link><![CDATA[http://www.grantland.com/story/_/id/9582086/inside-joke-hannibal-buress-grantland-channel-video]]></link>
+			<guid isPermalink="true"><![CDATA[http://www.grantland.com/story/_/id/9582086/inside-joke-hannibal-buress-grantland-channel-video]]></guid>
+			<dc:creator><![CDATA[Grantland Channel]]></dc:creator>
+			<description><![CDATA[One stand-up comedian explains how he develops some of his best material.]]></description>
+			<pubDate>Mon, 19 Aug 2013 11:26:48</pubDate>
+		</item>
+		<item>
+			<title><![CDATA[<b>More NBA Names:</b> <a href="http://www.grantland.com/story/_/id/9581428/the-definitive-guide-nba-team-names-part-1">Part 1</a> &diams; <a href="http://www.grantland.com/blog/the-triangle/post/_/id/72053/b-s-report-zach-lowe-and-dave-dameshek">B.S. Report &#8212; Zach Lowe and Dave Dameshek</a><br>
+<b>#HotSportsTakes:</b> <a href="http://www.grantland.com/blog/the-triangle/post/_/id/71944/hotsportstakes-does-lebron-james-think-hes-above-the-law">Does LeBron James Think He's Above the Law?</a>: The Definitive Guide to NBA Team Names, Part 2]]></title>
+			<link><![CDATA[http://www.grantland.com/story/_/id/9581986/the-definitive-guide-nba-team-names-part-ii]]></link>
+			<guid isPermalink="true"><![CDATA[http://www.grantland.com/story/_/id/9581986/the-definitive-guide-nba-team-names-part-ii]]></guid>
+			<dc:creator><![CDATA[Zach Lowe]]></dc:creator>
+			<description><![CDATA[The thrilling conclusion to a very important basketball matter.]]></description>
+			<pubDate>null</pubDate>
+		</item>
+		<item>
+			<title><![CDATA[<b>More Hyden:</b> <a href="http://www.grantland.com/blog/hollywood-prospectus/post/_/id/84601/r-i-p-elmore-leonard">R.I.P., Elmore Leonard</a> &diams; <a href="http://www.grantland.com/blog/hollywood-prospectus/post/_/id/84570/qa-charles-bissell-of-the-wrens-on-the-chinese-democracy-of-indie-rock-albums">An Update on the Wrens' Long-Awaited New Album</a><br>
+<b>Wesley Morris:</b> <a href="http://www.grantland.com/blog/hollywood-prospectus/post/_/id/84609/movie-poster-roundup-because-what-else-are-you-going-to-stare-at-waiting-on-line">Movie Poster Roundup</a>: Bros in Paradise]]></title>
+			<link><![CDATA[http://www.grantland.com/story/_/id/9581079/john-mayer-paradise-valley-how-turning-jimmy-buffett]]></link>
+			<guid isPermalink="true"><![CDATA[http://www.grantland.com/story/_/id/9581079/john-mayer-paradise-valley-how-turning-jimmy-buffett]]></guid>
+			<dc:creator><![CDATA[Steven Hyden]]></dc:creator>
+			<description><![CDATA[John Mayer morphs into the Jimmy Buffett of the north, but he can't touch the original article.]]></description>
+			<pubDate>null</pubDate>
+		</item>
+		<item>
+			<title><![CDATA[<b>Bill Barnwell:</b> <a href="http://www.grantland.com/blog/the-triangle/post/_/id/71963/broncos-defense-has-cancelled-their-encore">Broncos Defense Has Canceled Its Encore</a> &diams; <a href="http://www.grantland.com/blog/the-triangle/post/_/id/71970/nomentum-in-sports-part-2">Nomentum &#8212; the Sequel</a>: An Unsigned Star]]></title>
+			<link><![CDATA[http://www.grantland.com/blog/the-triangle/post/_/id/72039/the-all-22-all-stars-jairus-byrd-an-unsigned-star]]></link>
+			<guid isPermalink="true"><![CDATA[http://www.grantland.com/blog/the-triangle/post/_/id/72039/the-all-22-all-stars-jairus-byrd-an-unsigned-star]]></guid>
+			<dc:creator><![CDATA[Robert Mays]]></dc:creator>
+			<description><![CDATA[With the season just two weeks away, the Bills' Jairus Byrd still doesn't have a contract.
+]]></description>
+			<pubDate>null</pubDate>
+		</item>
+	</channel>
+</rss>

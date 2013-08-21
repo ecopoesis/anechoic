@@ -69,14 +69,14 @@ Anechoic.Dashboard = {
             Anechoic.baseUrl + 'feed',
             {url: widget.url, sig: "foo"},
             function(data) {
-                Anechoic.Dashboard.renderFeed(data, w);
+                Anechoic.Dashboard.renderFeed(data, w, widget.max);
             }
         );
     },
 
-    renderFeed: function(data, w) {
+    renderFeed: function(data, w, max) {
         var l = $('<ul></ul>').appendTo(w);
-        for (var i = 0; i < data.items.length; i++) {
+        for (var i = 0; i < data.items.length && i < max; i++) {
             var item = data.items[i];
             $('<li><a href="' + item.link + '">' + item.title + '</a></li>').appendTo(l);
         }

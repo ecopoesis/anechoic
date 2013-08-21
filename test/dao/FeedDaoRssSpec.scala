@@ -54,7 +54,7 @@ class FeedDaoRssSpec extends Specification {
       feed.get.title must_== "RSS Title"
       feed.get.description must_== "This is an example of an RSS feed"
       feed.get.link.toString must_== "http://www.someexamplerssdomain.com/main.html"
-      feed.get.date.toString() must_== "2009-09-06T16:20:00.000Z"
+      feed.get.date.get.toString() must_== "2009-09-06T16:20:00.000Z"
     }
 
     "process the first entry in the rss feed correctly" in test {
@@ -63,7 +63,7 @@ class FeedDaoRssSpec extends Specification {
       feed.get.items(0).description must_== "Here is some text containing an interesting description."
       feed.get.items(0).link.toString must_== "http://www.wikipedia.org/"
       feed.get.items(0).author must_== ""
-      feed.get.items(0).date.toString() must_== "2009-09-06T16:20:00.000Z"
+      feed.get.items(0).date.get.toString() must_== "2009-09-06T16:20:00.000Z"
     }
 
     "process the second entry in the rss feed correctly" in test {
@@ -72,15 +72,27 @@ class FeedDaoRssSpec extends Specification {
       feed.get.items(1).description must_== "more description"
       feed.get.items(1).link.toString must_== "http://www.example.com/"
       feed.get.items(1).author must_== "John Rambo"
-      feed.get.items(1).date.toString() must_== "2010-09-07T18:34:00.000Z"
+      feed.get.items(1).date.get.toString() must_== "2010-09-07T18:34:00.000Z"
     }
 
-    "process arstechnica.com from 2013-08-22" in test {
+    "process arstechnica.com from 2013-08-20" in test {
       import play.api.Play.current
       val feed = FeedDao.processRss(XML.load(Play.classloader.getResource("arstechnica-2013-08-20.rss")))
       feed.get.title must_== "Ars Technica"
-      feed.get.date.toString() must_== "2013-08-20T18:35:32.000Z"
+      feed.get.date.get.toString() must_== "2013-08-20T18:35:32.000Z"
       feed.get.items.length must_== 25
+    }
+
+    "process grantland.com from 2013-08-21" in test {
+      import play.api.Play.current
+      val feed = FeedDao.processRss(XML.load(Play.classloader.getResource("grantland-2013-08-21.rss")))
+      feed.get.title must_== "Grantland: Home Page"
+      feed.get.date must_== None
+      feed.get.items.length must_== 6
+
+      // check dates
+      feed.get.items(0).date.get.toString() must_== "2013-08-20T20:04:25.000Z"
+      feed.get.items(3).date must_== None
     }
   }
 
