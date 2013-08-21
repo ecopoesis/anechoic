@@ -3,20 +3,33 @@ package controllers
 import play.api.mvc._
 import dao.{CommentDao, FeedDao, StoryDao, UserDao}
 import model.{Feed, User}
-import helpers.Signature
-import helpers.Formatting
+import helpers.{Validation, Signature, Formatting}
 import dispatch._
 import Defaults._
 import Http._
 import play.api.{Play, Logger}
 import play.api.libs.json.Json
+import play.api.data.Form
+import play.api.data.Forms._
+import model.User
+import scala.Some
 
 /**
  * web page routes
  */
 object Www extends Controller with securesocial.core.SecureSocial {
+  case class FeedPost(sig: String, url: String)
+
   val DefaultPageSize = 25
-  
+
+  val feedPost = Form(
+    mapping(
+      "sig" -> nonEmptyText(maxLength = 100),
+      "url" -> nonEmptyText(maxLength = 2000)
+        .verifying("must be an URL", url => Validation.url(url))
+    )(FeedPost.apply)(FeedPost.unapply)
+  )
+
   def index = UserAwareAction { implicit request =>
     Ok(views.html.index(request.user, StoryDao.getScoredList(1, DefaultPageSize)))
   }
@@ -25,11 +38,16 @@ object Www extends Controller with securesocial.core.SecureSocial {
     Ok(views.html.dashboard(request.user))
   }
 
-  def feed(url: String, sig: String) = UserAwareAction { implicit request =>
-    FeedDao.get(url) match {
-      case Some(feed) => Ok(Json.toJson(feed))
-      case _ => InternalServerError
-    }
+  def feed = UserAwareAction { implicit request =>
+    feedPost.bindFromRequest.fold(
+      errors => BadRequest(errors.toString),
+      post => {
+        FeedDao.get(post.url) match {
+          case Some(feed) => Ok(Json.toJson(feed))
+          case _ => InternalServerError
+        }
+      }
+    )
   }
 
   def newest = UserAwareAction { implicit request =>

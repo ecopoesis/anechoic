@@ -14,7 +14,7 @@ GET         /comment/:id                   controllers.Www.comment(id: Long)
 # Ajax Calls
 GET         /story/vote/up/:storyId        controllers.Www.voteStoryUp(storyId: Long)
 GET         /user/scheme                   controllers.Www.setScheme()
-GET         /feed                          controllers.Www.feed(url: String, sig: String)
+POST        /feed                          controllers.Www.feed
 
 # Forms
 POST        /form/story                    controllers.Forms.story

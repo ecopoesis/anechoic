@@ -56,30 +56,30 @@ Anechoic.Dashboard = {
         var c = $('<div class="column"></div>').appendTo('#dashboard');
         for (var i = 0; i < column.widgets.length; i++) {
             var widget = column.widgets[i];
-            if (widget.type === "rss") {
-                Anechoic.Dashboard.buildRss(c, widget);
+            if (widget.type === "feed") {
+                Anechoic.Dashboard.buildFeed(c, widget);
             }
         }
     },
 
-    buildRss: function(c, widget) {
+    buildFeed: function(c, widget) {
         var w = $('<div class="widget rss"></div>').appendTo(c);
-        var l = $('<ul></ul>').appendTo(w);
 
-        $.get(widget.url, function(data) {
-            var $xml = $(data);
-            $xml.find("item").each(function() {
-                var $this = $(this),
-                    item = {
-                        title: $this.find("title").text(),
-                        link: $this.find("link").text(),
-                        description: $this.find("description").text(),
-                        pubDate: $this.find("pubDate").text(),
-                        author: $this.find("author").text()
-                    }
-                $('<li><a href="' + item.link + '">' + item.title + '</a></li>').appendTo(l);
-            });
-        });
+        $.post(
+            Anechoic.baseUrl + 'feed',
+            {url: widget.url, sig: "foo"},
+            function(data) {
+                Anechoic.Dashboard.renderFeed(data, w);
+            }
+        );
+    },
+
+    renderFeed: function(data, w) {
+        var l = $('<ul></ul>').appendTo(w);
+        for (var i = 0; i < data.items.length; i++) {
+            var item = data.items[i];
+            $('<li><a href="' + item.link + '">' + item.title + '</a></li>').appendTo(l);
+        }
     }
 }
 

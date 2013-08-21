@@ -6,22 +6,21 @@ import play.api.mvc.Controller
 import dao.StoryDao
 import dao.CommentDao
 import model.User
-import org.apache.commons.validator.routines.UrlValidator
+import helpers.Validation
 import play.api.Logger
-
-case class AddStory(title: String, url: String)
-case class AddComment(storyId: Long, parentId: Option[Long], text: String)
 
 /**
  * form submission
  */
 object Forms extends Controller with securesocial.core.SecureSocial {
+  case class AddStory(title: String, url: String)
+  case class AddComment(storyId: Long, parentId: Option[Long], text: String)
 
   val storyPost = Form(
     mapping(
       "title" -> nonEmptyText(maxLength = 100),
       "url" -> nonEmptyText(maxLength = 2000)
-        .verifying("must be an URL", url => Validate.url(url))
+        .verifying("must be an URL", url => Validation.url(url))
     )(AddStory.apply)(AddStory.unapply)
   )
 
@@ -74,12 +73,5 @@ object Forms extends Controller with securesocial.core.SecureSocial {
         }
       }
     )
-  }
-}
-
-object Validate {
-  def url(url: String): Boolean = {
-    val validator = new UrlValidator(Array("http", "https"))
-    validator.isValid(url)
   }
 }
