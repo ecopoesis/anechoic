@@ -48,12 +48,12 @@ Anechoic.Form = {
 Anechoic.Dashboard = {
     build: function(config) {
         for (var i = 0; i < config.columns.length; i++) {
-            Anechoic.Dashboard.buildColumn(config.columns[i]);
+            Anechoic.Dashboard.buildColumn(config.columns[i], config.columns.length);
         }
     },
 
-    buildColumn: function(column) {
-        var c = $('<div class="column"></div>').appendTo('#dashboard');
+    buildColumn: function(column, num_columns) {
+        var c = $('<div class="column column' + num_columns + ' cf"></div>').appendTo('#dashboard');
         for (var i = 0; i < column.widgets.length; i++) {
             var widget = column.widgets[i];
             if (widget.type === "feed") {

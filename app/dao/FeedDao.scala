@@ -21,7 +21,7 @@ object FeedDao {
 
   def get(uri: String): Option[Feed] = {
     val svc = url(uri) <:< Map("User-Agent" -> userAgent)
-    val f = Http(svc OK as.String)
+    val f = Http.configure(_ setFollowRedirects true)(svc OK as.String)
     val xml = XML.loadString(f())
     if ((xml \\ "channel").length == 0) {
       processAtom(xml)
