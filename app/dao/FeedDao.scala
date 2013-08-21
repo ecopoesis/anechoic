@@ -99,17 +99,24 @@ object FeedDao {
     }
 
     var d = date.trim
-    try {
-      Option(rssDateFormatOffsetTimezone.parseDateTime(d))
-    } catch {
-      case e: IllegalArgumentException => {
-        // if the date is longer then 25, assume is has a timezone
-        if (d.length > 25) {
-          // since timezone names are unparsable, assume this is a UTC time, remove the timezone on the end
-          d = d.substring(0, d.lastIndexOf(" "))
+
+    if (d.contains(" ")) {
+      // this is probably an RSS format date since it contains spaces
+      try {
+        Option(rssDateFormatOffsetTimezone.parseDateTime(d))
+      } catch {
+        case e: IllegalArgumentException => {
+          // if the date is longer then 25, assume is has a timezone
+          if (d.length > 25) {
+            // since timezone names are unparsable, assume this is a UTC time, remove the timezone on the end
+            d = d.substring(0, d.lastIndexOf(" "))
+          }
+          Option(rssDateFormatNoTimezone.parseDateTime(d))
         }
-        Option(rssDateFormatNoTimezone.parseDateTime(d))
       }
+    } else {
+      // probably not an rss date, so well try iso8601
+      Option(iso8601DateFormat.parseDateTime(d))
     }
   }
 }

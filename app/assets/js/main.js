@@ -63,7 +63,7 @@ Anechoic.Dashboard = {
     },
 
     buildFeed: function(c, widget) {
-        var w = $('<div class="widget rss"></div>').appendTo(c);
+        var w = $('<div class="widget feed"></div>').appendTo(c);
 
         $.post(
             Anechoic.baseUrl + 'feed',
@@ -75,6 +75,7 @@ Anechoic.Dashboard = {
     },
 
     renderFeed: function(data, w, max) {
+        $('<h3>' + data.title  +'</h3>').appendTo(w);
         var l = $('<ul></ul>').appendTo(w);
         for (var i = 0; i < data.items.length && i < max; i++) {
             var item = data.items[i];
