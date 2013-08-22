@@ -1,0 +1,25 @@
+@(user: securesocial.core.Identity)(implicit request: play.api.mvc.RequestHeader)
+
+@import tags._
+
+@frame(Option(user), Option("Configure Dashboard")) {
+    <div class="dashboard-config">
+        <div id="dashboard-layout" class="cf">
+        </div>
+
+        <form id="newfeed" method="POST">
+            New Feed
+            <input type="text" name="url"/>
+            <select name="max">
+                @for(x <- 1 to 25) {
+                    <option value="@x">@x</option>
+                }
+            </select>
+            <a href="#" class="button" onclick="Anechoic.Dashboard.Config.addFeed();">add feed</a>
+        </form>
+    </div>
+}
+
+<script>
+    $(document).ready(Anechoic.Dashboard.Config.reloadWidgetLayout);
+</script>

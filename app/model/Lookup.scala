@@ -10,11 +10,11 @@ object Lookup {
     'vote -> 1
   )
 
-  val WidgetKind_Id_Sym = Map(
-    1 -> 'feed
+  val WidgetKind_Id_Name = Map(
+    1 -> "feed"
   )
 
-  val WidgetKind_Sym_Id = Map(
-    'feed -> 1
+  val WidgetKind_Name_Id = Map(
+    "feed" -> 1
   )
 }

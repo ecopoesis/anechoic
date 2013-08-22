@@ -7,23 +7,47 @@ import scala.Some
 import org.joda.time.DateTime
 import play.api.Play.current
 import AnormExtension._
-import model.Widget
+import model.{User, Widget}
 import model.Lookup._
+import java.sql.Connection
 
 object WidgetDao {
   val widget: RowParser[Widget] = {
     get[Long]("id") ~
     get[Long]("user_id") ~
     get[Int]("type") ~
+    get[Option[Int]]("col") ~
+    get[Option[Int]]("pos") ~
     get[DateTime]("created_at") map {
-    case id ~ user_id ~ kind ~ created_at =>
+    case id ~ user_id ~ kind ~ column ~ position ~ created_at =>
       Widget(
         id,
         user_id,
-        WidgetKind_Id_Sym(kind),
+        WidgetKind_Id_Name(kind),
+        column,
+        position,
         created_at,
         selectProperties(id)
       )
+    }
+  }
+
+  def getAll(userId: Long): Seq[Widget] = {
+    DB.withConnection { implicit c =>
+      SQL(
+        """
+          |select
+          | widgets.id, user_id, type, col, pos, widgets.created_at
+          |from widgets
+          |left join widget_layout on widget_layout.widget_id = widgets.id
+          |where user_id = {user_id}
+          |order by
+          | coalesce(col, -1) ASC,
+          | coalesce(pos, -1) ASC,
+          | widgets.id ASC
+        """.stripMargin)
+        .on('user_id -> userId)
+        .as(widget.*)
     }
   }
 
@@ -32,64 +56,83 @@ object WidgetDao {
       SQL(
         """
           |select
-          | id, user_id, type, created_at
+          | widgets.id, user_id, type, col, pos, widgets.created_at
           |from widgets
-          |where id = {id}
+          |left join widget_layout on widget_layout.widget_id = widgets.id
+          |where widgets.id = {id}
         """.stripMargin)
         .on('id -> id)
         .singleOpt(widget)
     }
   }
 
-  private def selectProperties(id: Long): Map[Symbol, String] = {
+  private def selectProperties(id: Long): Map[String, String] = {
     DB.withConnection { implicit c =>
       SQL(
         """
           |select
           | k, v
           |from widget_properties
-          |where id = {id}
+          |where widget_id = {id}
         """.stripMargin)
         .on('id -> id)
         .as({
           get[String]("k") ~
           get[String]("v")
         }.*)
-        .map { case k ~ v => (Symbol(k), v) }.toMap
+        .map { case k ~ v => (k, v) }.toMap
     }
   }
 
-  def insert(userId: Long, t: Symbol): Any = {
-    DB.withConnection { implicit c =>
-      SQL(
-        """
-          |insert into widgets (user_id, type) values ({user_id}, {type})
-        """.stripMargin)
-        .on(
-        'user_id -> userId,
-        'type -> WidgetKind_Sym_Id(t)
-        )
-        .executeInsert() match {
-        case Some(a) => a
-        case None => None
-      }
-    }
-  }
-
-  def insertProperty(widgetId: Long, key: String, value: String) {
-    DB.withConnection { implicit c =>
-      SQL(
-        """
-          |insert into widget_properties (widget_id, k, v) values ({widget_id}, {k}, {v})
-        """.stripMargin)
-        .on(
-        'widget_id -> widgetId,
-        'k -> key,
-        'v -> value
+  private def insertWidget(implicit c: Connection, userId: Long, t: String): Option[Long] = {
+    SQL(
+      """
+        |insert into widgets (user_id, type) values ({user_id}, {type})
+      """.stripMargin)
+      .on(
+      'user_id -> userId,
+      'type -> WidgetKind_Name_Id(t)
       )
-        .executeInsert() match {
-        case Some(a) => a
-        case None => None
+      .executeInsert()
+  }
+
+  private def insertProperty(implicit c: Connection, widgetId: Long, key: String, value: String): Boolean = {
+    val result = SQL(
+      """
+        |insert into widget_properties (widget_id, k, v) values ({widget_id}, {k}, {v})
+      """.stripMargin)
+      .on(
+      'widget_id -> widgetId,
+      'k -> key,
+      'v -> value
+      )
+      .executeInsert()
+
+    result match {
+      case Some(a) => true
+      case None => false
+    }
+  }
+
+  def addFeed(user: User, url: String, max: Int): Boolean = {
+    DB.withTransaction { implicit c =>
+      insertWidget(c, user.numId, "feed") match {
+        case Some(widgetId) => {
+          if (
+            insertProperty(c, widgetId, "url", url) &&
+            insertProperty(c, widgetId, "max", max.toString)) {
+
+            c.commit()
+            true
+          } else {
+            c.rollback
+            false
+          }
+        }
+        case _ => {
+          c.rollback
+          false
+        }
       }
     }
   }

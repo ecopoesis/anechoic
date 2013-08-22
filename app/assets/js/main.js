@@ -84,4 +84,70 @@ Anechoic.Dashboard = {
     }
 }
 
+Anechoic.Dashboard.Config = {
+    reloadWidgetLayout: function() {
+        $.post(
+            Anechoic.baseUrl + 'dashboard/layout',
+            {},
+            Anechoic.Dashboard.Config.renderWidgetLayout
+        );
+    },
+
+    renderWidgetLayout: function(data) {
+        var layout = $('#dashboard-layout');
+        layout.empty();
+
+        // create our columns
+        var c1 = $('<div class="column cf">&nbsp;</div>').appendTo(layout);
+        var c2 = $('<div class="column cf">&nbsp;</div>').appendTo(layout);
+        var c3 = $('<div class="column cf">&nbsp;</div>').appendTo(layout);
+        var c4 = $('<div class="column cf">&nbsp;</div>').appendTo(layout);
+        var unassigned = $('<div class="column unassigned cf">&nbsp;</div>').appendTo(layout)
+
+        c1.sortable({connectWith: ".column"});
+        c2.sortable({connectWith: ".column"});
+        c3.sortable({connectWith: ".column"});
+        c4.sortable({connectWith: ".column"});
+        unassigned.sortable({connectWith: ".column"});
+
+        // draw the widgets
+        for (var i = 0; i < data.length; i++) {
+            switch(data[i].col) {
+                case 1:
+                    Anechoic.Dashboard.Config.renderWidget(c1, data[i]);
+                    break;
+                case 2:
+                    Anechoic.Dashboard.Config.renderWidget(c2, data[i]);
+                    break;
+                case 3:
+                    Anechoic.Dashboard.Config.renderWidget(c3, data[i]);
+                    break;
+                case 4:
+                    Anechoic.Dashboard.Config.renderWidget(c4, data[i]);
+                    break;
+                default:
+                    Anechoic.Dashboard.Config.renderWidget(unassigned, data[i]);
+            }
+        }
+    },
+
+    renderWidget: function(parent, widget) {
+        var w = $('<div class="draggable"></div>').appendTo(parent);
+        $('<i class="icon-rss"></i>').appendTo(w);
+        $('<div class="url">' + widget.properties.url + '</div>').appendTo(w);
+    },
+
+    addFeed: function() {
+        $.post(
+            Anechoic.baseUrl + 'dashboard/addfeed',
+            {
+                url: $("#newfeed [name='url']").val(),
+                max: $("#newfeed [name='max']").val()
+            }
+        )
+        .done(Anechoic.Dashboard.Config.reloadWidgetLayout)
+        .fail(function(){alert("fail");})
+    }
+}
+
 $(document).ready(Anechoic.Form.submitOnEnter);

@@ -1,7 +1,7 @@
 package controllers
 
 import play.api.mvc._
-import dao.{CommentDao, FeedDao, StoryDao, UserDao}
+import dao.{CommentDao, FeedDao, StoryDao, UserDao, WidgetDao}
 import model.{Feed, User}
 import helpers.{Validation, Signature, Formatting}
 import dispatch._
@@ -36,6 +36,15 @@ object Www extends Controller with securesocial.core.SecureSocial {
 
   def dashboard = UserAwareAction { implicit request =>
     Ok(views.html.dashboard(request.user))
+  }
+
+  def dashboardConfig = SecuredAction { implicit request =>
+    request.user match {
+      case user: User => {
+        Ok(views.html.dashboardConfig(request.user))
+      }
+      case _ => BadRequest("invalid user object")
+    }
   }
 
   def feed = UserAwareAction { implicit request =>
@@ -137,7 +146,7 @@ object Www extends Controller with securesocial.core.SecureSocial {
           case _ => BadRequest("missing scheme")
         }
       }
-      case _ => BadRequest
+      case _ => BadRequest("invalid user object")
     }
   }
 

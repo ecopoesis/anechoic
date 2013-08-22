@@ -7,29 +7,42 @@ import model.User
 import securesocial.core.{PasswordInfo, AuthenticationMethod, IdentityId}
 
 class WidgetDaoSpec extends Specification {
+  val testUser = new User(
+    -1,
+    new IdentityId("jrambo", "junk"),
+    "John",
+    "Rambo",
+    "ignored",
+    Option("rambo@army.mil"),
+    None,
+    AuthenticationMethod.UserPassword,
+    None,
+    None,
+    Option(new PasswordInfo("fakehasher", "fakehashedpassword", Option("fakesalt")))
+  )
+
   "WidgetDao" should {
       "have no widgets" in testDb {
         WidgetDao.select(1) must_== None
       }
 
-      "create a widget" in testDb {
-        WidgetDao.insert(1, 'feed) must beEqualTo(1L)
+      "create a feed" in testDb {
+        WidgetDao.addFeed(testUser, "https://news.ycombinator.com/rss", 10) must_== true
         val widget = WidgetDao.select(1);
         widget must_!= None
         widget.get.id must_== 1L
-        widget.get.kind must_== 'feed
-        widget.get.properties.size must_== 0
+        widget.get.kind must_== "feed"
+        widget.get.properties.size must_== 2
+        widget.get.properties.get("url").get must_== "https://news.ycombinator.com/rss"
+        widget.get.properties.get("max").get must_== "10"
       }
 
-      "create a property" in testDb {
-        WidgetDao.insert(1, 'feed) must beEqualTo(1L)
-        WidgetDao.insertProperty(1, "foo", "bar")
-        val widget = WidgetDao.select(1);
-        widget must_!= None
-        widget.get.id must_== 1L
-        widget.get.kind must_== 'feed
-        widget.get.properties.size must_== 1
-        widget.get.properties.get('foo).get must_== "bar"
+      "get all widgets for user" in testDb {
+        WidgetDao.getAll(1).size must_== 0
+
+        WidgetDao.addFeed(testUser, "https://news.ycombinator.com/rss", 10) must_== true
+        WidgetDao.addFeed(testUser, "http://rss.cnn.com/rss/cnn_us.rss", 10) must_== true
+        WidgetDao.getAll(-1).size must_== 2
       }
     }
 
