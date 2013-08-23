@@ -258,23 +258,34 @@ margin-top: 0px;
 }
 
 .dashboard {
-  .column {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+
+  .supercolumn {
     float: left;
+    margin: 0px;
+    padding: 0px;
   }
 
-  .column1 {
+  .column {
+    margin: 10px 5px 10px 5px;
+    max-width: 100%;
+  }
+
+  .layout_1_column {
     width: 100%;
   }
 
-  .column2 {
+  .layout_2_column {
     width: 50%;
   }
 
-  .column3 {
+  .layout_3_column {
     width: 33%;
   }
 
-  .column4 {
+  .layout_4_column {
     width: 25%;
   }
 
@@ -282,6 +293,7 @@ margin-top: 0px;
     margin: 10px 5px 10px 5px;
     padding: 10px;
     background-color: @content;
+    overflow: hidden;
   }
 
   .feed {
@@ -318,6 +330,7 @@ margin-top: 0px;
   .supercolumn {
     float: left;
     margin: 0px;
+    padding: 0px;
     width: 20%;
   }
 

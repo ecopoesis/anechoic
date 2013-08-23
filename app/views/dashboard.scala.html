@@ -1,86 +1,13 @@
-@(user: Option[securesocial.core.Identity])(implicit request: play.api.mvc.RequestHeader)
+@(user:securesocial.core.Identity)(implicit request: play.api.mvc.RequestHeader)
 
 @import tags._
 
-@frame(user, Option("Dashboard")) {
+@frame(Option(user), Option("Dashboard")) {
     <div id="dashboard" class="dashboard">
         <div class="top"><a href="//@request.host/dashboard/config"><i class="icon-gears"></i></a></div>
     </div>
 }
 
 <script>
-    var dashboard_config = {
-        "columns": [
-            {
-                widgets: [
-                {
-                "id": "1",
-                "type": "feed",
-                "url": "http://www.grantland.com/blog/feed?blog=hollywood-prospectus",
-                "max": 10
-                },
-                {
-                "id": "2",
-                "type": "feed",
-                "url": "http://www.grantland.com/blog/feed?blog=the-triangle",
-                "max": 10
-                },
-                {
-                "id": "3",
-                "type": "feed",
-                "url": "http://www.grantland.com/feed",
-                "max": 10
-                },
-                {
-                "id": "4",
-                "type": "feed",
-                "url": "http://feeds.penny-arcade.com/pa-report",
-                "max": 10
-                },
-                {
-                "id": "5",
-                "type": "feed",
-                "url": "https://news.ycombinator.com/rss",
-                "max": 10
-                },
-                {
-                "id": "6",
-                "type": "feed",
-                "url": "http://rss.slashdot.org/Slashdot/slashdot",
-                "max": 10
-                },
-                {
-                "id": "7",
-                "type": "feed",
-                "url": "http://www.bureau42.com/feed",
-                "max": 10
-                },
-                {
-                "id": "8",
-                "type": "feed",
-                "url": "http://feeds.arstechnica.com/arstechnica/index",
-                "max": 10
-                }
-                ]
-            },
-            {
-                widgets: [
-                {
-                "id": "10",
-                "type": "feed",
-                "url": "http://www.salon.com/feed/",
-                "max": 10
-                },
-                {
-                "id": "10",
-                "type": "feed",
-                "url": "http://rss.cnn.com/rss/cnn_us.rss",
-                "max": 10
-                }
-                ]
-            },
-        ]
-    };
-
-    $(document).ready(function() { Anechoic.Dashboard.build(dashboard_config); });
+    $(document).ready(function() { Anechoic.Dashboard.load(); });
 </script>

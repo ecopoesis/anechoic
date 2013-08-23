@@ -34,7 +34,7 @@ object Www extends Controller with securesocial.core.SecureSocial {
     Ok(views.html.index(request.user, StoryDao.getScoredList(1, DefaultPageSize)))
   }
 
-  def dashboard = UserAwareAction { implicit request =>
+  def dashboard = SecuredAction { implicit request =>
     Ok(views.html.dashboard(request.user))
   }
 

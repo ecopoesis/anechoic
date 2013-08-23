@@ -46,30 +46,48 @@ Anechoic.Form = {
 }
 
 Anechoic.Dashboard = {
-    build: function(config) {
-        for (var i = 0; i < config.columns.length; i++) {
-            Anechoic.Dashboard.buildColumn(config.columns[i], config.columns.length);
-        }
+    load: function() {
+        $.post(
+            Anechoic.baseUrl + 'dashboard/layout',
+            {},
+            function(data) {
+                Anechoic.Dashboard.render(data);
+            }
+        );
     },
 
-    buildColumn: function(column, num_columns) {
-        var c = $('<div class="column column' + num_columns + ' cf"></div>').appendTo('#dashboard');
-        for (var i = 0; i < column.widgets.length; i++) {
-            var widget = column.widgets[i];
-            if (widget.type === "feed") {
-                Anechoic.Dashboard.buildFeed(c, widget);
+    render: function(widgets) {
+        var columns = {};
+        var num_columns = 0;
+
+        // build the columns and stick them in a map
+        for (var i = 0; i < widgets.length; i++) {
+            if (typeof widgets[i].column !== 'undefined' && !(widgets[i].column in columns)) {
+                columns[widgets[i].column] = $('<div class="supercolumn cf"><div class="column cf">&nbsp;</div></div>').appendTo('#dashboard').find('.column');
+                num_columns = num_columns + 1;
+            }
+        }
+
+        // add the size to columns
+        var foo = $('#dashboard').find('.supercolumn').addClass('layout_' + num_columns + '_column');
+
+        // build the widgets
+        for (var i = 0; i < widgets.length; i++) {
+            var widget = widgets[i];
+            if (widget.kind === "feed") {
+                Anechoic.Dashboard.loadFeed(columns[widget.column], widget);
             }
         }
     },
 
-    buildFeed: function(c, widget) {
+    loadFeed: function(c, widget) {
         var w = $('<div class="widget feed"></div>').appendTo(c);
 
         $.post(
             Anechoic.baseUrl + 'feed',
-            {url: widget.url, sig: "foo"},
+            {url: widget.properties.url, sig: "foo"},
             function(data) {
-                Anechoic.Dashboard.renderFeed(data, w, widget.max);
+                Anechoic.Dashboard.renderFeed(data, w, widget.properties.max);
             }
         );
     },
