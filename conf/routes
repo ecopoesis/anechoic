@@ -15,6 +15,7 @@ GET         /comment/:id                   controllers.Www.comment(id: Long)
 # Dashboard
 POST        /dashboard/addfeed             controllers.Dashboard.addFeed
 POST        /dashboard/layout              controllers.Dashboard.getLayout
+POST        /dashboard/save                controllers.Dashboard.saveLayout
 
 # Ajax Calls
 GET         /story/vote/up/:storyId        controllers.Www.voteStoryUp(storyId: Long)

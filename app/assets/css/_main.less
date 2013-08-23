@@ -311,18 +311,32 @@ margin-top: 0px;
 }
 
 #dashboard-layout {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+
+  .supercolumn {
+    float: left;
+    margin: 0px;
+    width: 20%;
+  }
+
   .column {
     margin: 10px 5px 10px 5px;
-    float: left;
-    width: 19%;
+    max-width: 100%;
     background-color: @content;
   }
 
   .unassigned {
     margin: 10px 5px 10px 5px;
-    float: left;
-    width: 19%;
+    max-width: 100%;
     background-color: darkred;
+  }
+
+  .widget {
+    margin: 10px 5px 10px 5px;
+    padding: 10px;
+    background-color: @button;
     overflow: hidden;
   }
 }

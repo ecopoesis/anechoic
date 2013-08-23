@@ -10,6 +10,7 @@ import AnormExtension._
 import model.{User, Widget}
 import model.Lookup._
 import java.sql.Connection
+import controllers.Dashboard.WidgetLocation
 
 object WidgetDao {
   val widget: RowParser[Widget] = {
@@ -30,6 +31,40 @@ object WidgetDao {
         selectProperties(id)
       )
     }
+  }
+
+  /**
+   * @todo make this use transactions - for some reason execute only returns false, so I can't use it for transactions
+   * @param user
+   * @param locations
+   * @return
+   */
+  def saveLayout(user: User, locations: List[WidgetLocation]): Boolean = {
+    DB.withConnection { implicit c =>
+      SQL(
+        """
+          |delete from widget_layout where widget_id in (select id from widgets where user_id = {user_id})
+        """.stripMargin)
+        .on('user_id -> user.numId)
+        .execute
+
+      for(location <- locations) {
+        SQL(
+          """
+            |insert into widget_layout
+            |(widget_id, col, pos)
+            |values
+            |({widget}, {column}, {position})
+          """.stripMargin)
+          .on(
+            'widget -> location.widget,
+            'column -> location.column,
+            'position -> location.position
+          )
+          .execute()
+      }
+    }
+    true
   }
 
   def getAll(userId: Long): Seq[Widget] = {

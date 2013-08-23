@@ -98,11 +98,11 @@ Anechoic.Dashboard.Config = {
         layout.empty();
 
         // create our columns
-        var c1 = $('<div class="column cf">&nbsp;</div>').appendTo(layout);
-        var c2 = $('<div class="column cf">&nbsp;</div>').appendTo(layout);
-        var c3 = $('<div class="column cf">&nbsp;</div>').appendTo(layout);
-        var c4 = $('<div class="column cf">&nbsp;</div>').appendTo(layout);
-        var unassigned = $('<div class="column unassigned cf">&nbsp;</div>').appendTo(layout)
+        var c1 = $('<div class="supercolumn cf"><div class="column cf">&nbsp;</div></div>').appendTo(layout).find('.column');
+        var c2 = $('<div class="supercolumn cf"><div class="column cf">&nbsp;</div></div>').appendTo(layout).find('.column');
+        var c3 = $('<div class="supercolumn cf"><div class="column cf">&nbsp;</div></div>').appendTo(layout).find('.column');
+        var c4 = $('<div class="supercolumn cf"><div class="column cf">&nbsp;</div></div>').appendTo(layout).find('.column');
+        var unassigned = $('<div class="supercolumn cf"><div class="column unassigned cf">Unassigned Widgets:</div></div>').appendTo(layout).find('.column');
 
         c1.sortable({connectWith: ".column"});
         c2.sortable({connectWith: ".column"});
@@ -132,9 +132,39 @@ Anechoic.Dashboard.Config = {
     },
 
     renderWidget: function(parent, widget) {
-        var w = $('<div class="draggable"></div>').appendTo(parent);
+        var w = $('<div class="widget draggable" data-id="' + widget.id + '"></div>').appendTo(parent);
         $('<i class="icon-rss"></i>').appendTo(w);
         $('<div class="url">' + widget.properties.url + '</div>').appendTo(w);
+    },
+
+    saveLayout: function() {
+        var columns = $('.column');
+
+        var payload = [];
+
+        // iterate over columns to get their widgets
+        // don't process the last column: it's always the unassigned one
+        for (var i = 0; i < columns.length - 1; i++) {
+            var widgets = $(columns[i]).find('.widget');
+            for (var j = 0; j < widgets.length; j++) {
+                var location = {};
+                location['widget'] = $(widgets[j]).data('id');
+                location['column'] = i;
+                location['position'] = j;
+                payload.push(location);
+            }
+        }
+
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            url: Anechoic.baseUrl + 'dashboard/save',
+            data: JSON.stringify({"widgets": payload}),
+            success: function(data) {
+                alert("done");
+            }
+        });
     },
 
     addFeed: function() {
