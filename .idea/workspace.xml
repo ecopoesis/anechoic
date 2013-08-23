@@ -2,56 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71f484c1-7011-43f2-87dc-059d1ffb1f16" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Dashboard.scala" afterPath="$PROJECT_DIR$/app/controllers/Dashboard.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__com_cedarsoft_guice_annotations_2_0_14.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__com_cedarsoft_guice_annotations_2_0_14.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__com_cedarsoft_guice_annotations_2_0_18.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__com_cedarsoft_guice_annotations_2_0_18.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__com_typesafe_play_plugins_util_2_10_2_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__com_typesafe_play_plugins_util_2_10_2_1_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__com_typesafe_play_plugins_util_2_10_2_1_09.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__com_typesafe_play_plugins_util_2_10_2_1_09.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__commons_beanutils_commons_beanutils_1_8_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__commons_beanutils_commons_beanutils_1_8_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__commons_beanutils_commons_beanutils_1_8_34.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__commons_beanutils_commons_beanutils_1_8_34.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__commons_validator_commons_validator_1_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__commons_validator_commons_validator_1_4_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__commons_validator_commons_validator_1_4_05.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__commons_validator_commons_validator_1_4_05.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__javax_mail_mail_1_4_13.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__javax_mail_mail_1_4_13.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__javax_mail_mail_1_4_17.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__javax_mail_mail_1_4_17.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_apache_commons_commons_email_1_22.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_apache_commons_commons_email_1_22.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_apache_commons_commons_email_1_24.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_apache_commons_commons_email_1_24.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_mindrot_jbcrypt_0_3m5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_mindrot_jbcrypt_0_3m5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_mindrot_jbcrypt_0_3m7.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_mindrot_jbcrypt_0_3m7.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_ow2_spec_ee_ow2_atinject_1_0_spec_1_0_104.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_ow2_spec_ee_ow2_atinject_1_0_spec_1_0_104.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_ow2_spec_ee_ow2_atinject_1_0_spec_1_0_107.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_ow2_spec_ee_ow2_atinject_1_0_spec_1_0_107.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_postgresql_postgresql_9_2_1002_jdbc4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_postgresql_postgresql_9_2_1002_jdbc4.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_postgresql_postgresql_9_2_1002_jdbc47.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_postgresql_postgresql_9_2_1002_jdbc47.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_anorm_2_10_2_1_16.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_anorm_2_10_2_1_16.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_anorm_2_10_2_1_18.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_anorm_2_10_2_1_18.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_2_10_2_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_2_10_2_1_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_2_10_2_1_13.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_2_10_2_1_13.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_exceptions_2_1_16.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_exceptions_2_1_16.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_exceptions_2_1_18.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_exceptions_2_1_18.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_iteratees_2_10_2_1_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_iteratees_2_10_2_1_12.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_iteratees_2_10_2_1_19.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_iteratees_2_10_2_1_19.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_java_2_10_2_1_110.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_java_2_10_2_1_110.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_java_2_10_2_1_13.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_java_2_10_2_1_13.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_jdbc_2_10_2_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_jdbc_2_10_2_1_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_jdbc_2_10_2_1_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_jdbc_2_10_2_1_12.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_test_2_10_2_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_test_2_10_2_1_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_test_2_10_2_1_15.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_test_2_10_2_1_15.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_sbt_link_2_1_17.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_sbt_link_2_1_17.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_sbt_link_2_1_18.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_sbt_link_2_1_18.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_templates_2_10_2_1_15.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_templates_2_10_2_1_15.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_templates_2_10_2_1_16.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_templates_2_10_2_1_16.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__securesocial_securesocial_2_10_master_SNAPSHOT3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__securesocial_securesocial_2_10_master_SNAPSHOT3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__securesocial_securesocial_2_10_master_SNAPSHOT7.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__securesocial_securesocial_2_10_master_SNAPSHOT7.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/dao/WidgetDao.scala" afterPath="$PROJECT_DIR$/app/dao/WidgetDao.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/dao/WidgetDaoSpec.scala" afterPath="$PROJECT_DIR$/test/dao/WidgetDaoSpec.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/css/_main.less" afterPath="$PROJECT_DIR$/app/assets/css/_main.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dashboardConfig.scala.html" afterPath="$PROJECT_DIR$/app/views/dashboardConfig.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/js/main.js" afterPath="$PROJECT_DIR$/app/assets/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/routes" afterPath="$PROJECT_DIR$/conf/routes" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="anechoic.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377267833136" ignored="false" />
+    <file path="/Dummy.txt" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377286654855" ignored="false" />
     <file path="/application.log" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371147391406" ignored="false" />
     <file path="/application.conf" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374775994625" ignored="false" />
     <file path="/100000.sql" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371147914543" ignored="false" />
@@ -100,7 +57,7 @@
     <file path="/nest.scala.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374690264108" ignored="false" />
     <file path="/3.sql" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374170189552" ignored="false" />
     <file path="/Enum.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374074435234" ignored="false" />
-    <file path="/main.js" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377281998037" ignored="false" />
+    <file path="/main.js" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377287681894" ignored="false" />
     <file path="/vote.js" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374094542773" ignored="false" />
     <file path="/Signature.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374160812137" ignored="false" />
     <file path="/global.less" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377204359253" ignored="false" />
@@ -172,7 +129,7 @@
     <file path="/5.sql" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377117914103" ignored="false" />
     <file path="/Lookup.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377202140271" ignored="false" />
     <file path="/Widget.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377201876289" ignored="false" />
-    <file path="/WidgetDao.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377285744687" ignored="false" />
+    <file path="/WidgetDao.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377286709373" ignored="false" />
     <file path="/WidgetDaoSpec.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377285920232" ignored="false" />
     <file path="/dashboardConfig.scala.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377271525574" ignored="false" />
     <file path="/Dashboard.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377286371572" ignored="false" />
@@ -283,10 +240,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WidgetDao.scala" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="WidgetDao.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/dao/WidgetDao.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="77" selection-start="1500" selection-end="1500" vertical-scroll-proportion="0.60568184">
+            <state line="34" column="20" selection-start="766" selection-end="766" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#13#34#0" expanded="true" />
               </folding>
@@ -294,19 +251,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="181" column="255" selection-start="6225" selection-end="6225" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResultExecution.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar:///Applications/play/play-2.1.1/repository/local/org.specs2/specs2_2.10/1.13/jars/specs2_2.10.jar!/org/specs2/execute/ResultExecution.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="110" column="195" selection-start="3864" selection-end="3864" vertical-scroll-proportion="0.34545454">
               <folding />
             </state>
           </provider>
@@ -351,10 +299,19 @@
       <file leaf-file-name="Dashboard.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/Dashboard.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="0" selection-start="1057" selection-end="1057" vertical-scroll-proportion="0.0">
+            <state line="28" column="143" selection-start="826" selection-end="826" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#21#43#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JsResult.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar:///Applications/play/play-2.1.1/repository/cache/play/play_2.10/jars/play_2.10-2.1.3.jar!/play/api/libs/json/JsResult.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -398,10 +355,10 @@
         <option value="$PROJECT_DIR$/app/assets/css/_main.less" />
         <option value="$PROJECT_DIR$/app/views/dashboardConfig.scala.html" />
         <option value="$PROJECT_DIR$/conf/routes" />
-        <option value="$PROJECT_DIR$/app/assets/js/main.js" />
-        <option value="$PROJECT_DIR$/app/dao/WidgetDao.scala" />
         <option value="$PROJECT_DIR$/test/dao/WidgetDaoSpec.scala" />
         <option value="$PROJECT_DIR$/app/controllers/Dashboard.scala" />
+        <option value="$PROJECT_DIR$/app/dao/WidgetDao.scala" />
+        <option value="$PROJECT_DIR$/app/assets/js/main.js" />
       </list>
     </option>
   </component>
@@ -1723,7 +1680,11 @@
       <created>1377206788104</created>
       <updated>1377206788104</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="save dashboard layout working">
+      <created>1377286671355</created>
+      <updated>1377286671355</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1821,7 +1782,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="- support adding widgets through dashboard config&#10;- support drag and drop of widgets on dashboard config (but no saving yet)" />
+    <option name="LAST_COMMIT_MESSAGE" value="save dashboard layout working" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1835,7 +1796,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="fix seo urls matcher" />
     <MESSAGE value="clean up comment" />
     <MESSAGE value="sql cleanup" />
     <MESSAGE value="cleanup comment sorting, still doesn't work correctly" />
@@ -1860,6 +1820,7 @@
     <MESSAGE value="multi-column dashboard&#10;" />
     <MESSAGE value="widgetdaospec&#10;" />
     <MESSAGE value="- support adding widgets through dashboard config&#10;- support drag and drop of widgets on dashboard config (but no saving yet)" />
+    <MESSAGE value="save dashboard layout working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1873,13 +1834,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/css/_main.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="295" column="61" selection-start="4094" selection-end="4094" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/dashboardConfig.scala.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="30" selection-start="286" selection-end="286" vertical-scroll-proportion="-5.76">
@@ -1964,16 +1918,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/js/main.js">
+    <entry file="jar:///Applications/play/play-2.1.1/repository/cache/play/play_2.10/jars/play_2.10-2.1.3.jar!/play/api/libs/json/JsResult.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="181" column="255" selection-start="6225" selection-end="6225" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/Dashboard.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1057" selection-end="1057" vertical-scroll-proportion="0.0">
+        <state line="28" column="143" selection-start="826" selection-end="826" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#21#43#0" expanded="true" />
           </folding>
@@ -1982,10 +1936,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/dao/WidgetDao.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="77" selection-start="1500" selection-end="1500" vertical-scroll-proportion="0.60568184">
+        <state line="34" column="20" selection-start="766" selection-end="766" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#13#34#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="110" column="195" selection-start="3864" selection-end="3864" vertical-scroll-proportion="0.34545454">
+          <folding />
         </state>
       </provider>
     </entry>

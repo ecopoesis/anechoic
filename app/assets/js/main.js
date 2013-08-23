@@ -112,17 +112,17 @@ Anechoic.Dashboard.Config = {
 
         // draw the widgets
         for (var i = 0; i < data.length; i++) {
-            switch(data[i].col) {
-                case 1:
+            switch(data[i].column) {
+                case 0:
                     Anechoic.Dashboard.Config.renderWidget(c1, data[i]);
                     break;
-                case 2:
+                case 1:
                     Anechoic.Dashboard.Config.renderWidget(c2, data[i]);
                     break;
-                case 3:
+                case 2:
                     Anechoic.Dashboard.Config.renderWidget(c3, data[i]);
                     break;
-                case 4:
+                case 3:
                     Anechoic.Dashboard.Config.renderWidget(c4, data[i]);
                     break;
                 default:
@@ -157,14 +157,12 @@ Anechoic.Dashboard.Config = {
 
         $.ajax({
             type: 'POST',
-            dataType: 'json',
             contentType: 'application/json; charset=utf-8',
             url: Anechoic.baseUrl + 'dashboard/save',
-            data: JSON.stringify({"widgets": payload}),
-            success: function(data) {
-                alert("done");
-            }
-        });
+            data: JSON.stringify({"widgets": payload})
+        })
+        .done(Anechoic.Dashboard.Config.reloadWidgetLayout)
+        .fail(function(jqXHR, textStatus, errorThrown){alert(errorThrown);})
     },
 
     addFeed: function() {

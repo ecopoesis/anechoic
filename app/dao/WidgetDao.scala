@@ -35,9 +35,6 @@ object WidgetDao {
 
   /**
    * @todo make this use transactions - for some reason execute only returns false, so I can't use it for transactions
-   * @param user
-   * @param locations
-   * @return
    */
   def saveLayout(user: User, locations: List[WidgetLocation]): Boolean = {
     DB.withConnection { implicit c =>
