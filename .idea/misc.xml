@@ -16,6 +16,8 @@
     <option name="snInfluenceFormat" value="0" />
     <option name="snCheckCPP" value="true" />
     <option name="snCheckC" value="true" />
+    <option name="pathToUserRulesConfiguration" value="" />
+    <option name="pathToJarWithRules" value="" />
   </component>
   <component name="DeleteUselessSourceAdvisor">
     <option name="SHOULD_OFFER_DELETE_SOURCES" value="false" />

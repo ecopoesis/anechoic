@@ -69,13 +69,18 @@ Anechoic.Dashboard = {
         }
 
         // add the size to columns
-        var foo = $('#dashboard').find('.supercolumn').addClass('layout_' + num_columns + '_column');
+        $('#dashboard').find('.supercolumn').addClass('layout_' + num_columns + '_column');
 
         // build the widgets
         for (var i = 0; i < widgets.length; i++) {
             var widget = widgets[i];
-            if (widget.kind === "feed") {
-                Anechoic.Dashboard.loadFeed(columns[widget.column], widget);
+            switch (widget.kind) {
+                case "feed":
+                    Anechoic.Dashboard.loadFeed(columns[widget.column], widget);
+                    break;
+                case "weather":
+                    Anechoic.Dashboard.loadWeather(columns[widget.coluumn], widget);
+                    break;
             }
         }
     },
@@ -85,9 +90,21 @@ Anechoic.Dashboard = {
 
         $.post(
             Anechoic.baseUrl + 'feed',
-            {url: widget.properties.url, sig: "foo"},
+            {url: widget.properties.url, sig: widget.properties.sig},
             function(data) {
                 Anechoic.Dashboard.renderFeed(data, w, widget.properties.max);
+            }
+        );
+    },
+
+    loadWeather: function(c, widget) {
+        var w = $('<div class="widget feed"></div>').appendTo(c);
+
+        $.post(
+            Anechoic.baseUrl + 'weather',
+            {url: widget.properties.wunderId, sig: widget.properties.sig},
+            function(data) {
+                Anechoic.Dashboard.renderWeather(data, w);
             }
         );
     },
@@ -99,10 +116,58 @@ Anechoic.Dashboard = {
             var item = data.items[i];
             $('<li><a href="' + item.link + '">' + item.title + '</a></li>').appendTo(l);
         }
+    },
+
+    renderWeather: function(data, w) {
+        $('<h3>' + data.title  +'</h3>').appendTo(w);
     }
 }
 
 Anechoic.Dashboard.Config = {
+    startup: function() {
+        Anechoic.Dashboard.Config.reloadWidgetLayout();
+
+        $('#city').autocomplete({
+            source: function(request, response) {
+                $.ajax({
+                    url: 'http://autocomplete.wunderground.com/aq',
+                    dataType: "jsonp",
+                    jsonp: 'cb',
+                    data: {
+                        query: request.term
+                    },
+                    success: function(data) {
+                        response($.map(data.RESULTS, function(item) {
+                            return {
+                                label: item.name,
+                                wunder_id: item.l
+                            }
+                        }));
+                    }
+                });
+            },
+            minLength: 3,
+            focus: function(event, ui){
+                $('#city').val(ui.item.label);
+                $(".ui-helper-hidden-accessible").hide();
+                return false;
+            },
+            select: function(event, ui) {
+                $('#city').val(ui.item.label);
+                $('#city').data('wunder_id', ui.item.wunder_id);
+                return false;
+            },
+            open: function() {
+            },
+            close: function() {
+            },
+            messages: {
+                noResults: '',
+                results: function() {}
+            }
+        });
+    },
+
     reloadWidgetLayout: function() {
         $.post(
             Anechoic.baseUrl + 'dashboard/layout',
@@ -151,8 +216,16 @@ Anechoic.Dashboard.Config = {
 
     renderWidget: function(parent, widget) {
         var w = $('<div class="widget draggable" data-id="' + widget.id + '"></div>').appendTo(parent);
-        $('<i class="icon-rss"></i>').appendTo(w);
-        $('<div class="url">' + widget.properties.url + '</div>').appendTo(w);
+        switch (widget.kind) {
+            case "feed":
+                $('<i class="icon-rss"></i>').appendTo(w);
+                $('<div class="id">' + widget.properties.url + '</div>').appendTo(w);
+                break;
+            case "weather":
+                $('<ul><li class="icon-sun"></li></ul>').appendTo(w);
+                $('<div class="id">' + widget.properties.city + '</div>').appendTo(w);
+                break;
+        }
     },
 
     saveLayout: function() {
@@ -189,6 +262,18 @@ Anechoic.Dashboard.Config = {
             {
                 url: $("#newfeed [name='url']").val(),
                 max: $("#newfeed [name='max']").val()
+            }
+        )
+        .done(Anechoic.Dashboard.Config.reloadWidgetLayout)
+        .fail(function(){alert("fail");})
+    },
+
+    addWeather: function() {
+        $.post(
+            Anechoic.baseUrl + 'dashboard/addweather',
+            {
+                city: $("#newweather [name='city']").val(),
+                wunder_id: $("#newweather [name='city']").data('wunder_id')
             }
         )
         .done(Anechoic.Dashboard.Config.reloadWidgetLayout)

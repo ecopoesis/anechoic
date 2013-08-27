@@ -14,6 +14,7 @@ GET         /comment/:id                   controllers.Www.comment(id: Long)
 
 # Dashboard
 POST        /dashboard/addfeed             controllers.Dashboard.addFeed
+POST        /dashboard/addweather          controllers.Dashboard.addWeather
 POST        /dashboard/layout              controllers.Dashboard.getLayout
 POST        /dashboard/save                controllers.Dashboard.saveLayout
 

@@ -28,7 +28,7 @@ object WidgetDao {
         column,
         position,
         created_at,
-        selectProperties(id)
+        collection.mutable.Map() ++ selectProperties(id)
       )
     }
   }
@@ -153,6 +153,29 @@ object WidgetDao {
           if (
             insertProperty(c, widgetId, "url", url) &&
             insertProperty(c, widgetId, "max", max.toString)) {
+
+            c.commit()
+            true
+          } else {
+            c.rollback
+            false
+          }
+        }
+        case _ => {
+          c.rollback
+          false
+        }
+      }
+    }
+  }
+
+  def addWeather(user: User, city: String, wunderId: String): Boolean = {
+    DB.withTransaction { implicit c =>
+      insertWidget(c, user.numId, "weather") match {
+        case Some(widgetId) => {
+          if (
+            insertProperty(c, widgetId, "city", city) &&
+            insertProperty(c, widgetId, "wunderId", wunderId)) {
 
             c.commit()
             true

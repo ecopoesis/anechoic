@@ -11,10 +11,12 @@ object Lookup {
   )
 
   val WidgetKind_Id_Name = Map(
-    1 -> "feed"
+    1 -> "feed",
+    2 -> "weather"
   )
 
   val WidgetKind_Name_Id = Map(
-    "feed" -> 1
+    "feed" -> 1,
+    "weather" -> 2
   )
 }

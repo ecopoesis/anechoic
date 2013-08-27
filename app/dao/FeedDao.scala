@@ -11,15 +11,18 @@ import java.net.URL
 import java.util.Locale
 import org.joda.time.format.{DateTimeFormat, ISODateTimeFormat}
 import org.joda.time.{DateTime, DateTimeZone}
+import play.api.cache.Cache
 
 object FeedDao {
+  val CacheKey = "feed_"
+  val CacheTimeout = 60 * 5
 
-  val userAgent = "Anechoic News v" + Play.current.configuration.getString("application.version") + " - www.anechoicnews.com"
+  val userAgent = "Anechoic News v" + Play.current.configuration.getString("application.version").get + " - www.anechoicnews.com"
   val iso8601DateFormat = ISODateTimeFormat.dateTimeNoMillis().withLocale(Locale.ENGLISH).withZone(DateTimeZone.UTC);
   val rssDateFormatOffsetTimezone = DateTimeFormat.forPattern("EEE, dd MMM yyyy HH:mm:ss Z").withLocale(Locale.ENGLISH).withZone(DateTimeZone.UTC);
   val rssDateFormatNoTimezone = DateTimeFormat.forPattern("EEE, dd MMM yyyy HH:mm:ss").withLocale(Locale.ENGLISH).withZone(DateTimeZone.UTC);
 
-  def get(uri: String): Option[Feed] = {
+  def get(uri: String): Option[Feed] = Cache.getOrElse(CacheKey + uri, CacheTimeout) {
     val svc = url(uri) <:< Map("User-Agent" -> userAgent)
     val f = Http.configure(_ setFollowRedirects true)(svc OK as.String)
     val xml = XML.loadString(f())

@@ -5,7 +5,7 @@ import play.api.data.Forms._
 import play.api.mvc.Controller
 import dao.{WidgetDao}
 import model.User
-import helpers.Validation
+import helpers.{Signature, Validation}
 import play.api.libs.json._
 import play.api.libs.json.Json._
 
@@ -14,7 +14,8 @@ import play.api.libs.json.Json._
  */
 object Dashboard extends Controller with securesocial.core.SecureSocial {
   case class AddFeedPost(max: Int, url: String)
-  case class WidgetLocation(widget: Int, column: Int, position: Int);
+  case class AddWeatherPost(city: String, wunderId: String)
+  case class WidgetLocation(widget: Int, column: Int, position: Int)
 
   implicit val widgetLocationFormat:Format[WidgetLocation] = Json.format[WidgetLocation]
 
@@ -26,10 +27,28 @@ object Dashboard extends Controller with securesocial.core.SecureSocial {
     )(AddFeedPost.apply)(AddFeedPost.unapply)
   )
 
+  val addWeatherPost = Form(
+    mapping(
+      "city" -> nonEmptyText(maxLength = 2000),
+      "wunder_id" -> nonEmptyText(maxLength = 2000)
+    )(AddWeatherPost.apply)(AddWeatherPost.unapply)
+  )
+
   def getLayout = SecuredAction { implicit request =>
     request.user match {
       case user: User => {
-        Ok(Json.toJson(WidgetDao.getAll(user.numId)))
+        val widgets = WidgetDao.getAll(user.numId)
+        for (widget <- widgets) {
+          widget.kind match {
+            case "feed" => {
+              widget.properties += "sig" -> Signature.sign(user.numId.toString + widget.properties.get("url").get)
+            }
+            case "weather" => {
+              widget.properties += "sig" -> Signature.sign(user.numId.toString + widget.properties.get("wunderId").get)
+            }
+          }
+        }
+        Ok(Json.toJson(widgets))
       }
       case _ => BadRequest("invalid user object")
     }
@@ -63,6 +82,24 @@ object Dashboard extends Controller with securesocial.core.SecureSocial {
           errors => BadRequest(errors.toString),
           post => {
             if (WidgetDao.addFeed(user, post.url, post.max)) {
+              Ok
+            } else {
+              InternalServerError
+            }
+          }
+        )
+      }
+      case _ => BadRequest("invalid user object")
+    }
+  }
+
+  def addWeather = SecuredAction { implicit  request =>
+    request.user match {
+      case user: User => {
+        addWeatherPost.bindFromRequest.fold(
+          errors => BadRequest(errors.toString),
+          post => {
+            if (WidgetDao.addWeather(user, post.city, post.wunderId)) {
               Ok
             } else {
               InternalServerError

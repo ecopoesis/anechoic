@@ -2,6 +2,7 @@ package model
 
 import org.joda.time.DateTime
 import play.api.libs.json.Json
+import helpers.JsonSerialization._
 
 case class Widget(
   id: Long,
@@ -10,7 +11,7 @@ case class Widget(
   column: Option[Int],
   position: Option[Int],
   createdAt: DateTime,
-  properties: Map[String, String]
+  properties: collection.mutable.Map[String, String]
 )
 
 object Widget {

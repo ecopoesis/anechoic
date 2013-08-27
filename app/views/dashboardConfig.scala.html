@@ -20,9 +20,17 @@
             </select>
             <a href="#" class="button" onclick="Anechoic.Dashboard.Config.addFeed();">add feed</a>
         </form>
+
+        <hr>
+
+        <form id="newweather" method="POST">
+            New Weather
+            <input type="text" id="city" name="city"/>
+            <a href="#" class="button" onclick="Anechoic.Dashboard.Config.addWeather();">add weather</a>
+        </form>
     </div>
 }
 
 <script>
-    $(document).ready(Anechoic.Dashboard.Config.reloadWidgetLayout);
+    $(document).ready(Anechoic.Dashboard.Config.startup);
 </script>
