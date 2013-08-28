@@ -2,16 +2,16 @@ package model
 
 case class Weather(
   location: String,
-  temp_c: Int,
+  temp_c: Float,
   temp_f: Int,
   pressure_in: Float,
   pressure_mb: Int,
   pressure_trend: String,
-  humidity: Int,
+  humidity: String,
   wind_direction: String,
   wind_mph: Float,
   wind_kph: Float,
-  wind_gust_mpg: Float,
+  wind_gust_mph: Float,
   wind_gust_kph: Float,
   image: String,
   forecast: Seq[Forecast]
