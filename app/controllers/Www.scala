@@ -18,17 +18,7 @@ import scala.Some
  * web page routes
  */
 object Www extends Controller with securesocial.core.SecureSocial {
-  case class FeedPost(sig: String, url: String)
-
   val DefaultPageSize = 25
-
-  val feedPost = Form(
-    mapping(
-      "sig" -> nonEmptyText(maxLength = 28),
-      "url" -> nonEmptyText(maxLength = 2000)
-        .verifying("must be an URL", url => Validation.url(url))
-    )(FeedPost.apply)(FeedPost.unapply)
-  )
 
   def index = UserAwareAction { implicit request =>
     Ok(views.html.index(request.user, StoryDao.getScoredList(1, DefaultPageSize)))
@@ -42,27 +32,6 @@ object Www extends Controller with securesocial.core.SecureSocial {
     request.user match {
       case user: User => {
         Ok(views.html.dashboardConfig(request.user))
-      }
-      case _ => BadRequest("invalid user object")
-    }
-  }
-
-  def feed = SecuredAction { implicit request =>
-    request.user match {
-      case user: User => {
-        feedPost.bindFromRequest.fold(
-          errors => BadRequest(errors.toString),
-          post => {
-            if (Signature.check(post.sig, user.numId.toString, post.url)) {
-              FeedDao.get(post.url) match {
-                case Some(feed) => Ok(Json.toJson(feed))
-                case _ => InternalServerError
-              }
-            } else {
-              BadRequest("invalid signature")
-            }
-          }
-        )
       }
       case _ => BadRequest("invalid user object")
     }

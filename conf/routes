@@ -4,8 +4,6 @@
 
 # Web
 GET         /                              controllers.Www.index
-GET         /dashboard                     controllers.Www.dashboard
-GET         /dashboard/config              controllers.Www.dashboardConfig
 GET         /submit                        controllers.Www.submit
 GET         /newest                        controllers.Www.newest
 GET         /story/:id                     controllers.Www.story(id: Long, seo: Option[String] =        None)
@@ -13,15 +11,22 @@ GET         /story/:seo/:id                controllers.Www.story(id: Long, seo: 
 GET         /comment/:id                   controllers.Www.comment(id: Long)
 
 # Dashboard
-POST        /dashboard/addfeed             controllers.Dashboard.addFeed
-POST        /dashboard/addweather          controllers.Dashboard.addWeather
+GET         /dashboard                     controllers.Www.dashboard
+GET         /dashboard/config              controllers.Www.dashboardConfig
+
+# Dashboard - Widgets
+POST        /dashboard/addfeed             controllers.widgets.Feed.add
+POST        /dashboard/feed                controllers.widgets.Feed.read
+POST        /dashboard/addweather          controllers.widgets.Weather.add
+POST        /dashboard/weather             controllers.widgets.Weather.read
+
+# Dashboard - Layout
 POST        /dashboard/layout              controllers.Dashboard.getLayout
 POST        /dashboard/save                controllers.Dashboard.saveLayout
 
 # Ajax Calls
 GET         /story/vote/up/:storyId        controllers.Www.voteStoryUp(storyId: Long)
 GET         /user/scheme                   controllers.Www.setScheme()
-POST        /feed                          controllers.Www.feed
 
 # Forms
 POST        /form/story                    controllers.Forms.story

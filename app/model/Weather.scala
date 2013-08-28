@@ -1,5 +1,7 @@
 package model
 
+import play.api.libs.json.Json
+
 case class Weather(
   location: String,
   temp_c: Float,
@@ -25,3 +27,13 @@ case class Forecast(
   high_f: Int,
   image: String
 )
+
+object Forecast {
+  implicit val forecastReads = Json.reads[Forecast]
+  implicit val forecastWrites = Json.writes[Forecast]
+}
+
+object Weather {
+  implicit val weatherReads = Json.reads[Weather]
+  implicit val weatherWrites = Json.writes[Weather]
+}

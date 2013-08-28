@@ -79,7 +79,7 @@ Anechoic.Dashboard = {
                     Anechoic.Dashboard.loadFeed(columns[widget.column], widget);
                     break;
                 case "weather":
-                    Anechoic.Dashboard.loadWeather(columns[widget.coluumn], widget);
+                    Anechoic.Dashboard.loadWeather(columns[widget.column], widget);
                     break;
             }
         }
@@ -89,7 +89,7 @@ Anechoic.Dashboard = {
         var w = $('<div class="widget feed"></div>').appendTo(c);
 
         $.post(
-            Anechoic.baseUrl + 'feed',
+            Anechoic.baseUrl + 'dashboard/feed',
             {url: widget.properties.url, sig: widget.properties.sig},
             function(data) {
                 Anechoic.Dashboard.renderFeed(data, w, widget.properties.max);
@@ -98,10 +98,10 @@ Anechoic.Dashboard = {
     },
 
     loadWeather: function(c, widget) {
-        var w = $('<div class="widget feed"></div>').appendTo(c);
+        var w = $('<div class="widget weather"></div>').appendTo(c);
 
         $.post(
-            Anechoic.baseUrl + 'weather',
+            Anechoic.baseUrl + 'dashboard/weather',
             {url: widget.properties.wunderId, sig: widget.properties.sig},
             function(data) {
                 Anechoic.Dashboard.renderWeather(data, w);
@@ -119,7 +119,7 @@ Anechoic.Dashboard = {
     },
 
     renderWeather: function(data, w) {
-        $('<h3>' + data.title  +'</h3>').appendTo(w);
+        $('<h3>' + data.location  +'</h3>').appendTo(w);
     }
 }
 
