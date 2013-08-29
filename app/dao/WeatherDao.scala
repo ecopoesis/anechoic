@@ -13,7 +13,7 @@ object WeatherDao {
   val CacheTimeout = 60 * 60
 
   val userAgent = "Anechoic News v" + Play.current.configuration.getString("application.version").get + " - www.anechoicnews.com"
-  val baseUrl = "http://api.wunderground.com/api/" + Play.current.configuration.getString("api.key.wunderground").get + "/forecast/conditions"
+  val baseUrl = "http://api.wunderground.com/api/" + Play.current.configuration.getString("api.key.wunderground").get + "/forecast/conditions/astronomy"
 
   def get(wunder_id: String): Option[Weather] = Cache.getOrElse(CacheKey + wunder_id, CacheTimeout) {
     val svc = url(baseUrl + wunder_id + ".json") <:< Map("User-Agent" -> userAgent)
@@ -26,30 +26,62 @@ object WeatherDao {
     val current = weather \ "current_observation"
     Weather(
       (current \ "display_location" \ "full").as[String],
-      (current \ "temp_c").as[Float],
-      (current \ "temp_f").as[Int],
-      (current \ "pressure_in").as[String].toFloat,
-      (current \ "pressure_mb").as[String].toInt,
+      parseFloat(current \ "temp_c").get,
+      parseInt(current \ "temp_f").get,
+      parseFloat(current \ "pressure_in").get,
+      parseInt(current \ "pressure_mb").get,
       (current \ "pressure_trend").as[String],
       (current \ "relative_humidity").as[String],
       (current \ "wind_dir").as[String],
-      (current \ "wind_mph").as[Float],
-      (current \ "wind_kph").as[Float],
-      (current \ "wind_gust_mph").as[String].toFloat,
-      (current \ "wind_gust_kph").as[String].toFloat,
+      parseFloat(current \ "wind_mph").get,
+      parseFloat(current \ "wind_kph").get,
+      parseFloat(current \ "wind_gust_mph").get,
+      parseFloat(current \ "wind_gust_kph").get,
       (current \ "icon").as[String],
+      parseIsDay(weather \ "moon_phase"),
       parseForecast(weather \ "forecast" \ "simpleforecast")
     )
+  }
+
+  def parseFloat(x: JsValue): Option[Float] = {
+    x.validate[Float] match {
+      case f: JsSuccess[Float] => Option(f.value)
+      case _ => {
+        x.validate[String] match {
+          case s: JsSuccess[String] => Option(s.value.toFloat)
+          case _ => None
+        }
+      }
+    }
+  }
+
+  def parseInt(x: JsValue): Option[Int] = {
+    x.validate[Int] match {
+      case i: JsSuccess[Int] => Option(i.value)
+      case _ => {
+        x.validate[String] match {
+          case s: JsSuccess[String] => Option(s.value.toInt)
+          case _ => None
+        }
+      }
+    }
+  }
+
+  def parseIsDay(astro: JsValue): Boolean = {
+    parseInt(astro \ "current_time" \ "hour").get >= parseInt(astro \ "sunrise" \ "hour").get &&
+    parseInt(astro \ "current_time" \ "minute").get >= parseInt(astro \ "sunrise" \ "minute").get &&
+    parseInt(astro \ "current_time" \ "hour").get <= parseInt(astro \ "sunset" \ "hour").get &&
+    parseInt(astro \ "current_time" \ "minute").get <= parseInt(astro \ "sunset" \ "minute").get
   }
 
   def parseForecast(forecast: JsValue): Seq[Forecast] = {
     for (day <- (forecast \ "forecastday").as[List[JsValue]]) yield {
       Forecast(
         (day \ "date" \ "weekday").as[String],
-        (day \ "low" \ "celsius").as[String].toInt,
-        (day \ "low" \ "fahrenheit").as[String].toInt,
-        (day \ "high" \ "celsius").as[String].toInt,
-        (day \ "high" \ "fahrenheit").as[String].toInt,
+        parseInt(day \ "low" \ "celsius").get,
+        parseInt(day \ "low" \ "fahrenheit").get,
+        parseInt(day \ "high" \ "celsius").get,
+        parseInt(day \ "high" \ "fahrenheit").get,
         (day \ "icon").as[String]
       )
     }

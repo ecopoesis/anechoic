@@ -1,0 +1,505 @@
+
+{
+	"response": {
+		"version": "0.1"
+		,"termsofService": "http://www.wunderground.com/weather/api/d/terms.html"
+		,"features": {
+		"forecast": 1
+		,
+		"conditions": 1
+		,
+		"astronomy": 1
+		}
+	}
+		,	"current_observation": {
+		"image": {
+		"url":"http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
+		"title":"Weather Underground",
+		"link":"http://www.wunderground.com"
+		},
+		"display_location": {
+		"full":"Sydney, New South Wales",
+		"city":"Sydney",
+		"state":"NW",
+		"state_name":"New South Wales",
+		"country":"AU",
+		"country_iso3166":"AU",
+		"zip":"00000",
+		"magic":"1",
+		"wmo":"94767",
+		"latitude":"-33.95000076",
+		"longitude":"151.17999268",
+		"elevation":"3.00000000"
+		},
+		"observation_location": {
+		"full":"Sydney, ",
+		"city":"Sydney",
+		"state":"",
+		"country":"AU",
+		"country_iso3166":"AU",
+		"latitude":"-33.95000076",
+		"longitude":"151.17999268",
+		"elevation":"10 ft"
+		},
+		"estimated": {
+		},
+		"station_id":"YSSY",
+		"observation_time":"Last Updated on August 30, 5:00 AM EST",
+		"observation_time_rfc822":"Fri, 30 Aug 2013 05:00:00 +1000",
+		"observation_epoch":"1377802800",
+		"local_time_rfc822":"Fri, 30 Aug 2013 05:08:48 +1000",
+		"local_epoch":"1377803328",
+		"local_tz_short":"EST",
+		"local_tz_long":"Australia/Sydney",
+		"local_tz_offset":"+1000",
+		"weather":"Clear",
+		"temperature_string":"64 F (18 C)",
+		"temp_f":64,
+		"temp_c":18,
+		"relative_humidity":"64%",
+		"wind_string":"From the North at 10 MPH",
+		"wind_dir":"North",
+		"wind_degrees":10,
+		"wind_mph":10,
+		"wind_gust_mph":0,
+		"wind_kph":17,
+		"wind_gust_kph":0,
+		"pressure_mb":"1014",
+		"pressure_in":"29.95",
+		"pressure_trend":"0",
+		"dewpoint_string":"52 F (11 C)",
+		"dewpoint_f":52,
+		"dewpoint_c":11,
+		"heat_index_string":"NA",
+		"heat_index_f":"NA",
+		"heat_index_c":"NA",
+		"windchill_string":"NA",
+		"windchill_f":"NA",
+		"windchill_c":"NA",
+		"feelslike_string":"64 F (18 C)",
+		"feelslike_f":"64",
+		"feelslike_c":"18",
+		"visibility_mi":"N/A",
+		"visibility_km":"N/A",
+		"solarradiation":"",
+		"UV":"-1","precip_1hr_string":"-9999.00 in (-9999.00 mm)",
+		"precip_1hr_in":"-9999.00",
+		"precip_1hr_metric":"-9999.00",
+		"precip_today_string":"0.00 in (0.0 mm)",
+		"precip_today_in":"0.00",
+		"precip_today_metric":"0.0",
+		"icon":"clear",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/nt_clear.gif",
+		"forecast_url":"http://www.wunderground.com/global/stations/94767.html",
+		"history_url":"http://www.wunderground.com/history/airport/YSSY/2013/8/30/DailyHistory.html",
+		"ob_url":"http://www.wunderground.com/cgi-bin/findweather/getForecast?query=-33.95000076,151.17999268"
+	}
+		,
+	"forecast":{
+		"txt_forecast": {
+		"date":"10:00 AM EST",
+		"forecastday": [
+		{
+		"period":0,
+		"icon":"rain",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/rain.gif",
+		"title":"Friday",
+		"fcttext":"Clear with rain in the morning, then partly cloudy. High of 77F. Winds from the NNW at 5 to 15 mph. Chance of rain 60%.",
+		"fcttext_metric":"Clear with rain in the morning, then partly cloudy. High of 25C. Breezy. Winds from the NNW at 10 to 20 km/h. Chance of rain 60%.",
+		"pop":"60"
+		}
+		,
+		{
+		"period":1,
+		"icon":"clear",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/clear.gif",
+		"title":"Friday Night",
+		"fcttext":"Clear. Low of 55F. Winds from the West at 5 to 10 mph.",
+		"fcttext_metric":"Clear. Low of 13C. Winds from the West at 10 to 15 km/h.",
+		"pop":"0"
+		}
+		,
+		{
+		"period":2,
+		"icon":"partlycloudy",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
+		"title":"Saturday",
+		"fcttext":"Partly cloudy. High of 73F. Winds from the SW at 5 to 10 mph.",
+		"fcttext_metric":"Partly cloudy. High of 23C. Winds from the SW at 10 to 15 km/h.",
+		"pop":"0"
+		}
+		,
+		{
+		"period":3,
+		"icon":"clear",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/clear.gif",
+		"title":"Saturday Night",
+		"fcttext":"Clear. Low of 54F. Winds less than 5 mph.",
+		"fcttext_metric":"Clear. Low of 12C. Winds less than 5 km/h.",
+		"pop":"0"
+		}
+		,
+		{
+		"period":4,
+		"icon":"clear",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/clear.gif",
+		"title":"Sunday",
+		"fcttext":"Clear. High of 73F. Winds from the NNW at 5 to 15 mph shifting to the NE in the afternoon.",
+		"fcttext_metric":"Clear. High of 23C. Winds from the NNW at 5 to 20 km/h shifting to the NE in the afternoon.",
+		"pop":"0"
+		}
+		,
+		{
+		"period":5,
+		"icon":"clear",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/clear.gif",
+		"title":"Sunday Night",
+		"fcttext":"Clear. Low of 57F. Winds from the NNE at 5 to 10 mph.",
+		"fcttext_metric":"Clear. Low of 14C. Winds from the NNE at 10 to 15 km/h.",
+		"pop":"0"
+		}
+		,
+		{
+		"period":6,
+		"icon":"partlycloudy",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
+		"title":"Monday",
+		"fcttext":"Clear. High of 72F. Winds from the NE at 5 to 10 mph.",
+		"fcttext_metric":"Clear. High of 22C. Winds from the NE at 5 to 15 km/h.",
+		"pop":"0"
+		}
+		,
+		{
+		"period":7,
+		"icon":"clear",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/clear.gif",
+		"title":"Monday Night",
+		"fcttext":"Clear. Low of 55F. Winds less than 5 mph.",
+		"fcttext_metric":"Clear. Low of 13C. Winds less than 5 km/h.",
+		"pop":"0"
+		}
+		]
+		},
+		"simpleforecast": {
+		"forecastday": [
+		{"date":{
+	"epoch":"1377864000",
+	"pretty":"10:00 PM EST on August 30, 2013",
+	"day":30,
+	"month":8,
+	"year":2013,
+	"yday":241,
+	"hour":22,
+	"min":"00",
+	"sec":0,
+	"isdst":"0",
+	"monthname":"August",
+	"weekday_short":"Fri",
+	"weekday":"Friday",
+	"ampm":"PM",
+	"tz_short":"EST",
+	"tz_long":"Australia/Sydney"
+},
+		"period":1,
+		"high": {
+		"fahrenheit":"77",
+		"celsius":"25"
+		},
+		"low": {
+		"fahrenheit":"55",
+		"celsius":"13"
+		},
+		"conditions":"Rain",
+		"icon":"rain",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/rain.gif",
+		"skyicon":"sunny",
+		"pop":60,
+		"qpf_allday": {
+		"in": 0.17,
+		"mm": 4.3
+		},
+		"qpf_day": {
+		"in": 0.01,
+		"mm": 0.3
+		},
+		"qpf_night": {
+		"in": 0.00,
+		"mm": 0.0
+		},
+		"snow_allday": {
+		"in": 0,
+		"cm": 0
+		},
+		"snow_day": {
+		"in": 0,
+		"cm": 0
+		},
+		"snow_night": {
+		"in": 0,
+		"cm": 0
+		},
+		"maxwind": {
+		"mph": 11,
+		"kph": 18,
+		"dir": "North",
+		"degrees": 349
+		},
+		"avewind": {
+		"mph": 8,
+		"kph": 13,
+		"dir": "NW",
+		"degrees": 306
+		},
+		"avehumidity": 53,
+		"maxhumidity": 90,
+		"minhumidity": 40
+		}
+		,
+		{"date":{
+	"epoch":"1377950400",
+	"pretty":"10:00 PM EST on August 31, 2013",
+	"day":31,
+	"month":8,
+	"year":2013,
+	"yday":242,
+	"hour":22,
+	"min":"00",
+	"sec":0,
+	"isdst":"0",
+	"monthname":"August",
+	"weekday_short":"Sat",
+	"weekday":"Saturday",
+	"ampm":"PM",
+	"tz_short":"EST",
+	"tz_long":"Australia/Sydney"
+},
+		"period":2,
+		"high": {
+		"fahrenheit":"73",
+		"celsius":"23"
+		},
+		"low": {
+		"fahrenheit":"54",
+		"celsius":"12"
+		},
+		"conditions":"Partly Cloudy",
+		"icon":"partlycloudy",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
+		"skyicon":"mostlysunny",
+		"pop":0,
+		"qpf_allday": {
+		"in": 0.00,
+		"mm": 0.0
+		},
+		"qpf_day": {
+		"in": 0.00,
+		"mm": 0.0
+		},
+		"qpf_night": {
+		"in": 0.00,
+		"mm": 0.0
+		},
+		"snow_allday": {
+		"in": 0,
+		"cm": 0
+		},
+		"snow_day": {
+		"in": 0,
+		"cm": 0
+		},
+		"snow_night": {
+		"in": 0,
+		"cm": 0
+		},
+		"maxwind": {
+		"mph": 7,
+		"kph": 11,
+		"dir": "West",
+		"degrees": 274
+		},
+		"avewind": {
+		"mph": 6,
+		"kph": 10,
+		"dir": "SE",
+		"degrees": 141
+		},
+		"avehumidity": 63,
+		"maxhumidity": 78,
+		"minhumidity": 35
+		}
+		,
+		{"date":{
+	"epoch":"1378036800",
+	"pretty":"10:00 PM EST on September 01, 2013",
+	"day":1,
+	"month":9,
+	"year":2013,
+	"yday":243,
+	"hour":22,
+	"min":"00",
+	"sec":0,
+	"isdst":"0",
+	"monthname":"September",
+	"weekday_short":"Sun",
+	"weekday":"Sunday",
+	"ampm":"PM",
+	"tz_short":"EST",
+	"tz_long":"Australia/Sydney"
+},
+		"period":3,
+		"high": {
+		"fahrenheit":"73",
+		"celsius":"23"
+		},
+		"low": {
+		"fahrenheit":"57",
+		"celsius":"14"
+		},
+		"conditions":"Clear",
+		"icon":"clear",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/clear.gif",
+		"skyicon":"sunny",
+		"pop":0,
+		"qpf_allday": {
+		"in": 0.00,
+		"mm": 0.0
+		},
+		"qpf_day": {
+		"in": 0.00,
+		"mm": 0.0
+		},
+		"qpf_night": {
+		"in": 0.00,
+		"mm": 0.0
+		},
+		"snow_allday": {
+		"in": 0,
+		"cm": 0
+		},
+		"snow_day": {
+		"in": 0,
+		"cm": 0
+		},
+		"snow_night": {
+		"in": 0,
+		"cm": 0
+		},
+		"maxwind": {
+		"mph": 11,
+		"kph": 18,
+		"dir": "NE",
+		"degrees": 56
+		},
+		"avewind": {
+		"mph": 8,
+		"kph": 13,
+		"dir": "ENE",
+		"degrees": 58
+		},
+		"avehumidity": 66,
+		"maxhumidity": 83,
+		"minhumidity": 47
+		}
+		,
+		{"date":{
+	"epoch":"1378123200",
+	"pretty":"10:00 PM EST on September 02, 2013",
+	"day":2,
+	"month":9,
+	"year":2013,
+	"yday":244,
+	"hour":22,
+	"min":"00",
+	"sec":0,
+	"isdst":"0",
+	"monthname":"September",
+	"weekday_short":"Mon",
+	"weekday":"Monday",
+	"ampm":"PM",
+	"tz_short":"EST",
+	"tz_long":"Australia/Sydney"
+},
+		"period":4,
+		"high": {
+		"fahrenheit":"72",
+		"celsius":"22"
+		},
+		"low": {
+		"fahrenheit":"55",
+		"celsius":"13"
+		},
+		"conditions":"Partly Cloudy",
+		"icon":"partlycloudy",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
+		"skyicon":"partlycloudy",
+		"pop":0,
+		"qpf_allday": {
+		"in": 0.00,
+		"mm": 0.0
+		},
+		"qpf_day": {
+		"in": 0.00,
+		"mm": 0.0
+		},
+		"qpf_night": {
+		"in": 0.00,
+		"mm": 0.0
+		},
+		"snow_allday": {
+		"in": 0,
+		"cm": 0
+		},
+		"snow_day": {
+		"in": 0,
+		"cm": 0
+		},
+		"snow_night": {
+		"in": 0,
+		"cm": 0
+		},
+		"maxwind": {
+		"mph": 9,
+		"kph": 14,
+		"dir": "ENE",
+		"degrees": 65
+		},
+		"avewind": {
+		"mph": 6,
+		"kph": 10,
+		"dir": "NE",
+		"degrees": 53
+		},
+		"avehumidity": 69,
+		"maxhumidity": 86,
+		"minhumidity": 56
+		}
+		]
+		}
+	}
+		,	"moon_phase": {
+		"percentIlluminated":"37",
+		"ageOfMoon":"23",
+		"current_time": {
+		"hour":"5",
+		"minute":"08"
+		},
+		"sunrise": {
+		"hour":"6",
+		"minute":"16"
+		},
+		"sunset": {
+		"hour":"17",
+		"minute":"35"
+		}
+	},
+	"sun_phase": {
+		"sunrise": {
+		"hour":"6",
+		"minute":"16"
+		},
+		"sunset": {
+		"hour":"17",
+		"minute":"35"
+		}
+	}
+}

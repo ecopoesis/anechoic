@@ -16,6 +16,7 @@ case class Weather(
   wind_gust_mph: Float,
   wind_gust_kph: Float,
   image: String,
+  isDay: Boolean,
   forecast: Seq[Forecast]
 )
 

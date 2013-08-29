@@ -9,28 +9,28 @@
   font-style: normal;
 }
 
-.icon-night:before,
-.icon-sunny:before,
-.icon-frosty:before,
-.icon-windysnow:before,
-.icon-showers:before,
-.icon-basecloud:before,
-.icon-cloud:before,
-.icon-rainy:before,
-.icon-mist:before,
-.icon-windysnowcloud:before,
-.icon-drizzle:before,
-.icon-snowy:before,
-.icon-sleet:before,
-.icon-moon:before,
-.icon-windyrain:before,
-.icon-hail:before,
-.icon-sunset:before,
-.icon-windyraincloud:before,
-.icon-sunrise:before,
-.icon-sun:before,
-.icon-thunder:before,
-.icon-windy:before {
+.wicon-night:before,
+.wicon-sunny:before,
+.wicon-frosty:before,
+.wicon-windysnow:before,
+.wicon-showers:before,
+.wicon-basecloud:before,
+.wicon-cloud:before,
+.wicon-rainy:before,
+.wicon-mist:before,
+.wicon-windysnowcloud:before,
+.wicon-drizzle:before,
+.wicon-snowy:before,
+.wicon-sleet:before,
+.wicon-moon:before,
+.wicon-windyrain:before,
+.wicon-hail:before,
+.wicon-sunset:before,
+.wicon-windyraincloud:before,
+.wicon-sunrise:before,
+.wicon-sun:before,
+.wicon-thunder:before,
+.wicon-windy:before {
   font-family: "iconvault";
   font-style: normal;
   font-weight: normal;
@@ -42,25 +42,215 @@
   text-decoration: inherit;
 }
 
-.icon-night:before { content: "\f100"; }
-.icon-sunny:before { content: "\f101"; }
-.icon-frosty:before { content: "\f102"; }
-.icon-windysnow:before { content: "\f103"; }
-.icon-showers:before { content: "\f104"; }
-.icon-basecloud:before { content: "\f105"; }
-.icon-cloud:before { content: "\f106"; }
-.icon-rainy:before { content: "\f107"; }
-.icon-mist:before { content: "\f108"; }
-.icon-windysnowcloud:before { content: "\f109"; }
-.icon-drizzle:before { content: "\f10a"; }
-.icon-snowy:before { content: "\f10b"; }
-.icon-sleet:before { content: "\f10c"; }
-.icon-moon:before { content: "\f10d"; }
-.icon-windyrain:before { content: "\f10e"; }
-.icon-hail:before { content: "\f10f"; }
-.icon-sunset:before { content: "\f110"; }
-.icon-windyraincloud:before { content: "\f111"; }
-.icon-sunrise:before { content: "\f112"; }
-.icon-sun:before { content: "\f113"; }
-.icon-thunder:before { content: "\f114"; }
-.icon-windy:before { content: "\f115"; }
+[class^="wicon-"],
+[class*=" wicon-"] {
+  font-family: 'iconvault';
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+  font-size: 6em;
+}
+
+/* -----BaseCloud----- */
+
+.basecloud:before  {
+  font-family: 'iconvault';
+  font-size:6em;
+  content: '\f105';
+  position:absolute;
+  color:rgb(204, 204, 204);
+}
+
+/* -----windyraincloud----- */
+
+.windyraincloud:before  {
+  font-family: 'iconvault';
+  font-size:6em;
+  content: '\f111';
+  position:absolute;
+  color:rgb(204, 204, 204);
+}
+
+/* -----Windysnowcloud----- */
+
+.windysnowcloud:before  {
+  font-family: 'iconvault';
+  font-size:6em;
+  content: '\f109';
+  position:absolute;
+  color:rgb(204, 204, 204);
+}
+
+/* -----Basethundercloud----- */
+
+.basethundercloud:before  {
+  font-family: 'iconvault';
+  font-size:6em;
+  content: '\f105';
+  position:absolute;
+  color:#000;
+}
+
+/* -----Basefullcloud----- */
+
+.basefullcloud:before  {
+  font-family: 'iconvault';
+  font-size:6em;
+  content: '\f106';
+  position:absolute;
+  color:rgb(204, 204, 204);
+}
+
+/* -----Thunder----- */
+
+.wicon-thunder::before  {
+  content: "\f114";
+  position:absolute;
+  color:rgb(255, 165, 0);
+}
+
+/* -----Sunny----- */
+
+.wicon-sunny::after {
+  content: "\f101";
+  color:rgb(255, 165, 0);
+  position: absolute;
+}
+
+/* -----Drizzle----- */
+
+.wicon-drizzle::before  {
+  content: "\f10a";
+  color: #82b2e4;
+  position: absolute;
+}
+
+/* -----Hail----- */
+
+.wicon-hail::before {
+  content: "\f10f";
+  position:absolute;
+  color:rgb(204, 204, 204);}
+
+/* -----Showers----- */
+
+.wicon-showers::before  {
+  content: "\f104";
+  position:absolute;
+  color:#82b2e4;
+}
+
+/* -----Rainy----- */
+
+.wicon-rainy::before {
+  content: "\f107";
+  position:absolute;
+  color:#4681c3;
+}
+
+/* -----Snowy----- */
+
+.wicon-snowy::before  {
+  content: "\f10b";
+  position:absolute;
+  color:#acd3f3;
+}
+
+/* -----Frosty----- */
+
+.wicon-frosty::before {
+  content: "\f102";
+  position:absolute;
+  color:#85d8f7;
+}
+
+/* -----Windy----- */
+
+.wicon-windy::before  {
+  content: "\f115";
+  position:absolute;
+  color:rgb(204, 204, 204);
+}
+
+/* -----WindyRain----- */
+
+.wicon-windyrain::before {
+  content: "\f10e";
+  position:absolute;
+  color:#acd3f3;
+}
+
+/* -----WindySnow----- */
+
+.wicon-windysnow::before {
+  content: "\f103";
+  position:absolute;
+  color:#acd3f3;
+}
+
+/* -----Sleet----- */
+
+.wicon-sleet::before  {
+  content: "\f10c";
+  position:absolute;
+  color:#acd3f3;
+}
+
+/* -----Moon----- */
+
+.wicon-moon::after {
+  content: "\f10d";
+  color:rgb(255, 165, 0);
+  position: absolute;
+}
+
+/* -----Night----- */
+
+.wicon-night::after {
+  content: "\f100";
+  position:absolute;
+  color:rgb(255, 165, 0);
+}
+
+
+/* -----Sun----- */
+
+.wicon-sun::after {
+  content: "\f113";
+  color:rgb(255, 165, 0);
+  position: absolute;
+}
+
+/* -----Cloud----- */
+
+.wicon-cloud::after {
+  content: "\f106";
+  color:rgb(204, 204, 204);
+  position: absolute;
+}
+
+
+/* -----Sunrise----- */
+
+.wicon-sunrise:before  {
+  content: '\f112';
+  color:rgb(255, 165, 0);
+  position: absolute;
+}
+
+/* -----Sunset----- */
+
+.wicon-sunset:before  {
+  content: '\f110';
+  color:#f96f23;
+  position: absolute;
+}
+
+/* -----Mist----- */
+
+.wicon-mist:before  {
+  content: '\f108';
+  color:rgb(204, 204, 204);
+  position: absolute;
+}
