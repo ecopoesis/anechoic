@@ -1,0 +1,72 @@
+<h3><%=location%></h3>
+<div class="current">
+    <ul>
+        <% if (isDay) { %>
+            <% if (image == 'chanceflurries') { %>
+                <ul><li class="basecloud"></li><li class="wicon-frosty wicon-sunny"></li></ul>
+            <% } else if (image == 'chancerain') { %>
+                <ul><li class="basecloud"></li><li class="wicon-drizzle wicon-sunny"></li></ul>
+            <% } else if (image == 'chancesleet') { %>
+                <ul><li class="basecloud"></li><li class="wicon-sleet wicon-sunny"></li></ul>
+            <% } else if (image == 'chancesnow') { %>
+                <ul><li class="basecloud"></li><li class="wicon-snowy wicon-sunny"></li></ul>
+            <% } else if (image == 'chancetstorms') { %>
+                <ul><li class="basecloud"></li><li class="wicon-thunder wicon-sunny"></li></ul>
+            <% } else if ((image == 'clear') || (image == 'sunny')) { %>
+                <ul><li class="wicon-sun"></li></ul>
+            <% } else if (image == 'cloudy') { %>
+                <ul><li class="wicon-cloud"></li></ul>
+            <% } else if (image == 'flurries') { %>
+                <ul><li class="basecloud"></li><li class="wicon-frosty"></li></ul>
+            <% } else if ((image == 'fog') || (image == 'haze')) { %>
+                <ul><li class="wicon-mist"></li></ul>
+            <% } else if ((image == 'mostlycloudy') || (image == 'mostlysunny') || (image == 'partlycloudy') || (image == 'partlysunny')) { %>
+                <ul><li class="basefullcloud"></li><li class="wicon-sunny"></li></ul>
+            <% } else if (image == 'sleet') { %>
+                <ul><li class="basecloud"></li><li class="wicon-sleet"></li></ul>
+            <% } else if (image == 'rain') { %>
+                <ul><li class="basecloud"></li><li class="wicon-drizzle"></li></ul>
+            <% } else if (image == 'snow') { %>
+                <ul><li class="basecloud"></li><li class="wicon-snowy"></li></ul>
+            <% } else if (image == 'thunder') { %>
+                <ul><li class="basecloud"></li><li class="wicon-thunder"></li></ul>
+            <% } %>
+        <% } else { %>
+            <% if (image == 'chanceflurries') { %>
+                <ul><li class="basecloud"></li><li class="wicon-frosty wicon-night"></li></ul>
+            <% } else if (image == 'chancerain') { %>
+                <ul><li class="basecloud"></li><li class="wicon-drizzle wicon-night"></li></ul>
+            <% } else if (image == 'chancesleet') { %>
+                <ul><li class="basecloud"></li><li class="wicon-sleet wicon-night"></li></ul>
+            <% } else if (image == 'chancesnow') { %>
+                <ul><li class="basecloud"></li><li class="wicon-snowy wicon-night"></li></ul>
+            <% } else if (image == 'chancetstorms') { %>
+                <ul><li class="basecloud"></li><li class="wicon-thunder wicon-night"></li></ul>
+            <% } else if ((image == 'clear') || (image == 'sunny')) { %>
+                <ul><li class="wicon-moon"></li></ul>
+            <% } else if (image == 'cloudy') { %>
+                <ul><li class="wicon-cloud"></li></ul>
+            <% } else if (image == 'flurries') { %>
+                <ul><li class="basecloud"></li><li class="wicon-frosty"></li></ul>
+            <% } else if ((image == 'fog') || (image == 'haze')) { %>
+                <ul><li class="wicon-mist"></li></ul>
+            <% } else if ((image == 'mostlycloudy') || (image == 'mostlysunny') || (image == 'partlycloudy') || (image == 'partlysunny')) { %>
+                <ul><li class="basefullcloud"></li><li class="wicon-night"></li></ul>
+            <% } else if (image == 'sleet') { %>
+                <ul><li class="basecloud"></li><li class="wicon-sleet"></li></ul>
+            <% } else if (image == 'rain') { %>
+                <ul><li class="basecloud"></li><li class="wicon-drizzle"></li></ul>
+            <% } else if (image == 'snow') { %>
+                <ul><li class="basecloud"></li><li class="wicon-snowy"></li></ul>
+            <% } else if (image == 'thunder') { %>
+                <ul><li class="basecloud"></li><li class="wicon-thunder"></li></ul>
+            <% } %>
+        <% } %>
+    </ul>
+    <div class="temp">
+        <%=temp_f%>&deg;F
+    </div>
+</div>
+<div class="detail">
+    <%=humidity%> RH | <%=Anechoic.Utils.round_2(wind_mph)%> mph <%=wind_direction%> | <%=Anechoic.Utils.round_2(pressure_in)%> inHg <%=pressure_trend%>
+</div>

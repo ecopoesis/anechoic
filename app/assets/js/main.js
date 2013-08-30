@@ -1,5 +1,11 @@
 var Anechoic =  Anechoic || {};
 
+Anechoic.Utils = {
+    round_2: function(v) {
+        return Math.round(v * 100) / 100;
+    }
+}
+
 Anechoic.Vote = {
     vote: function(type, id, direction, signature) {
         var item = type + '_' + id;
@@ -119,64 +125,9 @@ Anechoic.Dashboard = {
     },
 
     renderWeather: function(data, w) {
-        $('<h3>' + data.location  +'</h3>').appendTo(w);
-
-        var chance = 'wicon-sunny';
-        var clear = 'wicon-sun';
-        if (data.isDay) {
-            chance = 'wicon-night';
-            clear = 'wicon-moon';
-        }
-
-        switch (data.image) {
-            case 'chanceflurries':
-                $('<ul><li class="basecloud"></li><li class="wicon-frosty ' + chance + '"></li></ul>').appendTo(w);
-                break;
-            case 'chancerain':
-                $('<ul><li class="basecloud"></li><li class="wicon-drizzle ' + chance + '"></li></ul>').appendTo(w);
-                break;
-            case 'chancesleet':
-                $('<ul><li class="basecloud"></li><li class="wicon-sleet ' + chance + '"></li></ul>').appendTo(w);
-                break;
-            case 'chancesnow':
-                $('<ul><li class="basecloud"></li><li class="wicon-snowy ' + chance + '"></li></ul>').appendTo(w);
-                break;
-            case 'chancetstorms':
-                $('<ul><li class="basecloud"></li><li class="wicon-thunder ' + chance + '"></li></ul>').appendTo(w);
-                break;
-            case 'clear':
-            case 'sunny':
-                $('<ul><li class="' + clear + '"></li></ul>').appendTo(w);
-                break;
-            case 'cloudy':
-                $('<ul><li class="wicon-cloud"></li></ul>').appendTo(w);
-                break;
-            case 'flurries':
-                $('<ul><li class="basecloud"></li><li class="wicon-frosty"></li></ul>').appendTo(w);
-                break;
-            case 'fog':
-            case 'haze':
-                $('<ul><li class="wicon-mist"></li></ul>').appendTo(w);
-                break;
-            case 'mostlycloudy':
-            case 'mostlysunny':
-            case 'partlycloudy':
-            case 'partlysunny':
-                $('<ul><li class="basefullcloud"></li><li class="' + chance + '"></li></ul>').appendTo(w);
-                break;
-            case 'sleet':
-                $('<ul><li class="basecloud"></li><li class="wicon-sleet"></li></ul>').appendTo(w);
-                break;
-            case 'rain':
-                $('<ul><li class="basecloud"></li><li class="wicon-drizzle"></li></ul>').appendTo(w);
-                break;
-            case 'snow':
-                $('<ul><li class="basecloud"></li><li class="wicon-snowy"></li></ul>').appendTo(w);
-                break;
-            case 'thunder':
-                $('<ul><li class="basecloud"></li><li class="wicon-thunder"></li></ul>').appendTo(w);
-                break;
-        }
+        var template = $("#weather-template").html();
+        var html = _.template(template, data);
+        w.html(html);
     }
 }
 

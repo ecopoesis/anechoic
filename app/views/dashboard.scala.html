@@ -8,6 +8,10 @@
     </div>
 }
 
+<script id="weather-template" type="text/x-lowdash-template">
+    @Html(helpers.Web.include("resources/weather._"))
+</script>
+
 <script>
     $(document).ready(function() { Anechoic.Dashboard.load(); });
 </script>
