@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="71f484c1-7011-43f2-87dc-059d1ffb1f16" name="Default" comment="heroku">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/conf/heroku.conf" />
+    <list default="true" id="71f484c1-7011-43f2-87dc-059d1ffb1f16" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Procfile" afterPath="$PROJECT_DIR$/Procfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/application.conf" afterPath="$PROJECT_DIR$/conf/application.conf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="anechoic.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378761653422" ignored="false" />
+    <file path="/Dummy.txt" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378761845464" ignored="false" />
     <file path="/application.log" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371147391406" ignored="false" />
     <file path="/application.conf" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378761312955" ignored="false" />
     <file path="/100000.sql" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371147914543" ignored="false" />
@@ -145,6 +143,7 @@
     <file path="/weather-icon._" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378750668509" ignored="false" />
     <file path="/production.conf" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378761836463" ignored="false" />
     <file path="/Procfile" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378761816021" ignored="false" />
+    <file path="/heroku.conf" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378762225071" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,19 +228,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="heroku.conf" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="heroku.conf" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conf/heroku.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="87" selection-start="59" selection-end="59" vertical-scroll-proportion="0.076009504">
+            <state line="4" column="84" selection-start="59" selection-end="59" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Procfile" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Procfile" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Procfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="153" selection-start="153" selection-end="153" vertical-scroll-proportion="0.0">
+            <state line="0" column="160" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -333,8 +332,8 @@
         <option value="$PROJECT_DIR$/app/assets/js/main.js" />
         <option value="$PROJECT_DIR$/conf/application.conf" />
         <option value="$PROJECT_DIR$/conf/production.conf" />
-        <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/conf/heroku.conf" />
+        <option value="$PROJECT_DIR$/Procfile" />
       </list>
     </option>
   </component>
@@ -1470,7 +1469,11 @@
       <created>1378759053794</created>
       <updated>1378759053794</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="heroku config">
+      <created>1378761848360</created>
+      <updated>1378761848360</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1568,7 +1571,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic search widget" />
+    <option name="LAST_COMMIT_MESSAGE" value="heroku config" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1582,7 +1585,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="#8 - join page styling&#10;&#10;also, fix static assets paths" />
     <MESSAGE value="fix #8 - securesocial templates updated" />
     <MESSAGE value="fix #22 - use google cdn for jquery" />
     <MESSAGE value="fix #16 - persist login with user" />
@@ -1607,6 +1609,7 @@
     <MESSAGE value="switch weather to lodash templating" />
     <MESSAGE value="weather widget layout done" />
     <MESSAGE value="basic search widget" />
+    <MESSAGE value="heroku config" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1712,13 +1715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Procfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="153" selection-start="153" selection-end="153" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/conf/application.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="0" selection-start="0" selection-end="23" vertical-scroll-proportion="0.0">
@@ -1728,7 +1724,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/conf/heroku.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="87" selection-start="59" selection-end="59" vertical-scroll-proportion="0.076009504">
+        <state line="4" column="84" selection-start="59" selection-end="59" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="160" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
