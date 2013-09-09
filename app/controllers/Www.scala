@@ -25,7 +25,7 @@ object Www extends Controller with securesocial.core.SecureSocial {
   }
 
   def dashboard = SecuredAction { implicit request =>
-    Ok(views.html.dashboard(request.user))
+    Ok(views.html.dashboard(request.user, "google"))
   }
 
   def dashboardConfig = SecuredAction { implicit request =>

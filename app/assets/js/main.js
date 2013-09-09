@@ -52,6 +52,8 @@ Anechoic.Form = {
 }
 
 Anechoic.Dashboard = {
+    searchProvider: 'google',
+
     load: function() {
         $.post(
             Anechoic.baseUrl + 'dashboard/layout',
@@ -60,6 +62,25 @@ Anechoic.Dashboard = {
                 Anechoic.Dashboard.render(data);
             }
         );
+
+        $('#search').keypress(function(e){
+            // enter key
+            if (e.which == 13) {
+                Anechoic.Dashboard.search();
+            }
+        });
+    },
+
+    search: function() {
+        var url = encodeURI($('#search').val());
+        switch (Anechoic.Dashboard.searchProvider) {
+            case 'bing':
+                url = 'http://www.bing.com/search?q=' + url;
+            default:
+                url = 'http://www.google.com/search?q=' + url;
+        }
+        window.open(url, '_blank');
+        return false;
     },
 
     render: function(widgets) {

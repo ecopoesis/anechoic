@@ -1,10 +1,16 @@
-@(user:securesocial.core.Identity)(implicit request: play.api.mvc.RequestHeader)
+@(user: securesocial.core.Identity, search: String)(implicit request: play.api.mvc.RequestHeader)
 
 @import tags._
 
 @frame(Option(user), Option("Dashboard")) {
     <div id="dashboard" class="dashboard">
-        <div class="top"><a href="//@request.host/dashboard/config"><i class="icon-gears"></i></a></div>
+        <div class="config">
+            <a href="//@request.host/dashboard/config"><i class="icon-gears"></i></a>
+        </div>
+        <div class="search">
+            <input type="text" id="search" name="search">
+            <a href="#" class="button" onclick="Anechoic.Dashboard.search();">search</a>
+        </div>
     </div>
 }
 
@@ -17,5 +23,6 @@
 </script>
 
 <script>
+    Anechoic.Dashboard.searchProvider = '@search';
     $(document).ready(function() { Anechoic.Dashboard.load(); });
 </script>
