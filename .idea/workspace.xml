@@ -1,48 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="71f484c1-7011-43f2-87dc-059d1ffb1f16" name="Default" comment="- fix weather parsing&#10;- add waether icons">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/Web.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/lodash-1.3.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/conf/resources/weather._" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__com_typesafe_play_plugins_util_2_10_2_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__com_typesafe_play_plugins_util_2_10_2_1_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__com_typesafe_play_plugins_util_2_10_2_1_09.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__com_typesafe_play_plugins_util_2_10_2_1_09.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__commons_beanutils_commons_beanutils_1_8_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__commons_beanutils_commons_beanutils_1_8_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__commons_beanutils_commons_beanutils_1_8_34.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__commons_beanutils_commons_beanutils_1_8_34.xml" />
+    <list default="true" id="71f484c1-7011-43f2-87dc-059d1ffb1f16" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/conf/resources/weather-icon._" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__com_cedarsoft_guice_annotations_2_0_17.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__com_cedarsoft_guice_annotations_2_0_17.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__com_cedarsoft_guice_annotations_2_0_18.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__com_cedarsoft_guice_annotations_2_0_18.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__commons_validator_commons_validator_1_4_04.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__commons_validator_commons_validator_1_4_04.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__commons_validator_commons_validator_1_4_05.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__commons_validator_commons_validator_1_4_05.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__javax_mail_mail_1_4_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__javax_mail_mail_1_4_12.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__javax_mail_mail_1_4_15.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__javax_mail_mail_1_4_15.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__javax_mail_mail_1_4_14.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__javax_mail_mail_1_4_14.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_apache_commons_commons_email_1_22.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_apache_commons_commons_email_1_22.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_apache_commons_commons_email_1_28.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_apache_commons_commons_email_1_28.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_ow2_spec_ee_ow2_atinject_1_0_spec_1_0_102.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_ow2_spec_ee_ow2_atinject_1_0_spec_1_0_102.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_apache_commons_commons_email_1_23.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_apache_commons_commons_email_1_23.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_mindrot_jbcrypt_0_3m2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_mindrot_jbcrypt_0_3m2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_mindrot_jbcrypt_0_3m5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_mindrot_jbcrypt_0_3m5.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_ow2_spec_ee_ow2_atinject_1_0_spec_1_0_105.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_ow2_spec_ee_ow2_atinject_1_0_spec_1_0_105.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_anorm_2_10_2_1_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_anorm_2_10_2_1_12.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_ow2_spec_ee_ow2_atinject_1_0_spec_1_0_106.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_ow2_spec_ee_ow2_atinject_1_0_spec_1_0_106.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_postgresql_postgresql_9_2_1002_jdbc45.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_postgresql_postgresql_9_2_1002_jdbc45.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_postgresql_postgresql_9_2_1002_jdbc47.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_postgresql_postgresql_9_2_1002_jdbc47.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_anorm_2_10_2_1_13.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_anorm_2_10_2_1_13.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_anorm_2_10_2_1_18.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_anorm_2_10_2_1_18.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_2_10_2_1_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_2_10_2_1_12.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_2_10_2_1_13.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_2_10_2_1_13.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_2_10_2_1_15.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_2_10_2_1_15.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_exceptions_2_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_exceptions_2_1_1.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_exceptions_2_1_14.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_exceptions_2_1_14.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_exceptions_2_1_16.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_exceptions_2_1_16.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_iteratees_2_10_2_1_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_iteratees_2_10_2_1_12.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_iteratees_2_10_2_1_19.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_iteratees_2_10_2_1_19.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_java_2_10_2_1_110.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_java_2_10_2_1_110.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_java_2_10_2_1_17.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_java_2_10_2_1_17.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_java_2_10_2_1_18.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_java_2_10_2_1_18.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_jdbc_2_10_2_1_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_jdbc_2_10_2_1_12.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_jdbc_2_10_2_1_14.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_jdbc_2_10_2_1_14.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_test_2_10_2_1_13.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_test_2_10_2_1_13.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_test_2_10_2_1_15.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_test_2_10_2_1_15.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_test_2_10_2_1_19.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_test_2_10_2_1_19.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_sbt_link_2_1_16.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_sbt_link_2_1_16.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_sbt_link_2_1_17.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_sbt_link_2_1_17.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__securesocial_securesocial_2_10_master_SNAPSHOT7.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__securesocial_securesocial_2_10_master_SNAPSHOT7.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_templates_2_10_2_1_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_templates_2_10_2_1_12.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_templates_2_10_2_1_15.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_templates_2_10_2_1_15.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__securesocial_securesocial_2_10_master_SNAPSHOT4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__securesocial_securesocial_2_10_master_SNAPSHOT4.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__securesocial_securesocial_2_10_master_SNAPSHOT9.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__securesocial_securesocial_2_10_master_SNAPSHOT9.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/dao/WeatherDao.scala" afterPath="$PROJECT_DIR$/app/dao/WeatherDao.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/css/_main.less" afterPath="$PROJECT_DIR$/app/assets/css/_main.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tags/basic.scala.html" afterPath="$PROJECT_DIR$/app/views/tags/basic.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dashboard.scala.html" afterPath="$PROJECT_DIR$/app/views/dashboard.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/css/global.less" afterPath="$PROJECT_DIR$/app/assets/css/global.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/js/main.js" afterPath="$PROJECT_DIR$/app/assets/js/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/css/weather-icons.less" afterPath="$PROJECT_DIR$/app/assets/css/weather-icons.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/resources/weather._" afterPath="$PROJECT_DIR$/conf/resources/weather._" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="anechoic.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377888071571" ignored="false" />
+    <file path="/Dummy.txt" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378748698189" ignored="false" />
     <file path="/application.log" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371147391406" ignored="false" />
     <file path="/application.conf" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377623039183" ignored="false" />
     <file path="/100000.sql" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371147914543" ignored="false" />
@@ -90,11 +94,11 @@
     <file path="/nest.scala.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374690264108" ignored="false" />
     <file path="/3.sql" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374170189552" ignored="false" />
     <file path="/Enum.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374074435234" ignored="false" />
-    <file path="/main.js" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377886430007" ignored="false" />
+    <file path="/main.js" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378750808687" ignored="false" />
     <file path="/vote.js" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374094542773" ignored="false" />
     <file path="/Signature.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374160812137" ignored="false" />
-    <file path="/global.less" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377632200257" ignored="false" />
-    <file path="/_main.less" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377876592263" ignored="false" />
+    <file path="/global.less" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378755840905" ignored="false" />
+    <file path="/_main.less" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378756104108" ignored="false" />
     <file path="/variables.less" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374260930923" ignored="false" />
     <file path="/font-awesome.less" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374261388299" ignored="false" />
     <file path="$PROJECT_DIR$/target/scala-2.10/resource_managed/main/public/javascripts/main.js" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374263701460" ignored="false" />
@@ -142,7 +146,7 @@
     <file path="/resetPasswordPage.scala.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374873115051" ignored="false" />
     <file path="/passwordChange.scala.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374854734275" ignored="false" />
     <file path="/4.sql" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1374866118964" ignored="false" />
-    <file path="/dashboard.scala.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377892729131" ignored="false" />
+    <file path="/dashboard.scala.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378750711019" ignored="false" />
     <file path="/Applications/play/play-2.1.1/repository/cache/securesocial/securesocial_2.10/jars/securesocial_2.10-master-SNAPSHOT.jar!/securesocial/controllers/LoginPage.class" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1376072065755" ignored="false" />
     <file path="/Applications/play/play-2.1.1/repository/cache/securesocial/securesocial_2.10/jars/securesocial_2.10-master-SNAPSHOT.jar!/securesocial/controllers/ProviderController.class" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1376072065755" ignored="false" />
     <file path="/Applications/play/play-2.1.1/repository/cache/securesocial/securesocial_2.10/jars/securesocial_2.10-master-SNAPSHOT.jar!/securesocial/controllers/Registration.class" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1376072065755" ignored="false" />
@@ -166,15 +170,16 @@
     <file path="/Dashboard.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377723046748" ignored="false" />
     <file path="/6.sql" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377199574683" ignored="false" />
     <file path="/apikeys.conf" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377623803771" ignored="false" />
-    <file path="/WeatherDao.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377805363047" ignored="false" />
+    <file path="/WeatherDao.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378749281127" ignored="false" />
     <file path="/Weather.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377801921988" ignored="false" />
     <file path="/WeatherDaoSpec.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377805694715" ignored="false" />
-    <file path="/weather-icons.less" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377894002070" ignored="false" />
+    <file path="/weather-icons.less" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378755785679" ignored="false" />
     <file path="/weather.scala.handlebar" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377877024763" ignored="false" />
     <file path="/weather.scala.html" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377888157895" ignored="false" />
     <file path="$PROJECT_DIR$/target/scala-2.10/src_managed/main/views/html/widgets/weather.template.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377888693791" ignored="false" />
     <file path="/Web.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377892516443" ignored="false" />
-    <file path="/weather._" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377894132368" ignored="false" />
+    <file path="/weather._" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378755972062" ignored="false" />
+    <file path="/weather-icon._" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378750668509" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,6 +199,8 @@
     <sortChildren value="false" />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -230,24 +237,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/app/helpers/Web.scala" line="7" class="helpers.Web$" package="helpers">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -257,30 +246,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="130" column="5" selection-start="4028" selection-end="4028" vertical-scroll-proportion="0.24048096">
+            <state line="108" column="61" selection-start="3262" selection-end="3262" vertical-scroll-proportion="-0.8">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lodash-1.3.1.min.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/lodash-1.3.1.min.js">
+      <file leaf-file-name="weather._" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conf/resources/weather._">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state line="16" column="0" selection-start="643" selection-end="643" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="basic.scala.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/tags/basic.scala.html">
+      <file leaf-file-name="global.less" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/css/global.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="35" selection-start="35" selection-end="35" vertical-scroll-proportion="-0.0">
+            <state line="15" column="21" selection-start="375" selection-end="394" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_main.less" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/css/_main.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="321" column="91" selection-start="4578" selection-end="4578" vertical-scroll-proportion="0.03807615">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="weather-icon._" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conf/resources/weather-icon._">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="17" selection-start="45" selection-end="45" vertical-scroll-proportion="-0.627451">
               <folding />
             </state>
           </provider>
@@ -298,7 +303,7 @@
       <file leaf-file-name="dashboard.scala.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/dashboard.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="14" column="24" selection-start="455" selection-end="455" vertical-scroll-proportion="-8.96">
               <folding />
             </state>
           </provider>
@@ -307,16 +312,7 @@
       <file leaf-file-name="weather-icons.less" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/css/weather-icons.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="16" selection-start="1343" selection-end="1346" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WeatherDaoSpec.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/dao/WeatherDaoSpec.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="0" selection-start="315" selection-end="472" vertical-scroll-proportion="0.0">
+            <state line="180" column="53" selection-start="3338" selection-end="3338" vertical-scroll-proportion="-0.21568628">
               <folding />
             </state>
           </provider>
@@ -325,7 +321,7 @@
       <file leaf-file-name="WeatherDao.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/dao/WeatherDao.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="737" selection-end="737" vertical-scroll-proportion="0.0">
+            <state line="78" column="83" selection-start="2909" selection-end="2909" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -334,18 +330,7 @@
       <file leaf-file-name="Web.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/helpers/Web.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="208" selection-end="208" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#17#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="weather._" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/resources/weather._">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="41" selection-start="2977" selection-end="2977" vertical-scroll-proportion="-9.784314">
+            <state line="11" column="226" selection-start="234" selection-end="234" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -369,22 +354,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/Dashboard.scala" />
-        <option value="$PROJECT_DIR$/app/controllers/widgets/Weather.scala" />
         <option value="$PROJECT_DIR$/app/views/tags/frame.scala.html" />
         <option value="$PROJECT_DIR$/app/views/dashboardConfig.scala.html" />
         <option value="$PROJECT_DIR$/app/model/Weather.scala" />
         <option value="$PROJECT_DIR$/test/dao/WeatherDaoSpec.scala" />
-        <option value="$PROJECT_DIR$/app/dao/WeatherDao.scala" />
-        <option value="$PROJECT_DIR$/app/assets/css/weather-icons.less" />
-        <option value="$PROJECT_DIR$/app/assets/css/_main.less" />
         <option value="$PROJECT_DIR$/app/views/handlebar/widget/weather.scala.handlebar" />
         <option value="$PROJECT_DIR$/app/views/tags/basic.scala.html" />
         <option value="$PROJECT_DIR$/app/views/widgets/weather.scala.html" />
         <option value="$PROJECT_DIR$/app/helpers/Web.scala" />
+        <option value="$PROJECT_DIR$/app/dao/WeatherDao.scala" />
+        <option value="$PROJECT_DIR$/conf/resources/weather-icon._" />
         <option value="$PROJECT_DIR$/app/views/dashboard.scala.html" />
-        <option value="$PROJECT_DIR$/conf/resources/weather._" />
         <option value="$PROJECT_DIR$/app/assets/js/main.js" />
+        <option value="$PROJECT_DIR$/app/assets/css/weather-icons.less" />
+        <option value="$PROJECT_DIR$/app/assets/css/global.less" />
+        <option value="$PROJECT_DIR$/conf/resources/weather._" />
+        <option value="$PROJECT_DIR$/app/assets/css/_main.less" />
       </list>
     </option>
   </component>
@@ -907,6 +892,32 @@
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="anechoic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="anechoic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -955,14 +966,10 @@
       <recent name="controllers" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/conf/resources" />
       <recent name="$PROJECT_DIR$/conf/evolutions/default" />
       <recent name="$PROJECT_DIR$/app/views" />
       <recent name="$PROJECT_DIR$/app/views/tags" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="helpers" />
-      <recent name="dao" />
-      <recent name="controllers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/conf/resources" />
@@ -970,6 +977,11 @@
       <recent name="$PROJECT_DIR$/app/views/tags" />
       <recent name="$PROJECT_DIR$/public/js" />
       <recent name="$PROJECT_DIR$/app/assets/stylesheets" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="helpers" />
+      <recent name="dao" />
+      <recent name="controllers" />
     </key>
   </component>
   <component name="RunManager" selected="Play 2 App.anechoic">
@@ -1557,7 +1569,11 @@
       <created>1377809954930</created>
       <updated>1377809954930</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="switch weather to lodash templating">
+      <created>1377894346752</created>
+      <updated>1377894346752</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1587,7 +1603,6 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299532" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20030816" sideWeight="0.4993865" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16805112" sideWeight="0.7995595" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20955315" sideWeight="0.6822086" order="3" side_tool="false" content_ui="tabs" />
@@ -1610,6 +1625,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24968995" sideWeight="0.6700468" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20030816" sideWeight="0.4993865" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1655,7 +1671,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="- fix weather parsing&#10;- add waether icons" />
+    <option name="LAST_COMMIT_MESSAGE" value="switch weather to lodash templating" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1669,7 +1685,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="fix #7 - version static resources" />
     <MESSAGE value="#8 - switch to our own copies of the securesocial templates" />
     <MESSAGE value="#8 - login page styling" />
     <MESSAGE value="#8 - join page styling&#10;&#10;also, fix static assets paths" />
@@ -1694,6 +1709,7 @@
     <MESSAGE value="- weather parsing" />
     <MESSAGE value="- refactoring&#10;- basic end-to-end weather" />
     <MESSAGE value="- fix weather parsing&#10;- add waether icons" />
+    <MESSAGE value="switch weather to lodash templating" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1708,45 +1724,20 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Applications/play/play-2.1.1/repository/cache/play/play_2.10/jars/play_2.10-2.1.3.jar!/play/utils/Threads.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/css/global.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/css/_main.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="295" column="21" selection-start="4169" selection-end="4169" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/submit.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="89" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="89" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/tags/frame.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/lodash-1.3.1.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1764,6 +1755,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Applications/play/play-2.1.1/repository/cache/play/play_2.10/jars/play_2.10-2.1.3.jar!/play/api/templates/Html.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="0" selection-end="831" vertical-scroll-proportion="0.21116751" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/Web.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="226" selection-start="234" selection-end="234" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/dashboard.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="24" selection-start="455" selection-end="455" vertical-scroll-proportion="-8.96">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/dao/WeatherDao.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="83" selection-start="2909" selection-end="2909" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/model/Weather.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="11" selection-start="58" selection-end="58" vertical-scroll-proportion="0.0">
@@ -1771,53 +1788,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Applications/play/play-2.1.1/repository/cache/play/play_2.10/jars/play_2.10-2.1.3.jar!/play/api/templates/Html.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="0" selection-end="831" vertical-scroll-proportion="0.21116751">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/Web.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="208" selection-end="208" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#17#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/dashboard.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/dao/WeatherDao.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="737" selection-end="737" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/css/weather-icons.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="16" selection-start="1343" selection-end="1346" vertical-scroll-proportion="0.0">
+        <state line="180" column="53" selection-start="3338" selection-end="3338" vertical-scroll-proportion="-0.21568628">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/resources/weather._">
+    <entry file="file://$PROJECT_DIR$/conf/resources/weather-icon._">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="41" selection-start="2977" selection-end="2977" vertical-scroll-proportion="-9.784314">
+        <state line="2" column="17" selection-start="45" selection-end="45" vertical-scroll-proportion="-0.627451">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="5" selection-start="4028" selection-end="4028" vertical-scroll-proportion="0.24048096">
+        <state line="108" column="61" selection-start="3262" selection-end="3262" vertical-scroll-proportion="-0.8">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/resources/weather._">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="643" selection-end="643" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/css/global.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="21" selection-start="375" selection-end="394" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/css/_main.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="321" column="91" selection-start="4578" selection-end="4578" vertical-scroll-proportion="0.03807615">
           <folding />
         </state>
       </provider>

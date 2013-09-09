@@ -125,8 +125,9 @@ Anechoic.Dashboard = {
     },
 
     renderWeather: function(data, w) {
-        var template = $("#weather-template").html();
-        var html = _.template(template, data);
+        var template = _.template($("#weather-template").html());
+        var icon = _.template($("#weather-icon-template").html());
+        var html = template({data: data, icon: icon});
         w.html(html);
     }
 }

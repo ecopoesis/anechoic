@@ -1,5 +1,4 @@
 @import "font-awesome/font-awesome";
-@import "weather-icons";
 
 @eigengrau: #16161D;
 @cosmic_beige: #FFF8E7;
@@ -12,8 +11,14 @@
   @button: lighten(@eigengrau, 20%);
   @detail: lighten(@eigengrau, 30%);
   @detail-text: lighten(@eigengrau, 40%);
+
+  @weather-grey: @foreground;
+  @weather-cool-color: #FFA500;
+  @weather-warm-color: #6897BB;
+
   @link: #6897BB;
   @import "_main";
+  @import "weather-icons";
 }
 
 .light {
@@ -23,6 +28,12 @@
   @button: darken(@cosmic_beige, 12.5%);
   @detail: darken(@cosmic_beige, 20%);
   @detail-text: darken(@cosmic_beige, 40%);
-  @link: #0000FF;
+
+  @weather-grey: @foreground;
+  @weather-cool-color: #ff3900;
+  @weather-warm-color: #1b48bb;
+
+  @link: #1B48BB;
   @import "_main";
+  @import "weather-icons";
 }

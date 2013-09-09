@@ -1,0 +1,63 @@
+<ul>
+    <% if (isDay) { %>
+        <% if (image == 'chanceflurries') { %>
+            <li class="basecloud"></li><li class="wicon-frosty wicon-sunny"></li>
+        <% } else if (image == 'chancerain') { %>
+            <li class="basecloud"></li><li class="wicon-drizzle wicon-sunny"></li>
+        <% } else if (image == 'chancesleet') { %>
+            <li class="basecloud"></li><li class="wicon-sleet wicon-sunny"></li>
+        <% } else if (image == 'chancesnow') { %>
+            <li class="basecloud"></li><li class="wicon-snowy wicon-sunny"></li>
+        <% } else if (image == 'chancetstorms') { %>
+            <li class="basecloud"></li><li class="wicon-thunder wicon-sunny"></li>
+        <% } else if ((image == 'clear') || (image == 'sunny')) { %>
+            <li class="wicon-sun"></li>
+        <% } else if (image == 'cloudy') { %>
+            <li class="wicon-cloud"></li>
+        <% } else if (image == 'flurries') { %>
+            <li class="basecloud"></li><li class="wicon-frosty"></li>
+        <% } else if ((image == 'fog') || (image == 'haze')) { %>
+            <li class="wicon-mist"></li>
+        <% } else if ((image == 'mostlycloudy') || (image == 'mostlysunny') || (image == 'partlycloudy') || (image == 'partlysunny')) { %>
+            <li class="basefullcloud"></li><li class="wicon-sunny"></li>
+        <% } else if (image == 'sleet') { %>
+            <li class="basecloud"></li><li class="wicon-sleet"></li>
+        <% } else if (image == 'rain') { %>
+            <li class="basecloud"></li><li class="wicon-drizzle"></li>
+        <% } else if (image == 'snow') { %>
+            <li class="basecloud"></li><li class="wicon-snowy"></li>
+        <% } else if (image == 'thunder') { %>
+            <li class="basecloud"></li><li class="wicon-thunder"></li>
+        <% } %>
+    <% } else { %>
+        <% if (image == 'chanceflurries') { %>
+            <li class="basecloud"></li><li class="wicon-frosty wicon-night"></li>
+        <% } else if (image == 'chancerain') { %>
+            <li class="basecloud"></li><li class="wicon-drizzle wicon-night"></li>
+        <% } else if (image == 'chancesleet') { %>
+            <li class="basecloud"></li><li class="wicon-sleet wicon-night"></li>
+        <% } else if (image == 'chancesnow') { %>
+            <li class="basecloud"></li><li class="wicon-snowy wicon-night"></li>
+        <% } else if (image == 'chancetstorms') { %>
+            <li class="basecloud"></li><li class="wicon-thunder wicon-night"></li>
+        <% } else if ((image == 'clear') || (image == 'sunny')) { %>
+            <li class="wicon-moon"></li>
+        <% } else if (image == 'cloudy') { %>
+            <li class="wicon-cloud"></li>
+        <% } else if (image == 'flurries') { %>
+            <li class="basecloud"></li><li class="wicon-frosty"></li>
+        <% } else if ((image == 'fog') || (image == 'haze')) { %>
+            <li class="wicon-mist"></li>
+        <% } else if ((image == 'mostlycloudy') || (image == 'mostlysunny') || (image == 'partlycloudy') || (image == 'partlysunny')) { %>
+            <li class="basefullcloud"></li><li class="wicon-night"></li>
+        <% } else if (image == 'sleet') { %>
+            <li class="basecloud"></li><li class="wicon-sleet"></li>
+        <% } else if (image == 'rain') { %>
+            <li class="basecloud"></li><li class="wicon-drizzle"></li>
+        <% } else if (image == 'snow') { %>
+            <li class="basecloud"></li><li class="wicon-snowy"></li>
+        <% } else if (image == 'thunder') { %>
+            <li class="basecloud"></li><li class="wicon-thunder"></li>
+        <% } %>
+    <% } %>
+</ul>

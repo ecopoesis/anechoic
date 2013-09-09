@@ -310,19 +310,60 @@ margin-top: 0px;
       display: table;
       margin-left: auto;
       margin-right: auto;
+
+      ul {
+        padding: 0px;
+        list-style: none;
+        width: 100px;
+        height: 100px;
+        display: table-cell;
+
+        li {
+          list-style: none;
+          margin: 0px;
+          font-size: 100px;
+        }
+      }
     }
 
-    ul {
-      padding: 0px;
-      list-style: none;
-      width: 100px;
-      height: 100px;
-      display: table-cell;
+    table.forecast {
+      width: 100%;
+      margin-top: 10px;
 
-      li {
+      td {
+        width: 25%;
+        text-align: center;
+      }
+
+      .low {
+        display: inline;
+        color: @weather-warm-color;
+        padding-left: 3px;
+        padding-right: 3px;
+      }
+
+      .high {
+        display: inline;
+        color: @weather-cool-color;
+        padding-left: 3px;
+        padding-right: 3px;
+      }
+    }
+
+    .forecast {
+      ul {
+        padding: 0px;
         list-style: none;
-        margin: 0px;
-        font-size: 100px;
+        width: 40px;
+        height: 30px;
+        margin-left: auto;
+        margin-right: auto;
+
+        li {
+          list-style: none;
+          margin: 0px;
+          font-size: 40px;
+        }
       }
     }
 

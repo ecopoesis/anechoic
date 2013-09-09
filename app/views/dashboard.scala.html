@@ -12,6 +12,10 @@
     @Html(helpers.Web.include("resources/weather._"))
 </script>
 
+<script id="weather-icon-template" type="text/x-lowdash-template">
+    @Html(helpers.Web.include("resources/weather-icon._"))
+</script>
+
 <script>
     $(document).ready(function() { Anechoic.Dashboard.load(); });
 </script>

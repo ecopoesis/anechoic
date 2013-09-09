@@ -68,10 +68,15 @@ object WeatherDao {
   }
 
   def parseIsDay(astro: JsValue): Boolean = {
-    parseInt(astro \ "current_time" \ "hour").get >= parseInt(astro \ "sunrise" \ "hour").get &&
-    parseInt(astro \ "current_time" \ "minute").get >= parseInt(astro \ "sunrise" \ "minute").get &&
-    parseInt(astro \ "current_time" \ "hour").get <= parseInt(astro \ "sunset" \ "hour").get &&
-    parseInt(astro \ "current_time" \ "minute").get <= parseInt(astro \ "sunset" \ "minute").get
+    val current_hour = parseInt(astro \ "current_time" \ "hour").get
+    val current_min =  parseInt(astro \ "current_time" \ "minute").get
+    val sunrise_hour = parseInt(astro \ "sunrise" \ "hour").get
+    val sunrise_min = parseInt(astro \ "sunrise" \ "minute").get
+    val sunset_hour = parseInt(astro \ "sunset" \ "hour").get
+    val sunset_min = parseInt(astro \ "sunset" \ "minute").get
+
+    ((current_hour > sunrise_hour) || (current_hour == sunrise_hour && current_min >= sunrise_min)) &&
+    ((current_hour < sunset_hour) || (current_hour == sunset_hour && current_min <= sunset_min))
   }
 
   def parseForecast(forecast: JsValue): Seq[Forecast] = {

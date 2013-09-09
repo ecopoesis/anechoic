@@ -58,7 +58,7 @@
   font-family: 'iconvault';
   content: '\f105';
   position:absolute;
-  color:rgb(204, 204, 204);
+  color:@weather-grey;
 }
 
 /* -----windyraincloud----- */
@@ -67,7 +67,7 @@
   font-family: 'iconvault';
   content: '\f111';
   position:absolute;
-  color:rgb(204, 204, 204);
+  color:@weather-grey;
 }
 
 /* -----Windysnowcloud----- */
@@ -76,7 +76,7 @@
   font-family: 'iconvault';
   content: '\f109';
   position:absolute;
-  color:rgb(204, 204, 204);
+  color:@weather-grey;
 }
 
 /* -----Basethundercloud----- */
@@ -85,7 +85,7 @@
   font-family: 'iconvault';
   content: '\f105';
   position:absolute;
-  color:#000;
+  color:@weather-grey;
 }
 
 /* -----Basefullcloud----- */
@@ -94,7 +94,7 @@
   font-family: 'iconvault';
   content: '\f106';
   position:absolute;
-  color:rgb(204, 204, 204);
+  color:@weather-grey;
 }
 
 /* -----Thunder----- */
@@ -102,14 +102,14 @@
 .wicon-thunder::before  {
   content: "\f114";
   position:absolute;
-  color:rgb(255, 165, 0);
+  color:@weather-cool-color;
 }
 
 /* -----Sunny----- */
 
 .wicon-sunny::after {
   content: "\f101";
-  color:rgb(255, 165, 0);
+  color:@weather-cool-color;
   position: absolute;
 }
 
@@ -117,7 +117,7 @@
 
 .wicon-drizzle::before  {
   content: "\f10a";
-  color: #82b2e4;
+  color:@weather-warm-color;
   position: absolute;
 }
 
@@ -126,14 +126,15 @@
 .wicon-hail::before {
   content: "\f10f";
   position:absolute;
-  color:rgb(204, 204, 204);}
+  color:@weather-grey;
+}
 
 /* -----Showers----- */
 
 .wicon-showers::before  {
   content: "\f104";
   position:absolute;
-  color:#82b2e4;
+  color:@weather-warm-color;
 }
 
 /* -----Rainy----- */
@@ -141,7 +142,7 @@
 .wicon-rainy::before {
   content: "\f107";
   position:absolute;
-  color:#4681c3;
+  color:@weather-warm-color;
 }
 
 /* -----Snowy----- */
@@ -149,7 +150,7 @@
 .wicon-snowy::before  {
   content: "\f10b";
   position:absolute;
-  color:#acd3f3;
+  color:@weather-warm-color;
 }
 
 /* -----Frosty----- */
@@ -157,7 +158,7 @@
 .wicon-frosty::before {
   content: "\f102";
   position:absolute;
-  color:#85d8f7;
+  color:@weather-warm-color;
 }
 
 /* -----Windy----- */
@@ -165,7 +166,7 @@
 .wicon-windy::before  {
   content: "\f115";
   position:absolute;
-  color:rgb(204, 204, 204);
+  color:@weather-grey;
 }
 
 /* -----WindyRain----- */
@@ -173,7 +174,7 @@
 .wicon-windyrain::before {
   content: "\f10e";
   position:absolute;
-  color:#acd3f3;
+  color:@weather-warm-color;
 }
 
 /* -----WindySnow----- */
@@ -181,7 +182,7 @@
 .wicon-windysnow::before {
   content: "\f103";
   position:absolute;
-  color:#acd3f3;
+  color:@weather-warm-color;
 }
 
 /* -----Sleet----- */
@@ -189,14 +190,14 @@
 .wicon-sleet::before  {
   content: "\f10c";
   position:absolute;
-  color:#acd3f3;
+  color:@weather-warm-color;
 }
 
 /* -----Moon----- */
 
 .wicon-moon::after {
   content: "\f10d";
-  color:rgb(255, 165, 0);
+  color:@weather-cool-color;
   position: absolute;
 }
 
@@ -205,7 +206,7 @@
 .wicon-night::after {
   content: "\f100";
   position:absolute;
-  color:rgb(255, 165, 0);
+  color:@weather-cool-color;
 }
 
 
@@ -213,7 +214,7 @@
 
 .wicon-sun::after {
   content: "\f113";
-  color:rgb(255, 165, 0);
+   color:@weather-cool-color;
   position: absolute;
 }
 
@@ -221,7 +222,7 @@
 
 .wicon-cloud::after {
   content: "\f106";
-  color:rgb(204, 204, 204);
+  color:@weather-grey;
   position: absolute;
 }
 
@@ -230,7 +231,7 @@
 
 .wicon-sunrise:before  {
   content: '\f112';
-  color:rgb(255, 165, 0);
+  color:@weather-cool-color;
   position: absolute;
 }
 
@@ -238,7 +239,7 @@
 
 .wicon-sunset:before  {
   content: '\f110';
-  color:#f96f23;
+  color:@weather-cool-color;
   position: absolute;
 }
 
@@ -246,6 +247,6 @@
 
 .wicon-mist:before  {
   content: '\f108';
-  color:rgb(204, 204, 204);
+  color:@weather-grey;
   position: absolute;
 }
