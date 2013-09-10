@@ -5,3 +5,4 @@ logs
 .Trashes
 .swp
 .lock
+.idea/workspace.xml
