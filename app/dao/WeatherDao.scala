@@ -3,22 +3,18 @@ package dao
 import play.api.Play.current
 import model.{Forecast, Weather}
 import play.api.Play
-import dispatch._
-import Defaults._
 import play.api.cache.Cache
 import play.api.libs.json._
+import helpers.Http
 
 object WeatherDao {
   val CacheKey = "weather_"
   val CacheTimeout = 60 * 60
 
-  val userAgent = "Anechoic News v" + Play.current.configuration.getString("application.version").get + " - www.anechoicnews.com"
   val baseUrl = "http://api.wunderground.com/api/" + Play.current.configuration.getString("api.key.wunderground").get + "/forecast/conditions/astronomy"
 
   def get(wunder_id: String): Option[Weather] = Cache.getOrElse(CacheKey + wunder_id, CacheTimeout) {
-    val svc = url(baseUrl + wunder_id + ".json") <:< Map("User-Agent" -> userAgent)
-    val w = Http.configure(_ setFollowRedirects true)(svc OK as.String)
-    val json = Json.parse(w())
+    val json = Json.parse(Http.get(baseUrl + wunder_id + ".json"))
     Option(parseWeather(json))
   }
 
