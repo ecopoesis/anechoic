@@ -2,88 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71f484c1-7011-43f2-87dc-059d1ffb1f16" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/Http.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/dao/FeedDao.scala" afterPath="$PROJECT_DIR$/app/dao/FeedDao.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__com_cedarsoft_guice_annotations_2_0_110.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__com_cedarsoft_guice_annotations_2_0_110.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__com_cedarsoft_guice_annotations_2_0_14.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__com_cedarsoft_guice_annotations_2_0_14.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__com_cedarsoft_guice_annotations_2_0_18.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__com_cedarsoft_guice_annotations_2_0_18.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__com_cedarsoft_guice_annotations_2_0_19.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__com_cedarsoft_guice_annotations_2_0_19.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__com_typesafe_play_plugins_mailer_2_10_2_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__com_typesafe_play_plugins_mailer_2_10_2_1_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__com_typesafe_play_plugins_mailer_2_10_2_1_06.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__com_typesafe_play_plugins_mailer_2_10_2_1_06.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__com_typesafe_play_plugins_util_2_10_2_1_010.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__com_typesafe_play_plugins_util_2_10_2_1_010.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__com_typesafe_play_plugins_util_2_10_2_1_08.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__com_typesafe_play_plugins_util_2_10_2_1_08.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__commons_beanutils_commons_beanutils_1_8_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__commons_beanutils_commons_beanutils_1_8_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__commons_beanutils_commons_beanutils_1_8_32.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__commons_beanutils_commons_beanutils_1_8_32.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__commons_beanutils_commons_beanutils_1_8_33.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__commons_beanutils_commons_beanutils_1_8_33.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__commons_beanutils_commons_beanutils_1_8_35.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__commons_beanutils_commons_beanutils_1_8_35.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__commons_digester_commons_digester_1_83.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__commons_digester_commons_digester_1_83.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__commons_digester_commons_digester_1_86.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__commons_digester_commons_digester_1_86.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__commons_validator_commons_validator_1_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__commons_validator_commons_validator_1_4_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__commons_validator_commons_validator_1_4_03.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__commons_validator_commons_validator_1_4_03.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__commons_validator_commons_validator_1_4_05.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__commons_validator_commons_validator_1_4_05.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__commons_validator_commons_validator_1_4_06.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__commons_validator_commons_validator_1_4_06.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__javax_mail_mail_1_4_13.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__javax_mail_mail_1_4_13.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__javax_mail_mail_1_4_14.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__javax_mail_mail_1_4_14.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__javax_mail_mail_1_4_15.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__javax_mail_mail_1_4_15.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__javax_mail_mail_1_4_18.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__javax_mail_mail_1_4_18.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__net_databinder_dispatch_dispatch_core_2_10_0_11_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__net_databinder_dispatch_dispatch_core_2_10_0_11_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__net_databinder_dispatch_dispatch_core_2_10_0_11_02.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__net_databinder_dispatch_dispatch_core_2_10_0_11_02.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_apache_commons_commons_email_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_apache_commons_commons_email_1_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_apache_commons_commons_email_1_23.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_apache_commons_commons_email_1_23.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_apache_commons_commons_email_1_26.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_apache_commons_commons_email_1_26.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_apache_commons_commons_email_1_28.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_apache_commons_commons_email_1_28.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_mindrot_jbcrypt_0_3m.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_mindrot_jbcrypt_0_3m.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_mindrot_jbcrypt_0_3m5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_mindrot_jbcrypt_0_3m5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_mindrot_jbcrypt_0_3m8.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_mindrot_jbcrypt_0_3m8.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_mindrot_jbcrypt_0_3m9.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_mindrot_jbcrypt_0_3m9.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_ocpsoft_prettytime_prettytime_3_0_2_Final4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_ocpsoft_prettytime_prettytime_3_0_2_Final4.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_ocpsoft_prettytime_prettytime_3_0_2_Final5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_ocpsoft_prettytime_prettytime_3_0_2_Final5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_ow2_spec_ee_ow2_atinject_1_0_spec_1_0_10.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_ow2_spec_ee_ow2_atinject_1_0_spec_1_0_10.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_ow2_spec_ee_ow2_atinject_1_0_spec_1_0_106.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_ow2_spec_ee_ow2_atinject_1_0_spec_1_0_106.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_postgresql_postgresql_9_2_1002_jdbc4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_postgresql_postgresql_9_2_1002_jdbc4.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_postgresql_postgresql_9_2_1002_jdbc44.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_postgresql_postgresql_9_2_1002_jdbc44.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_postgresql_postgresql_9_2_1002_jdbc46.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_postgresql_postgresql_9_2_1002_jdbc46.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_postgresql_postgresql_9_2_1002_jdbc49.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_postgresql_postgresql_9_2_1002_jdbc49.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_anorm_2_10_2_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_anorm_2_10_2_1_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_anorm_2_10_2_1_110.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_anorm_2_10_2_1_110.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_anorm_2_10_2_1_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_anorm_2_10_2_1_12.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_anorm_2_10_2_1_19.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_anorm_2_10_2_1_19.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_2_10_2_1_14.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_2_10_2_1_14.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_2_10_2_1_17.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_2_10_2_1_17.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_2_10_2_1_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_2_10_2_1_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_2_10_2_1_32.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_2_10_2_1_32.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_exceptions_2_1_18.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_exceptions_2_1_18.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_exceptions_2_1_19.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_exceptions_2_1_19.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_exceptions_2_1_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_exceptions_2_1_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_exceptions_2_1_32.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_exceptions_2_1_32.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_iteratees_2_10_2_1_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_iteratees_2_10_2_1_12.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_iteratees_2_10_2_1_19.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_iteratees_2_10_2_1_19.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_iteratees_2_10_2_1_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_iteratees_2_10_2_1_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_iteratees_2_10_2_1_32.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_iteratees_2_10_2_1_32.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_java_2_10_2_1_110.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_java_2_10_2_1_110.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_java_2_10_2_1_111.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_java_2_10_2_1_111.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_java_2_10_2_1_17.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_java_2_10_2_1_17.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_java_2_10_2_1_19.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_java_2_10_2_1_19.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_jdbc_2_10_2_1_110.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_jdbc_2_10_2_1_110.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_jdbc_2_10_2_1_14.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_jdbc_2_10_2_1_14.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_jdbc_2_10_2_1_16.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_jdbc_2_10_2_1_16.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_jdbc_2_10_2_1_19.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_jdbc_2_10_2_1_19.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_test_2_10_2_1_110.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_test_2_10_2_1_110.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_test_2_10_2_1_111.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_test_2_10_2_1_111.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_test_2_10_2_1_14.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_test_2_10_2_1_14.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_test_2_10_2_1_18.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_play_test_2_10_2_1_18.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_sbt_link_2_1_15.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_sbt_link_2_1_15.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_sbt_link_2_1_16.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_sbt_link_2_1_16.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_templates_2_10_2_1_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_templates_2_10_2_1_12.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__play_templates_2_10_2_1_16.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__play_templates_2_10_2_1_16.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__securesocial_securesocial_2_10_master_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__securesocial_securesocial_2_10_master_SNAPSHOT.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__securesocial_securesocial_2_10_master_SNAPSHOT8.xml" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__securesocial_securesocial_2_10_master_SNAPSHOT8.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/dao/WeatherDao.scala" afterPath="$PROJECT_DIR$/app/dao/WeatherDao.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/resources/weather-icon._" afterPath="$PROJECT_DIR$/conf/resources/weather-icon._" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="anechoic.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378822578806" ignored="false" />
+    <file path="/Dummy.txt" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378827427412" ignored="false" />
     <file path="/application.log" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371147391406" ignored="false" />
     <file path="/application.conf" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378773292915" ignored="false" />
     <file path="/100000.sql" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1371147914543" ignored="false" />
@@ -216,7 +140,7 @@
     <file path="$PROJECT_DIR$/target/scala-2.10/src_managed/main/views/html/widgets/weather.template.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377888693791" ignored="false" />
     <file path="/Web.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1377892516443" ignored="false" />
     <file path="/weather._" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378755972062" ignored="false" />
-    <file path="/weather-icon._" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378750668509" ignored="false" />
+    <file path="/weather-icon._" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378828608772" ignored="false" />
     <file path="/production.conf" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378761836463" ignored="false" />
     <file path="/Procfile" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378776168453" ignored="false" />
     <file path="/heroku.conf" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378771442114" ignored="false" />
@@ -304,15 +228,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="application.conf" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/application.conf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="32" selection-start="461" selection-end="461" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="_main.less" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/css/_main.less">
           <provider selected="true" editor-type-id="text-editor">
@@ -376,13 +291,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WeatherDao.scala" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="WeatherDao.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/dao/WeatherDao.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="29" selection-start="536" selection-end="536" vertical-scroll-proportion="0.4566474">
-              <folding>
-                <element signature="e#13#41#0" expanded="true" />
-              </folding>
+            <state line="4" column="40" selection-start="95" selection-end="95" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="weather-icon._" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/conf/resources/weather-icon._">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="80" selection-start="1069" selection-end="1069" vertical-scroll-proportion="0.15343915">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -416,7 +338,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/conf/heroku.conf" />
         <option value="$PROJECT_DIR$/app/views/tags/basic.scala.html" />
         <option value="$PROJECT_DIR$/project/plugins.sbt" />
         <option value="$PROJECT_DIR$/project/Build.scala" />
@@ -432,6 +353,7 @@
         <option value="$PROJECT_DIR$/app/helpers/Http.scala" />
         <option value="$PROJECT_DIR$/app/dao/FeedDao.scala" />
         <option value="$PROJECT_DIR$/app/dao/WeatherDao.scala" />
+        <option value="$PROJECT_DIR$/conf/resources/weather-icon._" />
       </list>
     </option>
   </component>
@@ -440,10 +362,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
     <option name="y" value="22" />
-    <option name="width" value="1611" />
-    <option name="height" value="1028" />
+    <option name="width" value="2491" />
+    <option name="height" value="1418" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -1652,7 +1573,11 @@
       <created>1378778310234</created>
       <updated>1378778310234</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="fix http threadpool leak">
+      <created>1378827439956</created>
+      <updated>1378827439956</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1676,7 +1601,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="22" width="1611" height="1028" extended-state="6" />
+    <frame x="0" y="22" width="2491" height="1418" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299532" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1686,11 +1611,12 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.68178916" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35792953" sideWeight="0.31757188" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2503852" sideWeight="0.31757188" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299532" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32819724" sideWeight="0.4997955" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31972265" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32896763" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Analysis" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -1698,13 +1624,12 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32965234" sideWeight="0.69953775" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34121406" sideWeight="0.6420705" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2184049" sideWeight="0.7496148" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973805" sideWeight="0.5529652" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24968995" sideWeight="0.6700468" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20030816" sideWeight="0.4993865" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31972265" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1750,7 +1675,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="fonts" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix http threadpool leak" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1764,7 +1689,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="- fix feed dates&#10;- add feed json serialization&#10;- add arstechinca rss as test" />
     <MESSAGE value="async rss with server side parsing" />
     <MESSAGE value="fix grantland's weird rss" />
     <MESSAGE value="fix penny arcade's broken rss" />
@@ -1789,6 +1713,7 @@
     <MESSAGE value="fix procfile" />
     <MESSAGE value="fix memcachier servers" />
     <MESSAGE value="fonts" />
+    <MESSAGE value="fix http threadpool leak" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1803,13 +1728,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Applications/play/play-2.1.1/repository/cache/spy/spymemcached/srcs/spymemcached-2.8.9-sources.jar!/net/spy/memcached/MemcachedClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="282" column="0" selection-start="10031" selection-end="10031" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/dao/UserDao.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="79" column="151" selection-start="2190" selection-end="2190" vertical-scroll-proportion="0.0">
@@ -1910,10 +1828,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/dao/WeatherDao.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="29" selection-start="536" selection-end="536" vertical-scroll-proportion="0.4566474">
-          <folding>
-            <element signature="e#13#41#0" expanded="true" />
-          </folding>
+        <state line="4" column="40" selection-start="95" selection-end="95" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/resources/weather-icon._">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="80" selection-start="1069" selection-end="1069" vertical-scroll-proportion="0.15343915">
+          <folding />
         </state>
       </provider>
     </entry>

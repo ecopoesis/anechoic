@@ -26,7 +26,7 @@
             <li class="basecloud"></li><li class="wicon-drizzle"></li>
         <% } else if (image == 'snow') { %>
             <li class="basecloud"></li><li class="wicon-snowy"></li>
-        <% } else if (image == 'thunder') { %>
+        <% } else if (image == 'thunder' || (image == 'tstorms')) { %>
             <li class="basecloud"></li><li class="wicon-thunder"></li>
         <% } %>
     <% } else { %>
@@ -56,7 +56,7 @@
             <li class="basecloud"></li><li class="wicon-drizzle"></li>
         <% } else if (image == 'snow') { %>
             <li class="basecloud"></li><li class="wicon-snowy"></li>
-        <% } else if (image == 'thunder') { %>
+        <% } else if (image == 'thunder' || (image == 'tstorms')) { %>
             <li class="basecloud"></li><li class="wicon-thunder"></li>
         <% } %>
     <% } %>
