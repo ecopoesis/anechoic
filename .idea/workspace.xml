@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71f484c1-7011-43f2-87dc-059d1ffb1f16" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/release.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/release.sh" afterPath="$PROJECT_DIR$/release.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="anechoic.iws" />
@@ -148,7 +148,7 @@
     <file path="/Http.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378826871534" ignored="false" />
     <file path="/path.less" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378834446647" ignored="false" />
     <file path="/Global.scala" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378839603968" ignored="false" />
-    <file path="/release.sh" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378849144036" ignored="false" />
+    <file path="/release.sh" changelist="71f484c1-7011-43f2-87dc-059d1ffb1f16" time="1378849610546" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,7 +290,7 @@
       <file leaf-file-name="version.conf" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conf/version.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="32" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="33" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -299,7 +299,7 @@
       <file leaf-file-name="release.sh" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/release.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="4" selection-start="210" selection-end="210" vertical-scroll-proportion="0.11089109">
+            <state line="41" column="17" selection-start="1169" selection-end="1169" vertical-scroll-proportion="0.64950496">
               <folding />
             </state>
           </provider>
@@ -1587,14 +1587,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/conf/version.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="32" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="33" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/release.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="4" selection-start="210" selection-end="210" vertical-scroll-proportion="0.11089109">
+        <state line="41" column="17" selection-start="1169" selection-end="1169" vertical-scroll-proportion="0.64950496">
           <folding />
         </state>
       </provider>
