@@ -6,6 +6,7 @@ import model.Story
 import scala.util.matching.Regex
 import controllers.routes
 import play.api.Play
+import play.api.Play.current
 
 object Formatting {
 
@@ -29,6 +30,11 @@ object Formatting {
   }
 
   def asset(f: String) = {
-    routes.Www.asset(f, Play.current.configuration.getString("application.version").get)
+    if (Play.isProd && (f.endsWith(".js") || f.endsWith(".css") && !f.contains(".min"))) {
+      val n = f.replace(".js", ".min.js").replace(".css", ".min.css")
+      routes.Www.asset(n, Play.current.configuration.getString("application.version").get)
+    } else {
+      routes.Www.asset(f, Play.current.configuration.getString("application.version").get)
+    }
   }
 }
