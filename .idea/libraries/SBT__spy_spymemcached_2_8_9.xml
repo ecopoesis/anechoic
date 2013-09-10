@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="SBT: spy:spymemcached:2.8.9">
+    <CLASSES>
+      <root url="jar:///Applications/play/play-2.1.1/repository/cache/spy/spymemcached/jars/spymemcached-2.8.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar:///Applications/play/play-2.1.1/repository/cache/spy/spymemcached/srcs/spymemcached-2.8.9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

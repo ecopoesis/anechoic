@@ -97,7 +97,7 @@ object UserDao {
 
     getByUsername(identity.identityId.userId) match {
       case Some(u: User) => {
-        Cache.set(CacheKey + u, u, CacheTimeout)
+        Cache.set(CacheKey + u.numId, u, CacheTimeout)
         return Option(u)
       }
       case _ => return None

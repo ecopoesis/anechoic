@@ -17,11 +17,13 @@ object ApplicationBuild extends Build {
     "org.postgresql" % "postgresql" % "9.2-1002-jdbc4",
     "commons-validator" % "commons-validator" % "1.4.0" ,
     "org.ocpsoft.prettytime" % "prettytime" % "3.0.2.Final",
-    "net.databinder.dispatch" %% "dispatch-core" % "0.11.0"
+    "net.databinder.dispatch" %% "dispatch-core" % "0.11.0",
+    "com.github.mumoshu" %% "play2-memcached" % "0.3.0.2"
   )
 
   val main = play.Project(appName, appVersion, appDependencies).settings(
     resolvers += Resolver.url("sbt-plugin-snapshots", new URL("http://repo.scala-sbt.org/scalasbt/sbt-plugin-snapshots/"))(Resolver.ivyStylePatterns),
+    resolvers += "Spy Repository" at "http://files.couchbase.com/maven2",
     lessEntryPoints <<= baseDirectory(_ / "app" / "assets" / "css" ** "global.less"),
     scalacOptions += "-feature",
     routesImport += "extensions.Binders._"

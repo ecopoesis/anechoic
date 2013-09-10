@@ -1,6 +1,7 @@
 1500:com.typesafe.plugin.CommonsMailerPlugin
-9994:securesocial.core.DefaultAuthenticatorStore
-9995:securesocial.core.DefaultIdGenerator
+5000:com.github.mumoshu.play2.memcached.MemcachedPlugin
+9994:service.auth.MemcachedAuthenticatorStore
+9995:service.auth.MemcachedIdGenerator
 9996:securesocial.core.providers.utils.DefaultPasswordValidator
 9997:controllers.Authorization
 9998:service.UserService
