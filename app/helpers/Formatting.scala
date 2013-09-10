@@ -31,7 +31,7 @@ object Formatting {
 
   def asset(f: String) = {
     if (Play.isProd && (f.endsWith(".js") || f.endsWith(".css") && !f.contains(".min"))) {
-      val n = f.replace(".js", ".min.js").replace(".css", ".min.css")
+      val n = f.replace(".css", ".min.css") //.replace(".js", ".min.js")
       routes.Www.asset(n, Play.current.configuration.getString("application.version").get)
     } else {
       routes.Www.asset(f, Play.current.configuration.getString("application.version").get)

@@ -1,3 +1,4 @@
+import com.google.javascript.jscomp.{CompilerOptions, CompilationLevel}
 import java.util.TimeZone
 import sbt._
 import Keys._
