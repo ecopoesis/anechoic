@@ -37,6 +37,7 @@ echo "New Working Version: ${NEW_SNAPSHOT}"
 
 # update the version info, check in, push to bitbucket
 echo "application.version=\"${NEW_SNAPSHOT}\"" > conf/version.conf
+/usr/bin/git add conf/version.conf
 /usr/bin/git commit -m "Creating Working Version ${VERSION}"
 /usr/bin/git push --tags
 
