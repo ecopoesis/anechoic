@@ -24,10 +24,12 @@
       <sourceFolder url="file://$MODULE_DIR$/../test/resources" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/../target/native_libraries" />
       <excludeFolder url="file://$MODULE_DIR$/../target/resolution-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/../target/scala-2.10/api" />
       <excludeFolder url="file://$MODULE_DIR$/../target/scala-2.10/cache" />
       <excludeFolder url="file://$MODULE_DIR$/../target/scala-2.10/classes" />
       <excludeFolder url="file://$MODULE_DIR$/../target/scala-2.10/classes_managed" />
       <excludeFolder url="file://$MODULE_DIR$/../target/scala-2.10/resource_managed" />
+      <excludeFolder url="file://$MODULE_DIR$/../target/staged" />
       <excludeFolder url="file://$MODULE_DIR$/../target/streams" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -106,6 +108,7 @@
     <orderEntry type="library" name="SBT: com.ning:async-http-client:1.7.16" level="project" />
     <orderEntry type="library" name="SBT: com.github.mumoshu:play2-memcached_2.10:0.3.0.2" level="project" />
     <orderEntry type="library" name="SBT: spy:spymemcached:2.8.9" level="project" />
+    <orderEntry type="library" name="SBT: com.typesafe.play.extras:iteratees-extras_2.10:1.0.1" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: play:play-test_2.10:2.1.1" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: junit:junit-dep:4.10" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: org.hamcrest:hamcrest-core:1.1" level="project" />

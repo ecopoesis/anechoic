@@ -18,7 +18,8 @@ object ApplicationBuild extends Build {
     "commons-validator" % "commons-validator" % "1.4.0" ,
     "org.ocpsoft.prettytime" % "prettytime" % "3.0.2.Final",
     "net.databinder.dispatch" %% "dispatch-core" % "0.11.0",
-    "com.github.mumoshu" %% "play2-memcached" % "0.3.0.2"
+    "com.github.mumoshu" %% "play2-memcached" % "0.3.0.2",
+    "com.typesafe.play.extras" %% "iteratees-extras" % "1.0.1"
   )
 
   val main = play.Project(appName, appVersion, appDependencies).settings(
