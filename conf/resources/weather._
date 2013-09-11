@@ -1,22 +1,24 @@
 <h3><%=data.location%></h3>
-<div class="current">
-    <%= icon({image: data.image, isDay: data.isDay}) %>
-    <div class="temp">
-        <%=data.temp_f%>&deg;F
+<div class="card">
+    <div class="current">
+        <%= icon({image: data.image, isDay: data.isDay}) %>
+        <div class="temp">
+            <%=data.temp_f%>&deg;F
+        </div>
     </div>
+    <div class="detail">
+        <%=data.humidity%> RH | <%=Anechoic.Utils.round_2(data.wind_mph)%> mph <%=data.wind_direction%> | <%=Anechoic.Utils.round_2(data.pressure_in)%> inHg <%=data.pressure_trend%>
+    </div>
+    <table class="forecast">
+        <tr>
+            <% for(var i=  0; i < data.forecast.length; i++) { %>
+                <td>
+                    <%= icon({image: data.forecast[i].image, isDay: true}) %>
+                    <div class="low"><%=data.forecast[i].low_f%>&deg;</div>
+                    <div class="high"><%=data.forecast[i].high_f%>&deg;</div>
+                    <div class="date"><%=data.forecast[i].day%></div>
+                </td>
+            <% } %>
+        </tr>
+    </table>
 </div>
-<div class="detail">
-    <%=data.humidity%> RH | <%=Anechoic.Utils.round_2(data.wind_mph)%> mph <%=data.wind_direction%> | <%=Anechoic.Utils.round_2(data.pressure_in)%> inHg <%=data.pressure_trend%>
-</div>
-<table class="forecast">
-    <tr>
-        <% for(var i=  0; i < data.forecast.length; i++) { %>
-            <td>
-                <%= icon({image: data.forecast[i].image, isDay: true}) %>
-                <div class="low"><%=data.forecast[i].low_f%>&deg;</div>
-                <div class="high"><%=data.forecast[i].high_f%>&deg;</div>
-                <div class="date"><%=data.forecast[i].day%></div>
-            </td>
-        <% } %>
-    </tr>
-</table>

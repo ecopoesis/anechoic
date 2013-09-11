@@ -316,18 +316,23 @@ margin-top: 0px;
 
   .widget {
     margin: 10px 5px 10px 5px;
-    padding: 10px;
     background-color: @content;
     overflow: hidden;
+
+    .card {
+      padding: 10px;
+    }
+
+    h3 {
+      background-color: @detail;
+      padding: 5px;
+      font-size: 16px;
+      margin: 0px;
+    }
   }
 
   .weather {
     font-size: 14px;
-
-    h3 {
-      margin: 0px;
-      font-size: 16px;
-    }
 
     .current {
       text-align: center;
@@ -406,11 +411,6 @@ margin-top: 0px;
 
   .feed {
     font-size: 14px;
-
-    h3 {
-      margin: 0px;
-      font-size: 16px;
-    }
 
     ul {
       list-style-type: circle;

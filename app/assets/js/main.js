@@ -137,12 +137,9 @@ Anechoic.Dashboard = {
     },
 
     renderFeed: function(data, w, max) {
-        $('<h3>' + data.title  +'</h3>').appendTo(w);
-        var l = $('<ul></ul>').appendTo(w);
-        for (var i = 0; i < data.items.length && i < max; i++) {
-            var item = data.items[i];
-            $('<li><a href="' + item.link + '">' + item.title + '</a></li>').appendTo(l);
-        }
+        var template = _.template($("#feed-template").html());
+        var html = template({data: data, max: max});
+        w.html(html);
     },
 
     renderWeather: function(data, w) {
