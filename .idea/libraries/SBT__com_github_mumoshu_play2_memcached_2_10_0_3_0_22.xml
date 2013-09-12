@@ -3,7 +3,11 @@
     <CLASSES>
       <root url="jar:///Applications/play/play-2.1.1/repository/cache/com.github.mumoshu/play2-memcached_2.10/jars/play2-memcached_2.10-0.3.0.2.jar!/" />
     </CLASSES>
-    <JAVADOC />
-    <SOURCES />
+    <JAVADOC>
+      <root url="jar:///Applications/play/play-2.1.1/repository/cache/com.github.mumoshu/play2-memcached_2.10/docs/play2-memcached_2.10-0.3.0.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar:///Applications/play/play-2.1.1/repository/cache/com.github.mumoshu/play2-memcached_2.10/srcs/play2-memcached_2.10-0.3.0.2-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>
