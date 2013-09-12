@@ -23,30 +23,30 @@
             <a href="#" class="button" onclick="Anechoic.Dashboard.search();">search</a>
         </div>
     </div>
-}
 
-<script id="feed-template" type="text/x-lowdash-template">
-    @Html(helpers.Web.include("resources/feed._"))
-</script>
+    <script id="feed-template" type="text/x-lowdash-template">
+        @Html(helpers.Web.include("resources/feed._"))
+    </script>
 
-<script id="weather-template" type="text/x-lowdash-template">
-    @Html(helpers.Web.include("resources/weather._"))
-</script>
+    <script id="weather-template" type="text/x-lowdash-template">
+        @Html(helpers.Web.include("resources/weather._"))
+    </script>
 
-<script id="weather-icon-template" type="text/x-lowdash-template">
-    @Html(helpers.Web.include("resources/weather-icon._"))
-</script>
+    <script id="weather-icon-template" type="text/x-lowdash-template">
+        @Html(helpers.Web.include("resources/weather-icon._"))
+    </script>
 
-@user match {
-    case Some(user) => {}
-    case _ => {
-        <script id="welcome-template" type="text/x-lowdash-template">
-            @Html(helpers.Web.include("resources/welcome._"))
-        </script>
+    @user match {
+        case Some(user) => {}
+        case _ => {
+            <script id="welcome-template" type="text/x-lowdash-template">
+                @Html(helpers.Web.include("resources/welcome._"))
+            </script>
+        }
     }
-}
 
-<script>
-    Anechoic.Dashboard.searchProvider = '@search';
-    $(document).ready(function() { Anechoic.Dashboard.load(); });
-</script>
+    <script>
+        Anechoic.Dashboard.searchProvider = '@search';
+        $(document).ready(function() { Anechoic.Dashboard.load(); });
+    </script>
+}
