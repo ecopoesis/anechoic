@@ -26,25 +26,20 @@ object Weather extends Controller with securesocial.core.SecureSocial {
     )(Read.apply)(Read.unapply)
   )
 
-  def read = SecuredAction { implicit request =>
-    request.user match {
-      case user: User => {
-        readData.bindFromRequest.fold(
-          errors => BadRequest(errors.toString),
-          post => {
-            if (Signature.check(post.sig, user.numId.toString, post.wunderId)) {
-              WeatherDao.get(post.wunderId) match {
-                case Some(weather) => Ok(Json.toJson(weather))
-                case _ => InternalServerError
-              }
-            } else {
-              BadRequest("invalid signature")
-            }
+  def read = UserAwareAction { implicit request =>
+    readData.bindFromRequest.fold(
+      errors => BadRequest(errors.toString),
+      post => {
+        if (Signature.check(post.sig, post.wunderId)) {
+          WeatherDao.get(post.wunderId) match {
+            case Some(weather) => Ok(Json.toJson(weather))
+            case _ => InternalServerError
           }
-        )
+        } else {
+          BadRequest("invalid signature")
+        }
       }
-      case _ => BadRequest("invalid user object")
-    }
+    )
   }
 
   def add = SecuredAction { implicit  request =>

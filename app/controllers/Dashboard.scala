@@ -3,7 +3,7 @@ package controllers
 import play.api.data._
 import play.api.data.Forms._
 import play.api.mvc.Controller
-import dao.{FeedDao, WidgetDao}
+import dao.{UserDao, FeedDao, WidgetDao}
 import model.User
 import helpers.{Signature, Validation}
 import play.api.libs.json._
@@ -16,17 +16,31 @@ object Dashboard extends Controller with securesocial.core.SecureSocial {
   case class WidgetLocation(widget: Int, column: Int, position: Int)
   implicit val widgetLocationFormat:Format[WidgetLocation] = Json.format[WidgetLocation]
 
-  def getLayout = SecuredAction { implicit request =>
+  def getLayout = UserAwareAction { implicit request =>
     request.user match {
-      case user: User => {
-        val widgets = WidgetDao.getAll(user.numId)
+      case user: Some[User] => {
+        val widgets = WidgetDao.getAll(user.get.numId)
         for (widget <- widgets) {
           widget.kind match {
             case "feed" => {
-              widget.properties += "sig" -> Signature.sign(user.numId.toString + widget.properties.get("url").get)
+              widget.properties += "sig" -> Signature.sign(widget.properties.get("url").get)
             }
             case "weather" => {
-              widget.properties += "sig" -> Signature.sign(user.numId.toString + widget.properties.get("wunderId").get)
+              widget.properties += "sig" -> Signature.sign(widget.properties.get("wunderId").get)
+            }
+          }
+        }
+        Ok(Json.toJson(widgets))
+      }
+      case None => {
+        val widgets = WidgetDao.getAll(UserDao.getByUsername("system").get.numId)
+        for (widget <- widgets) {
+          widget.kind match {
+            case "feed" => {
+              widget.properties += "sig" -> Signature.sign(widget.properties.get("url").get)
+            }
+            case "weather" => {
+              widget.properties += "sig" -> Signature.sign(widget.properties.get("wunderId").get)
             }
           }
         }

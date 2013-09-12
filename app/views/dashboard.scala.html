@@ -1,12 +1,23 @@
-@(user: securesocial.core.Identity, search: String)(implicit request: play.api.mvc.RequestHeader)
+@(user: Option[securesocial.core.Identity], search: String)(implicit request: play.api.mvc.RequestHeader)
 
 @import tags._
 
-@frame(Option(user), Option("Dashboard")) {
+@frame(user, Option("Dashboard")) {
     <div id="dashboard" class="dashboard">
-        <div class="config">
-            <a href="//@request.host/dashboard/config"><i class="icon-gears"></i></a>
-        </div>
+        @user match {
+            case Some(user) => {
+                <div class="config">
+                    <a href="//@request.host/dashboard/config"><i class="icon-gears"></i></a>
+                </div>
+            }
+            case _ => {
+                <div class="signup">
+                    <div class="signup-content">
+                        <a href="//@request.host/login">Sign in</a> or <a href="//@request.host/signup">create an account</a> to customize your dashboard.
+                    </div>
+                </div>
+            }
+        }
         <div class="search">
             <input type="text" id="search" name="search">
             <a href="#" class="button" onclick="Anechoic.Dashboard.search();">search</a>
