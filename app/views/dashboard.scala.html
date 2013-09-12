@@ -3,7 +3,7 @@
 @import tags._
 
 @frame(user, Option("Dashboard")) {
-    <div id="dashboard" class="dashboard">
+    <div id="dashboard" class="dashboard cf">
         @user match {
             case Some(user) => {
                 <div class="config">
@@ -22,6 +22,12 @@
             <input type="text" id="search" name="search">
             <a href="#" class="button" onclick="Anechoic.Dashboard.search();">search</a>
         </div>
+    </div>
+
+    <div class="footer">
+        Weather data provided by Weather Underground
+        <br>
+        <a href="http://www.wunderground.com/?apiref=ace3a8eb784e1179"><div class="wunderground"></div></a>
     </div>
 
     <script id="feed-template" type="text/x-lowdash-template">
@@ -50,3 +56,4 @@
         $(document).ready(function() { Anechoic.Dashboard.load(); });
     </script>
 }
+
