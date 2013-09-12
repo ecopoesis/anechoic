@@ -42,6 +42,7 @@ object Dashboard extends Controller with securesocial.core.SecureSocial {
             case "weather" => {
               widget.properties += "sig" -> Signature.sign(widget.properties.get("wunderId").get)
             }
+            case _ => {}
           }
         }
         Ok(Json.toJson(widgets))

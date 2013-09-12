@@ -108,6 +108,9 @@ Anechoic.Dashboard = {
                 case "weather":
                     Anechoic.Dashboard.loadWeather(columns[widget.column], widget);
                     break;
+                case "welcome":
+                    Anechoic.Dashboard.renderWelcome(columns[widget.column], widget);
+                    break;
             }
         }
     },
@@ -146,6 +149,13 @@ Anechoic.Dashboard = {
         var template = _.template($("#weather-template").html());
         var icon = _.template($("#weather-icon-template").html());
         var html = template({data: data, icon: icon});
+        w.html(html);
+    },
+
+    renderWelcome: function(c, widget) {
+        var w = $('<div class="widget welcome"></div>').appendTo(c);
+        var template = _.template($("#welcome-template").html());
+        var html = template({baseUrl: Anechoic.baseUrl});
         w.html(html);
     }
 }
