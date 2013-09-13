@@ -5,13 +5,14 @@
 @frame(Option(user), Option("Configure Dashboard")) {
     <div class="dashboard-config">
 
-        Drag and drop the widgets to create the layout you'd like. Empty columns and widgets in the unassigned column will not be displayed
+        <div class="instructions cf">
+            <div id="spinner" class="spinner ninja">
+                <i class="icon-spinner icon-spin icon-large"></i>
+            </div>
+            Drag and drop the widgets to create the layout you'd like. Empty columns and widgets in the unassigned column will not be displayed.
+        </div>
 
         <div id="dashboard-layout" class="cf"></div>
-
-        <div>
-            <a href="#" class="button" onclick="Anechoic.Dashboard.Config.saveLayout()">save</a>
-        </div>
 
         <form id="newfeed" method="POST">
             New Feed

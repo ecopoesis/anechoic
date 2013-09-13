@@ -224,11 +224,36 @@ Anechoic.Dashboard.Config = {
         var c4 = $('<div class="supercolumn cf"><div class="column cf">&nbsp;</div></div>').appendTo(layout).find('.column');
         var unassigned = $('<div class="supercolumn cf"><div class="column unassigned cf">Unassigned Widgets:</div></div>').appendTo(layout).find('.column');
 
-        c1.sortable({connectWith: ".column"});
-        c2.sortable({connectWith: ".column"});
-        c3.sortable({connectWith: ".column"});
-        c4.sortable({connectWith: ".column"});
-        unassigned.sortable({connectWith: ".column"});
+        c1.sortable({
+            connectWith: ".column",
+            update: function(e, ui) {
+                Anechoic.Dashboard.Config.saveLayout();
+            }
+        });
+        c2.sortable({
+            connectWith: ".column",
+            receive: function(e, ui) {
+                Anechoic.Dashboard.Config.saveLayout();
+            }
+        });
+        c3.sortable({
+            connectWith: ".column",
+            receive: function(e, ui) {
+                Anechoic.Dashboard.Config.saveLayout();
+            }
+        });
+        c4.sortable({
+            connectWith: ".column",
+            receive: function(e, ui) {
+                Anechoic.Dashboard.Config.saveLayout();
+            }
+        });
+        unassigned.sortable({
+            connectWith: ".column",
+            receive: function(e, ui) {
+                Anechoic.Dashboard.Config.saveLayout();
+            }
+        });
 
         // draw the widgets
         for (var i = 0; i < data.length; i++) {
@@ -275,6 +300,8 @@ Anechoic.Dashboard.Config = {
     },
 
     saveLayout: function() {
+        $('#spinner').removeClass('ninja');
+
         var columns = $('.column');
 
         var payload = [];
@@ -298,7 +325,9 @@ Anechoic.Dashboard.Config = {
             url: Anechoic.baseUrl + 'dashboard/save',
             data: JSON.stringify({"widgets": payload})
         })
-        .done(Anechoic.Dashboard.Config.reloadWidgetLayout)
+        .done(function() {
+            $('#spinner').addClass('ninja');
+        })
         .fail(function(jqXHR, textStatus, errorThrown){alert(errorThrown);})
     },
 
