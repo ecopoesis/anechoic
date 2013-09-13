@@ -24,14 +24,14 @@ class WidgetDaoSpec extends Specification {
 
   "WidgetDao" should {
       "have no widgets" in testDb {
-        WidgetDao.select(1) must_== None
+        WidgetDao.select(2) must_== None
       }
 
       "create a feed" in testDb {
         WidgetDao.addFeed(testUser, "https://news.ycombinator.com/rss", 10) must_== true
-        val widget = WidgetDao.select(1);
+        val widget = WidgetDao.select(2);
         widget must_!= None
-        widget.get.id must_== 1L
+        widget.get.id must_== 2L
         widget.get.kind must_== "feed"
         widget.get.properties.size must_== 2
         widget.get.properties.get("url").get must_== "https://news.ycombinator.com/rss"
@@ -39,7 +39,7 @@ class WidgetDaoSpec extends Specification {
       }
 
       "get all widgets for user" in testDb {
-        WidgetDao.getAll(1).size must_== 0
+        WidgetDao.getAll(-1).size must_== 0
 
         WidgetDao.addFeed(testUser, "https://news.ycombinator.com/rss", 10) must_== true
         WidgetDao.addFeed(testUser, "http://rss.cnn.com/rss/cnn_us.rss", 10) must_== true
@@ -55,12 +55,12 @@ class WidgetDaoSpec extends Specification {
         val w1 = WidgetDao.getAll(-1);
 
         w1(0).properties.get("url").get must_== "https://news.ycombinator.com/rss"
-        w1(0).id must_== 1
+        w1(0).id must_== 2
         w1(0).column must_== None
         w1(0).position must_== None
 
         w1(1).properties.get("url").get must_== "http://rss.cnn.com/rss/cnn_us.rss"
-        w1(1).id must_== 2
+        w1(1).id must_== 3
         w1(1).column must_== None
         w1(1).position must_== None
 
@@ -71,12 +71,12 @@ class WidgetDaoSpec extends Specification {
         val w2 = WidgetDao.getAll(-1);
 
         w2(0).properties.get("url").get must_== "https://news.ycombinator.com/rss"
-        w2(0).id must_== 1
+        w2(0).id must_== 2
         w2(0).column.get must_== 1
         w2(0).position.get must_== 0
 
         w2(1).properties.get("url").get must_== "http://rss.cnn.com/rss/cnn_us.rss"
-        w2(1).id must_== 2
+        w2(1).id must_== 3
         w2(1).column.get must_== 2
         w2(1).position.get must_== 1
 
@@ -87,14 +87,23 @@ class WidgetDaoSpec extends Specification {
         val w3 = WidgetDao.getAll(-1);
 
         w2(0).properties.get("url").get must_== "https://news.ycombinator.com/rss"
-        w2(0).id must_== 1
+        w2(0).id must_== 2
         w2(0).column must_== None
         w2(0).position must_== None
 
         w3(1).properties.get("url").get must_== "http://rss.cnn.com/rss/cnn_us.rss"
-        w3(1).id must_== 2
+        w3(1).id must_== 3
         w3(1).column.get must_== 3
         w3(1).position.get must_== 4
+      }
+
+      "delete a widget" in testDb {
+        WidgetDao.addFeed(testUser, "https://news.ycombinator.com/rss", 10) must_== true
+        val w1 = WidgetDao.select(1);
+        w1 must_!= None
+        WidgetDao.delete(1);
+        val w2 = WidgetDao.select(1);
+        w2 must_== None
       }
     }
 

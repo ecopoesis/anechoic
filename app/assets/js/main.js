@@ -252,11 +252,26 @@ Anechoic.Dashboard.Config = {
     },
 
     renderWidget: function(parent, widget) {
-        var w = $('<div class="widget draggable ' + widget.kind + '" data-id="' + widget.id + '"></div>').appendTo(parent);
+        var w = $('<div class="widget draggable ' + widget.kind + '" data-id="' + widget.id + '" id="widget_' + widget.id + '"></div>').appendTo(parent);
 
         var template = _.template($('#' + widget.kind + '-template').html());
         var html = template(widget);
         w.html(html);
+
+        $('#remove_' + widget.id).click(function() {
+            $.post(
+                Anechoic.baseUrl + 'dashboard/delete',
+                {
+                    id: widget.id,
+                    sig: widget.properties.delsig
+                }
+            )
+            .done(function() {
+                $('#widget_' + widget.id).remove();
+            })
+            .fail(function(){alert("fail");})
+            return false;
+        })
     },
 
     saveLayout: function() {

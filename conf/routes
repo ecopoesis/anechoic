@@ -23,6 +23,7 @@ POST        /dashboard/weather             controllers.widgets.Weather.read
 # Dashboard - Layout
 POST        /dashboard/layout              controllers.Dashboard.getLayout
 POST        /dashboard/save                controllers.Dashboard.saveLayout
+POST        /dashboard/delete              controllers.Dashboard.deleteWidget
 
 # Ajax Calls
 GET         /story/vote/up/:storyId        controllers.Www.voteStoryUp(storyId: Long)

@@ -16,6 +16,15 @@ object Dashboard extends Controller with securesocial.core.SecureSocial {
   case class WidgetLocation(widget: Int, column: Int, position: Int)
   implicit val widgetLocationFormat:Format[WidgetLocation] = Json.format[WidgetLocation]
 
+  case class DeleteWidget(id: Long, sig: String)
+
+  val deleteWidgetData = Form(
+    mapping(
+      "id" -> longNumber,
+      "sig" -> nonEmptyText(maxLength = 28)
+    )(DeleteWidget.apply)(DeleteWidget.unapply)
+  )
+
   def getLayout = UserAwareAction { implicit request =>
     request.user match {
       case user: Some[User] => {
@@ -30,6 +39,7 @@ object Dashboard extends Controller with securesocial.core.SecureSocial {
             }
             case _ => {}
           }
+          widget.properties += "delsig" -> Signature.sign(widget.id.toString)
         }
         Ok(Json.toJson(widgets))
       }
@@ -45,6 +55,7 @@ object Dashboard extends Controller with securesocial.core.SecureSocial {
             }
             case _ => {}
           }
+          widget.properties += "delsig" -> Signature.sign(widget.id.toString)
         }
         Ok(Json.toJson(widgets))
       }
@@ -68,6 +79,28 @@ object Dashboard extends Controller with securesocial.core.SecureSocial {
         }.getOrElse {
           BadRequest("expected json data")
         }
+      }
+      case _ => BadRequest("invalid user object")
+    }
+  }
+
+  def deleteWidget = SecuredAction { implicit request =>
+    request.user match {
+      case user: User => {
+        deleteWidgetData.bindFromRequest.fold(
+          errors => BadRequest(errors.toString),
+          post => {
+            if (Signature.check(post.sig, post.id.toString)) {
+              if (WidgetDao.delete(post.id)) {
+                Ok
+              } else {
+                InternalServerError
+              }
+            } else {
+              BadRequest("invalid signature")
+            }
+          }
+        )
       }
       case _ => BadRequest("invalid user object")
     }

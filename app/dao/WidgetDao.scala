@@ -146,6 +146,36 @@ object WidgetDao {
     }
   }
 
+  /**
+   * @todo make this use transactions - for some reason execute only returns false, so I can't use it for transactions
+   */
+  def delete(widgetId: Long): Boolean = {
+    DB.withConnection { implicit c =>
+      SQL(
+        """
+          |delete from widget_layout where widget_id = {widget_id}
+        """.stripMargin)
+        .on('widget_id -> widgetId)
+        .execute
+
+      SQL(
+        """
+          |delete from widget_properties where widget_id = {widget_id}
+        """.stripMargin)
+        .on('widget_id -> widgetId)
+        .execute
+
+      SQL(
+        """
+          |delete from widgets where id = {widget_id}
+        """.stripMargin)
+        .on('widget_id -> widgetId)
+        .execute
+    }
+
+    true
+  }
+
   def addFeed(user: User, url: String, max: Int): Boolean = {
     DB.withTransaction { implicit c =>
       insertWidget(c, user.numId, "feed") match {
