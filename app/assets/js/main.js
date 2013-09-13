@@ -252,17 +252,11 @@ Anechoic.Dashboard.Config = {
     },
 
     renderWidget: function(parent, widget) {
-        var w = $('<div class="widget draggable" data-id="' + widget.id + '"></div>').appendTo(parent);
-        switch (widget.kind) {
-            case "feed":
-                $('<i class="icon-rss"></i>').appendTo(w);
-                $('<div class="id">' + widget.properties.url + '</div>').appendTo(w);
-                break;
-            case "weather":
-                $('<ul><li class="icon-sun"></li></ul>').appendTo(w);
-                $('<div class="id">' + widget.properties.city + '</div>').appendTo(w);
-                break;
-        }
+        var w = $('<div class="widget draggable ' + widget.kind + '" data-id="' + widget.id + '"></div>').appendTo(parent);
+
+        var template = _.template($('#' + widget.kind + '-template').html());
+        var html = template(widget);
+        w.html(html);
     },
 
     saveLayout: function() {
