@@ -356,7 +356,7 @@ margin-top: 0px;
 
     .current {
       text-align: center;
-      height: 100px;
+      height: 80px;
       display: table;
       margin-left: auto;
       margin-right: auto;
@@ -364,14 +364,14 @@ margin-top: 0px;
       ul {
         padding: 0px;
         list-style: none;
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
         display: table-cell;
 
         li {
           list-style: none;
           margin: 0px;
-          font-size: 100px;
+          font-size: 80px;
           width: 0px;
         }
       }
@@ -382,33 +382,44 @@ margin-top: 0px;
       margin-top: 10px;
 
       td {
-        width: 25%;
         text-align: center;
       }
 
+      .weather-icon {
+        width: 25%;
+      }
+
       .low {
-        display: inline;
         color: @weather-warm-color;
+        padding-top: 5px;
         padding-left: 3px;
-        padding-right: 3px;
+        padding-right: 2px;
+        width: 12.5%;
+        font-size: 14px;
+        text-align: right;
       }
 
       .high {
-        display: inline;
         color: @weather-cool-color;
-        padding-left: 3px;
+        padding-top: 5px;
+        padding-left: 2px;
         padding-right: 3px;
+        width: 12.5%;
+        font-size: 14px;
+        text-align: left;
       }
 
       .date {
+        padding-top: 5px;
         font-size: 12px;
+        width: 25%;
       }
     }
 
     .forecast {
       .icon {
         width: 40px;
-        height: 30px;
+        height: 40px;
         margin-left: auto;
         margin-right: auto;
       }

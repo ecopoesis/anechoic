@@ -11,13 +11,27 @@
     </div>
     <table class="forecast">
         <tr>
-            <% for(var i=  0; i < data.forecast.length; i++) { %>
-                <td>
-                    <%= icon({image: data.forecast[i].image, isDay: true}) %>
-                    <div class="low"><%=data.forecast[i].low_f%>&deg;</div>
-                    <div class="high"><%=data.forecast[i].high_f%>&deg;</div>
-                    <div class="date"><%=data.forecast[i].day%></div>
+            <% for(var i=0; i < data.forecast.length; i++) { %>
+            <td colspan="2" class="weather-icon">
+                <%= icon({image: data.forecast[i].image, isDay: true}) %>
+            </td>
+            <% } %>
+        </tr>
+        <tr>
+            <% for(var i=0; i < data.forecast.length; i++) { %>
+                <td class="low">
+                    <%=data.forecast[i].low_f%>&deg;
                 </td>
+                <td class="high">
+                    <%=data.forecast[i].high_f%>&deg;
+                </td>
+            <% } %>
+        </tr>
+        <tr>
+            <% for(var i=0; i < data.forecast.length; i++) { %>
+            <td colspan="2" class="date">
+                <%=data.forecast[i].day%>
+            </td>
             <% } %>
         </tr>
     </table>
