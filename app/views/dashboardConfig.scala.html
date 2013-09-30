@@ -14,24 +14,47 @@
 
         <div id="dashboard-layout" class="cf"></div>
 
-        <form id="newfeed" method="POST">
-            New Feed
-            <input type="text" name="url"/>
-            <select name="max">
-                @for(x <- 1 to 25) {
-                    <option value="@x">@x</option>
-                }
-            </select>
-            <a href="#" class="button" onclick="Anechoic.Dashboard.Config.addFeed();">add feed</a>
-        </form>
-
         <hr>
 
-        <form id="newweather" method="POST">
-            New Weather
-            <input type="text" id="city" name="city"/>
-            <a href="#" class="button" onclick="Anechoic.Dashboard.Config.addWeather();">add weather</a>
-        </form>
+        <div class="choose-widget">
+            <div>Choose a widget to add:</div>
+            <select size="2" id="add-widget" class="add-widget-select">
+                <option value="feed">Feed</option>
+                <option value="weather">Weather</option>
+            </select>
+        </div>
+
+        <div class="add-widget ninja" id="add-feed">
+            <h3>New Feed</h3>
+            <form id="newfeed" method="POST">
+                <div class="form-item">
+                    URL: <input type="text" name="url" size="50"/>
+                </div>
+
+                <div class="form-item">
+                    Max Items: <select name="max">
+                    @for(x <- 1 to 25) {
+                        @if(x == 10) {
+                            <option value="@x" selected>@x</option>
+                        } else {
+                            <option value="@x">@x</option>
+                        }
+                    }
+                    </select>
+                </div>
+                <a href="#" class="button" onclick="Anechoic.Dashboard.Config.addFeed();">add feed</a>
+            </form>
+        </div>
+
+        <div class="add-widget ninja" id="add-weather">
+            <h3>New Weather</h3>
+            <form id="newweather" method="POST">
+                <div class="form-item">
+                    City: <input type="text" id="city" name="city" size="50"/>
+                </div>
+                <a href="#" class="button" onclick="Anechoic.Dashboard.Config.addWeather();">add weather</a>
+            </form>
+        </div>
     </div>
 
     <script id="feed-template" type="text/x-lowdash-template">

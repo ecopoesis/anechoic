@@ -164,6 +164,12 @@ Anechoic.Dashboard.Config = {
     startup: function() {
         Anechoic.Dashboard.Config.reloadWidgetLayout();
 
+        $('#add-widget').change(function() {
+            Anechoic.Dashboard.Config.resetWidgets();
+            $('.add-widget').addClass('ninja');
+            $('#add-' + $('#add-widget').val()).removeClass('ninja');
+        });
+
         $('#city').autocomplete({
             source: function(request, response) {
                 $.ajax({
@@ -206,6 +212,8 @@ Anechoic.Dashboard.Config = {
     },
 
     reloadWidgetLayout: function() {
+        Anechoic.Dashboard.Config.resetWidgets();
+
         $.post(
             Anechoic.baseUrl + 'dashboard/layout',
             {},
@@ -274,6 +282,7 @@ Anechoic.Dashboard.Config = {
                     Anechoic.Dashboard.Config.renderWidget(unassigned, data[i]);
             }
         }
+        $('#spinner').addClass('ninja');
     },
 
     renderWidget: function(parent, widget) {
@@ -284,6 +293,7 @@ Anechoic.Dashboard.Config = {
         w.html(html);
 
         $('#remove_' + widget.id).click(function() {
+            $('#spinner').removeClass('ninja');
             $.post(
                 Anechoic.baseUrl + 'dashboard/delete',
                 {
@@ -293,6 +303,7 @@ Anechoic.Dashboard.Config = {
             )
             .done(function() {
                 $('#widget_' + widget.id).remove();
+                $('#spinner').addClass('ninja');
             })
             .fail(function(){alert("fail");})
             return false;
@@ -332,6 +343,7 @@ Anechoic.Dashboard.Config = {
     },
 
     addFeed: function() {
+        $('#spinner').removeClass('ninja');
         $.post(
             Anechoic.baseUrl + 'dashboard/addfeed',
             {
@@ -344,6 +356,7 @@ Anechoic.Dashboard.Config = {
     },
 
     addWeather: function() {
+        $('#spinner').removeClass('ninja');
         $.post(
             Anechoic.baseUrl + 'dashboard/addweather',
             {
@@ -353,6 +366,12 @@ Anechoic.Dashboard.Config = {
         )
         .done(Anechoic.Dashboard.Config.reloadWidgetLayout)
         .fail(function(){alert("fail");})
+    },
+
+    resetWidgets: function() {
+        $("#newfeed [name='url']").val('');
+        $("#newfeed [name='max']").val(10);
+        $("#newweather [name='city']").val('');
     }
 }
 

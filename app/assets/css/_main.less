@@ -5,6 +5,7 @@ margin-top: 0px;
 
 .ninja {
   visibility: hidden;
+  display: none;
 }
 
 .header {
@@ -585,6 +586,53 @@ margin-top: 0px;
     height: 50px;
     padding: 5px;
   }
+
+  .add-widget-select {
+    margin: 10px 0px 10px 0px;
+    font-size: 16px;
+    width: 200px;
+  }
+
+  .choose-widget {
+    margin: 10px;
+    float: left;
+  }
+
+  .add-widget {
+    float: left;
+    background: @content;
+    margin: 10px;
+
+    .form-item {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+
+    form {
+      padding: 10px;
+    }
+
+    h3 {
+      background-color: @detail;
+      padding: 5px;
+      font-size: 16px;
+      margin: 0px;
+    }
+
+    .button {
+      float: right;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    input {
+      font-size: 16px;
+    }
+
+    select {
+      font-size: 16px;
+    }
+  }
 }
 
 .footer {
@@ -599,3 +647,17 @@ margin-top: 0px;
   width: 150px;
   height: 20px;
 }
+
+.ui-autocomplete {
+  list-style-type: none;
+  margin: 5px;
+}
+
+.ui-menu .ui-menu-item a {
+  background-color: @button;
+}
+
+.ui-menu .ui-menu-item a:hover {
+  background-color: @detail;
+}
+
