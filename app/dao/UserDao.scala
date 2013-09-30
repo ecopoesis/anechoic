@@ -104,11 +104,14 @@ object UserDao {
     }
   }
 
+  /**
+   * hardcode verified_email to 0 because we don't send verification emails
+   */
   def insert(identity: Identity): Any = {
     DB.withConnection { implicit c =>
       SQL(
         """
-          |insert into users (username, password, pw_hash, pw_salt, firstname, lastname, email) values ({username}, {password}, {pw_hash}, {pw_salt}, {firstname}, {lastname}, {email})
+          |insert into users (username, password, pw_hash, pw_salt, firstname, lastname, email, verified_email) values ({username}, {password}, {pw_hash}, {pw_salt}, {firstname}, {lastname}, {email}, B'0')
         """.stripMargin)
         .on(
           'username -> identity.identityId.userId,

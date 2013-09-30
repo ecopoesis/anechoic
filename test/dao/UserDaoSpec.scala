@@ -52,8 +52,8 @@ class UserDaoSpec extends Specification {
   )
 
   "UserDao" should {
-    "user 'foo' shouldn't exist" in testDb {
-      UserDao.getByUsername("foo") must_== None
+    "user 'singleSignUp' shouldn't exist" in testDb {
+      UserDao.getByUsername("singleSignUp") must_== None
     }
 
     "email 'fake@example.com' shouldn't exist" in testDb {

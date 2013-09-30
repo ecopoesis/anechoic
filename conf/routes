@@ -42,10 +42,8 @@ GET         /login                         securesocial.controllers.LoginPage.lo
 GET         /logout                        securesocial.controllers.LoginPage.logout
 
 # SecureSocial - User Registration and password handling
-GET         /signup                        securesocial.controllers.Registration.startSignUp
-POST        /signup                        securesocial.controllers.Registration.handleStartSignUp
-GET         /signup/:token                 securesocial.controllers.Registration.signUp(token)
-POST        /signup/:token                 securesocial.controllers.Registration.handleSignUp(token)
+GET         /signup                        controllers.Registration.signup
+POST        /signup                        controllers.Registration.handleSignup
 GET         /reset                         securesocial.controllers.Registration.startResetPassword
 POST        /reset                         securesocial.controllers.Registration.handleStartResetPassword
 GET         /reset/:token                  securesocial.controllers.Registration.resetPassword(token)

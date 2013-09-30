@@ -19,17 +19,17 @@ class Authorization(application: play.Application) extends TemplatesPlugin {
   }
 
   /**
-   * Returns the html for the signup page
+   * NOT USED - Returns the html for the signup page
    */
   override def getSignUpPage[A](implicit request: Request[A], form: Form[RegistrationInfo], token: String): Html = {
-    views.html.authorization.registration.signUp(form, token)
+    views.html.authorization.registration.unused.signUp(form, token)
   }
 
   /**
-   * Returns the html for the start signup page
+   * NOT USED - Returns the html for the start signup page
    */
   override def getStartSignUpPage[A](implicit request: Request[A], form: Form[String]): Html = {
-    views.html.authorization.registration.startSignUp(form)
+    views.html.authorization.registration.unused.startSignUp(form)
   }
 
   /**
@@ -98,6 +98,6 @@ class Authorization(application: play.Application) extends TemplatesPlugin {
   }
 
   def getNotAuthorizedPage[A](implicit request: Request[A]): Html = {
-    views.html.authorization.notAuthorized()
+    views.html.authorization.notAuthorized(request)
   }
 }

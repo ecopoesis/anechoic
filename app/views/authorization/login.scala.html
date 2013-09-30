@@ -32,7 +32,8 @@
                 @helper.inputText(
                     loginForm("username"),
                     '_label -> "username",
-                    '_showConstraints -> false
+                    '_showConstraints -> false,
+                    'autocapitalize -> "none"
                 )
 
                 @helper.inputPassword(
@@ -46,7 +47,7 @@
                 </div>
 
                 <div class="secondary">
-                    <a href="@securesocial.core.providers.utils.RoutesHelper.startResetPassword()">reset password</a> | <a href="@securesocial.core.providers.utils.RoutesHelper.startSignUp()">join</a>
+                    <a href="@securesocial.core.providers.utils.RoutesHelper.startResetPassword()">reset password</a> | <a href="//@request.host/signup">join</a>
                 </div>
             </form>
         </div>

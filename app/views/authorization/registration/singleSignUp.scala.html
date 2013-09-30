@@ -1,0 +1,69 @@
+@(signUpForm:Form[controllers.Registration.RegInfo])(implicit request: RequestHeader)
+@import securesocial.core.providers.UsernamePasswordProvider
+@import securesocial.core.IdentityProvider
+@import helper._
+@import tags._
+@implicitFieldConstructor = @{ FieldConstructor(securesocial.views.html.inputFieldConstructor.f) }
+
+@basic(Some("Sign Up")) {
+    <div class="content">
+        @request.flash.get("error").map { msg =>
+            <div class="alert alert-error">
+                @msg
+            </div>
+        }
+
+        <div class="dialog">
+            <form action="//@request.host/signup" class="form-horizontal" autocomplete="off" method="POST" id="signup">
+                @helper.inputText(
+                    signUpForm("email"),
+                    'type -> "email",
+                    '_label -> "email",
+                    '_showConstraints -> false
+                )
+
+                @helper.inputText(
+                    signUpForm("userName"),
+                    '_label -> "username",
+                    '_showConstraints -> false,
+                    'autocapitalize -> "none"
+                )
+
+                @helper.inputText(
+                    signUpForm("firstName"),
+                    '_label -> "first name",
+                    '_showConstraints -> false
+                )
+
+                @helper.inputText(
+                    signUpForm("lastName"),
+                    '_label -> "last name",
+                    '_showConstraints -> false
+                )
+
+                @helper.inputPassword(
+                    signUpForm("password.password1"),
+                    '_label -> "password",
+                    '_showConstraints -> false
+                )
+
+                @helper.inputPassword(
+                    signUpForm("password.password2"),
+                    '_label -> "confirm password",
+                    '_error -> signUpForm.error("password"),
+                    '_showConstraints -> false
+                )
+
+                <div class="form-action cf">
+                    <a href="#" class="button" onclick="$('#signup').submit();">join</a>
+                </div>
+
+                <div class="secondary">
+                    <a href="@securesocial.core.providers.utils.RoutesHelper.startResetPassword()">reset password</a> | <a href="@securesocial.core.providers.utils.RoutesHelper.login()">login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+} {
+
+}
