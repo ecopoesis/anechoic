@@ -1,5 +1,6 @@
 @(title: Option[String], user: Option[securesocial.core.Identity] = None)(body: Html)(menu: Html)(implicit request: play.api.mvc.RequestHeader)
 
+@import tags._
 @import helpers.Formatting
 
 <!DOCTYPE html>
@@ -12,7 +13,7 @@
         }
         </title>
         <link rel="stylesheet" href="@Formatting.asset("css/global.css")"/>
-        @helper.requireJs(core = routes.Assets.at("javascripts/require.js").url, module = routes.Assets.at("javascripts/main").url)
+        @requireJs(core = routes.Assets.at("javascripts/require.js").url, module = routes.Assets.at("javascripts/main").url)
         <script>anechoic_base_url = "//@request.host/";</script>
         <meta name="google-site-verification" content="4Jsr9fqJTEu8XrCVCMSsyna3yxTbkzfPQhoCeVtpkac" />
     </head>

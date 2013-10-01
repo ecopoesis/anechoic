@@ -45,9 +45,22 @@ require([
     utils,
     vote
 ) {
-    $(document).ready(function(){
+    $(document).ready(function() {
+        // common functions fo the whole world
         form.initialize();
         scheme.initialize();
+
+        // startup individual pages
+        switch (page) {
+            case 'dashboard':
+                dashboard.load();
+                break;
+            case 'dashboard-config':
+                $(document).ready(function() { dashboard_config.startup(); });
+                $('#addfeed').click(dashboard_config.addFeed);
+                $('#addweather').click(dashboard_config.addWeather);
+                break;
+        }
     });
 
 });

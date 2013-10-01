@@ -91,11 +91,7 @@
     </script>
 
     <script>
-        require(['lib/dashboard-config'], function(dashboard_config) {
-            $(document).ready(function() { dashboard_config.startup(); });
-            $('#addfeed').click(dashboard_config.addFeed);
-            $('#addweather').click(dashboard_config.addWeather);
-        });
+        var page = "dashboard-config";
     </script>
 }
 
