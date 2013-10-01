@@ -42,7 +42,7 @@
                     }
                     </select>
                 </div>
-                <a href="#" class="button" onclick="Anechoic.Dashboard.Config.addFeed();">add feed</a>
+                <a href="#" class="button" id="addfeed">add feed</a>
             </form>
         </div>
 
@@ -52,7 +52,7 @@
                 <div class="form-item">
                     City: <input type="text" id="city" name="city" size="50"/>
                 </div>
-                <a href="#" class="button" onclick="Anechoic.Dashboard.Config.addWeather();">add weather</a>
+                <a href="#" class="button" id="addweather">add weather</a>
             </form>
         </div>
     </div>
@@ -91,7 +91,11 @@
     </script>
 
     <script>
-        $(document).ready(Anechoic.Dashboard.Config.startup);
+        require(['lib/dashboard-config'], function(dashboard_config) {
+            $(document).ready(function() { dashboard_config.startup(); });
+            $('#addfeed').click(dashboard_config.addFeed);
+            $('#addweather').click(dashboard_config.addWeather);
+        });
     </script>
 }
 

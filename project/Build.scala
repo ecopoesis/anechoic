@@ -29,6 +29,8 @@ object ApplicationBuild extends Build {
     resolvers += "Spy Repository" at "http://files.couchbase.com/maven2",
     lessEntryPoints <<= baseDirectory(_ / "app" / "assets" / "css" ** "global.less"),
     scalacOptions += "-feature",
-    routesImport += "extensions.Binders._"
+    routesImport += "extensions.Binders._",
+    requireJs += "main.js",
+    requireJsShim := "main.js"
   )
 }

@@ -52,8 +52,9 @@
     }
 
     <script>
-        Anechoic.Dashboard.searchProvider = '@search';
-        $(document).ready(function() { Anechoic.Dashboard.load(); });
+        require(['lib/dashboard'], function(dashboard) {
+            $(document).ready(function() { dashboard.load(); });
+        });
     </script>
 }
 

@@ -7,7 +7,7 @@
         </div>
     </div>
     <div class="detail">
-        <%=data.humidity%> RH | <%=Anechoic.Utils.round_2(data.wind_mph)%> mph <%=data.wind_direction%> | <%=Anechoic.Utils.round_2(data.pressure_in)%> inHg <%=data.pressure_trend%>
+        <%=data.humidity%> RH | <%=utils.round_2(data.wind_mph)%> mph <%=data.wind_direction%> | <%=utils.round_2(data.pressure_in)%> inHg <%=data.pressure_trend%>
     </div>
     <table class="forecast">
         <tr>

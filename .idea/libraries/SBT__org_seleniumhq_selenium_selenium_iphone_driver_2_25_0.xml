@@ -1,9 +1,13 @@
 <component name="libraryTable">
   <library name="SBT: org.seleniumhq.selenium:selenium-iphone-driver:2.25.0">
     <CLASSES>
-      <root url="jar:///Applications/play/play-2.1.1/repository/local/org.seleniumhq.selenium/selenium-iphone-driver/2.25.0/jars/selenium-iphone-driver.jar!/" />
+      <root url="jar:///Applications/play/play-2.2.0/repository/cache/org.seleniumhq.selenium/selenium-iphone-driver/jars/selenium-iphone-driver-2.25.0.jar!/" />
     </CLASSES>
-    <JAVADOC />
-    <SOURCES />
+    <JAVADOC>
+      <root url="jar:///Applications/play/play-2.2.0/repository/cache/org.seleniumhq.selenium/selenium-iphone-driver/docs/selenium-iphone-driver-2.25.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar:///Applications/play/play-2.2.0/repository/cache/org.seleniumhq.selenium/selenium-iphone-driver/srcs/selenium-iphone-driver-2.25.0-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

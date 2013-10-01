@@ -9,10 +9,10 @@
     <ul class="menu">
         @user match {
             case Some(user: model.User) => {
-                <li class="menu-item"><a href="#" onclick="return Anechoic.Scheme.change('@Signature.sign(user.identityId.userId, "scheme")')"><i class="icon-adjust"></i></a></li>
+                <li class="menu-item"><a href="#" id="scheme" data-sig="@Signature.sign(user.identityId.userId, "scheme")"><i class="icon-adjust"></i></a></li>
             }
             case _ => {
-                <li class="menu-item"><a href="#" onclick="return Anechoic.Scheme.change(null)"><i class="icon-adjust"></i></a></li>
+                <li class="menu-item"><a href="#" id="scheme"><i class="icon-adjust"></i></a></li>
             }
         }
         <li class="menu-item"><a href="//@request.host/dashboard">dashboard</a></li>
