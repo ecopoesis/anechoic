@@ -50,7 +50,7 @@ object Feed extends Controller with securesocial.core.SecureSocial {
         addData.bindFromRequest.fold(
           errors => BadRequest(errors.toString),
           post => {
-            if (WidgetDao.addFeed(user, post.url, post.max)) {
+            if (WidgetDao.addFeed(user, post.url, post.max) > 0) {
               Ok
             } else {
               InternalServerError

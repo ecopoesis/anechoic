@@ -40,7 +40,11 @@
     </script>
 
     @user match {
-        case Some(user) => {}
+        case Some(user) => {
+            <script id="welcome-template" type="text/x-lowdash-template">
+                @Html(helpers.Web.include("resources/welcome-signedin._"))
+            </script>
+        }
         case _ => {
             <script id="welcome-template" type="text/x-lowdash-template">
                 @Html(helpers.Web.include("resources/welcome._"))

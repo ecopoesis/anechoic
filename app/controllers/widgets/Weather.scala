@@ -48,7 +48,7 @@ object Weather extends Controller with securesocial.core.SecureSocial {
         addData.bindFromRequest.fold(
           errors => BadRequest(errors.toString),
           post => {
-            if (WidgetDao.addWeather(user, post.city, post.wunderId)) {
+            if (WidgetDao.addWeather(user, post.city, post.wunderId) > 0) {
               Ok
             } else {
               InternalServerError

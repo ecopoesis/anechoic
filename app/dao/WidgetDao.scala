@@ -64,6 +64,24 @@ object WidgetDao {
     true
   }
 
+  private def setPosition(widgetId: Long, col: Int, pos: Int) {
+    DB.withConnection { implicit c =>
+      SQL(
+        """
+          |insert into widget_layout
+          |(widget_id, col, pos)
+          |values
+          |({widget}, {column}, {position})
+        """.stripMargin)
+        .on(
+        'widget -> widgetId,
+        'column -> col,
+        'position -> pos
+      )
+      .execute()
+    }
+  }
+
   def getAll(userId: Long): Seq[Widget] = {
     DB.withConnection { implicit c =>
       SQL(
@@ -176,7 +194,7 @@ object WidgetDao {
     true
   }
 
-  def addFeed(user: User, url: String, max: Int): Boolean = {
+  def addFeed(user: User, url: String, max: Int): Long = {
     DB.withTransaction { implicit c =>
       insertWidget(c, user.numId, "feed") match {
         case Some(widgetId) => {
@@ -185,21 +203,21 @@ object WidgetDao {
             insertProperty(c, widgetId, "max", max.toString)) {
 
             c.commit()
-            true
+            widgetId
           } else {
             c.rollback
-            false
+            0
           }
         }
         case _ => {
           c.rollback
-          false
+          0
         }
       }
     }
   }
 
-  def addWeather(user: User, city: String, wunderId: String): Boolean = {
+  def addWeather(user: User, city: String, wunderId: String): Long = {
     DB.withTransaction { implicit c =>
       insertWidget(c, user.numId, "weather") match {
         case Some(widgetId) => {
@@ -208,16 +226,52 @@ object WidgetDao {
             insertProperty(c, widgetId, "wunderId", wunderId)) {
 
             c.commit()
-            true
+            widgetId
           } else {
             c.rollback
-            false
+            0
           }
         }
         case _ => {
           c.rollback
-          false
+          0
         }
+      }
+    }
+  }
+
+  def addWelcome(user: User): Long = {
+    DB.withTransaction { implicit c =>
+      insertWidget(c, user.numId, "welcome") match {
+        case Some(widgetId) => {
+          c.commit()
+          widgetId
+        }
+        case _ => {
+          c.rollback
+          0
+        }
+      }
+    }
+  }
+
+  def duplicateSystem(user: User) = {
+    val widgets = WidgetDao.getAll(UserDao.getByUsername("system").get.numId)
+    for (widget <- widgets) {
+      widget.kind match {
+        case "feed" => {
+          val widgetId = addFeed(user, widget.properties.get("url").get, widget.properties.get("max").get.toInt)
+          setPosition(widgetId, widget.column.getOrElse(-1), widget.position.getOrElse(-1))
+        }
+        case "weather" => {
+          val widgetId = addWeather(user, widget.properties.get("city").get, widget.properties.get("wunderId").get)
+          setPosition(widgetId, widget.column.getOrElse(-1), widget.position.getOrElse(-1))
+        }
+        case "welcome" => {
+          val widgetId = addWelcome(user)
+          setPosition(widgetId, widget.column.getOrElse(-1), widget.position.getOrElse(-1))
+        }
+        case _ => {}
       }
     }
   }

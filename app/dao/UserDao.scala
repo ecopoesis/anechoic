@@ -107,8 +107,8 @@ object UserDao {
   /**
    * hardcode verified_email to 0 because we don't send verification emails
    */
-  def insert(identity: Identity): Any = {
-    DB.withConnection { implicit c =>
+  def insert(identity: Identity): Option[Long] = {
+    val userId: Option[Long] = DB.withConnection { implicit c =>
       SQL(
         """
           |insert into users (username, password, pw_hash, pw_salt, firstname, lastname, email, verified_email) values ({username}, {password}, {pw_hash}, {pw_salt}, {firstname}, {lastname}, {email}, B'0')
@@ -122,10 +122,20 @@ object UserDao {
           'lastname -> identity.lastName,
           'email -> identity.email
       )
-      .executeInsert() match {
-        case Some(a) => a
-        case None => None
+      .executeInsert()
+    }
+
+    userId match {
+      case Some(userId) => {
+        getById(userId) match {
+          case Some(user) => {
+            WidgetDao.duplicateSystem(user)
+            Some(userId)
+          }
+          case _ => None
+        }
       }
+      case _ => None
     }
   }
 
