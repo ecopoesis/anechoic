@@ -11,8 +11,8 @@ define(['lib/cookie'], function(cookie) {
 
             cookie.bake('scheme', $('body').attr('class'));
 
-            if (sig !== null) {
-                $.get(anechoic_base_url + 'user/scheme' + '?sig=' + sig + "&scheme=" + $('body').attr('class'));
+            if (sig !== null && sig != undefined) {
+                $.get(anechoic_base_url + 'scheme' + '?sig=' + sig + "&scheme=" + $('body').attr('class'));
             }
 
             return false;

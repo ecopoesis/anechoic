@@ -1,0 +1,15 @@
+@(user: model.User)(implicit request: play.api.mvc.RequestHeader)
+
+@import tags._
+
+@frame(Some(user), Option("Account")) {
+    <div class="content">
+        @user.identityId.userId
+        <br>
+        @user.fullName
+        <div class="buttons">
+            <a class="button" href="@securesocial.core.providers.utils.RoutesHelper.changePasswordPage()">change password</a>
+        </div>
+    </div>
+}
+

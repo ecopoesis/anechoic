@@ -9,6 +9,7 @@ GET         /newest                        controllers.Www.newest
 GET         /story/:id                     controllers.Www.story(id: Long, seo: Option[String] =        None)
 GET         /story/:seo/:id                controllers.Www.story(id: Long, seo: Option[String])
 GET         /comment/:id                   controllers.Www.comment(id: Long)
+GET         /user/:id                      controllers.Www.user(id: Long)
 
 # Dashboard
 GET         /dashboard/config              controllers.Www.dashboardConfig
@@ -26,7 +27,7 @@ POST        /dashboard/delete              controllers.Dashboard.deleteWidget
 
 # Ajax Calls
 GET         /story/vote/up/:storyId        controllers.Www.voteStoryUp(storyId: Long)
-GET         /user/scheme                   controllers.Www.setScheme()
+GET         /scheme                        controllers.Www.setScheme()
 
 # Forms
 POST        /form/story                    controllers.Forms.story

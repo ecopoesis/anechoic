@@ -50,7 +50,7 @@ class UserService(application: Application) extends UserServicePlugin(applicatio
 
   /**
    * Saves a token.  This is needed for users that
-   * are creating an account in the system instead of using one in a 3rd party system.
+   * are creating an user in the system instead of using one in a 3rd party system.
    * @param token The token to save
    */
   def save(token: Token) {

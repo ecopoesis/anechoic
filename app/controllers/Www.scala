@@ -37,6 +37,15 @@ object Www extends Controller with securesocial.core.SecureSocial {
     }
   }
 
+  def user(id: Long) = SecuredAction { implicit request =>
+    request.user match {
+      case user: User => {
+        Ok(views.html.user(user))
+      }
+      case _ => BadRequest("invalid user object")
+    }
+  }
+
   def newest = UserAwareAction { implicit request =>
     Ok(views.html.index(request.user, StoryDao.getNewestList(1, DefaultPageSize)))
   }
