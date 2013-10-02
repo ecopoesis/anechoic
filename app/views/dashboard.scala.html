@@ -6,9 +6,6 @@
     <div id="dashboard" class="dashboard cf">
         @user match {
             case Some(user) => {
-                <div class="config">
-                    <a href="//@request.host/dashboard/config"><i class="icon-gears"></i></a>
-                </div>
             }
             case _ => {
                 <div class="signup">

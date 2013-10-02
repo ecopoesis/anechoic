@@ -3,7 +3,7 @@
 # ~~~~
 
 # Web
-GET         /                              controllers.Www.index
+GET         /                              controllers.Www.dashboard
 GET         /submit                        controllers.Www.submit
 GET         /newest                        controllers.Www.newest
 GET         /story/:id                     controllers.Www.story(id: Long, seo: Option[String] =        None)
@@ -11,7 +11,6 @@ GET         /story/:seo/:id                controllers.Www.story(id: Long, seo: 
 GET         /comment/:id                   controllers.Www.comment(id: Long)
 
 # Dashboard
-GET         /dashboard                     controllers.Www.dashboard
 GET         /dashboard/config              controllers.Www.dashboardConfig
 
 # Dashboard - Widgets

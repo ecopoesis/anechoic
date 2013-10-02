@@ -9,17 +9,15 @@
     <ul class="menu">
         @user match {
             case Some(user: model.User) => {
-                <li class="menu-item"><a href="#" id="scheme" data-sig="@Signature.sign(user.identityId.userId, "scheme")"><i class="icon-adjust"></i></a></li>
+                <li class="menu-item"><a href="#" id="scheme" data-sig="@Signature.sign(user.identityId.userId, "scheme")"><i class="icon-adjust"></i>color</a></li>
             }
             case _ => {
-                <li class="menu-item"><a href="#" id="scheme"><i class="icon-adjust"></i></a></li>
+                <li class="menu-item"><a href="#" id="scheme"><i class="icon-adjust"></i>color</a></li>
             }
         }
-        <li class="menu-item"><a href="//@request.host/dashboard">dashboard</a></li>
-        <li class="menu-item"><a href="//@request.host/newest">newest</a></li>
-        <li class="menu-item"><a href="//@request.host/submit">submit</a></li>
         @user match {
             case Some(user: model.User) => {
+                <li class="menu-item"><a href="//@request.host/dashboard/config"><i class="icon-gears"></i>customize</a></li>
                 <li class="menu-item"><a href="//@request.host/user/@user.numId">@user.identityId.userId</a></li>
                 <li class="menu-item"><a href="//@request.host/logout">logout</a></li>
             }
