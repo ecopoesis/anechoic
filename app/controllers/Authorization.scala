@@ -53,7 +53,6 @@ class Authorization(application: play.Application) extends TemplatesPlugin {
     views.html.authorization.passwordChange(form)
   }
 
-
   /**
    * Returns the email sent when a user starts the sign up process
    */

@@ -1,7 +1,7 @@
 <h3>Welcome</h3>
 <div class="card">
     <p>Anechoic News Dashboard is a free service that let's you create a customized dashboard of information to use as your home page. Think iGoogle, but still around after November 1st.</p>
-    <p>Currently, Anechoic has widgets for RSS feeds and weather. More are coming soon. If there is type of widget you'd like to see, email <a href="support@anechoicnews.com">support@anechoicnews.com</a> and we'll see what we can do.</p>
+    <p>Currently, Anechoic has widgets for RSS feeds and weather. More are coming soon. If there is type of widget you'd like to see, email <a href="mailto:support@anechoicnews.com">support@anechoicnews.com</a> and we'll see what we can do.</p>
     <div class="buttons">
         <a href="<%=baseUrl%>signup" class="button">Create a Free Account</a>
         <a href="<%=baseUrl%>login" class="button">Sign In</a>
