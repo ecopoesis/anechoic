@@ -28,4 +28,12 @@ object Global extends WithFilters(new GzipFilter()) {
       ))
     }
   }
+
+  override def onRouteRequest(request: RequestHeader): Option[Handler] = {
+    if (Play.isProd && !request.headers.get("x-forwarded-proto").getOrElse("").contains("https")) {
+      Some(controllers.Secure.redirect)
+    } else {
+      super.onRouteRequest(request)
+    }
+  }
 }
