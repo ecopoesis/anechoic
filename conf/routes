@@ -17,8 +17,11 @@ GET         /dashboard/config              controllers.Www.dashboardConfig
 # Dashboard - Widgets
 POST        /dashboard/addfeed             controllers.widgets.Feed.add
 POST        /dashboard/feed                controllers.widgets.Feed.read
+POST        /dashboard/addstock            controllers.widgets.Stock.add
+POST        /dashboard/stock               controllers.widgets.Stock.read
 POST        /dashboard/addweather          controllers.widgets.Weather.add
 POST        /dashboard/weather             controllers.widgets.Weather.read
+
 
 # Dashboard - Layout
 POST        /dashboard/layout              controllers.Dashboard.getLayout

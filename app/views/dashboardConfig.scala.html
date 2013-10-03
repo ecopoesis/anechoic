@@ -20,6 +20,7 @@
             <div>Choose a widget to add:</div>
             <select size="2" id="add-widget" class="add-widget-select">
                 <option value="feed">Feed</option>
+                <option value="stock">Stock</option>
                 <option value="weather">Weather</option>
             </select>
         </div>
@@ -46,6 +47,16 @@
             </form>
         </div>
 
+        <div class="add-widget ninja" id="add-stock">
+            <h3>New Stock</h3>
+            <form id="newstock" method="POST">
+                <div class="form-item">
+                    Symbol: <input type="text" id="symbol" name="symbol" size="10"/>
+                </div>
+                <a href="#" class="button" id="addstock">add stock</a>
+            </form>
+        </div>
+
         <div class="add-widget ninja" id="add-weather">
             <h3>New Weather</h3>
             <form id="newweather" method="POST">
@@ -65,6 +76,17 @@
         </h3>
         <div class="desc">
             <%=properties.url%>
+        </div>
+    </script>
+
+    <script id="stock-template" type="text/x-lowdash-template">
+        <h3>
+            <i class="icon-money"></i>
+            Stock
+            <a href="#" class="remove" id="remove_<%=id%>"><i class="icon-remove-circle remove"></i></a>
+        </h3>
+        <div class="desc">
+            <%=properties.symbol%>
         </div>
     </script>
 

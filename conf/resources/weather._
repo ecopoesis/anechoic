@@ -1,7 +1,7 @@
 <h3><%=data.location%></h3>
 <div class="card">
     <div class="current">
-        <%= icon({image: data.image, isDay: data.isDay}) %>
+        <%=properties.icon_template({image: data.image, isDay: data.isDay}) %>
         <div class="temp">
             <%=data.temp_f%>&deg;F
         </div>
@@ -13,7 +13,7 @@
         <tr>
             <% for(var i=0; i < data.forecast.length; i++) { %>
             <td colspan="2" class="weather-icon">
-                <%= icon({image: data.forecast[i].image, isDay: true}) %>
+                <%=properties.icon_template({image: data.forecast[i].image, isDay: true}) %>
             </td>
             <% } %>
         </tr>

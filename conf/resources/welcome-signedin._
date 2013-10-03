@@ -1,8 +1,8 @@
 <h3>Welcome</h3>
 <div class="card">
-    <p>Welcome to Anechoic News Dashboard. Thanks for creating an account. You can <a href="<%=baseUrl%>dashboard/config">customize</a> this dashboard by clicking the link or using the menu at the top of the page.</p>
+    <p>Welcome to Anechoic News Dashboard. Thanks for creating an account. You can <a href="<%=data.baseUrl%>dashboard/config">customize</a> this dashboard by clicking the link or using the menu at the top of the page.</p>
     <p>Currently, Anechoic has widgets for RSS feeds and weather. More are coming soon. If there is a type of widget you'd like to see, email <a href="mailto:support@anechoicnews.com">support@anechoicnews.com</a> and we'll see what we can do.</p>
     <div class="buttons">
-        <a href="<%=baseUrl%>dashboard/config" class="button">Customize</a>
+        <a href="<%=data.baseUrl%>dashboard/config" class="button">Customize</a>
     </div>
 </div>

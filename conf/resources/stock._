@@ -1,0 +1,4 @@
+<h3><%=data.symbol%></h3>
+<div class="card">
+    <div id="plot_<%=widget.id%>" class="plot"></div>
+</div>

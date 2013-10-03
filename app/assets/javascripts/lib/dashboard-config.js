@@ -195,6 +195,19 @@ define(['jquery', 'jqueryui', 'lodash'], function() {
                 .fail(function(){alert("fail");})
         },
 
+        addStock: function() {
+            $('#spinner').removeClass('ninja');
+            $.post(
+                anechoic_base_url + 'dashboard/addstock',
+                {
+                    symbol: $("#newstock [name='symbol']").val(),
+                    range: "1d"
+                }
+            )
+                .done(dashboard_config.reloadWidgetLayout)
+                .fail(function(){alert("fail");})
+        },
+
         addWeather: function() {
             $('#spinner').removeClass('ninja');
             $.post(
@@ -211,6 +224,7 @@ define(['jquery', 'jqueryui', 'lodash'], function() {
         resetWidgets: function() {
             $("#newfeed [name='url']").val('');
             $("#newfeed [name='max']").val(10);
+            $("#newstock [name='symbol']").val('');
             $("#newweather [name='city']").val('');
         }
     }

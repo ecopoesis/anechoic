@@ -1,13 +1,9 @@
 <component name="libraryTable">
   <library name="SBT: com.novocode:junit-interface:0.9">
     <CLASSES>
-      <root url="jar:///Applications/play/play-2.2.0/repository/cache/com.novocode/junit-interface/jars/junit-interface-0.9.jar!/" />
+      <root url="jar:///Applications/play/play-2.1.1/repository/local/com.novocode/junit-interface/0.9/jars/junit-interface.jar!/" />
     </CLASSES>
-    <JAVADOC>
-      <root url="jar:///Applications/play/play-2.2.0/repository/cache/com.novocode/junit-interface/docs/junit-interface-0.9-javadoc.jar!/" />
-    </JAVADOC>
-    <SOURCES>
-      <root url="jar:///Applications/play/play-2.2.0/repository/cache/com.novocode/junit-interface/srcs/junit-interface-0.9-sources.jar!/" />
-    </SOURCES>
+    <JAVADOC />
+    <SOURCES />
   </library>
 </component>

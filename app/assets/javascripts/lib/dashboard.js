@@ -1,4 +1,4 @@
-define(['lib/utils', 'jquery', 'jqueryui', 'lodash'], function(utils) {
+define(['lib/utils', 'jquery', 'jqueryui', 'lodash', 'flot', 'flot_resize', 'flot_time'], function(utils) {
     var dashboard = {
         searchProvider: 'google',
         count: 0,
@@ -66,11 +66,15 @@ define(['lib/utils', 'jquery', 'jqueryui', 'lodash'], function(utils) {
                     case "feed":
                         dashboard.loadFeed(columns[widget.column], widget);
                         break;
+                    case "stock":
+                        dashboard.loadStock(columns[widget.column], widget);
+                        break;
                     case "weather":
                         dashboard.loadWeather(columns[widget.column], widget);
                         break;
                     case "welcome":
-                        dashboard.renderWelcome(columns[widget.column], widget);
+                        var div = $('<div class="widget welcome"></div>').appendTo(columns[widget.column]);
+                        dashboard.draw({baseUrl: anechoic_base_url}, div, widget);
                         break;
                 }
             }
@@ -83,7 +87,19 @@ define(['lib/utils', 'jquery', 'jqueryui', 'lodash'], function(utils) {
                 anechoic_base_url + 'dashboard/feed',
                 {url: widget.properties.url, sig: widget.properties.sig},
                 function(data) {
-                    dashboard.renderFeed(data, w, widget.properties.max);
+                    dashboard.draw(data, w, widget);
+                }
+            );
+        },
+
+        loadStock: function(c, widget) {
+            var w = $('<div class="widget stock"></div>').appendTo(c);
+
+            $.post(
+                anechoic_base_url + 'dashboard/stock',
+                {symbol: widget.properties.symbol, range: widget.properties.range, sig: widget.properties.sig},
+                function(data) {
+                    dashboard.drawStock(data, w, widget);
                 }
             );
         },
@@ -95,7 +111,8 @@ define(['lib/utils', 'jquery', 'jqueryui', 'lodash'], function(utils) {
                 anechoic_base_url + 'dashboard/weather',
                 {url: widget.properties.wunderId, sig: widget.properties.sig},
                 function(data) {
-                    dashboard.renderWeather(data, w);
+                    widget.properties.icon_template =  _.template($("#weather-icon-template").html());
+                    dashboard.draw(data, w, widget);
                 }
             );
         },
@@ -108,26 +125,25 @@ define(['lib/utils', 'jquery', 'jqueryui', 'lodash'], function(utils) {
             }
         },
 
-        renderFeed: function(data, w, max) {
-            var template = _.template($("#feed-template").html());
-            var html = template({data: data, max: max});
-            w.html(html);
-            dashboard.updateProgress();
+        drawStock: function(data, div, widget) {
+            dashboard.draw(data, div, widget);
+
+            var flot_data = new Array();
+            for(i = 0; i < data.ticks.length; i++) {
+                flot_data.push([data.ticks[i].timestamp * 1000, data.ticks[i].close]);
+            }
+            var plot = $.plot($('#plot_' + widget.id), [flot_data], {
+                xaxis: {
+                    mode: "time",
+                    timezone: "browser"
+                }
+           });
         },
 
-        renderWeather: function(data, w) {
-            var template = _.template($("#weather-template").html());
-            var icon = _.template($("#weather-icon-template").html());
-            var html = template({data: data, icon: icon, utils: utils});
-            w.html(html);
-            dashboard.updateProgress();
-        },
-
-        renderWelcome: function(c, widget) {
-            var w = $('<div class="widget welcome"></div>').appendTo(c);
-            var template = _.template($("#welcome-template").html());
-            var html = template({baseUrl: anechoic_base_url});
-            w.html(html);
+        draw: function(data, div, widget) {
+            var template = _.template($('#' + widget.kind + '-template').html());
+            var html = template({data: data, properties: widget.properties, utils: utils, widget: widget});
+            div.html(html);
             dashboard.updateProgress();
         }
     }

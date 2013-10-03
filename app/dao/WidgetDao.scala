@@ -217,6 +217,29 @@ object WidgetDao {
     }
   }
 
+  def addStock(user: User, symbol: String, range: String): Long = {
+    DB.withTransaction { implicit c =>
+      insertWidget(c, user.numId, "stock") match {
+        case Some(widgetId) => {
+          if (
+            insertProperty(c, widgetId, "symbol", symbol.toUpperCase) &&
+            insertProperty(c, widgetId, "range", range)) {
+
+            c.commit()
+            widgetId
+          } else {
+            c.rollback
+            0
+          }
+        }
+        case _ => {
+          c.rollback
+          0
+        }
+      }
+    }
+  }
+
   def addWeather(user: User, city: String, wunderId: String): Long = {
     DB.withTransaction { implicit c =>
       insertWidget(c, user.numId, "weather") match {
@@ -261,6 +284,10 @@ object WidgetDao {
       widget.kind match {
         case "feed" => {
           val widgetId = addFeed(user, widget.properties.get("url").get, widget.properties.get("max").get.toInt)
+          setPosition(widgetId, widget.column.getOrElse(-1), widget.position.getOrElse(-1))
+        }
+        case "stock" => {
+          val widgetId = addStock(user, widget.properties.get("symbol").get, widget.properties.get("range").get)
           setPosition(widgetId, widget.column.getOrElse(-1), widget.position.getOrElse(-1))
         }
         case "weather" => {

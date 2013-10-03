@@ -26,41 +26,32 @@ object Dashboard extends Controller with securesocial.core.SecureSocial {
   )
 
   def getLayout = UserAwareAction { implicit request =>
-    request.user match {
+    val widgets = request.user match {
       case user: Some[User] => {
-        val widgets = WidgetDao.getAll(user.get.numId)
-        for (widget <- widgets) {
-          widget.kind match {
-            case "feed" => {
-              widget.properties += "sig" -> Signature.sign(widget.properties.get("url").get)
-            }
-            case "weather" => {
-              widget.properties += "sig" -> Signature.sign(widget.properties.get("wunderId").get)
-            }
-            case _ => {}
-          }
-          widget.properties += "delsig" -> Signature.sign(widget.id.toString)
-        }
-        Ok(Json.toJson(widgets))
+        WidgetDao.getAll(user.get.numId)
       }
       case None => {
-        val widgets = WidgetDao.getAll(UserDao.getByUsername("system").get.numId)
-        for (widget <- widgets) {
-          widget.kind match {
-            case "feed" => {
-              widget.properties += "sig" -> Signature.sign(widget.properties.get("url").get)
-            }
-            case "weather" => {
-              widget.properties += "sig" -> Signature.sign(widget.properties.get("wunderId").get)
-            }
-            case _ => {}
-          }
-          widget.properties += "delsig" -> Signature.sign(widget.id.toString)
-        }
-        Ok(Json.toJson(widgets))
+        WidgetDao.getAll(UserDao.getByUsername("system").get.numId)
       }
-      case _ => BadRequest("invalid user object")
     }
+
+    for (widget <- widgets) {
+      widget.kind match {
+        case "feed" => {
+          widget.properties += "sig" -> Signature.sign(widget.properties.get("url").get)
+        }
+        case "stock" => {
+          widget.properties += "sig" -> Signature.sign(widget.properties.get("symbol").get)
+        }
+        case "weather" => {
+          widget.properties += "sig" -> Signature.sign(widget.properties.get("wunderId").get)
+        }
+        case _ => {}
+      }
+      widget.properties += "delsig" -> Signature.sign(widget.id.toString)
+    }
+
+    Ok(Json.toJson(widgets))
   }
 
   def saveLayout = SecuredAction { implicit request =>
