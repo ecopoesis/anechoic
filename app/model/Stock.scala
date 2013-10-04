@@ -13,7 +13,10 @@ case class Tick (
 
 case class Stock (
     symbol: String,
-    ticks: Seq[Tick]
+    ticks: Seq[Tick],
+    min: Long,
+    max: Long,
+    previousClose: Double
 )
 
 object Tick {

@@ -28,10 +28,11 @@ object StockDao {
     if ((xml \\ "error").length > 0) {
       None
     } else {
-      val offset = (xml \\ "feature" filter( _ \ "@name" contains Text("gmtoffset"))).text.toInt
+      val min = (xml \\ "data-series" \ "reference-meta" \ "min").text.toLong
+      val max = (xml \\ "data-series" \ "reference-meta" \ "max").text.toLong
       val ticks = for (p <- (xml \\ "p")) yield {
         Tick(
-          (p \ "@ref").text.toInt + offset,
+          (p \ "@ref").text.toLong,
           (p \\ "v")(0).text.toDouble,
           (p \\ "v")(1).text.toDouble,
           (p \\ "v")(2).text.toDouble,
@@ -42,7 +43,10 @@ object StockDao {
 
       Some(Stock(
         (xml \\ "feature" filter( _ \ "@name" contains Text("ticker"))).text.toUpperCase,
-        ticks
+        ticks,
+        min,
+        max,
+        (xml \\ "feature" filter( _ \ "@name" contains Text("previous_close"))).text.toDouble
       ))
     }
   }

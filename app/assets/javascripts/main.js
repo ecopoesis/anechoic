@@ -72,7 +72,7 @@ require([
         scheme.initialize();
 
         // timezoneJs
-        timezoneJS.timezone.zoneFileBasePath = "assets/javascripts/tz";
+        timezoneJS.timezone.zoneFileBasePath = "/assets/javascripts/tz";
         timezoneJS.timezone.defaultZoneFile = [];
         timezoneJS.timezone.init({async: false});
 

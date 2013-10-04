@@ -19,6 +19,8 @@ class StockDaoSpec extends Specification {
       stock must_!= None
       stock.get.symbol must_== "TSLA"
       stock.get.ticks.length must_== 236
+      stock.get.min must_== 1380807000
+      stock.get.max must_== 1380830400
 
       stock.get.ticks(0).timestamp must_== 1380792659
       stock.get.ticks(0).close must_== 173.2720

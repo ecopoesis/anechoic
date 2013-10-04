@@ -1,4 +1,4 @@
-define(['lib/utils', 'jquery', 'jqueryui', 'lodash', 'flot', 'flot_resize', 'flot_time'], function(utils) {
+define(['lib/utils', 'lib/scheme', 'jquery', 'jqueryui', 'lodash', 'flot', 'flot_resize', 'flot_time'], function(utils, scheme) {
     var dashboard = {
         searchProvider: 'google',
         count: 0,
@@ -74,7 +74,7 @@ define(['lib/utils', 'jquery', 'jqueryui', 'lodash', 'flot', 'flot_resize', 'flo
                         break;
                     case "welcome":
                         var div = $('<div class="widget welcome"></div>').appendTo(columns[widget.column]);
-                        dashboard.draw({baseUrl: anechoic_base_url}, div, widget);
+                        dashboard.draw({baseUrl: anechoic_base_url}, div, widget, true);
                         break;
                 }
             }
@@ -87,7 +87,7 @@ define(['lib/utils', 'jquery', 'jqueryui', 'lodash', 'flot', 'flot_resize', 'flo
                 anechoic_base_url + 'dashboard/feed',
                 {url: widget.properties.url, sig: widget.properties.sig},
                 function(data) {
-                    dashboard.draw(data, w, widget);
+                    dashboard.draw(data, w, widget, true);
                 }
             );
         },
@@ -112,7 +112,7 @@ define(['lib/utils', 'jquery', 'jqueryui', 'lodash', 'flot', 'flot_resize', 'flo
                 {url: widget.properties.wunderId, sig: widget.properties.sig},
                 function(data) {
                     widget.properties.icon_template =  _.template($("#weather-icon-template").html());
-                    dashboard.draw(data, w, widget);
+                    dashboard.draw(data, w, widget, true);
                 }
             );
         },
@@ -126,25 +126,108 @@ define(['lib/utils', 'jquery', 'jqueryui', 'lodash', 'flot', 'flot_resize', 'flo
         },
 
         drawStock: function(data, div, widget) {
-            dashboard.draw(data, div, widget);
-
-            var flot_data = new Array();
-            for(i = 0; i < data.ticks.length; i++) {
-                flot_data.push([data.ticks[i].timestamp * 1000, data.ticks[i].close]);
-            }
-            var plot = $.plot($('#plot_' + widget.id), [flot_data], {
-                xaxis: {
-                    mode: "time",
-                    timezone: "browser"
+            scheme.reloadFuncs.push({
+                fn: dashboard.plotStock,
+                args: {
+                    data: data,
+                    div: div,
+                    widget: widget,
+                    initial: false
                 }
-           });
+            });
+
+            dashboard.plotStock({
+                data: data,
+                div: div,
+                widget: widget,
+                initial: true
+            });
         },
 
-        draw: function(data, div, widget) {
+        plotStock: function(args) {
+            dashboard.draw(args.data, args.div, args.widget, args.initial);
+            var colors = scheme.colors();
+
+            var current = {
+                data: new Array(),
+                lines: {
+                    show: true,
+                    fill: true
+                },
+                shadowSize: 0,
+                color: colors.detail
+            };
+
+            var close = {
+                data: new Array(),
+                lines: {
+                    show: true,
+                    fill: false
+                },
+                shadowSize: 0,
+                color: colors.detail_text
+            };
+
+            var y_min = args.data.ticks[0].close;
+            var y_max = args.data.ticks[0].close;
+            for(var i = 0; i < args.data.ticks.length; i++) {
+                current.data.push([args.data.ticks[i].timestamp * 1000, args.data.ticks[i].close]);
+                if (args.data.ticks[i].close < y_min) {
+                    y_min = args.data.ticks[i].close;
+                }
+                if (args.data.ticks[i].close > y_max) {
+                    y_max = args.data.ticks[i].close;
+                }
+            }
+
+            close.data.push([args.data.min * 1000, args.data.previousClose]);
+            close.data.push([args.data.max * 1000, args.data.previousClose]);
+
+            if (args.data.previousClose < y_min) {
+                y_min = args.data.previousClose;
+            }
+
+            if (args.data.previousClose > y_max) {
+                y_max = args.data.previousClose;
+            }
+
+            $.plot($('#plot_' + args.widget.id), [current, close], {
+                grid: {
+                    show: true,
+                    borderWidth: 0
+                },
+                xaxis: {
+                    min: args.data.min * 1000,
+                    max: args.data.max * 1000,
+                    mode: "time",
+                    timezone: "browser",
+                    color: colors.button,
+                    tickColor: 'rgba(0,0,0,0)'
+                },
+                yaxis: {
+                    min: y_min - ((y_max - y_min) * 0.1),
+                    max: y_max + ((y_max - y_min) * 0.1),
+                    color: colors.button,
+                    tickColor: 'rgba(0,0,0,0)'
+                },
+                series: {
+                    lines: {
+                        show: true,
+                        fill: true,
+                        fillColor: colors.detail
+                    }
+                }
+            });
+        },
+
+        draw: function(data, div, widget, initial) {
             var template = _.template($('#' + widget.kind + '-template').html());
             var html = template({data: data, properties: widget.properties, utils: utils, widget: widget});
             div.html(html);
-            dashboard.updateProgress();
+
+            if (initial) {
+                dashboard.updateProgress();
+            }
         }
     }
     

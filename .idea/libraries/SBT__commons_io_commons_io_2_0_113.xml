@@ -1,13 +1,9 @@
 <component name="libraryTable">
   <library name="SBT: commons-io:commons-io:2.0.1">
     <CLASSES>
-      <root url="jar:///Applications/play/play-2.2.0/repository/local/commons-io/commons-io/2.0.1/jars/commons-io.jar!/" />
+      <root url="jar:///Applications/play/play-2.1.1/repository/local/commons-io/commons-io/2.0.1/jars/commons-io.jar!/" />
     </CLASSES>
-    <JAVADOC>
-      <root url="jar:///Applications/play/play-2.2.0/repository/cache/commons-io/commons-io/docs/commons-io-2.0.1-javadoc.jar!/" />
-    </JAVADOC>
-    <SOURCES>
-      <root url="jar:///Applications/play/play-2.2.0/repository/cache/commons-io/commons-io/srcs/commons-io-2.0.1-sources.jar!/" />
-    </SOURCES>
+    <JAVADOC />
+    <SOURCES />
   </library>
 </component>
