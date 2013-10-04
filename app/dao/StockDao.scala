@@ -20,7 +20,7 @@ object StockDao {
   }
 
   def intraday(symbol: String): Option[Stock] = {
-    val xml = XML.loadString(Http.get(intradayUrl.replace("$SYMBOL$", symbol)))
+    val xml = XML.loadString(Http.get(intradayUrl.replace("$SYMBOL$", java.net.URLEncoder.encode(symbol, "utf8"))))
     processIntraday(xml)
   }
 
