@@ -80,25 +80,25 @@ define(['jquery', 'jqueryui', 'lodash'], function() {
             });
             c2.sortable({
                 connectWith: ".column",
-                receive: function(e, ui) {
+                update: function(e, ui) {
                     dashboard_config.saveLayout();
                 }
             });
             c3.sortable({
                 connectWith: ".column",
-                receive: function(e, ui) {
+                update: function(e, ui) {
                     dashboard_config.saveLayout();
                 }
             });
             c4.sortable({
                 connectWith: ".column",
-                receive: function(e, ui) {
+                update: function(e, ui) {
                     dashboard_config.saveLayout();
                 }
             });
             unassigned.sortable({
                 connectWith: ".column",
-                receive: function(e, ui) {
+                update: function(e, ui) {
                     dashboard_config.saveLayout();
                 }
             });
