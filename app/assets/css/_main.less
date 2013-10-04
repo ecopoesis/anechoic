@@ -370,19 +370,17 @@ margin-top: 0px;
       margin-left: auto;
       margin-right: auto;
 
-      ul {
+      .icon {
+        padding-right: 20px;
+      }
+
+      i {
         padding: 0px;
         list-style: none;
         width: 80px;
         height: 80px;
         display: table-cell;
-
-        li {
-          list-style: none;
-          margin: 0px;
-          font-size: 80px;
-          width: 0px;
-        }
+        font-size: 80px;
       }
     }
 
@@ -396,6 +394,14 @@ margin-top: 0px;
 
       .weather-icon {
         width: 25%;
+
+        .icon {
+          padding-bottom: 10px;
+        }
+
+        i {
+          font-size: 35px;
+        }
       }
 
       .low {
@@ -452,9 +458,20 @@ margin-top: 0px;
       vertical-align: middle;
     }
 
-    .detail {
+    .details {
       width: 100%;
       text-align: center;
+    }
+
+    .detail {
+      display: inline;
+      padding-left: 8px;
+      padding-right: 8px;
+
+      .direction {
+        display: inline;
+        font-size: 18px;
+      }
     }
   }
 
