@@ -1,7 +1,10 @@
 define(['jquery', 'jqueryui', 'lodash'], function() {
     var dashboard_config = {
+        blocks: 0,
+        saving: false,
 
         startup: function() {
+            dashboard_config.blockActions();
             dashboard_config.reloadWidgetLayout();
 
             $('#add-widget').change(function() {
@@ -49,9 +52,13 @@ define(['jquery', 'jqueryui', 'lodash'], function() {
                     results: function() {}
                 }
             });
+
+            dashboard_config.unblockActions();
         },
 
         reloadWidgetLayout: function() {
+            dashboard_config.blockActions();
+
             dashboard_config.resetWidgets();
 
             $.post(
@@ -59,9 +66,13 @@ define(['jquery', 'jqueryui', 'lodash'], function() {
                 {},
                 dashboard_config.renderWidgetLayout
             );
+
+            dashboard_config.unblockActions();
         },
 
         renderWidgetLayout: function(data) {
+            dashboard_config.blockActions();
+
             var layout = $('#dashboard-layout');
             layout.empty();
 
@@ -72,38 +83,7 @@ define(['jquery', 'jqueryui', 'lodash'], function() {
             var c4 = $('<div class="supercolumn cf"><div class="column cf">&nbsp;</div></div>').appendTo(layout).find('.column');
             var unassigned = $('<div class="supercolumn cf"><div class="column unassigned cf">Unassigned Widgets:</div></div>').appendTo(layout).find('.column');
 
-            c1.sortable({
-                connectWith: ".column",
-                update: function(e, ui) {
-                    dashboard_config.saveLayout();
-                }
-            });
-            c2.sortable({
-                connectWith: ".column",
-                update: function(e, ui) {
-                    dashboard_config.saveLayout();
-                }
-            });
-            c3.sortable({
-                connectWith: ".column",
-                update: function(e, ui) {
-                    dashboard_config.saveLayout();
-                }
-            });
-            c4.sortable({
-                connectWith: ".column",
-                update: function(e, ui) {
-                    dashboard_config.saveLayout();
-                }
-            });
-            unassigned.sortable({
-                connectWith: ".column",
-                update: function(e, ui) {
-                    dashboard_config.saveLayout();
-                }
-            });
-
-            // draw the widgets
+           // draw the widgets
             for (var i = 0; i < data.length; i++) {
                 switch(data[i].column) {
                     case 0:
@@ -122,10 +102,13 @@ define(['jquery', 'jqueryui', 'lodash'], function() {
                         dashboard_config.renderWidget(unassigned, data[i]);
                 }
             }
-            $('#spinner').addClass('ninja');
+
+            dashboard_config.unblockActions();
         },
 
         renderWidget: function(parent, widget) {
+            dashboard_config.blockActions();
+
             var w = $('<div class="widget draggable ' + widget.kind + '" data-id="' + widget.id + '" id="widget_' + widget.id + '"></div>').appendTo(parent);
 
             var template = _.template($('#' + widget.kind + '-template').html());
@@ -133,7 +116,7 @@ define(['jquery', 'jqueryui', 'lodash'], function() {
             w.html(html);
 
             $('#remove_' + widget.id).click(function() {
-                $('#spinner').removeClass('ninja');
+                dashboard_config.blockActions();
                 $.post(
                     anechoic_base_url + 'dashboard/delete',
                     {
@@ -143,47 +126,59 @@ define(['jquery', 'jqueryui', 'lodash'], function() {
                 )
                     .done(function() {
                         $('#widget_' + widget.id).remove();
-                        $('#spinner').addClass('ninja');
+                        dashboard_config.unblockActions();
                     })
-                    .fail(function(){alert("fail");})
+                    .fail(function(){
+                        alert("fail");
+                        dashboard_config.unblockActions();
+                    })
                 return false;
-            })
+            });
+
+            dashboard_config.unblockActions();
         },
 
         saveLayout: function() {
-            $('#spinner').removeClass('ninja');
+            if (!dashboard_config.saving) {
+                dashboard_config.saving = true;
 
-            var columns = $('.column');
+                dashboard_config.blockActions();
 
-            var payload = [];
+                var columns = $('.column');
 
-            // iterate over columns to get their widgets
-            // don't process the last column: it's always the unassigned one
-            for (var i = 0; i < columns.length - 1; i++) {
-                var widgets = $(columns[i]).find('.widget');
-                for (var j = 0; j < widgets.length; j++) {
-                    var location = {};
-                    location['widget'] = $(widgets[j]).data('id');
-                    location['column'] = i;
-                    location['position'] = j;
-                    payload.push(location);
+                var payload = [];
+
+                // iterate over columns to get their widgets
+                // don't process the last column: it's always the unassigned one
+                for (var i = 0; i < columns.length - 1; i++) {
+                    var widgets = $(columns[i]).find('.widget');
+                    for (var j = 0; j < widgets.length; j++) {
+                        var location = {};
+                        location['widget'] = $(widgets[j]).data('id');
+                        location['column'] = i;
+                        location['position'] = j;
+                        payload.push(location);
+                    }
                 }
-            }
 
-            $.ajax({
-                type: 'POST',
-                contentType: 'application/json; charset=utf-8',
-                url: anechoic_base_url + 'dashboard/save',
-                data: JSON.stringify({"widgets": payload})
-            })
-                .done(function() {
-                    $('#spinner').addClass('ninja');
+                $.ajax({
+                    type: 'POST',
+                    contentType: 'application/json; charset=utf-8',
+                    url: anechoic_base_url + 'dashboard/save',
+                    data: JSON.stringify({"widgets": payload})
                 })
-                .fail(function(jqXHR, textStatus, errorThrown){alert(errorThrown);})
+                    .always(function() {
+                        dashboard_config.unblockActions();
+                        dashboard_config.saving = false;
+                    })
+                    .fail(function(jqXHR, textStatus, errorThrown){
+                        alert(errorThrown);
+                    })
+            }
         },
 
         addFeed: function() {
-            $('#spinner').removeClass('ninja');
+            dashboard_config.blockActions();
             $.post(
                 anechoic_base_url + 'dashboard/addfeed',
                 {
@@ -193,10 +188,11 @@ define(['jquery', 'jqueryui', 'lodash'], function() {
             )
                 .done(dashboard_config.reloadWidgetLayout)
                 .fail(function(){alert("fail");})
+                .always( dashboard_config.unblockActions)
         },
 
         addStock: function() {
-            $('#spinner').removeClass('ninja');
+            dashboard_config.blockActions();
             $.post(
                 anechoic_base_url + 'dashboard/addstock',
                 {
@@ -206,10 +202,11 @@ define(['jquery', 'jqueryui', 'lodash'], function() {
             )
                 .done(dashboard_config.reloadWidgetLayout)
                 .fail(function(){alert("fail");})
+                .always(dashboard_config.unblockActions)
         },
 
         addWeather: function() {
-            $('#spinner').removeClass('ninja');
+            dashboard_config.blockActions();
             $.post(
                 anechoic_base_url + 'dashboard/addweather',
                 {
@@ -219,6 +216,7 @@ define(['jquery', 'jqueryui', 'lodash'], function() {
             )
                 .done(dashboard_config.reloadWidgetLayout)
                 .fail(function(){alert("fail");})
+                .always(dashboard_config.unblockActions)
         },
 
         resetWidgets: function() {
@@ -226,6 +224,36 @@ define(['jquery', 'jqueryui', 'lodash'], function() {
             $("#newfeed [name='max']").val(10);
             $("#newstock [name='symbol']").val('');
             $("#newweather [name='city']").val('');
+        },
+
+        // blocks updates while we're saving stuff
+        blockActions: function() {
+            dashboard_config.blocks += 1;
+
+            if (dashboard_config.blocks === 1) {
+                $('#spinner').removeClass('ninja');
+                $('.column').sortable({
+                    connectWith: undefined,
+                    update: function(e, ui) {
+                        dashboard_config.saveLayout();
+                    }
+                });
+            }
+        },
+
+        // allow actions to happen
+        unblockActions: function() {
+            dashboard_config.blocks -= 1;
+
+            if (dashboard_config.blocks === 0) {
+                $('#spinner').addClass('ninja');
+                $('.column').sortable({
+                    connectWith: ".column",
+                    update: function(e, ui) {
+                        dashboard_config.saveLayout();
+                    }
+                })
+            }
         }
     }
 

@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="SBT: play:play-java_2.10:2.1.1">
     <CLASSES>
-      <root url="jar:///Applications/play/play-2.2.0/repository/cache/play/play-java_2.10/jars/play-java_2.10-2.1.1.jar!/" />
+      <root url="jar:///Applications/play/play-2.1.1/repository/local/play/play-java_2.10/2.1.1/jars/play-java_2.10.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar:///Applications/play/play-2.2.0/repository/cache/play/play-java_2.10/srcs/play-java_2.10-2.1.1-sources.jar!/" />
+      <root url="jar:///Applications/play/play-2.1.1/repository/local/play/play-java_2.10/2.1.1/srcs/play-java_2.10-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

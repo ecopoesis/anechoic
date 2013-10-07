@@ -33,17 +33,14 @@ object WidgetDao {
     }
   }
 
-  /**
-   * @todo make this use transactions - for some reason execute only returns false, so I can't use it for transactions
-   */
   def saveLayout(user: User, locations: List[WidgetLocation]): Boolean = {
-    DB.withConnection { implicit c =>
+    DB.withTransaction { implicit c =>
       SQL(
         """
           |delete from widget_layout where widget_id in (select id from widgets where user_id = {user_id})
         """.stripMargin)
         .on('user_id -> user.numId)
-        .execute
+        .executeUpdate
 
       for(location <- locations) {
         SQL(
@@ -58,7 +55,7 @@ object WidgetDao {
             'column -> location.column,
             'position -> location.position
           )
-          .execute()
+          .executeUpdate
       }
     }
     true
@@ -164,11 +161,8 @@ object WidgetDao {
     }
   }
 
-  /**
-   * @todo make this use transactions - for some reason execute only returns false, so I can't use it for transactions
-   */
   def delete(widgetId: Long): Boolean = {
-    DB.withConnection { implicit c =>
+    DB.withTransaction { implicit c =>
       SQL(
         """
           |delete from widget_layout where widget_id = {widget_id}
@@ -201,16 +195,12 @@ object WidgetDao {
           if (
             insertProperty(c, widgetId, "url", url) &&
             insertProperty(c, widgetId, "max", max.toString)) {
-
-            c.commit()
             widgetId
           } else {
-            c.rollback
             0
           }
         }
         case _ => {
-          c.rollback
           0
         }
       }
@@ -224,16 +214,12 @@ object WidgetDao {
           if (
             insertProperty(c, widgetId, "symbol", symbol.toUpperCase) &&
             insertProperty(c, widgetId, "range", range)) {
-
-            c.commit()
             widgetId
           } else {
-            c.rollback
             0
           }
         }
         case _ => {
-          c.rollback
           0
         }
       }
@@ -247,16 +233,12 @@ object WidgetDao {
           if (
             insertProperty(c, widgetId, "city", city) &&
             insertProperty(c, widgetId, "wunderId", wunderId)) {
-
-            c.commit()
             widgetId
           } else {
-            c.rollback
             0
           }
         }
         case _ => {
-          c.rollback
           0
         }
       }
@@ -267,11 +249,9 @@ object WidgetDao {
     DB.withTransaction { implicit c =>
       insertWidget(c, user.numId, "welcome") match {
         case Some(widgetId) => {
-          c.commit()
           widgetId
         }
         case _ => {
-          c.rollback
           0
         }
       }

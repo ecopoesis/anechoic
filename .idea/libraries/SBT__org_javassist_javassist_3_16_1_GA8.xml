@@ -1,9 +1,13 @@
 <component name="libraryTable">
   <library name="SBT: org.javassist:javassist:3.16.1-GA">
     <CLASSES>
-      <root url="jar:///Applications/play/play-2.1.1/repository/local/org.javassist/javassist/3.16.1-GA/jars/javassist.jar!/" />
+      <root url="jar:///Applications/play/play-2.2.0/repository/cache/org.javassist/javassist/jars/javassist-3.16.1-GA.jar!/" />
     </CLASSES>
-    <JAVADOC />
-    <SOURCES />
+    <JAVADOC>
+      <root url="jar:///Applications/play/play-2.2.0/repository/cache/org.javassist/javassist/docs/javassist-3.16.1-GA-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar:///Applications/play/play-2.2.0/repository/cache/org.javassist/javassist/srcs/javassist-3.16.1-GA-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

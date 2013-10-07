@@ -151,17 +151,14 @@ object CommentDao {
           )
             .executeInsert() match {
             case Some(a) => {
-              c.commit()
               return true
             }
             case None => {
-              c.rollback()
               return false
             }
           }
         }
         case _ => {
-          c.rollback()
           return false
         }
       }
