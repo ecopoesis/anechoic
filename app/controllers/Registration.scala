@@ -18,7 +18,7 @@ import securesocial.core.providers.Token
 import scala.Some
 import securesocial.core.IdentityId
 import securesocial.controllers.{ProviderController, TemplatesPlugin}
-import play.data.validation.Constraints.Email
+//import play.data.validation.Constraints.EmailValidator
 import scala.language.reflectiveCalls
 
 /**

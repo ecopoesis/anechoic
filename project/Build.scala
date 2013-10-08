@@ -14,13 +14,15 @@ object ApplicationBuild extends Build {
   val appDependencies = Seq(
     jdbc,
     anorm,
-    "securesocial" %% "securesocial" % "master-SNAPSHOT",
+    cache,
+    filters,
+    "com.typesafe.play" % "play_2.10" % "2.2.0",
+    "securesocial" %% "securesocial" % "master-SNAPSHOT" exclude("org.scala-stm", "scala-stm_2.10.0"),
     "org.postgresql" % "postgresql" % "9.2-1002-jdbc4",
     "commons-validator" % "commons-validator" % "1.4.0" ,
     "org.ocpsoft.prettytime" % "prettytime" % "3.0.2.Final",
     "net.databinder.dispatch" %% "dispatch-core" % "0.11.0",
     "com.github.mumoshu" %% "play2-memcached" % "0.3.0.2",
-    "com.typesafe.play.extras" %% "iteratees-extras" % "1.0.1",
     "com.jolbox" % "bonecp" % "0.8.0-rc1"
   )
 

@@ -1,10 +1,10 @@
 import play.api._
 import play.api.mvc._
 import play.api.http.HeaderNames._
-import play.extras.iteratees.GzipFilter
+import play.filters.gzip.GzipFilter
 import play.api.Play.current
 
-object Global extends WithFilters(new GzipFilter()) {
+object Global extends WithFilters(new GzipFilter()) with GlobalSettings {
 
   override def onStart(app: Application) {
     Logger.info("Anechoic has started")
@@ -14,7 +14,7 @@ object Global extends WithFilters(new GzipFilter()) {
     Logger.info("Anechoic shutdown...")
   }
 
-  override def doFilter(action: EssentialAction): EssentialAction = EssentialAction { request =>
+/*  override def doFilter(action: EssentialAction): EssentialAction = EssentialAction { request =>
     if (Play.isProd && request.path.contains(".") && request.path.contains("assets")) {
       // in prod, cache items with . in their name (images, css, js etc) forever
       action.apply(request).map(_.withHeaders(
@@ -27,7 +27,7 @@ object Global extends WithFilters(new GzipFilter()) {
         CACHE_CONTROL -> "private, max-age=0, no-cache"
       ))
     }
-  }
+  }    */
 
   override def onRouteRequest(request: RequestHeader): Option[Handler] = {
     if (Play.isProd && !request.headers.get("x-forwarded-proto").getOrElse("").contains("https")) {
