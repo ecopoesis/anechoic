@@ -6,3 +6,5 @@ logs
 .swp
 .lock
 .idea/workspace.xml
+.idea/libraries
+.apdisk
