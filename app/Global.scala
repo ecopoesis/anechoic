@@ -21,12 +21,14 @@ object Global extends WithFilters(new GzipFilter()) with GlobalSettings {
         // in prod, cache items with . in their name (images, css, js etc) forever
         // also add htst
         action.apply(request).map(_.withHeaders(
-          CACHE_CONTROL -> "public, max-age=2592000, no-cache",
+          CACHE_CONTROL -> "public, max-age=2592000",
           "Strict-Transport-Security" -> "max-age=16070400; includeSubDomains"
         ))
       } else {
-        // just add hsts to everything else
+        // just add hsts to everything else and don't cache it
         action.apply(request).map(_.withHeaders(
+          PRAGMA -> "no-cache",
+          CACHE_CONTROL -> "no-cache, max-age=0",
           "Strict-Transport-Security" -> "max-age=16070400; includeSubDomains"
         ))
       }
@@ -34,7 +36,7 @@ object Global extends WithFilters(new GzipFilter()) with GlobalSettings {
       // don't cache anything else
       action.apply(request).map(_.withHeaders(
         PRAGMA -> "no-cache",
-        CACHE_CONTROL -> "private, max-age=0, no-cache"
+        CACHE_CONTROL -> "no-cache, max-age=0"
       ))
     }
   }
