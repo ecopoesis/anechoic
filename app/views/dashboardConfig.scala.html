@@ -25,6 +25,20 @@
             </select>
         </div>
 
+        <div class="add-widget ninja" id="add-imap">
+            <h3>New IMAP</h3>
+            <form id="newimap" method="POST">
+                <div class="form-item">
+                    Host: <input type="text" id="host" name="host" size="25"/>
+                    Username: <input type="text" id="username" name="username" size="25"/>
+                    Password: <input type="password" id="password" name="password" size="25"/>
+                    Port: <input type="text" id="port" name="port" size="10"/>
+                    SSL: <input type="checkbox" id="ssl" name="ssl"/>
+                </div>
+                <a href="#" class="button" id="addimap">add imap</a>
+            </form>
+        </div>
+
         <div class="add-widget ninja" id="add-feed">
             <h3>New Feed</h3>
             <form id="newfeed" method="POST">
@@ -76,6 +90,18 @@
         </h3>
         <div class="desc">
             <%=properties.url%>
+        </div>
+    </script>
+
+    <script id="imap-template" type="text/x-lowdash-template">
+        <h3>
+            <i class="icon-envelope"></i>
+            IMAP
+            <a href="#" class="remove" id="remove_<%=id%>"><i class="icon-remove-circle remove"></i></a>
+        </h3>
+        <div class="desc">
+
+
         </div>
     </script>
 
