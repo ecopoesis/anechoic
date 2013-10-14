@@ -8,6 +8,7 @@ import java.security.spec.PKCS8EncodedKeySpec
 import javax.crypto.Cipher
 import scala.Predef.String
 import org.apache.commons.codec.binary.Base64
+import scala.language.postfixOps
 import play.api.Play.current
 
 object Crypto {
