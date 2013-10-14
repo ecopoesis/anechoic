@@ -106,6 +106,7 @@ require([
             case 'dashboard-config':
                 $(document).ready(function() { dashboard_config.startup(); });
                 $('#addfeed').click(dashboard_config.addFeed);
+                $('#addmail').click(dashboard_config.addMail);
                 $('#addstock').click(dashboard_config.addStock);
                 $('#addweather').click(dashboard_config.addWeather);
                 break;

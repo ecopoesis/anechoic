@@ -5,15 +5,16 @@ import play.api.Play
 import java.io.BufferedInputStream
 import java.security.KeyFactory
 import java.security.spec.PKCS8EncodedKeySpec
-import javax.crypto.Cipher
-import scala.Predef.String
+import javax.crypto.{SecretKeyFactory, SecretKey, Cipher}
 import org.apache.commons.codec.binary.Base64
 import scala.language.postfixOps
 import play.api.Play.current
+import javax.crypto.spec.{IvParameterSpec, SecretKeySpec, PBEKeySpec}
 
 object Crypto {
 
   val privateKeyPath = "resources/keys/rsa_private.der"
+  val salt = "salty"
 
   val key = {
     java.security.Security.addProvider(new BouncyCastleProvider)
@@ -32,4 +33,26 @@ object Crypto {
     new String(Base64.decodeBase64(clearBytes))
   }
 
+  def generateSecret(password: String): SecretKey = {
+    val factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1")
+    val spec = new PBEKeySpec(password.toCharArray, salt.getBytes, 65536, 256)
+    new SecretKeySpec(factory.generateSecret(spec).getEncoded, "AES")
+  }
+
+  def aesEncrypt(cleartext: String, password: String) = {
+    val secret = generateSecret(password)
+    val cipher = Cipher.getInstance("AES/CBC/PKCS5Padding")
+    cipher.init(Cipher.ENCRYPT_MODE, secret)
+    val params = cipher.getParameters
+    val iv = new String(Base64.encodeBase64(params.getParameterSpec(classOf[IvParameterSpec]).getIV))
+    val ciphertext = new String(Base64.encodeBase64(cipher.doFinal(cleartext.getBytes("UTF-8"))))
+    (ciphertext, iv)
+  }
+
+  def aesDecrypt(ciphertext: String, iv: String, password: String) = {
+    val secret = generateSecret(password)
+    val cipher = Cipher.getInstance("AES/CBC/PKCS5Padding")
+    cipher.init(Cipher.DECRYPT_MODE, secret, new IvParameterSpec(Base64.decodeBase64(iv.getBytes)))
+    new String(cipher.doFinal(Base64.decodeBase64(ciphertext.getBytes)), "UTF-8")
+  }
 }

@@ -20,23 +20,10 @@
             <div>Choose a widget to add:</div>
             <select size="2" id="add-widget" class="add-widget-select">
                 <option value="feed">Feed</option>
+                <option value="mail">Mail</option>
                 <option value="stock">Stock</option>
                 <option value="weather">Weather</option>
             </select>
-        </div>
-
-        <div class="add-widget ninja" id="add-imap">
-            <h3>New IMAP</h3>
-            <form id="newimap" method="POST">
-                <div class="form-item">
-                    Host: <input type="text" id="host" name="host" size="25"/>
-                    Username: <input type="text" id="username" name="username" size="25"/>
-                    Password: <input type="password" id="password" name="password" size="25"/>
-                    Port: <input type="text" id="port" name="port" size="10"/>
-                    SSL: <input type="checkbox" id="ssl" name="ssl"/>
-                </div>
-                <a href="#" class="button" id="addimap">add imap</a>
-            </form>
         </div>
 
         <div class="add-widget ninja" id="add-feed">
@@ -58,6 +45,37 @@
                     </select>
                 </div>
                 <a href="#" class="button" id="addfeed">add feed</a>
+            </form>
+        </div>
+
+        <div class="add-widget ninja" id="add-mail">
+            <h3>New Mail</h3>
+            <form id="newmail" method="POST">
+                <div class="form-item">
+                    <table>
+                        <tr>
+                            <td>IMAP Host:</td>
+                            <td><input type="text" id="host" name="host" size="25"/></td>
+                        </tr>
+                        <tr>
+                            <td>Username:</td>
+                            <td><input type="text" id="username" name="username" size="25"/></td>
+                        </tr>
+                        <tr>
+                            <td>Password:</td>
+                            <td><input type="password" id="password" name="password" size="25"/></td>
+                        </tr>
+                        <tr>
+                            <td>Port:</td>
+                            <td><input type="text" id="port" name="port" size="10" value="143"/></td>
+                        </tr>
+                        <tr>
+                            <td>SSL:</td>
+                            <td><input type="checkbox" id="ssl" name="ssl"/></td>
+                        </tr>
+                    </table>
+                </div>
+                <a href="#" class="button" id="addmail">add mail</a>
             </form>
         </div>
 
