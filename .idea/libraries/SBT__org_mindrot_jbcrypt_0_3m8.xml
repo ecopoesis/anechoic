@@ -3,11 +3,7 @@
     <CLASSES>
       <root url="jar:///Applications/play/play-2.2.0/repository/cache/org.mindrot/jbcrypt/jars/jbcrypt-0.3m.jar!/" />
     </CLASSES>
-    <JAVADOC>
-      <root url="jar:///Applications/play/play-2.2.0/repository/cache/org.mindrot/jbcrypt/docs/jbcrypt-0.3m-javadoc.jar!/" />
-    </JAVADOC>
-    <SOURCES>
-      <root url="jar:///Applications/play/play-2.2.0/repository/cache/org.mindrot/jbcrypt/srcs/jbcrypt-0.3m-sources.jar!/" />
-    </SOURCES>
+    <JAVADOC />
+    <SOURCES />
   </library>
 </component>

@@ -4,8 +4,6 @@
       <root url="jar:///Applications/play/play-2.2.0/repository/cache/commons-digester/commons-digester/jars/commons-digester-1.8.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar:///Applications/play/play-2.2.0/repository/cache/commons-digester/commons-digester/srcs/commons-digester-1.8-sources.jar!/" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>

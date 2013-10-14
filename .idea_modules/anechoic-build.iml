@@ -99,24 +99,6 @@
     <orderEntry type="library" name="SBT: scala:2.10.2" level="project" />
   </component>
   <component name="org.twodividedbyzero.idea.findbugs">
-    <option name="_basePreferences">
-      <map>
-        <entry key="property.analysisEffortLevel" value="default" />
-        <entry key="property.analyzeAfterCompile" value="false" />
-        <entry key="property.annotationGutterIconEnabled" value="true" />
-        <entry key="property.annotationSuppressWarningsClass" value="edu.umd.cs.findbugs.annotations.SuppressWarnings" />
-        <entry key="property.annotationTextRangeMarkupEnabled" value="true" />
-        <entry key="property.exportAsHtml" value="true" />
-        <entry key="property.exportAsXml" value="true" />
-        <entry key="property.exportBaseDir" value="" />
-        <entry key="property.exportCreateArchiveDir" value="false" />
-        <entry key="property.exportOpenBrowser" value="true" />
-        <entry key="property.minPriorityToReport" value="Medium" />
-        <entry key="property.runAnalysisInBackground" value="false" />
-        <entry key="property.showHiddenDetectors" value="false" />
-        <entry key="property.toolWindowToFront" value="true" />
-      </map>
-    </option>
     <option name="_detectors">
       <map>
         <entry key="AppendingToAnObjectOutputStream" value="true" />
@@ -274,19 +256,6 @@
         <entry key="WaitInLoop" value="true" />
         <entry key="WrongMapIterator" value="true" />
         <entry key="XMLFactoryBypass" value="true" />
-      </map>
-    </option>
-    <option name="_reportCategories">
-      <map>
-        <entry key="BAD_PRACTICE" value="true" />
-        <entry key="CORRECTNESS" value="true" />
-        <entry key="EXPERIMENTAL" value="true" />
-        <entry key="I18N" value="true" />
-        <entry key="MALICIOUS_CODE" value="true" />
-        <entry key="MT_CORRECTNESS" value="true" />
-        <entry key="PERFORMANCE" value="true" />
-        <entry key="SECURITY" value="true" />
-        <entry key="STYLE" value="true" />
       </map>
     </option>
   </component>

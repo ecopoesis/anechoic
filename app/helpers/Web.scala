@@ -6,6 +6,8 @@ import play.api.Play.current
 object Web {
   def include(filename: String): String = {
     val source = scala.io.Source.fromURL((Play.classloader.getResource(filename)))
-    source.mkString
+    val s = source.mkString
+    source.close
+    s
   }
 }

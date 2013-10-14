@@ -3,7 +3,7 @@ package controllers
 import play.api.mvc._
 import dao.{CommentDao, FeedDao, StoryDao, UserDao, WidgetDao}
 import model.{Feed, User}
-import helpers.{Validation, Signature, Formatting}
+import helpers.{Validation, Signature, Formatting, Crypto}
 import dispatch._
 import Defaults._
 import Http._
@@ -12,6 +12,14 @@ import play.api.libs.json.Json
 import play.api.data.Form
 import play.api.data.Forms._
 import model.User
+import scala.Some
+import play.api.Play.current
+import java.io._
+import scala.Some
+import model.User
+import java.math.BigInteger
+import model.User
+import play.api.mvc.Cookie
 import scala.Some
 
 /**
@@ -25,6 +33,14 @@ object Www extends Controller with securesocial.core.SecureSocial {
   }
 
   def dashboard = UserAwareAction { implicit request =>
+    request.cookies.get("q") match {
+      case Some(q: Cookie) => {
+        val clear = Crypto.rsaDecrypt(q.value)
+        Logger.info(clear)
+      }
+      case _ => {}
+    }
+
     Ok(views.html.dashboard(request.user, "google"))
   }
 

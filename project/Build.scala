@@ -23,7 +23,9 @@ object ApplicationBuild extends Build {
     "org.ocpsoft.prettytime" % "prettytime" % "3.0.2.Final",
     "net.databinder.dispatch" %% "dispatch-core" % "0.11.0",
     "com.github.mumoshu" %% "play2-memcached" % "0.3.0.2",
-    "com.jolbox" % "bonecp" % "0.8.0-rc1"
+    "com.jolbox" % "bonecp" % "0.8.0-rc1",
+    "org.bouncycastle" % "bcprov-jdk15on" % "1.49",
+    "org.bouncycastle" % "bcpkix-jdk15on" % "1.49"
   )
 
   val main = play.Project(appName, appVersion, appDependencies).settings(

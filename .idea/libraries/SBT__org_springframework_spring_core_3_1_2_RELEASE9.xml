@@ -1,11 +1,9 @@
 <component name="libraryTable">
   <library name="SBT: org.springframework:spring-core:3.1.2.RELEASE">
     <CLASSES>
-      <root url="jar:///Applications/play/play-2.2.0/repository/cache/org.springframework/spring-core/jars/spring-core-3.1.2.RELEASE.jar!/" />
+      <root url="jar:///Applications/play/play-2.1.1/repository/local/org.springframework/spring-core/3.1.2.RELEASE/jars/spring-core.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar:///Applications/play/play-2.2.0/repository/cache/org.springframework/spring-core/srcs/spring-core-3.1.2.RELEASE-sources.jar!/" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>
