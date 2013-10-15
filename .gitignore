@@ -7,4 +7,5 @@ logs
 .lock
 .idea/workspace.xml
 .idea/libraries
+.idea/libraries/*
 .apdisk
