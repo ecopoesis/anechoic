@@ -2,7 +2,7 @@
 <div class="card">
     <ul>
         <% for(var i = 0; i < data.items.length && i < properties.max; i++) { %>
-        <li><a href="<%=data.items[i].link%>" target="_blank"><%=data.items[i].title%></a></li>
+            <li><a href="<%=data.items[i].link%>" target="_blank"><%=data.items[i].title%></a></li>
         <% } %>
     </ul>
 </div>

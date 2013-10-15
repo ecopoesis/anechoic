@@ -26,9 +26,14 @@
       <sourceFolder url="file://$MODULE_DIR$/../test/resources" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/../target/native_libraries" />
       <excludeFolder url="file://$MODULE_DIR$/../target/resolution-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/../target/scala-2.10/cache" />
       <excludeFolder url="file://$MODULE_DIR$/../target/scala-2.10/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../target/scala-2.10/classes_managed" />
       <excludeFolder url="file://$MODULE_DIR$/../target/scala-2.10/resource_managed" />
+      <excludeFolder url="file://$MODULE_DIR$/../target/scala-2.10/test-classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../target/specs2-reports" />
       <excludeFolder url="file://$MODULE_DIR$/../target/streams" />
+      <excludeFolder url="file://$MODULE_DIR$/../target/test-reports" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -102,6 +107,7 @@
     <orderEntry type="library" name="SBT: spy:spymemcached:2.8.9" level="project" />
     <orderEntry type="library" name="SBT: org.bouncycastle:bcprov-jdk15on:1.49" level="project" />
     <orderEntry type="library" name="SBT: org.bouncycastle:bcpkix-jdk15on:1.49" level="project" />
+    <orderEntry type="library" name="SBT: org.jsoup:jsoup:1.7.2" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: com.typesafe.play:play-test_2.10:2.2.0:test" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: junit:junit:4.11:test" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: org.hamcrest:hamcrest-core:1.3:test" level="project" />
@@ -150,6 +156,24 @@
     <orderEntry type="library" name="securesocial_2.10-master-SNAPSHOT.jar" level="project" />
   </component>
   <component name="org.twodividedbyzero.idea.findbugs">
+    <option name="_basePreferences">
+      <map>
+        <entry key="property.analysisEffortLevel" value="default" />
+        <entry key="property.analyzeAfterCompile" value="false" />
+        <entry key="property.annotationGutterIconEnabled" value="true" />
+        <entry key="property.annotationSuppressWarningsClass" value="edu.umd.cs.findbugs.annotations.SuppressWarnings" />
+        <entry key="property.annotationTextRangeMarkupEnabled" value="true" />
+        <entry key="property.exportAsHtml" value="true" />
+        <entry key="property.exportAsXml" value="true" />
+        <entry key="property.exportBaseDir" value="" />
+        <entry key="property.exportCreateArchiveDir" value="false" />
+        <entry key="property.exportOpenBrowser" value="true" />
+        <entry key="property.minPriorityToReport" value="Medium" />
+        <entry key="property.runAnalysisInBackground" value="false" />
+        <entry key="property.showHiddenDetectors" value="false" />
+        <entry key="property.toolWindowToFront" value="true" />
+      </map>
+    </option>
     <option name="_detectors">
       <map>
         <entry key="AppendingToAnObjectOutputStream" value="true" />
@@ -307,6 +331,19 @@
         <entry key="WaitInLoop" value="true" />
         <entry key="WrongMapIterator" value="true" />
         <entry key="XMLFactoryBypass" value="true" />
+      </map>
+    </option>
+    <option name="_reportCategories">
+      <map>
+        <entry key="BAD_PRACTICE" value="true" />
+        <entry key="CORRECTNESS" value="true" />
+        <entry key="EXPERIMENTAL" value="true" />
+        <entry key="I18N" value="true" />
+        <entry key="MALICIOUS_CODE" value="true" />
+        <entry key="MT_CORRECTNESS" value="true" />
+        <entry key="PERFORMANCE" value="true" />
+        <entry key="SECURITY" value="true" />
+        <entry key="STYLE" value="true" />
       </map>
     </option>
   </component>

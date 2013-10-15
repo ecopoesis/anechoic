@@ -1,0 +1,19 @@
+<h3>Mail</h3>
+<div class="card">
+    <% if (data.error !== undefined) { %>
+        <%=data.error%>
+    <% } else { %>
+        <ul>
+            <% for(var i = 0; i < data.length; i++) { %>
+                <li>
+                    <div>
+                        <div class="date cf"><%=data[i].date%></div>
+                        <div class="sender"><%=data[i].sender%></div>
+                    </div>
+                    <div class="subject"><%=data[i].subject%></div>
+                    <div class="message"><%=data[i].message%></div>
+                </li>
+            <% } %>
+        </ul>
+    <% } %>
+</div>

@@ -66,6 +66,9 @@ define(['lib/utils', 'lib/scheme', 'jquery', 'jqueryui', 'lodash', 'flot', 'flot
                     case "feed":
                         dashboard.loadFeed(columns[widget.column], widget);
                         break;
+                    case "mail":
+                        dashboard.loadMail(columns[widget.column], widget);
+                        break;
                     case "stock":
                         dashboard.loadStock(columns[widget.column], widget);
                         break;
@@ -86,6 +89,18 @@ define(['lib/utils', 'lib/scheme', 'jquery', 'jqueryui', 'lodash', 'flot', 'flot
             $.post(
                 anechoic_base_url + 'dashboard/feed',
                 {url: widget.properties.url, sig: widget.properties.sig},
+                function(data) {
+                    dashboard.draw(data, w, widget, true);
+                }
+            );
+        },
+
+        loadMail: function(c, widget) {
+            var w = $('<div class="widget mail"></div>').appendTo(c);
+
+            $.post(
+                anechoic_base_url + 'dashboard/mail',
+                {id: widget.id, sig: widget.properties.sig},
                 function(data) {
                     dashboard.draw(data, w, widget, true);
                 }

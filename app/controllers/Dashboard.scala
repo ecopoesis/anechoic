@@ -25,11 +25,18 @@ object Dashboard extends Controller with securesocial.core.SecureSocial {
     )(DeleteWidget.apply)(DeleteWidget.unapply)
   )
 
-  def signWidgets(widgets: Seq[Widget]) {
+  /**
+   * clean up the widgets, adding signatures where needed, but also removing information as needed
+   */
+  def decorateWidgets(widgets: Seq[Widget]) {
     for (widget <- widgets) {
       widget.kind match {
         case "feed" => {
           widget.properties += "sig" -> Signature.sign(widget.properties.get("url").get)
+        }
+        case "mail" => {
+          widget.properties += "sig" -> Signature.sign(widget.id.toString)
+          widget.properties.remove("password")
         }
         case "stock" => {
           widget.properties += "sig" -> Signature.sign(widget.properties.get("symbol").get)
@@ -49,7 +56,7 @@ object Dashboard extends Controller with securesocial.core.SecureSocial {
         request.cookies.get("q") match {
           case Some(q: Cookie) => {
             val widgets = new WidgetDao(Crypto.rsaDecrypt(q.value)).getAll(user.numId)
-            signWidgets(widgets)
+            decorateWidgets(widgets)
             Ok(Json.toJson(widgets))
           }
           case _ => BadRequest("no q value")
@@ -57,7 +64,7 @@ object Dashboard extends Controller with securesocial.core.SecureSocial {
       }
       case _ => {
         val widgets = new WidgetDao(null).getAll(UserDao.getByUsername("system").get.numId)
-        signWidgets(widgets)
+        decorateWidgets(widgets)
         Ok(Json.toJson(widgets))
       }
     }

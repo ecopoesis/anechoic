@@ -25,7 +25,8 @@ object ApplicationBuild extends Build {
     "com.github.mumoshu" %% "play2-memcached" % "0.3.0.2",
     "com.jolbox" % "bonecp" % "0.8.0-rc1",
     "org.bouncycastle" % "bcprov-jdk15on" % "1.49",
-    "org.bouncycastle" % "bcpkix-jdk15on" % "1.49"
+    "org.bouncycastle" % "bcpkix-jdk15on" % "1.49",
+    "org.jsoup" % "jsoup" % "1.7.2"
   )
 
   val main = play.Project(appName, appVersion, appDependencies).settings(

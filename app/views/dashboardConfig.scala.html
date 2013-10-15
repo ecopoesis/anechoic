@@ -111,15 +111,16 @@
         </div>
     </script>
 
-    <script id="imap-template" type="text/x-lowdash-template">
+    <script id="mail-template" type="text/x-lowdash-template">
         <h3>
             <i class="icon-envelope"></i>
-            IMAP
+            Mail
             <a href="#" class="remove" id="remove_<%=id%>"><i class="icon-remove-circle remove"></i></a>
         </h3>
         <div class="desc">
-
-
+            <%=properties.host%>
+            <br>
+            <%=properties.username%>
         </div>
     </script>
 
