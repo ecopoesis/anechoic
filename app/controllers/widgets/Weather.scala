@@ -1,11 +1,11 @@
 package controllers.widgets
 
-import play.api.mvc.Controller
+import play.api.mvc.{Cookie, Controller}
 import play.api.data.Form
 import play.api.data.Forms._
 import model.User
 import dao.{WeatherDao, WidgetDao}
-import helpers.{Signature}
+import helpers.{Crypto, Signature}
 import play.api.libs.json.Json
 
 object Weather extends Controller with securesocial.core.SecureSocial {
@@ -14,15 +14,15 @@ object Weather extends Controller with securesocial.core.SecureSocial {
 
   val addData = Form(
     mapping(
-      "city" -> nonEmptyText(maxLength = 2000),
-      "wunder_id" -> nonEmptyText(maxLength = 2000)
+      "city" -> nonEmptyText(maxLength = 100),
+      "wunder_id" -> nonEmptyText(maxLength = 100)
     )(Add.apply)(Add.unapply)
   )
 
   val readData = Form(
     mapping(
       "sig" -> nonEmptyText(maxLength = 28),
-      "url" -> nonEmptyText(maxLength = 2000)
+      "url" -> nonEmptyText(maxLength = 100)
     )(Read.apply)(Read.unapply)
   )
 
@@ -48,10 +48,15 @@ object Weather extends Controller with securesocial.core.SecureSocial {
         addData.bindFromRequest.fold(
           errors => BadRequest(errors.toString),
           post => {
-            if (WidgetDao.addWeather(user, post.city, post.wunderId) > 0) {
-              Ok
-            } else {
-              InternalServerError
+            request.cookies.get("q") match {
+              case Some(q: Cookie) => {
+                if (new WidgetDao(Crypto.rsaDecrypt(q.value)).addWeather(user, post.city, post.wunderId) > 0) {
+                  Ok
+                } else {
+                  InternalServerError
+                }
+              }
+              case _ => BadRequest("no q value")
             }
           }
         )

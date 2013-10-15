@@ -2,10 +2,10 @@ package controllers
 
 import play.api.data._
 import play.api.data.Forms._
-import play.api.mvc.Controller
+import play.api.mvc.{Cookie, Controller}
 import dao.{UserDao, FeedDao, WidgetDao}
-import model.User
-import helpers.{Signature, Validation}
+import model.{Widget, User}
+import helpers.{Crypto, Signature, Validation}
 import play.api.libs.json._
 import play.api.libs.json.Json._
 
@@ -25,16 +25,7 @@ object Dashboard extends Controller with securesocial.core.SecureSocial {
     )(DeleteWidget.apply)(DeleteWidget.unapply)
   )
 
-  def getLayout = UserAwareAction { implicit request =>
-    val widgets = request.user match {
-      case user: Some[User] => {
-        WidgetDao.getAll(user.get.numId)
-      }
-      case None => {
-        WidgetDao.getAll(UserDao.getByUsername("system").get.numId)
-      }
-    }
-
+  def signWidgets(widgets: Seq[Widget]) {
     for (widget <- widgets) {
       widget.kind match {
         case "feed" => {
@@ -50,8 +41,26 @@ object Dashboard extends Controller with securesocial.core.SecureSocial {
       }
       widget.properties += "delsig" -> Signature.sign(widget.id.toString)
     }
+  }
 
-    Ok(Json.toJson(widgets))
+  def getLayout = UserAwareAction { implicit request =>
+    request.user match {
+      case Some(user: User) => {
+        request.cookies.get("q") match {
+          case Some(q: Cookie) => {
+            val widgets = new WidgetDao(Crypto.rsaDecrypt(q.value)).getAll(user.numId)
+            signWidgets(widgets)
+            Ok(Json.toJson(widgets))
+          }
+          case _ => BadRequest("no q value")
+        }
+      }
+      case _ => {
+        val widgets = new WidgetDao(null).getAll(UserDao.getByUsername("system").get.numId)
+        signWidgets(widgets)
+        Ok(Json.toJson(widgets))
+      }
+    }
   }
 
   def saveLayout = SecuredAction { implicit request =>

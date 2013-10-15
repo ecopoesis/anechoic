@@ -129,7 +129,8 @@ object UserDao {
       case Some(userId) => {
         getById(userId) match {
           case Some(user) => {
-            WidgetDao.duplicateSystem(user)
+            // we don't need a q here because we don't duplicate widgets with secure properties
+            new WidgetDao(null).duplicateSystem(user)
             Some(userId)
           }
           case _ => None

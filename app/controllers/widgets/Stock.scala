@@ -1,11 +1,11 @@
 package controllers.widgets
 
-import play.api.mvc.Controller
+import play.api.mvc.{Cookie, Controller}
 import play.api.data.Form
 import play.api.data.Forms._
 import model.User
 import dao.{StockDao, WeatherDao, WidgetDao}
-import helpers.{Signature}
+import helpers.{Crypto, Signature}
 import play.api.libs.json.Json
 
 object Stock extends Controller with securesocial.core.SecureSocial {
@@ -49,10 +49,15 @@ object Stock extends Controller with securesocial.core.SecureSocial {
         addData.bindFromRequest.fold(
           errors => BadRequest(errors.toString),
           post => {
-            if (WidgetDao.addStock(user, post.symbol, post.range) > 0) {
-              Ok
-            } else {
-              InternalServerError
+            request.cookies.get("q") match {
+              case Some(q: Cookie) => {
+                if (new WidgetDao(Crypto.rsaDecrypt(q.value)).addStock(user, post.symbol, post.range) > 0) {
+                  Ok
+                } else {
+                  InternalServerError
+                }
+              }
+              case _ => BadRequest("no q value")
             }
           }
         )

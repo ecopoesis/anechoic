@@ -7,23 +7,26 @@ import helpers.{Crypto, Signature, Validation}
 import model.User
 import dao.{WidgetDao, FeedDao}
 import play.api.libs.json.Json
+import play.api.Logger
 
-object Feed extends Controller with securesocial.core.SecureSocial {
-  case class Add(max: Int, url: String)
+object Mail extends Controller with securesocial.core.SecureSocial {
+  case class Add(host: String, username: String, password: String, port: Int, ssl: Boolean)
   case class Read(sig: String, url: String)
 
   val addData = Form(
     mapping(
-      "max" -> number,
-      "url" -> nonEmptyText(maxLength = 100)
-        .verifying("must be an URL", url => Validation.url(url))
+      "host" -> nonEmptyText(maxLength = 100),
+      "username" -> nonEmptyText(maxLength = 100),
+      "password" -> nonEmptyText(maxLength = 100),
+      "port" -> number(min=1),
+      "ssl" -> boolean
     )(Add.apply)(Add.unapply)
   )
 
   val readData = Form(
     mapping(
       "sig" -> nonEmptyText(maxLength = 28),
-      "url" -> nonEmptyText(maxLength = 100)
+      "url" -> nonEmptyText(maxLength = 2000)
         .verifying("must be an URL", url => Validation.url(url))
     )(Read.apply)(Read.unapply)
   )
@@ -52,7 +55,7 @@ object Feed extends Controller with securesocial.core.SecureSocial {
           post => {
             request.cookies.get("q") match {
               case Some(q: Cookie) => {
-                if (new WidgetDao(Crypto.rsaDecrypt(q.value)).addFeed(user, post.url, post.max) > 0) {
+                if (new WidgetDao(Crypto.rsaDecrypt(q.value)).addMail(user, post.host, post.username, post.password, post.port, post.ssl) > 0) {
                   Ok
                 } else {
                   InternalServerError

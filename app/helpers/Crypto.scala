@@ -14,7 +14,7 @@ import javax.crypto.spec.{IvParameterSpec, SecretKeySpec, PBEKeySpec}
 object Crypto {
 
   val privateKeyPath = "resources/keys/rsa_private.der"
-  val salt = "salty"
+  val salt = Play.current.configuration.getString("application.secret").get
 
   val key = {
     java.security.Security.addProvider(new BouncyCastleProvider)

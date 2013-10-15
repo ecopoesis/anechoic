@@ -179,11 +179,30 @@ define(['jquery', 'jqueryui', 'lodash'], function() {
 
         addFeed: function() {
             dashboard_config.blockActions();
+            var newfeed = $('#newfeed');
             $.post(
                 anechoic_base_url + 'dashboard/addfeed',
                 {
-                    url: $("#newfeed [name='url']").val(),
-                    max: $("#newfeed [name='max']").val()
+                    url: newfeed.find("[name='url']").val(),
+                    max: newfeed.find("[name='max']").val()
+                }
+            )
+                .done(dashboard_config.reloadWidgetLayout)
+                .fail(function(){alert("fail");})
+                .always( dashboard_config.unblockActions)
+        },
+
+        addMail: function() {
+            dashboard_config.blockActions();
+            var newmail = $('#newmail');
+            $.post(
+                anechoic_base_url + 'dashboard/addmail',
+                {
+                    host: newmail.find("[name='host']").val(),
+                    username: newmail.find("[name='username']").val(),
+                    password: newmail.find("[name='password']").val(),
+                    port: newmail.find("[name='port']").val(),
+                    ssl: newmail.find("[name='ssl']").is(':checked')
                 }
             )
                 .done(dashboard_config.reloadWidgetLayout)
@@ -193,10 +212,11 @@ define(['jquery', 'jqueryui', 'lodash'], function() {
 
         addStock: function() {
             dashboard_config.blockActions();
+            var newstock = $('#newstock');
             $.post(
                 anechoic_base_url + 'dashboard/addstock',
                 {
-                    symbol: $("#newstock [name='symbol']").val(),
+                    symbol: newstock.find("[name='symbol']").val(),
                     range: "1d"
                 }
             )
@@ -207,11 +227,12 @@ define(['jquery', 'jqueryui', 'lodash'], function() {
 
         addWeather: function() {
             dashboard_config.blockActions();
+            var newweather = $("#newweather");
             $.post(
                 anechoic_base_url + 'dashboard/addweather',
                 {
-                    city: $("#newweather [name='city']").val(),
-                    wunder_id: $("#newweather [name='city']").data('wunder_id')
+                    city: newweather.find("[name='city']").val(),
+                    wunder_id: newweather.find("[name='city']").data('wunder_id')
                 }
             )
                 .done(dashboard_config.reloadWidgetLayout)
@@ -220,10 +241,10 @@ define(['jquery', 'jqueryui', 'lodash'], function() {
         },
 
         resetWidgets: function() {
-            $("#newfeed [name='url']").val('');
-            $("#newfeed [name='max']").val(10);
-            $("#newstock [name='symbol']").val('');
-            $("#newweather [name='city']").val('');
+            $("#newfeed").find("[name='url']").val('');
+            $("#newfeed").find("[name='max']").val(10);
+            $("#newstock").find("[name='symbol']").val('');
+            $("#newweather").find("[name='city']").val('');
         },
 
         // blocks updates while we're saving stuff

@@ -17,6 +17,8 @@ GET         /dashboard/config              controllers.Www.dashboardConfig
 # Dashboard - Widgets
 POST        /dashboard/addfeed             controllers.widgets.Feed.add
 POST        /dashboard/feed                controllers.widgets.Feed.read
+POST        /dashboard/addmail             controllers.widgets.Mail.add
+POST        /dashboard/mail                controllers.widgets.Mail.read
 POST        /dashboard/addstock            controllers.widgets.Stock.add
 POST        /dashboard/stock               controllers.widgets.Stock.read
 POST        /dashboard/addweather          controllers.widgets.Weather.add
