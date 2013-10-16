@@ -1,0 +1,27 @@
+@eigengrau: #16161D;
+@cosmic_beige: #FFF8E7;
+@fonts: Rosario, Helvetica, Arial, sans-serif;
+
+// these colors are duped in scheme.js because flot doesn't use css
+
+@background: @cosmic_beige;
+@foreground: @eigengrau;
+@second-text: fadeout(@eigengrau, 50%);
+@content: darken(@cosmic_beige, 5%);
+@button: darken(@cosmic_beige, 12.5%);
+@detail: darken(@cosmic_beige, 20%);
+@detail-text: darken(@cosmic_beige, 40%);
+@alert: #e19095;
+
+@weather-grey: @foreground;
+@weather-cool-color: #ff3900;
+@weather-warm-color: #1b48bb;
+
+@link_color: #1B48BB;
+@link_alt: #cf413b;
+
+.wunderground {
+  background-image: url("../img/wunderground_black.png");
+}
+
+@import "_main";

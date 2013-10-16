@@ -1,7 +1,15 @@
-background-color: @background;
-color: @foreground;
-font-family: @fonts;
-margin-top: 0px;
+@import "font-awesome/font-awesome";
+@import "weather-icons/weather-icons";
+@import "libs/jquery-ui-custom";
+@import "libs/nprogress-0.1.2";
+@import url("//fonts.googleapis.com/css?family=Rosario:400,400italic,700,700italic");
+
+body {
+  background-color: @background;
+  color: @foreground;
+  font-family: @fonts;
+  margin-top: 0px;
+}
 
 .ninja {
   visibility: hidden;
@@ -86,7 +94,7 @@ margin-top: 0px;
     }
 
     a:hover {
-      color: @link;
+      color: @link_color;
     }
   }
 }
@@ -130,7 +138,7 @@ margin-top: 0px;
       }
 
       a:hover {
-        color: @link;
+        color: @link_color;
       }
     }
 
@@ -148,7 +156,7 @@ margin-top: 0px;
       }
 
       a:hover {
-        color: @link;
+        color: @link_color;
       }
     }
   }
@@ -178,7 +186,7 @@ margin-top: 0px;
     }
 
     a:hover {
-      color: @link;
+      color: @link_color;
     }
   }
 
@@ -208,7 +216,7 @@ margin-top: 0px;
   }
 
   a.button:hover {
-    color: @link;
+    color: @link_color;
   }
 
   .dialog {
@@ -250,7 +258,7 @@ margin-top: 0px;
       }
 
       a:hover {
-        color: @link;
+        color: @link_color;
       }
     }
   }
@@ -283,7 +291,7 @@ margin-top: 0px;
 
     a {
       text-decoration: none;
-      color: @link;
+      color: @link_color;
     }
 
     a:hover {
@@ -312,7 +320,7 @@ margin-top: 0px;
     }
 
     a:hover {
-      color: @link;
+      color: @link_color;
     }
   }
 
@@ -495,7 +503,7 @@ margin-top: 0px;
     }
 
     a:hover {
-      color: @link;
+      color: @link_color;
     }
   }
 
@@ -542,7 +550,7 @@ margin-top: 0px;
   .welcome {
     a {
       text-decoration: none;
-      color: @link;
+      color: @link_color;
     }
 
     a:hover {
@@ -565,7 +573,7 @@ margin-top: 0px;
     }
 
     a.button:hover {
-      color: @link;
+      color: @link_color;
     }
   }
 }

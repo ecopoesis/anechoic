@@ -1,9 +1,13 @@
 <component name="libraryTable">
   <library name="SBT: org.joda:joda-convert:1.2">
     <CLASSES>
-      <root url="jar:///Applications/play/play-2.1.1/repository/local/org.joda/joda-convert/1.2/jars/joda-convert.jar!/" />
+      <root url="jar:///Applications/play/play-2.2.0/repository/cache/org.joda/joda-convert/jars/joda-convert-1.2.jar!/" />
     </CLASSES>
-    <JAVADOC />
-    <SOURCES />
+    <JAVADOC>
+      <root url="jar:///Applications/play/play-2.2.0/repository/cache/org.joda/joda-convert/docs/joda-convert-1.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar:///Applications/play/play-2.2.0/repository/cache/org.joda/joda-convert/srcs/joda-convert-1.2-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

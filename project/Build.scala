@@ -29,10 +29,15 @@ object ApplicationBuild extends Build {
     "org.jsoup" % "jsoup" % "1.7.2"
   )
 
+  def customLessEntryPoints(base: File): PathFinder = (
+    (base / "app" / "assets" / "css" / "dark.less")
+      +++ (base / "app" / "assets" / "css" / "light.less")
+    )
+
   val main = play.Project(appName, appVersion, appDependencies).settings(
     resolvers += Resolver.url("sbt-plugin-snapshots", new URL("http://repo.scala-sbt.org/scalasbt/sbt-plugin-snapshots/"))(Resolver.ivyStylePatterns),
     resolvers += "Spy Repository" at "http://files.couchbase.com/maven2",
-    lessEntryPoints <<= baseDirectory(_ / "app" / "assets" / "css" ** "global.less"),
+    lessEntryPoints <<= baseDirectory(customLessEntryPoints),
     scalacOptions += "-feature",
     routesImport += "extensions.Binders._",
     requireJs += "main.js",

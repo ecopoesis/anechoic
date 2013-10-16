@@ -6,15 +6,28 @@ define(['lib/cookie'], function(cookie) {
             $('#scheme').click(scheme.change);
         },
 
+        // figure out what scheme is set
+        getScheme: function() {
+            var parts = $('#css').attr('href').split('/');
+            return parts[parts.length - 1].split('.')[0];
+        },
+
         change: function() {
             var sig = $('#scheme').data('sig');
 
-            $('body').toggleClass('dark light');
+            var oldscheme = scheme.getScheme();
 
-            cookie.bake('scheme', $('body').attr('class'));
+            var newscheme = 'dark';
+            if (oldscheme === 'dark') {
+                newscheme = 'light';
+            }
+
+            $('#css').attr('href', $('#css').attr('href').replace(oldscheme, newscheme));
+
+            cookie.bake('scheme', newscheme);
 
             if (sig !== null && sig != undefined) {
-                $.get(anechoic_base_url + 'scheme' + '?sig=' + sig + "&scheme=" + $('body').attr('class'));
+                $.get(anechoic_base_url + 'scheme' + '?sig=' + sig + "&scheme=" + newscheme);
             }
 
             for (var i = 0; i < scheme.reloadFuncs.length; i++) {
@@ -25,9 +38,9 @@ define(['lib/cookie'], function(cookie) {
             return false;
         },
 
-        // these colors are duped in global.less
+        // these colors are duped in the themes
         colors: function() {
-            switch ($('body').attr('class')) {
+            switch (scheme.getScheme()) {
                 case 'light':
                     return {
                         background: '#FFF8E7',

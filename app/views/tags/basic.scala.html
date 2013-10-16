@@ -12,19 +12,19 @@
             case None => { Anechoic News }
         }
         </title>
-        <link rel="stylesheet" href="@Formatting.asset("css/global.css")"/>
+        @user match {
+            case Some(user: model.User) => {
+                <link rel="stylesheet" id="css" href="@Formatting.asset("css/" + user.scheme +".css")"/>
+                }
+            case _ => {
+                <link rel="stylesheet" id="css" href="@Formatting.asset("css/" + request.cookies.get("scheme").fold("dark")(cookie => cookie.value) +".css")"/>
+                }
+        }
         @requireJs(core = routes.Assets.at("javascripts/require.js").url, module = routes.Assets.at("javascripts/main").url)
         <script>anechoic_base_url = "//@request.host/";</script>
         <meta name="google-site-verification" content="4Jsr9fqJTEu8XrCVCMSsyna3yxTbkzfPQhoCeVtpkac" />
     </head>
-    @user match {
-        case Some(user: model.User) => {
-            <body class="@user.scheme">
-        }
-        case _ => {
-            <body class="@request.cookies.get("scheme").fold("dark")(cookie => cookie.value)">
-        }
-    }
+    <body>
         <div class="header cf">
             <div class="logo">
                 <a href="//@request.host/">
