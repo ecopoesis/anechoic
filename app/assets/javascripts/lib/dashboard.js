@@ -67,7 +67,8 @@ define(['lib/utils', 'lib/scheme', 'jquery', 'jqueryui', 'lodash', 'flot', 'flot
                         dashboard.loadFeed(columns[widget.column], widget);
                         break;
                     case "mail":
-                        dashboard.loadMail(columns[widget.column], widget);
+                        var div = $('<div class="widget mail" id="widget-' + widget.id + '"></div>').appendTo(columns[widget.column]);
+                        dashboard.loadMail(div, widget);
                         break;
                     case "stock":
                         dashboard.loadStock(columns[widget.column], widget);
@@ -76,7 +77,7 @@ define(['lib/utils', 'lib/scheme', 'jquery', 'jqueryui', 'lodash', 'flot', 'flot
                         dashboard.loadWeather(columns[widget.column], widget);
                         break;
                     case "welcome":
-                        var div = $('<div class="widget welcome"></div>').appendTo(columns[widget.column]);
+                        var div = $('<div class="widget welcome" id="widget-' + widget.id + '"></div>').appendTo(columns[widget.column]);
                         dashboard.draw({baseUrl: anechoic_base_url}, div, widget, true);
                         break;
                 }
@@ -84,7 +85,7 @@ define(['lib/utils', 'lib/scheme', 'jquery', 'jqueryui', 'lodash', 'flot', 'flot
         },
 
         loadFeed: function(c, widget) {
-            var w = $('<div class="widget feed"></div>').appendTo(c);
+            var w = $('<div class="widget feed" id="widget-' + widget.id + '"></div>').appendTo(c);
 
             $.post(
                 anechoic_base_url + 'dashboard/feed',
@@ -95,20 +96,25 @@ define(['lib/utils', 'lib/scheme', 'jquery', 'jqueryui', 'lodash', 'flot', 'flot
             );
         },
 
-        loadMail: function(c, widget) {
-            var w = $('<div class="widget mail"></div>').appendTo(c);
-
+        loadMail: function(div, widget) {
             $.post(
                 anechoic_base_url + 'dashboard/mail',
                 {id: widget.id, sig: widget.properties.sig},
                 function(data) {
-                    dashboard.draw(data, w, widget, true);
+                    dashboard.draw(data, div, widget, true);
+                    $('#update-' + widget.id).click(function(data) {
+                        dashboard.updatePassword(widget);
+                    });
+                    $('#update-form-' + widget.id).submit(function(event) {
+                        dashboard.updatePassword(widget);
+                        event.preventDefault();
+                    });
                 }
             );
         },
 
         loadStock: function(c, widget) {
-            var w = $('<div class="widget stock"></div>').appendTo(c);
+            var w = $('<div class="widget stock" id="widget-' + widget.id + '"></div>').appendTo(c);
 
             $.post(
                 anechoic_base_url + 'dashboard/stock',
@@ -120,7 +126,7 @@ define(['lib/utils', 'lib/scheme', 'jquery', 'jqueryui', 'lodash', 'flot', 'flot
         },
 
         loadWeather: function(c, widget) {
-            var w = $('<div class="widget weather"></div>').appendTo(c);
+            var w = $('<div class="widget weather" id="widget-' + widget.id + '"></div>').appendTo(c);
 
             $.post(
                 anechoic_base_url + 'dashboard/weather',
@@ -130,6 +136,25 @@ define(['lib/utils', 'lib/scheme', 'jquery', 'jqueryui', 'lodash', 'flot', 'flot
                     dashboard.draw(data, w, widget, true);
                 }
             );
+        },
+
+        updatePassword: function(widget) {
+            $('#spinner-' + widget.id).removeClass('ninja');
+            $.post(
+                anechoic_base_url + 'dashboard/secure',
+                {
+                    value: $('#password-' + widget.id).val(),
+                    id: widget.id,
+                    field: "password"
+                }
+            )
+            .done(function(){
+                var div = $('#widget-' + widget.id);
+                dashboard.loadMail(div, widget);
+            })
+            .fail(function(){
+                alert("fail");
+            })
         },
 
         updateProgress: function() {

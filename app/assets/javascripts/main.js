@@ -104,11 +104,7 @@ require([
                 dashboard.load();
                 break;
             case 'dashboard-config':
-                $(document).ready(function() { dashboard_config.startup(); });
-                $('#addfeed').click(dashboard_config.addFeed);
-                $('#addmail').click(dashboard_config.addMail);
-                $('#addstock').click(dashboard_config.addStock);
-                $('#addweather').click(dashboard_config.addWeather);
+                dashboard_config.startup();
                 break;
             case 'login':
                 $('#login').submit(function() { encryption.encrypt($('#password').val()) });
@@ -116,6 +112,14 @@ require([
             case 'singleSignUp':
                 $('#signup').submit(function() { encryption.encrypt($('#password_password1').val()) });
                 break;
+            case 'changePassword':
+                $('#password').submit(function() { encryption.encrypt($('#newPassword.password1').val()) });
+                break;
+            case 'resetPassword':
+                $('#reset').submit(function() { encryption.encrypt($('#password.password1').val()) });
+                break;
+
+
         }
     });
 

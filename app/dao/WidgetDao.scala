@@ -221,6 +221,26 @@ class WidgetDao(q: String) {
     }
   }
 
+  def updateSecureProperty(widgetId: Long, key: String, value: String): Boolean = {
+    val (ciphertext, iv) = Crypto.aesEncrypt(value, q)
+
+    DB.withConnection { implicit c =>
+      val result = SQL(
+        """
+          |update widget_properties set v = {v}, iv = {iv} where widget_id = {widget_id} and k = {k}
+        """.stripMargin)
+      .on(
+        'widget_id -> widgetId,
+        'k -> key,
+        'v -> ciphertext,
+        'iv -> iv
+      )
+      .executeUpdate()
+
+      return result == 1
+    }
+  }
+
   def addFeed(user: User, url: String, max: Int): Long = {
     DB.withTransaction { implicit c =>
       insertWidget(c, user.numId, "feed") match {
@@ -246,7 +266,7 @@ class WidgetDao(q: String) {
         case Some(widgetId) => {
           if (
             insertProperty(c, widgetId, "host", host)
-              && insertSecureProperty(c, widgetId, "username", username)
+              && insertProperty(c, widgetId, "username", username)
               && insertSecureProperty(c, widgetId, "password", password)
               && insertProperty(c, widgetId, "port", port.toString)
               && insertProperty(c, widgetId, "ssl", ssl.toString)) {

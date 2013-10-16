@@ -5,6 +5,23 @@ define(['jquery', 'jqueryui', 'lodash'], function() {
 
         startup: function() {
             dashboard_config.blockActions();
+
+            $('#addfeed').click(dashboard_config.addFeed);
+            $('#addmail').click(dashboard_config.addMail);
+            $('#addstock').click(dashboard_config.addStock);
+            $('#addweather').click(dashboard_config.addWeather);
+
+            var newmail = $('#newmail');
+            var mailssl = newmail.find("[name='ssl']");
+            var mailport = newmail.find("[name='port']");
+            mailssl.click(function() {
+                if (mailssl.is(':checked') && mailport.val() === '143') {
+                    mailport.val('993');
+                } else if (!mailssl.is(':checked') && mailport.val() === '993') {
+                    mailport.val('143');
+                }
+            });
+
             dashboard_config.reloadWidgetLayout();
 
             $('#add-widget').change(function() {
@@ -52,6 +69,8 @@ define(['jquery', 'jqueryui', 'lodash'], function() {
                     results: function() {}
                 }
             });
+
+
 
             dashboard_config.unblockActions();
         },
@@ -241,8 +260,17 @@ define(['jquery', 'jqueryui', 'lodash'], function() {
         },
 
         resetWidgets: function() {
-            $("#newfeed").find("[name='url']").val('');
-            $("#newfeed").find("[name='max']").val(10);
+            var newfeed = $('#newfeed');
+            newfeed.find("[name='url']").val('');
+            newfeed.find("[name='max']").val(10);
+
+            var newmail = $('#newmail');
+            newmail.find("[name='host']").val('');
+            newmail.find("[name='username']").val('');
+            newmail.find("[name='password']").val('');
+            newmail.find("[name='port']").val('143');
+            newmail.find("[name='ssl']").prop('checked', false);
+
             $("#newstock").find("[name='symbol']").val('');
             $("#newweather").find("[name='city']").val('');
         },

@@ -50,9 +50,13 @@ object Crypto {
   }
 
   def aesDecrypt(ciphertext: String, iv: String, password: String) = {
-    val secret = generateSecret(password)
-    val cipher = Cipher.getInstance("AES/CBC/PKCS5Padding")
-    cipher.init(Cipher.DECRYPT_MODE, secret, new IvParameterSpec(Base64.decodeBase64(iv.getBytes)))
-    new String(cipher.doFinal(Base64.decodeBase64(ciphertext.getBytes)), "UTF-8")
+    try {
+      val secret = generateSecret(password)
+      val cipher = Cipher.getInstance("AES/CBC/PKCS5Padding")
+      cipher.init(Cipher.DECRYPT_MODE, secret, new IvParameterSpec(Base64.decodeBase64(iv.getBytes)))
+      new String(cipher.doFinal(Base64.decodeBase64(ciphertext.getBytes)), "UTF-8")
+    } catch {
+      case e: Exception => ""
+    }
   }
 }

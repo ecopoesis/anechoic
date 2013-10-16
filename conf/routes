@@ -13,6 +13,7 @@ GET         /user/:id                      controllers.Www.user(id: Long)
 
 # Dashboard
 GET         /dashboard/config              controllers.Www.dashboardConfig
+POST        /dashboard/secure              controllers.Dashboard.updateSecure
 
 # Dashboard - Widgets
 POST        /dashboard/addfeed             controllers.widgets.Feed.add

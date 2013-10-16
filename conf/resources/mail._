@@ -1,7 +1,16 @@
 <h3>Mail</h3>
 <div class="card">
-    <% if (data.error !== undefined) { %>
-        <%=data.error%>
+    <% if (data.error !== undefined && data.error.indexOf('AUTHENTICATIONFAILED') !== -1) { %>
+        <form method="POST" id="update-form-<%=widget.id%>">
+            <div class="desc">
+                For security, please reenter the password for your <%=widget.properties.username%> account at <%=widget.properties.host%>
+            </div>
+            <div class="form-item">
+                Password: <input type="password" id="password-<%=widget.id%>" name="password" size="25"/>
+            </div>
+            <input type="hidden" name="id" id="id" value="<%=widget.id%>"/>
+            <a href="#" class="button" id="update-<%=widget.id%>">update password</a><div id="spinner-<%=widget.id%>" class="spinner ninja"><i class="icon-spinner icon-spin icon-large"></i></div>
+        </form>
     <% } else { %>
         <ul>
             <% for(var i = 0; i < data.length; i++) { %>

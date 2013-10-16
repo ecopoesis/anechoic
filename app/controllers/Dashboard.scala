@@ -13,16 +13,25 @@ import play.api.libs.json.Json._
  * widgets controllers
  */
 object Dashboard extends Controller with securesocial.core.SecureSocial {
-  case class WidgetLocation(widget: Int, column: Int, position: Int)
-  implicit val widgetLocationFormat:Format[WidgetLocation] = Json.format[WidgetLocation]
-
   case class DeleteWidget(id: Long, sig: String)
+  case class UpdateSecure(id: Long, field: String, value: String)
+  case class WidgetLocation(widget: Int, column: Int, position: Int)
+
+  implicit val widgetLocationFormat:Format[WidgetLocation] = Json.format[WidgetLocation]
 
   val deleteWidgetData = Form(
     mapping(
       "id" -> longNumber,
       "sig" -> nonEmptyText(maxLength = 28)
     )(DeleteWidget.apply)(DeleteWidget.unapply)
+  )
+
+  val updateSecureData = Form(
+    mapping(
+      "id" -> longNumber,
+      "field" -> nonEmptyText(maxLength = 100),
+      "value" -> nonEmptyText(maxLength = 100)
+    )(UpdateSecure.apply)(UpdateSecure.unapply)
   )
 
   /**
@@ -105,6 +114,39 @@ object Dashboard extends Controller with securesocial.core.SecureSocial {
               }
             } else {
               BadRequest("invalid signature")
+            }
+          }
+        )
+      }
+      case _ => BadRequest("invalid user object")
+    }
+  }
+
+  def updateSecure = SecuredAction { implicit request =>
+    request.user match {
+      case user: User => {
+        updateSecureData.bindFromRequest.fold(
+          errors => BadRequest(errors.toString),
+          post => {
+            request.cookies.get("q") match {
+              case Some(q: Cookie) => {
+                val dao = new WidgetDao(Crypto.rsaDecrypt(q.value))
+                dao.select(post.id) match {
+                  case Some(widget) => {
+                    if (widget.userId == user.numId) {
+                      if (dao.updateSecureProperty(post.id, post.field, post.value)) {
+                        Ok
+                      } else {
+                        InternalServerError
+                      }
+                    } else {
+                      Forbidden
+                    }
+                  }
+                  case _ => BadRequest("invalid widget")
+                }
+              }
+              case _ => BadRequest("no q value")
             }
           }
         )
