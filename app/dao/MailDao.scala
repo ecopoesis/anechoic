@@ -2,11 +2,12 @@ package dao
 
 import model.MailMessage
 import java.util.Properties
-import javax.mail.{BodyPart, Multipart, Folder, Session}
+import javax.mail._
 import org.joda.time.DateTime
 import helpers.Formatting
 import org.jsoup.Jsoup
 import org.jsoup.safety.Whitelist
+import scala.collection.mutable.ListBuffer
 
 object MailDao {
 
@@ -23,25 +24,33 @@ object MailDao {
 
     val store = Session.getInstance(props).getStore(proto)
     store.connect(host, port, username, password)
-    val inbox = store.getFolder("Inbox")
+    val inbox = store.getFolder("INBOX")
     inbox.open(Folder.READ_ONLY)
 
-    val total = inbox.getMessageCount
-    val messages = inbox.getMessages(total - max + 1, total).reverse
+    val messages = inbox.getMessages.reverse
 
-    val msgs = for (message <- messages) yield {
-      MailMessage(
-        message.getFrom()(0).toString,
-        message.getSubject,
-        Formatting.print(new DateTime(message.getReceivedDate)),
-        parseContent(message.getContent)
-      )
+    val msgs = new ListBuffer[MailMessage]
+    var i = 0
+    while (i < messages.length && msgs.size < max) {
+      i += 1
+      if (!messages(i).isSet(Flags.Flag.DELETED)) {
+        msgs.append(
+          MailMessage(
+            messages(i).getFrom()(0).toString,
+            messages(i).getSubject,
+            Formatting.print(new DateTime(messages(i).getReceivedDate)),
+            parseContent(messages(i).getContent)
+          )
+        )
+      }
     }
+
     inbox.close(true)
     store.close
 
     msgs
   }
+
 
   def parseContent(x: Any): String = {
     // parse the various message types
