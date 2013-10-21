@@ -17,7 +17,7 @@
         }
         @user match {
             case Some(user: model.User) => {
-                <li class="menu-item"><a href="//@request.host/dashboard/config"><i class="icon-gears"></i>customize</a></li>
+                <li class="menu-item customize"><a href="//@request.host/dashboard/config"><i class="icon-gears"></i>customize</a></li>
                 <li class="menu-item"><a href="//@request.host/user/@user.numId">@user.identityId.userId</a></li>
                 <li class="menu-item"><a href="//@request.host/logout">logout</a></li>
             }

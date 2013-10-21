@@ -776,40 +776,21 @@ body {
 
 // iPad
 @media only screen
-and (min-device-width: 768px)
-and (max-device-width: 1024px)
-and (orientation: landscape) {
+and (min-width: 720px)
+and (max-width: 1024px) {
   .header {
-    margin: auto 10px 15px 10px;
-    width: 1014px;
-    max-width: 1014px;
+    margin: auto auto 15px auto;
+    width: 100%;
+    max-width: 100%;
   }
 
   .frame {
-    margin: auto 10px auto 10px;
-    width: 1014px;
-    max-width: 1014px;
-  }
-}
-
-@media only screen
-and (min-device-width: 768px)
-and (max-device-width: 1024px)
-and (orientation: portrait) {
-  .header {
-    margin: auto 10px 15px 10px;
-    width: 748px;
-    max-width: 748px;
-  }
-
-  .frame {
-    margin: auto 10px auto 10px;
-    width: 748px;
-    max-width: 748px;
+    margin: auto auto 15px auto;
+    width: 100%;
+    max-width: 100%;
   }
 
   .dashboard .weather {
-
     .current {
       text-align: center;
       height: 50px;
@@ -899,6 +880,61 @@ and (orientation: portrait) {
         font-size: 10px;
         width: 25%;
       }
+    }
+  }
+}
+
+// iPhone
+@media only screen
+and (min-width: 0px)
+and (max-width: 720px) {
+  .header {
+    margin: auto 0px 15px 0px;
+    width: 100%;
+    max-width: 100%;
+
+    .logo {
+      margin-top: 9px;
+      height: 40px;
+      width: 40px;
+      float: left;
+    }
+
+    svg {
+      width: 40px;
+      height: 40px;
+
+      rect {
+        fill: @foreground;
+      }
+    }
+
+    .mast {
+      visibility: hidden;
+      display: none;
+    }
+
+    .customize {
+      visibility: hidden;
+      display: none;
+    }
+  }
+
+  .frame {
+    margin: auto 0px 15px 0px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .dashboard {
+    .supercolumn {
+      float: none;
+      width: 100%;
+    }
+
+    .column {
+      margin: 0px 0px 0px 0px;
+      max-width: 100%;
     }
   }
 }
