@@ -774,3 +774,131 @@ body {
   }
 }
 
+// iPad
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (orientation: landscape) {
+  .header {
+    margin: auto 10px 15px 10px;
+    width: 1014px;
+    max-width: 1014px;
+  }
+
+  .frame {
+    margin: auto 10px auto 10px;
+    width: 1014px;
+    max-width: 1014px;
+  }
+}
+
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (orientation: portrait) {
+  .header {
+    margin: auto 10px 15px 10px;
+    width: 748px;
+    max-width: 748px;
+  }
+
+  .frame {
+    margin: auto 10px auto 10px;
+    width: 748px;
+    max-width: 748px;
+  }
+
+  .dashboard .weather {
+
+    .current {
+      text-align: center;
+      height: 50px;
+      display: table;
+      margin-left: auto;
+      margin-right: auto;
+
+      .icon {
+        padding-right: 15px;
+      }
+
+      i {
+        padding: 0px;
+        list-style: none;
+        width: 50px;
+        height: 50px;
+        display: table-cell;
+        font-size: 50px;
+      }
+    }
+
+    .temp {
+      display: table-cell;
+      font-size: 40px;
+      vertical-align: middle;
+    }
+
+    .details {
+      width: 100%;
+      text-align: center;
+    }
+
+    .detail {
+      font-size: 12px;
+      display: inline;
+      padding-left: 6px;
+      padding-right: 6px;
+
+      .direction {
+        display: inline;
+        font-size: 16px;
+      }
+    }
+
+    table.forecast {
+      width: 100%;
+      margin-top: 10px;
+
+      td {
+        text-align: center;
+      }
+
+      .weather-icon {
+        width: 25%;
+
+        .icon {
+          padding-bottom: 0px;
+        }
+
+        i {
+          font-size: 20px;
+        }
+      }
+
+      .low {
+        color: @weather-warm-color;
+        padding-top: 5px;
+        padding-left: 3px;
+        padding-right: 2px;
+        width: 12.5%;
+        font-size: 12px;
+        text-align: right;
+      }
+
+      .high {
+        color: @weather-cool-color;
+        padding-top: 5px;
+        padding-left: 2px;
+        padding-right: 3px;
+        width: 12.5%;
+        font-size: 12px;
+        text-align: left;
+      }
+
+      .date {
+        padding-top: 5px;
+        font-size: 10px;
+        width: 25%;
+      }
+    }
+  }
+}
