@@ -48,7 +48,7 @@ define(['lib/utils', 'lib/scheme', 'jquery', 'jqueryui', 'lodash', 'flot', 'flot
                 if (typeof widgets[i].column !== 'undefined') {
                     dashboard.count += 1;
                     if (!(widgets[i].column in columns)) {
-                        columns[widgets[i].column] = $('<div class="supercolumn cf"><div class="column cf">&nbsp;</div></div>').appendTo('#dashboard').find('.column');
+                        columns[widgets[i].column] = $('<div class="supercolumn cf"><div class="column cf"></div></div>').appendTo('#dashboard').find('.column');
                         num_columns = num_columns + 1;
                     }
                 }
