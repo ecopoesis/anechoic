@@ -99,7 +99,6 @@ define(['jquery', 'jqueryui', 'lodash'], function() {
             var c1 = $('<div class="supercolumn cf"><div class="column cf">&nbsp;</div></div>').appendTo(layout).find('.column');
             var c2 = $('<div class="supercolumn cf"><div class="column cf">&nbsp;</div></div>').appendTo(layout).find('.column');
             var c3 = $('<div class="supercolumn cf"><div class="column cf">&nbsp;</div></div>').appendTo(layout).find('.column');
-            var c4 = $('<div class="supercolumn cf"><div class="column cf">&nbsp;</div></div>').appendTo(layout).find('.column');
             var unassigned = $('<div class="supercolumn cf"><div class="column unassigned cf">Unassigned Widgets:</div></div>').appendTo(layout).find('.column');
 
            // draw the widgets
@@ -113,9 +112,6 @@ define(['jquery', 'jqueryui', 'lodash'], function() {
                         break;
                     case 2:
                         dashboard_config.renderWidget(c3, data[i]);
-                        break;
-                    case 3:
-                        dashboard_config.renderWidget(c4, data[i]);
                         break;
                     default:
                         dashboard_config.renderWidget(unassigned, data[i]);
