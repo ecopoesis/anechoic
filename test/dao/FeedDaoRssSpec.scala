@@ -103,6 +103,16 @@ class FeedDaoRssSpec extends Specification {
       feed.get.items.length must_== 10
       feed.get.items(0).date.get.toString() must_== "2013-08-21T17:56:02.000Z"
     }
+
+    "process reddit from 2013-10-21" in test {
+      import play.api.Play.current
+      val feed = FeedDao.processRss(XML.load(Play.classloader.getResource("reddit-2013-10-21.rss")))
+      feed.get.title must_== "reddit: the front page of the internet"
+      feed.get.date must_== None
+      feed.get.items.length must_== 25
+      feed.get.items(0).date.get.toString() must_== "2013-10-21T14:46:17.000Z"
+      feed.get.items(0).title must_== "He really feels like he's the victim"
+    }
   }
 
   def test[T](code: =>T) =
