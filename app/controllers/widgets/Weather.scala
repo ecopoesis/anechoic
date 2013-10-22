@@ -7,6 +7,7 @@ import model.User
 import dao.{WeatherDao, WidgetDao}
 import helpers.{Crypto, Signature}
 import play.api.libs.json.Json
+import java.net.URLEncoder
 
 object Weather extends Controller with securesocial.core.SecureSocial {
   case class Add(city: String, wunderId: String)
@@ -65,4 +66,7 @@ object Weather extends Controller with securesocial.core.SecureSocial {
     }
   }
 
+  def city(cb: String, query: String) = SecuredAction { implicit  request =>
+    Ok(helpers.Http.get("http://autocomplete.wunderground.com/aq?cb=" + URLEncoder.encode(cb, "UTF-8") + "&query=" + URLEncoder.encode(query, "UTF-8")))
+  }
 }

@@ -24,6 +24,7 @@ POST        /dashboard/addstock            controllers.widgets.Stock.add
 POST        /dashboard/stock               controllers.widgets.Stock.read
 POST        /dashboard/addweather          controllers.widgets.Weather.add
 POST        /dashboard/weather             controllers.widgets.Weather.read
+GET         /dashboard/weather/city        controllers.widgets.Weather.city(cb: String, query: String)
 
 
 # Dashboard - Layout

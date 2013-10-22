@@ -11,6 +11,11 @@ define(['jquery', 'jqueryui', 'lodash'], function() {
             $('#addstock').click(dashboard_config.addStock);
             $('#addweather').click(dashboard_config.addWeather);
 
+            $('#newfeed').submit(function(event){dashboard_config.addFeed; event.preventDefault();})
+            $('#newmail').submit(function(event){dashboard_config.addMail; event.preventDefault();})
+            $('#newstock').submit(function(event){dashboard_config.addStock; event.preventDefault();})
+            $('#newweather').submit(function(event){dashboard_config.addWeather; event.preventDefault();})
+
             var newmail = $('#newmail');
             var mailssl = newmail.find("[name='ssl']");
             var mailport = newmail.find("[name='port']");
@@ -33,7 +38,7 @@ define(['jquery', 'jqueryui', 'lodash'], function() {
             $('#city').autocomplete({
                 source: function(request, response) {
                     $.ajax({
-                        url: 'http://autocomplete.wunderground.com/aq',
+                        url: anechoic_base_url + 'dashboard/weather/city',
                         dataType: "jsonp",
                         jsonp: 'cb',
                         data: {
@@ -69,8 +74,6 @@ define(['jquery', 'jqueryui', 'lodash'], function() {
                     results: function() {}
                 }
             });
-
-
 
             dashboard_config.unblockActions();
         },

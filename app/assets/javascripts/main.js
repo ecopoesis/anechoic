@@ -28,7 +28,6 @@ require.config({
             deps: ['timezone', 'flot']
         },
         jqueryui: {
-            exports: '$',
             deps: ['jquery']
         },
         lodash: {

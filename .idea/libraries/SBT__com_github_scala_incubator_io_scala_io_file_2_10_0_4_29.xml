@@ -1,13 +1,9 @@
 <component name="libraryTable">
   <library name="SBT: com.github.scala-incubator.io:scala-io-file_2.10:0.4.2">
     <CLASSES>
-      <root url="jar:///Applications/play/play-2.2.0/repository/local/com.github.scala-incubator.io/scala-io-file_2.10/0.4.2/jars/scala-io-file_2.10.jar!/" />
+      <root url="jar:///Applications/play/play-2.1.1/repository/local/com.github.scala-incubator.io/scala-io-file_2.10/0.4.2/jars/scala-io-file_2.10.jar!/" />
     </CLASSES>
-    <JAVADOC>
-      <root url="jar:///Applications/play/play-2.2.0/repository/cache/com.github.scala-incubator.io/scala-io-file_2.10/docs/scala-io-file_2.10-0.4.2-javadoc.jar!/" />
-    </JAVADOC>
-    <SOURCES>
-      <root url="jar:///Applications/play/play-2.2.0/repository/cache/com.github.scala-incubator.io/scala-io-file_2.10/srcs/scala-io-file_2.10-0.4.2-sources.jar!/" />
-    </SOURCES>
+    <JAVADOC />
+    <SOURCES />
   </library>
 </component>
