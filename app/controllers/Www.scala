@@ -32,8 +32,13 @@ object Www extends Controller with securesocial.core.SecureSocial {
     Ok(views.html.index(request.user, StoryDao.getScoredList(1, DefaultPageSize)))
   }
 
-  def dashboard = UserAwareAction { implicit request =>
-    Ok(views.html.dashboard(request.user, "google"))
+  def dashboard(src: Option[String]) = UserAwareAction { implicit request =>
+    val cookies: Seq[Cookie] = src match {
+      case Some(source) => Seq(Cookie("src", source, Some(30 * 24 * 60 * 60)))
+      case _ => Seq.empty[Cookie]
+    }
+
+    Ok(views.html.dashboard(request.user, "google")).withCookies(cookies:_*)
   }
 
   def dashboardConfig = SecuredAction { implicit request =>
