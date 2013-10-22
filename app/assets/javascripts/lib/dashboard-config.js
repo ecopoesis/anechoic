@@ -1,4 +1,4 @@
-define(['jquery', 'jqueryui', 'lodash'], function() {
+define(['lib/form', 'jquery', 'jqueryui', 'lodash'], function(form) {
     var dashboard_config = {
         blocks: 0,
         saving: false,
@@ -11,12 +11,15 @@ define(['jquery', 'jqueryui', 'lodash'], function() {
             $('#addstock').click(dashboard_config.addStock);
             $('#addweather').click(dashboard_config.addWeather);
 
-            $('#newfeed').submit(function(event){dashboard_config.addFeed; event.preventDefault();})
-            $('#newmail').submit(function(event){dashboard_config.addMail; event.preventDefault();})
-            $('#newstock').submit(function(event){dashboard_config.addStock; event.preventDefault();})
-            $('#newweather').submit(function(event){dashboard_config.addWeather; event.preventDefault();})
-
             var newmail = $('#newmail');
+
+            $('#newfeed').submit(function(event){dashboard_config.addFeed(); event.preventDefault();})
+            newmail.submit(function(event){dashboard_config.addMail(); event.preventDefault();})
+            $('#newstock').submit(function(event){dashboard_config.addStock(); event.preventDefault();})
+            $('#newweather').submit(function(event){dashboard_config.addWeather(); event.preventDefault();})
+
+            form.add_enter_to_submit(newmail);
+
             var mailssl = newmail.find("[name='ssl']");
             var mailport = newmail.find("[name='port']");
             mailssl.click(function() {

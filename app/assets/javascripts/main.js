@@ -89,7 +89,6 @@ require([
 ) {
     $(document).ready(function() {
         // common functions fo the whole world
-        form.initialize();
         scheme.initialize();
 
         // timezoneJs
@@ -106,19 +105,25 @@ require([
                 dashboard_config.startup();
                 break;
             case 'login':
-                $('#login').submit(function() { encryption.encrypt($('#password').val()) });
+                var login = $('#login');
+                form.add_enter_to_submit(login);
+                login.submit(function() { encryption.encrypt($('#password').val()) });
                 break;
             case 'singleSignUp':
-                $('#signup').submit(function() { encryption.encrypt($('#password_password1').val()) });
+                var signup = $('#signup');
+                form.add_enter_to_submit(signup);
+                signup.submit(function() { encryption.encrypt($('#password_password1').val()) });
                 break;
             case 'changePassword':
-                $('#password').submit(function() { encryption.encrypt($('#newPassword.password1').val()) });
+                var password = $('#password');
+                form.add_enter_to_submit(password);
+                password.submit(function() { encryption.encrypt($('#newPassword.password1').val()) });
                 break;
             case 'resetPassword':
-                $('#reset').submit(function() { encryption.encrypt($('#password.password1').val()) });
+                var reset = $('#reset');
+                form.add_enter_to_submit(reset);
+                reset.submit(function() { encryption.encrypt($('#password.password1').val()) });
                 break;
-
-
         }
     });
 

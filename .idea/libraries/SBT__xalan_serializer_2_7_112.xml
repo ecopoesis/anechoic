@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="SBT: xalan:serializer:2.7.1">
     <CLASSES>
-      <root url="jar:///Applications/play/play-2.1.1/repository/local/xalan/serializer/2.7.1/jars/serializer.jar!/" />
+      <root url="jar:///Applications/play/play-2.2.0/repository/local/xalan/serializer/2.7.1/jars/serializer.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
