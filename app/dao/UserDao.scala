@@ -176,5 +176,23 @@ object UserDao {
       false
     }
   }
+
+  def setSource(identity: Identity, source: String): Boolean = {
+    if (source.length <= 200) {
+      DB.withConnection { implicit c =>
+        SQL(
+          """
+            |update users set source={source} where username={username}
+          """.stripMargin
+        ).on(
+          'source -> source,
+          'username -> identity.identityId.userId
+        )
+        .executeUpdate() == 1
+      }
+    } else {
+      false
+    }
+  }
 }
 

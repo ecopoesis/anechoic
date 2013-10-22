@@ -1,7 +1,7 @@
 package controllers
 
 import _root_.java.util.UUID
-import play.api.mvc.{Result, Action, Controller}
+import play.api.mvc.{Cookie, Result, Action, Controller}
 import play.api.data._
 import play.api.data.Form
 import play.api.data.Forms._
@@ -19,6 +19,7 @@ import scala.Some
 import securesocial.core.IdentityId
 import securesocial.controllers.{ProviderController, TemplatesPlugin}
 import scala.language.reflectiveCalls
+import dao.UserDao
 
 /**
  * this class is a giant hack so we can get single step signup to work
@@ -81,9 +82,17 @@ object Registration extends Controller {
               AuthenticationMethod.UserPassword,
               passwordInfo = Some(Registry.hashers.currentHasher.hash(info.password))
             )
-            val saved = UserService.save(user)
+            val savedUser = UserService.save(user)
+
+            // mark the source of the user
+            // this is ineffiecent, but SecureSocial doesn't give us hooks to do it a better way
+            request.cookies.get("src") match {
+              case Some(src: Cookie) => UserDao.setSource(savedUser, src.value)
+              case _ => {}
+            }
+
             if (UsernamePasswordProvider.sendWelcomeEmail) {
-              Mailer.sendWelcomeEmail(saved)
+              Mailer.sendWelcomeEmail(savedUser)
             }
             val eventSession = Events.fire(new SignUpEvent(user)).getOrElse(session)
             ProviderController.completeAuthentication(user, eventSession).flashing("success" -> Messages("securesocial.signup.signUpDone"))
