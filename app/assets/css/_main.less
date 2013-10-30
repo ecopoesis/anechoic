@@ -741,6 +741,13 @@ body {
   font-size: 12px;
 }
 
+.ad-footer {
+  width: 100%;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .wunderground {
   display: inline-block;
   margin: 10px;
@@ -771,6 +778,32 @@ body {
 
   .flot-y-axis {
     color: @detail-text;
+  }
+}
+
+.dashboard-bottom {
+  width: 234px;
+  height: 60px;
+}
+
+@media(min-width: 500px) {
+  .dashboard-bottom {
+    width: 468px;
+    height: 60px;
+  }
+}
+
+@media(min-width: 800px) {
+  .dashboard-bottom {
+    width: 728px;
+    height: 90px;
+  }
+}
+
+@media(min-width: 1000px) {
+  .dashboard-bottom {
+    width: 970px;
+    height: 90px;
   }
 }
 

@@ -4,6 +4,8 @@
       <root url="jar:///Applications/play/play-2.1.1/repository/local/play/sbt-link/2.1.1/jars/sbt-link.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar:///Applications/play/play-2.1.1/repository/local/play/sbt-link/2.1.1/srcs/sbt-link-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

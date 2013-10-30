@@ -3,11 +3,11 @@
     <CLASSES>
       <root url="jar:///Applications/play/play-2.1.1/repository/cache/securesocial/securesocial_2.10/jars/securesocial_2.10-master-SNAPSHOT.jar!/" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar:///Applications/play/play-2.1.1/repository/cache/securesocial/securesocial_2.10/docs/securesocial_2.10-master-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
     <SOURCES>
-      <root url="jar:///Applications/play/play-2.1.1/repository/cache/securesocial/securesocial_2.10/srcs/securesocial_2.10-master-SNAPSHOT-sources.jar!/securesocial/core/providers/utils" />
-      <root url="jar://$USER_HOME$/Downloads/securesocial_2.10-sources.jar!/" />
-      <root url="jar://$USER_HOME$/Downloads/securesocial_2.10-sources.jar!/" />
+      <root url="jar:///Applications/play/play-2.1.1/repository/cache/securesocial/securesocial_2.10/srcs/securesocial_2.10-master-SNAPSHOT-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

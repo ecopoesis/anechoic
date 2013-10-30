@@ -4,8 +4,6 @@
       <root url="jar:///Applications/play/play-2.1.1/repository/local/play/anorm_2.10/2.1.1/jars/anorm_2.10.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar:///Applications/play/play-2.1.1/repository/local/play/anorm_2.10/2.1.1/srcs/anorm_2.10-sources.jar!/" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>
