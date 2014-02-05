@@ -4,6 +4,8 @@
       <root url="jar:///Applications/play/play-2.2.0/repository/local/javax.transaction/jta/1.1/jars/jta.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar:///Applications/play/play-2.2.0/repository/cache/javax.transaction/jta/srcs/jta-1.1-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

@@ -1,11 +1,9 @@
 <component name="libraryTable">
   <library name="SBT: org.hamcrest:hamcrest-core:1.1">
     <CLASSES>
-      <root url="jar:///Applications/play/play-2.2.0/repository/cache/org.hamcrest/hamcrest-core/jars/hamcrest-core-1.1.jar!/" />
+      <root url="jar:///Applications/play/play-2.1.1/repository/local/org.hamcrest/hamcrest-core/1.1/jars/hamcrest-core.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar:///Applications/play/play-2.2.0/repository/cache/org.hamcrest/hamcrest-core/srcs/hamcrest-core-1.1-sources.jar!/" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>

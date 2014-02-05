@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="SBT: com.typesafe.play:sbt-link:2.2.0">
     <CLASSES>
-      <root url="jar:///Applications/play/play-2.2.0/repository/local/com.typesafe.play/sbt-link/2.2.0/jars/sbt-link.jar!/" />
+      <root url="jar://$USER_HOME$/tools/play-2.2.1/repository/cache/com.typesafe.play/sbt-link/jars/sbt-link-2.2.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

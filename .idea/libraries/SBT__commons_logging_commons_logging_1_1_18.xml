@@ -3,11 +3,7 @@
     <CLASSES>
       <root url="jar:///Applications/play/play-2.2.0/repository/local/commons-logging/commons-logging/1.1.1/jars/commons-logging.jar!/" />
     </CLASSES>
-    <JAVADOC>
-      <root url="jar:///Applications/play/play-2.2.0/repository/cache/commons-logging/commons-logging/docs/commons-logging-1.1.1-javadoc.jar!/" />
-    </JAVADOC>
-    <SOURCES>
-      <root url="jar:///Applications/play/play-2.2.0/repository/cache/commons-logging/commons-logging/srcs/commons-logging-1.1.1-sources.jar!/" />
-    </SOURCES>
+    <JAVADOC />
+    <SOURCES />
   </library>
 </component>

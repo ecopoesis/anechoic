@@ -3,7 +3,11 @@
     <CLASSES>
       <root url="jar:///Applications/play/play-2.2.0/repository/cache/org.ocpsoft.prettytime/prettytime/jars/prettytime-3.0.2.Final.jar!/" />
     </CLASSES>
-    <JAVADOC />
-    <SOURCES />
+    <JAVADOC>
+      <root url="jar:///Applications/play/play-2.2.0/repository/cache/org.ocpsoft.prettytime/prettytime/docs/prettytime-3.0.2.Final-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar:///Applications/play/play-2.2.0/repository/cache/org.ocpsoft.prettytime/prettytime/srcs/prettytime-3.0.2.Final-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

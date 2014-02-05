@@ -58,7 +58,7 @@ object FeedDao {
     if (channel.length > 0) {
       val items = for (item <- (channel.head \\ "item")) yield {
         Item(
-          (item \\ "title").last.text,
+          (item \\ "title").head.text,
           (item \\ "description").text,
           new URL((item \\ "link").text),
           parseRssDate((item \\ "pubDate").text),

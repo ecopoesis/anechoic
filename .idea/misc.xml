@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CheckstyleConfigurable">
-    <option name="suppFilterFilename" value="" />
-    <option name="suppCommentFilter" value="false" />
-    <option name="offComment" value="CHECKSTYLE\:OFF" />
-    <option name="onComment" value="CHECKSTYLE\:ON" />
-    <option name="checkFormat" value=".*" />
-    <option name="messageFormat" value="" />
-    <option name="checkCPP" value="true" />
-    <option name="checkC" value="true" />
-    <option name="suppNearbyCommentFilter" value="false" />
-    <option name="snCommentFormat" value="SUPPRESS CHECKSTYLE (\w+)" />
-    <option name="snCheckFormat" value="$1" />
-    <option name="snMessageFormat" value="" />
-    <option name="snInfluenceFormat" value="0" />
-    <option name="snCheckCPP" value="true" />
-    <option name="snCheckC" value="true" />
-    <option name="pathToUserRulesConfiguration" value="" />
-    <option name="pathToJarWithRules" value="" />
+    <option value="" name="suppFilterFilename" />
+    <option value="false" name="suppCommentFilter" />
+    <option value="CHECKSTYLE\:OFF" name="offComment" />
+    <option value="CHECKSTYLE\:ON" name="onComment" />
+    <option value=".*" name="checkFormat" />
+    <option value="" name="messageFormat" />
+    <option value="true" name="checkCPP" />
+    <option value="true" name="checkC" />
+    <option value="false" name="suppNearbyCommentFilter" />
+    <option value="SUPPRESS CHECKSTYLE (\w+)" name="snCommentFormat" />
+    <option value="$1" name="snCheckFormat" />
+    <option value="" name="snMessageFormat" />
+    <option value="0" name="snInfluenceFormat" />
+    <option value="true" name="snCheckCPP" />
+    <option value="true" name="snCheckC" />
+    <option value="" name="pathToUserRulesConfiguration" />
+    <option value="" name="pathToJarWithRules" />
   </component>
   <component name="DeleteUselessSourceAdvisor">
     <option name="SHOULD_OFFER_DELETE_SOURCES" value="false" />
@@ -26,15 +26,15 @@
     <entry_points version="2.0" />
   </component>
   <component name="FindBugsConfigurable">
-    <option name="make" value="true" />
-    <option name="effort" value="default" />
-    <option name="priority" value="Medium" />
-    <option name="excludeFilter" value="" />
+    <option value="true" name="make" />
+    <option value="default" name="effort" />
+    <option value="Medium" name="priority" />
+    <option value="" name="excludeFilter" />
   </component>
   <component name="IdProvider" IDEtalkID="EE4AA9E5F422FD1E5EE97C65DB19F2AD" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK" />
   <component name="SuppressionsComponent">
-    <option name="suppComments" value="[]" />
+    <option value="[]" name="suppComments" />
   </component>
 </project>
 

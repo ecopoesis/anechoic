@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="SBT: com.google.guava:guava:14.0.1">
     <CLASSES>
-      <root url="jar:///Applications/play/play-2.2.0/repository/local/com.google.guava/guava/14.0.1/bundles/guava.jar!/" />
+      <root url="jar://$USER_HOME$/tools/play-2.2.1/repository/local/com.google.guava/guava/14.0.1/bundles/guava.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

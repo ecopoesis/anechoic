@@ -113,6 +113,39 @@ class FeedDaoRssSpec extends Specification {
       feed.get.items(0).date.get.toString() must_== "2013-10-21T14:46:17.000Z"
       feed.get.items(0).title must_== "He really feels like he's the victim"
     }
+
+    "process grantland features from 2014-02-05" in test {
+      import play.api.Play.current
+      val feed = FeedDao.processRss(XML.load(Play.classloader.getResource("grantland-features-2014-02-05.rss")))
+      feed.get.title === "Grantland » Features"
+      feed.get.items.length === 10
+      feed.get.items(0).title === "Director’s Cut: ‘Moscow Games,’ by George Plimpton"
+      feed.get.items(1).title === "What the Cossacks Can Do"
+      feed.get.items(2).title === "Crimson Pride"
+      feed.get.items(3).title === "A Team Grows in Brooklyn"
+      feed.get.items(4).title === "The Lion Sleeps Tonight"
+      feed.get.items(5).title === "Are We Having Fun Yet?"
+      feed.get.items(6).title === "Seattle’s Best"
+      feed.get.items(7).title === "The Super Bag"
+      feed.get.items(8).title === "Surely They Can’t Be Serious?"
+      feed.get.items(9).title === "A Commissioner’s Legacy"
+    }
+
+    "process grantland hollywood from 2014-02-05" in test {
+      import play.api.Play.current
+      val feed = FeedDao.processRss(XML.load(Play.classloader.getResource("grantland-hollywood-2014-02-05.rss")))
+      feed.get.title === "Grantland » Hollywood Prospectus"
+      feed.get.items.length === 10
+      feed.get.items(0).title === "The Red Hot Chili Peppers: Air Guitar Champions"
+    }
+
+    "process grantland triangle from 2014-02-05" in test {
+      import play.api.Play.current
+      val feed = FeedDao.processRss(XML.load(Play.classloader.getResource("grantland-triangle-2014-02-05.rss")))
+      feed.get.title === "Grantland » The Triangle"
+      feed.get.items.length === 10
+      feed.get.items(0).title === "About Last Night: A Brand-New Gator"
+    }
   }
 
   def test[T](code: =>T) =
