@@ -10,3 +10,5 @@ logs
 .idea/libraries
 .idea/libraries/*
 .apdisk
+/*.iml
+/.idea_modules
