@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="SBT: com.github.mumoshu:play2-memcached_2.10:0.3.0.2">
-    <CLASSES>
-      <root url="jar://$USER_HOME$/tools/play-2.2.1/repository/cache/com.github.mumoshu/play2-memcached_2.10/jars/play2-memcached_2.10-0.3.0.2.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

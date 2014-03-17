@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="SBT: securesocial:securesocial_2.10:master-SNAPSHOT">
-    <CLASSES>
-      <root url="jar:///Applications/play/play-2.1.1/repository/cache/securesocial/securesocial_2.10/jars/securesocial_2.10-master-SNAPSHOT.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

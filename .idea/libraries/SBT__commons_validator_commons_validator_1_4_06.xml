@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="SBT: commons-validator:commons-validator:1.4.0">
-    <CLASSES>
-      <root url="jar:///Applications/play/play-2.2.0/repository/cache/commons-validator/commons-validator/jars/commons-validator-1.4.0.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

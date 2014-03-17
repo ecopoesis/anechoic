@@ -5,6 +5,7 @@ logs
 .Trashes
 .swp
 .lock
+.idea
 .idea/workspace.xml
 .idea/libraries
 .idea/libraries/*

@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="SBT: net.databinder.dispatch:dispatch-core_2.10:0.11.0">
-    <CLASSES>
-      <root url="jar:///Applications/play/play-2.2.0/repository/cache/net.databinder.dispatch/dispatch-core_2.10/jars/dispatch-core_2.10-0.11.0.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

@@ -16,8 +16,7 @@ object ApplicationBuild extends Build {
     anorm,
     cache,
     filters,
-    "com.typesafe.play" % "play_2.10" % "2.2.0",
-    "securesocial" %% "securesocial" % "master-SNAPSHOT" exclude("org.scala-stm", "scala-stm_2.10.0"),
+    "ws.securesocial" %% "securesocial" % "2.1.3",
     "org.postgresql" % "postgresql" % "9.2-1002-jdbc4",
     "commons-validator" % "commons-validator" % "1.4.0" ,
     "org.ocpsoft.prettytime" % "prettytime" % "3.0.2.Final",
@@ -26,6 +25,7 @@ object ApplicationBuild extends Build {
     "com.jolbox" % "bonecp" % "0.8.0-rc1",
     "org.bouncycastle" % "bcprov-jdk15on" % "1.49",
     "org.bouncycastle" % "bcpkix-jdk15on" % "1.49",
+    "com.google.guava" % "guava" % "14.0",
     "org.jsoup" % "jsoup" % "1.7.2"
   )
 
